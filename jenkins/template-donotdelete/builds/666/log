@@ -1,0 +1,12 @@
+Started by timer
+Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
+Updating file:///var/repos/LABOR/template at revision '2016-01-07T14:18:00.671 +0100'
+At revision 7
+No changes for file:///var/repos/LABOR/template since the previous build
+[workspace] $ /bin/bash -xe /tmp/tomcat7-tomcat7-tmp/hudson5444476347632035806.sh
++ bash -ex validatebuild.sh
++ cd lab-template/Ampel/Template/IDE-Host/AmpelMake
+validatebuild.sh: line 2: cd: lab-template/Ampel/Template/IDE-Host/AmpelMake: No such file or directory
+Build step 'Execute shell' marked build as failure
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: FAILURE

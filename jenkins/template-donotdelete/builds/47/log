@@ -1,0 +1,16 @@
+Started by timer
+Building in workspace /home/jenkins/workspace/Team A1
+Updating https://wwwitrt.hs-esslingen.de/svn/labor/teama1 at revision '2015-11-16T16:18:00.766 +0100'
+At revision 24
+no change for https://wwwitrt.hs-esslingen.de/svn/labor/teama1 since the previous build
+[Team A1] $ /bin/bash -xe /tmp/tomcat7-tomcat7-tmp/hudson7704316195934819970.sh
++ cd impl/IDE-Host/AmpelMake
++ make all
+Building target: Ampel
+Invoking: C Linker
+gcc  -o "Ampel.exe" obj/ampel.o obj/buttonh.o obj/states.o obj/button.o obj/ticker.o obj/hal.o obj/led.o 
+Finished building target: Ampel
+ 
++ ./Ampel.exe
+0: Yellow on
+Finished: SUCCESS

@@ -1,0 +1,17 @@
+
+## wenn auf ldap kaputt: folgendes Vorgehen
+
+  /etc/init.d/slapd stop
+  cd /var/lib/ldap/
+  ls -altr
+  rm *.bdb log.* __* alock -vf
+
+  FILE=`ls -1tr /root/ldap-backups/*.ldif| tail -1`
+
+  time slapadd -l $FILE
+
+  chown openldap:openldap *
+
+  /etc/init.d/slapd start
+
+

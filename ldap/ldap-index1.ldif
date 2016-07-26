@@ -1,0 +1,7 @@
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcDbIndex
+# simple use of the default value
+olcDbIndex: default pres,eq
+olcDbIndex: objectClass,cn,sn,uid,member,uniqueMember,memberUid
+

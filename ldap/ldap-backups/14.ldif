@@ -1,0 +1,3506 @@
+dn: dc=hs-esslingen,dc=de
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: hs-esslingen.de
+dc: hs-esslingen
+structuralObjectClass: organization
+entryUUID: d961688a-1f58-1032-8686-23fbf061e260
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130312120517Z
+entryCSN: 20130312120517.515533Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130312120517Z
+
+dn: cn=admin,dc=hs-esslingen,dc=de
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+structuralObjectClass: organizationalRole
+entryUUID: d966ce7e-1f58-1032-8687-23fbf061e260
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130312120517Z
+userPassword:: e1NIQX1NWEdxSWo2U3Nubi9CVHBmTjVLR016MWlqMEU9
+entryCSN: 20130703103032.606342Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130703103032Z
+
+dn: ou=staff,dc=hs-esslingen,dc=de
+ou: staff
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: b82b386e-268b-1032-95c3-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321155704Z
+entryCSN: 20130321155704.268222Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130321155704Z
+
+dn: ou=people,dc=hs-esslingen,dc=de
+ou: people
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: da5ff96a-268b-1032-95c4-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321155801Z
+entryCSN: 20130321155801.656517Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130321155801Z
+
+dn:: Y249SsO2cmcgRnJpZWRyaWNoLG91PXBlb3BsZSxkYz1ocy1lc3NsaW5nZW4sZGM9ZGU=
+uid: friedric
+sn: Friedrich
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: 27c4a606-268c-1032-95c5-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321160011Z
+mail: joerg.friedrich@hs-esslingen.de
+cn:: SsO2cmcgRnJpZWRyaWNo
+givenName:: SsO2cmc=
+userPassword:: e1NTSEF9eHlrVnI2R2dVMFFURUU0YnVtZ1JscExHK1VJTngrK0I=
+entryCSN: 20151210152100.653803Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151210152100Z
+
+dn: cn=Rafael Trybek,ou=people,dc=hs-esslingen,dc=de
+uid: trybek
+mail: rafael.trybek@hs-esslingen.de
+sn: Trybek
+cn: Rafael Trybek
+givenName: Rafael
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: 61d23758-26b6-1032-96f2-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321210227Z
+userPassword:: e1NIQX1nV2ZMS0tOZUx5RlJuTVlQZis4cmxlOXZrd3c9
+entryCSN: 20130326135115.281844Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130326135115Z
+
+dn: cn=User u1 Team ed,ou=people,dc=hs-esslingen,dc=de
+uid: teamedu1
+mail: teamedu1@hs-esslingen.de
+sn: Team ed
+cn: User u1 Team ed
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3271390-d0e3-1032-9f3d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: ZWQ3NDI5dTE=
+entryCSN: 20150408090454.439402Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team ed,ou=people,dc=hs-esslingen,dc=de
+uid: teamedu2
+mail: teamedu2@hs-esslingen.de
+sn: Team ed
+cn: User u2 Team ed
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3294124-d0e3-1032-9f3e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: ZWQ2NTIxdTI=
+entryCSN: 20150408090454.453804Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team ed,ou=people,dc=hs-esslingen,dc=de
+uid: teamedu3
+mail: teamedu3@hs-esslingen.de
+sn: Team ed
+cn: User u3 Team ed
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f32b615c-d0e3-1032-9f3f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: ZWQ4MjU5dTM=
+entryCSN: 20150408090454.461275Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team ed,ou=people,dc=hs-esslingen,dc=de
+uid: teamedu4
+mail: teamedu4@hs-esslingen.de
+sn: Team ed
+cn: User u4 Team ed
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f32d5796-d0e3-1032-9f40-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: ZWQ5NDQ5dTQ=
+entryCSN: 20150408090454.462600Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team a1,ou=people,dc=hs-esslingen,dc=de
+uid: teama1u1
+mail: teama1u1@hs-esslingen.de
+sn: Team a1
+cn: User u1 Team a1
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: f32e7432-d0e3-1032-9f41-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: bGRhcHBhc3N3b3Jk
+pwmResponseSet:
+entryCSN: 20151213141546.942796Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151213141546Z
+
+dn: cn=User u2 Team a1,ou=people,dc=hs-esslingen,dc=de
+uid: teama1u2
+mail: teama1u2@hs-esslingen.de
+sn: Team a1
+cn: User u2 Team a1
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3309460-d0e3-1032-9f42-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTEyMzM5dTI=
+entryCSN: 20151012215803.902100Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012215803Z
+
+dn: cn=User u3 Team a1,ou=people,dc=hs-esslingen,dc=de
+uid: teama1u3
+mail: teama1u3@hs-esslingen.de
+sn: Team a1
+cn: User u3 Team a1
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3315d8c-d0e3-1032-9f43-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTEzMDg4dTM=
+entryCSN: 20151012215803.910451Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012215803Z
+
+dn: cn=User u4 Team a1,ou=people,dc=hs-esslingen,dc=de
+uid: teama1u4
+mail: teama1u4@hs-esslingen.de
+sn: Team a1
+cn: User u4 Team a1
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f332147a-d0e3-1032-9f44-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTExOTU1dTQ=
+entryCSN: 20150408090454.466094Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team a2,ou=people,dc=hs-esslingen,dc=de
+uid: teama2u1
+mail: teama2u1@hs-esslingen.de
+sn: Team a2
+cn: User u1 Team a2
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3338684-d0e3-1032-9f45-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTIzMDAwdTE=
+entryCSN: 20150929072703.696187Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u2 Team a2,ou=people,dc=hs-esslingen,dc=de
+uid: teama2u2
+mail: teama2u2@hs-esslingen.de
+sn: Team a2
+cn: User u2 Team a2
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3344bbe-d0e3-1032-9f46-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTI1MTY0dTI=
+entryCSN: 20150929072703.697123Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u3 Team a2,ou=people,dc=hs-esslingen,dc=de
+uid: teama2u3
+mail: teama2u3@hs-esslingen.de
+sn: Team a2
+cn: User u3 Team a2
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f337b6aa-d0e3-1032-9f47-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTI2MzI4dTM=
+entryCSN: 20150929072703.697977Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u4 Team a2,ou=people,dc=hs-esslingen,dc=de
+uid: teama2u4
+mail: teama2u4@hs-esslingen.de
+sn: Team a2
+cn: User u4 Team a2
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3392d46-d0e3-1032-9f48-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTI5MDI1dTQ=
+entryCSN: 20150408090454.469989Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team a3,ou=people,dc=hs-esslingen,dc=de
+uid: teama3u1
+mail: teama3u1@hs-esslingen.de
+sn: Team a3
+cn: User u1 Team a3
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f339f028-d0e3-1032-9f49-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTMyNjYwdTE=
+entryCSN: 20150929072703.698967Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u2 Team a3,ou=people,dc=hs-esslingen,dc=de
+uid: teama3u2
+mail: teama3u2@hs-esslingen.de
+sn: Team a3
+cn: User u2 Team a3
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f33b74d4-d0e3-1032-9f4a-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTMyNjY2dTI=
+entryCSN: 20150929072703.700307Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u3 Team a3,ou=people,dc=hs-esslingen,dc=de
+uid: teama3u3
+mail: teama3u3@hs-esslingen.de
+sn: Team a3
+cn: User u3 Team a3
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f33d2edc-d0e3-1032-9f4b-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTM4MjQ1dTM=
+entryCSN: 20150929072703.701277Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u4 Team a3,ou=people,dc=hs-esslingen,dc=de
+uid: teama3u4
+mail: teama3u4@hs-esslingen.de
+sn: Team a3
+cn: User u4 Team a3
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f33e7b2a-d0e3-1032-9f4c-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTM4NzQ1dTQ=
+entryCSN: 20150408090454.473869Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team a4,ou=people,dc=hs-esslingen,dc=de
+uid: teama4u1
+mail: teama4u1@hs-esslingen.de
+sn: Team a4
+cn: User u1 Team a4
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f340d4ec-d0e3-1032-9f4d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTQ1Nzk1dTE=
+entryCSN: 20150929072703.705382Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u2 Team a4,ou=people,dc=hs-esslingen,dc=de
+uid: teama4u2
+mail: teama4u2@hs-esslingen.de
+sn: Team a4
+cn: User u2 Team a4
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3434c0e-d0e3-1032-9f4e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTQ3NjA3dTI=
+entryCSN: 20150929072703.706242Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u3 Team a4,ou=people,dc=hs-esslingen,dc=de
+uid: teama4u3
+mail: teama4u3@hs-esslingen.de
+sn: Team a4
+cn: User u3 Team a4
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f344039c-d0e3-1032-9f4f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTQ5MDU4dTM=
+entryCSN: 20150929072703.707576Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u4 Team a4,ou=people,dc=hs-esslingen,dc=de
+uid: teama4u4
+mail: teama4u4@hs-esslingen.de
+sn: Team a4
+cn: User u4 Team a4
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f345950e-d0e3-1032-9f50-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YTQ0OTgzdTQ=
+entryCSN: 20150408090454.478028Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team b1,ou=people,dc=hs-esslingen,dc=de
+uid: teamb1u1
+mail: teamb1u1@hs-esslingen.de
+sn: Team b1
+cn: User u1 Team b1
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3474aac-d0e3-1032-9f51-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjExNzEydTE=
+entryCSN: 20150408090454.478960Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team b1,ou=people,dc=hs-esslingen,dc=de
+uid: teamb1u2
+mail: teamb1u2@hs-esslingen.de
+sn: Team b1
+cn: User u2 Team b1
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3497052-d0e3-1032-9f52-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjE3Mzg5dTI=
+entryCSN: 20150408090454.479843Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team b1,ou=people,dc=hs-esslingen,dc=de
+uid: teamb1u3
+mail: teamb1u3@hs-esslingen.de
+sn: Team b1
+cn: User u3 Team b1
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f34b88e2-d0e3-1032-9f53-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjE1ODYzdTM=
+entryCSN: 20150408090454.480815Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team b1,ou=people,dc=hs-esslingen,dc=de
+uid: teamb1u4
+mail: teamb1u4@hs-esslingen.de
+sn: Team b1
+cn: User u4 Team b1
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f34ca9b6-d0e3-1032-9f54-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjEyNzI4dTQ=
+entryCSN: 20150408090454.481745Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team b2,ou=people,dc=hs-esslingen,dc=de
+uid: teamb2u1
+mail: teamb2u1@hs-esslingen.de
+sn: Team b2
+cn: User u1 Team b2
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f34f7d6c-d0e3-1032-9f55-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjI3NjQ2dTE=
+entryCSN: 20150408090454.482782Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team b2,ou=people,dc=hs-esslingen,dc=de
+uid: teamb2u2
+mail: teamb2u2@hs-esslingen.de
+sn: Team b2
+cn: User u2 Team b2
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3509116-d0e3-1032-9f56-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjI4MjEydTI=
+entryCSN: 20150408090454.483751Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team b2,ou=people,dc=hs-esslingen,dc=de
+uid: teamb2u3
+mail: teamb2u3@hs-esslingen.de
+sn: Team b2
+cn: User u3 Team b2
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3513fc6-d0e3-1032-9f57-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjI4MDI3dTM=
+entryCSN: 20150408090454.485310Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team b2,ou=people,dc=hs-esslingen,dc=de
+uid: teamb2u4
+mail: teamb2u4@hs-esslingen.de
+sn: Team b2
+cn: User u4 Team b2
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3532610-d0e3-1032-9f58-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjI2NzYydTQ=
+entryCSN: 20150408090454.486130Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team b3,ou=people,dc=hs-esslingen,dc=de
+uid: teamb3u1
+mail: teamb3u1@hs-esslingen.de
+sn: Team b3
+cn: User u1 Team b3
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f354ffd0-d0e3-1032-9f59-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjM3NTgxdTE=
+entryCSN: 20150408090454.487015Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team b3,ou=people,dc=hs-esslingen,dc=de
+uid: teamb3u2
+mail: teamb3u2@hs-esslingen.de
+sn: Team b3
+cn: User u2 Team b3
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35611a4-d0e3-1032-9f5a-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjM3MzAydTI=
+entryCSN: 20150408090454.487862Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team b3,ou=people,dc=hs-esslingen,dc=de
+uid: teamb3u3
+mail: teamb3u3@hs-esslingen.de
+sn: Team b3
+cn: User u3 Team b3
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35725bc-d0e3-1032-9f5b-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjM5MzM0dTM=
+entryCSN: 20150408090454.488803Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team b3,ou=people,dc=hs-esslingen,dc=de
+uid: teamb3u4
+mail: teamb3u4@hs-esslingen.de
+sn: Team b3
+cn: User u4 Team b3
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f358b2ec-d0e3-1032-9f5c-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjM0NTUzdTQ=
+entryCSN: 20150408090454.489689Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team b4,ou=people,dc=hs-esslingen,dc=de
+uid: teamb4u1
+mail: teamb4u1@hs-esslingen.de
+sn: Team b4
+cn: User u1 Team b4
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35a8482-d0e3-1032-9f5d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjQ5MTY2dTE=
+entryCSN: 20150408090454.490511Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team b4,ou=people,dc=hs-esslingen,dc=de
+uid: teamb4u2
+mail: teamb4u2@hs-esslingen.de
+sn: Team b4
+cn: User u2 Team b4
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35c3b4c-d0e3-1032-9f5e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjQ0NTQ1dTI=
+entryCSN: 20150408090454.491400Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team b4,ou=people,dc=hs-esslingen,dc=de
+uid: teamb4u3
+mail: teamb4u3@hs-esslingen.de
+sn: Team b4
+cn: User u3 Team b4
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35d09dc-d0e3-1032-9f5f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjQxOTU1dTM=
+entryCSN: 20150408090454.493106Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team b4,ou=people,dc=hs-esslingen,dc=de
+uid: teamb4u4
+mail: teamb4u4@hs-esslingen.de
+sn: Team b4
+cn: User u4 Team b4
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35db936-d0e3-1032-9f60-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YjQ0MjMydTQ=
+entryCSN: 20150408090454.494122Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team c1,ou=people,dc=hs-esslingen,dc=de
+uid: teamc1u1
+mail: teamc1u1@hs-esslingen.de
+sn: Team c1
+cn: User u1 Team c1
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35eafda-d0e3-1032-9f61-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YzEzNzMydTE=
+entryCSN: 20150408090454.495040Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team c1,ou=people,dc=hs-esslingen,dc=de
+uid: teamc1u2
+mail: teamc1u2@hs-esslingen.de
+sn: Team c1
+cn: User u2 Team c1
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f35ff35e-d0e3-1032-9f62-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YzE0MzI5dTI=
+entryCSN: 20150408090454.495969Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team c1,ou=people,dc=hs-esslingen,dc=de
+uid: teamc1u3
+mail: teamc1u3@hs-esslingen.de
+sn: Team c1
+cn: User u3 Team c1
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f360b01e-d0e3-1032-9f63-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YzE1NjY5dTM=
+entryCSN: 20150408090454.496884Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team c1,ou=people,dc=hs-esslingen,dc=de
+uid: teamc1u4
+mail: teamc1u4@hs-esslingen.de
+sn: Team c1
+cn: User u4 Team c1
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f361a6b8-d0e3-1032-9f64-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103656Z
+userPassword:: YzE0ODkxdTQ=
+entryCSN: 20150408090454.497775Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team c2,ou=people,dc=hs-esslingen,dc=de
+uid: teamc2u1
+mail: teamc2u1@hs-esslingen.de
+sn: Team c2
+cn: User u1 Team c2
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3633460-d0e3-1032-9f65-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzI4MDQ0dTE=
+entryCSN: 20150408090454.498621Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team c2,ou=people,dc=hs-esslingen,dc=de
+uid: teamc2u2
+mail: teamc2u2@hs-esslingen.de
+sn: Team c2
+cn: User u2 Team c2
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36425d2-d0e3-1032-9f66-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzI5Mjg5dTI=
+entryCSN: 20150408090454.499445Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team c2,ou=people,dc=hs-esslingen,dc=de
+uid: teamc2u3
+mail: teamc2u3@hs-esslingen.de
+sn: Team c2
+cn: User u3 Team c2
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f364ce60-d0e3-1032-9f67-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzIyOTQ2dTM=
+entryCSN: 20150408090454.500823Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team c2,ou=people,dc=hs-esslingen,dc=de
+uid: teamc2u4
+mail: teamc2u4@hs-esslingen.de
+sn: Team c2
+cn: User u4 Team c2
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36570cc-d0e3-1032-9f68-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzI4NzcxdTQ=
+entryCSN: 20150408090454.501718Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team c3,ou=people,dc=hs-esslingen,dc=de
+uid: teamc3u1
+mail: teamc3u1@hs-esslingen.de
+sn: Team c3
+cn: User u1 Team c3
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3665d0c-d0e3-1032-9f69-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzM2MzYwdTE=
+entryCSN: 20150408090454.502684Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team c3,ou=people,dc=hs-esslingen,dc=de
+uid: teamc3u2
+mail: teamc3u2@hs-esslingen.de
+sn: Team c3
+cn: User u2 Team c3
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3685ab2-d0e3-1032-9f6a-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzM4MDkwdTI=
+entryCSN: 20150408090454.503560Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team c3,ou=people,dc=hs-esslingen,dc=de
+uid: teamc3u3
+mail: teamc3u3@hs-esslingen.de
+sn: Team c3
+cn: User u3 Team c3
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f369005c-d0e3-1032-9f6b-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzMzNjE4dTM=
+entryCSN: 20150408090454.504530Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team c3,ou=people,dc=hs-esslingen,dc=de
+uid: teamc3u4
+mail: teamc3u4@hs-esslingen.de
+sn: Team c3
+cn: User u4 Team c3
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f369ebde-d0e3-1032-9f6c-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzM0NTIxdTQ=
+entryCSN: 20150408090454.505555Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team c4,ou=people,dc=hs-esslingen,dc=de
+uid: teamc4u1
+mail: teamc4u1@hs-esslingen.de
+sn: Team c4
+cn: User u1 Team c4
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36a970a-d0e3-1032-9f6d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzQyMDM4dTE=
+entryCSN: 20150408090454.506508Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team c4,ou=people,dc=hs-esslingen,dc=de
+uid: teamc4u2
+mail: teamc4u2@hs-esslingen.de
+sn: Team c4
+cn: User u2 Team c4
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36b628e-d0e3-1032-9f6e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzQ3Nzc2dTI=
+entryCSN: 20150408090454.507435Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team c4,ou=people,dc=hs-esslingen,dc=de
+uid: teamc4u3
+mail: teamc4u3@hs-esslingen.de
+sn: Team c4
+cn: User u3 Team c4
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36c649a-d0e3-1032-9f6f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzQyNzUydTM=
+entryCSN: 20150408090454.508853Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team c4,ou=people,dc=hs-esslingen,dc=de
+uid: teamc4u4
+mail: teamc4u4@hs-esslingen.de
+sn: Team c4
+cn: User u4 Team c4
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36de090-d0e3-1032-9f70-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: YzQ5Nzc1dTQ=
+entryCSN: 20150408090454.509856Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team d1,ou=people,dc=hs-esslingen,dc=de
+uid: teamd1u1
+mail: teamd1u1@hs-esslingen.de
+sn: Team d1
+cn: User u1 Team d1
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f36e97c4-d0e3-1032-9f71-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDExNjMwdTE=
+entryCSN: 20150408090454.510841Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team d1,ou=people,dc=hs-esslingen,dc=de
+uid: teamd1u2
+mail: teamd1u2@hs-esslingen.de
+sn: Team d1
+cn: User u2 Team d1
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f370c53a-d0e3-1032-9f72-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDE5NjgxdTI=
+entryCSN: 20150408090454.511758Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team d1,ou=people,dc=hs-esslingen,dc=de
+uid: teamd1u3
+mail: teamd1u3@hs-esslingen.de
+sn: Team d1
+cn: User u3 Team d1
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3717f02-d0e3-1032-9f73-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDE1ODM1dTM=
+entryCSN: 20150408090454.512752Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team d1,ou=people,dc=hs-esslingen,dc=de
+uid: teamd1u4
+mail: teamd1u4@hs-esslingen.de
+sn: Team d1
+cn: User u4 Team d1
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3727f1a-d0e3-1032-9f74-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDEzMjc3dTQ=
+entryCSN: 20150408090454.513706Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team d2,ou=people,dc=hs-esslingen,dc=de
+uid: teamd2u1
+mail: teamd2u1@hs-esslingen.de
+sn: Team d2
+cn: User u1 Team d2
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f374581c-d0e3-1032-9f75-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDIyNzAydTE=
+entryCSN: 20150408090454.514905Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team d2,ou=people,dc=hs-esslingen,dc=de
+uid: teamd2u2
+mail: teamd2u2@hs-esslingen.de
+sn: Team d2
+cn: User u2 Team d2
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f374f808-d0e3-1032-9f76-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDI1ODQydTI=
+entryCSN: 20150408090454.515894Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team d2,ou=people,dc=hs-esslingen,dc=de
+uid: teamd2u3
+mail: teamd2u3@hs-esslingen.de
+sn: Team d2
+cn: User u3 Team d2
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f376f356-d0e3-1032-9f77-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDI1NzAzdTM=
+entryCSN: 20150408090454.516868Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team d2,ou=people,dc=hs-esslingen,dc=de
+uid: teamd2u4
+mail: teamd2u4@hs-esslingen.de
+sn: Team d2
+cn: User u4 Team d2
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f377b14c-d0e3-1032-9f78-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDI1NjIwdTQ=
+entryCSN: 20150408090454.518276Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team d3,ou=people,dc=hs-esslingen,dc=de
+uid: teamd3u1
+mail: teamd3u1@hs-esslingen.de
+sn: Team d3
+cn: User u1 Team d3
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f378686c-d0e3-1032-9f79-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDMxNDY0dTE=
+entryCSN: 20150408090454.519141Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team d3,ou=people,dc=hs-esslingen,dc=de
+uid: teamd3u2
+mail: teamd3u2@hs-esslingen.de
+sn: Team d3
+cn: User u2 Team d3
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f37c607a-d0e3-1032-9f7a-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDM4Nzk3dTI=
+entryCSN: 20150408090454.519992Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team d3,ou=people,dc=hs-esslingen,dc=de
+uid: teamd3u3
+mail: teamd3u3@hs-esslingen.de
+sn: Team d3
+cn: User u3 Team d3
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f37dfad4-d0e3-1032-9f7b-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDM5NTMydTM=
+entryCSN: 20150408090454.520962Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team d3,ou=people,dc=hs-esslingen,dc=de
+uid: teamd3u4
+mail: teamd3u4@hs-esslingen.de
+sn: Team d3
+cn: User u4 Team d3
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f37eae84-d0e3-1032-9f7c-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDM5NDM4dTQ=
+entryCSN: 20150408090454.521884Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team d4,ou=people,dc=hs-esslingen,dc=de
+uid: teamd4u1
+mail: teamd4u1@hs-esslingen.de
+sn: Team d4
+cn: User u1 Team d4
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f37f9c4a-d0e3-1032-9f7d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDQ2NDE4dTE=
+entryCSN: 20150408090454.522861Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team d4,ou=people,dc=hs-esslingen,dc=de
+uid: teamd4u2
+mail: teamd4u2@hs-esslingen.de
+sn: Team d4
+cn: User u2 Team d4
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3814ba8-d0e3-1032-9f7e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDQ3MzI4dTI=
+entryCSN: 20150408090454.523731Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team d4,ou=people,dc=hs-esslingen,dc=de
+uid: teamd4u3
+mail: teamd4u3@hs-esslingen.de
+sn: Team d4
+cn: User u3 Team d4
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3825af2-d0e3-1032-9f7f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDQ1Nzg2dTM=
+entryCSN: 20150408090454.524699Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team d4,ou=people,dc=hs-esslingen,dc=de
+uid: teamd4u4
+mail: teamd4u4@hs-esslingen.de
+sn: Team d4
+cn: User u4 Team d4
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3845794-d0e3-1032-9f80-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZDQ1NTE5dTQ=
+entryCSN: 20150408090454.526920Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team e1,ou=people,dc=hs-esslingen,dc=de
+uid: teame1u1
+mail: teame1u1@hs-esslingen.de
+sn: Team e1
+cn: User u1 Team e1
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3850842-d0e3-1032-9f81-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTE0MTAxdTE=
+entryCSN: 20150408090454.527856Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team e1,ou=people,dc=hs-esslingen,dc=de
+uid: teame1u2
+mail: teame1u2@hs-esslingen.de
+sn: Team e1
+cn: User u2 Team e1
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f38806aa-d0e3-1032-9f82-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTE0ODM0dTI=
+entryCSN: 20150408090454.528808Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team e1,ou=people,dc=hs-esslingen,dc=de
+uid: teame1u3
+mail: teame1u3@hs-esslingen.de
+sn: Team e1
+cn: User u3 Team e1
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f38b39d8-d0e3-1032-9f83-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTEzMDM3dTM=
+entryCSN: 20150408090454.529716Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team e1,ou=people,dc=hs-esslingen,dc=de
+uid: teame1u4
+mail: teame1u4@hs-esslingen.de
+sn: Team e1
+cn: User u4 Team e1
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f38ebf36-d0e3-1032-9f84-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTE3MDc2dTQ=
+entryCSN: 20150408090454.530614Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team e2,ou=people,dc=hs-esslingen,dc=de
+uid: teame2u1
+mail: teame2u1@hs-esslingen.de
+sn: Team e2
+cn: User u1 Team e2
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f38fdd76-d0e3-1032-9f85-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTIxNzE3dTE=
+entryCSN: 20150408090454.531529Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team e2,ou=people,dc=hs-esslingen,dc=de
+uid: teame2u2
+mail: teame2u2@hs-esslingen.de
+sn: Team e2
+cn: User u2 Team e2
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f39087e4-d0e3-1032-9f86-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTIzMDgzdTI=
+entryCSN: 20150408090454.532474Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team e2,ou=people,dc=hs-esslingen,dc=de
+uid: teame2u3
+mail: teame2u3@hs-esslingen.de
+sn: Team e2
+cn: User u3 Team e2
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3912e10-d0e3-1032-9f87-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTI2OTQ3dTM=
+entryCSN: 20150408090454.533402Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team e2,ou=people,dc=hs-esslingen,dc=de
+uid: teame2u4
+mail: teame2u4@hs-esslingen.de
+sn: Team e2
+cn: User u4 Team e2
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f392426e-d0e3-1032-9f88-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTI0NjU0dTQ=
+entryCSN: 20150408090454.534865Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team e3,ou=people,dc=hs-esslingen,dc=de
+uid: teame3u1
+mail: teame3u1@hs-esslingen.de
+sn: Team e3
+cn: User u1 Team e3
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3942ffc-d0e3-1032-9f89-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTM0ODgydTE=
+entryCSN: 20150408090454.535781Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team e3,ou=people,dc=hs-esslingen,dc=de
+uid: teame3u2
+mail: teame3u2@hs-esslingen.de
+sn: Team e3
+cn: User u2 Team e3
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3957772-d0e3-1032-9f8a-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTMxNTU1dTI=
+entryCSN: 20150408090454.536673Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team e3,ou=people,dc=hs-esslingen,dc=de
+uid: teame3u3
+mail: teame3u3@hs-esslingen.de
+sn: Team e3
+cn: User u3 Team e3
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3969bc0-d0e3-1032-9f8b-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTM2OTY1dTM=
+entryCSN: 20150408090454.537509Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team e3,ou=people,dc=hs-esslingen,dc=de
+uid: teame3u4
+mail: teame3u4@hs-esslingen.de
+sn: Team e3
+cn: User u4 Team e3
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f397ff9c-d0e3-1032-9f8c-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTM4NDM2dTQ=
+entryCSN: 20150408090454.538399Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u1 Team e4,ou=people,dc=hs-esslingen,dc=de
+uid: teame4u1
+mail: teame4u1@hs-esslingen.de
+sn: Team e4
+cn: User u1 Team e4
+givenName: User u1
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f39cb122-d0e3-1032-9f8d-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTQ1NjAydTE=
+entryCSN: 20150408090454.539263Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u2 Team e4,ou=people,dc=hs-esslingen,dc=de
+uid: teame4u2
+mail: teame4u2@hs-esslingen.de
+sn: Team e4
+cn: User u2 Team e4
+givenName: User u2
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f39ec2aa-d0e3-1032-9f8e-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTQzMzA0dTI=
+entryCSN: 20150408090454.540129Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u3 Team e4,ou=people,dc=hs-esslingen,dc=de
+uid: teame4u3
+mail: teame4u3@hs-esslingen.de
+sn: Team e4
+cn: User u3 Team e4
+givenName: User u3
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f39f760a-d0e3-1032-9f8f-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTQ1Nzg4dTM=
+entryCSN: 20150408090454.541022Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=User u4 Team e4,ou=people,dc=hs-esslingen,dc=de
+uid: teame4u4
+mail: teame4u4@hs-esslingen.de
+sn: Team e4
+cn: User u4 Team e4
+givenName: User u4
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+structuralObjectClass: inetOrgPerson
+entryUUID: f3a0647a-d0e3-1032-9f90-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131024103657Z
+userPassword:: ZTQ5MDI1dTQ=
+entryCSN: 20150408090454.542413Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150408090454Z
+
+dn: cn=Vikas Agrawal,ou=people,dc=hs-esslingen,dc=de
+cn: Vikas Agrawal
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: a57a9a7a-d662-1032-9f92-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131031102628Z
+uid: vagrawal
+sn: Agrawal
+givenName: Vikas
+mail: vikas.agrawal@hs-esslingen.de
+memberOf: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+userPassword:: e1NTSEF9MFM5S1hnZWVKOU9VY3pMNHZKM0VBMTgrWVNCVFR2N3Y=
+entryCSN: 20151213224544.294939Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151213224544Z
+
+dn: cn=User u1 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u1 Team a5
+sn: Team a5
+givenName: User u1
+mail: teama5u1@hs-esslingen.de
+uid: teama5u1
+structuralObjectClass: inetOrgPerson
+entryUUID: 530c52fa-f5a1-1034-8828-732c9abf7d29
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150922181309Z
+userPassword:: YTUzOTc4dTE=
+entryCSN: 20150929072703.709000Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u2 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u2 Team a5
+sn: Team a5
+givenName: User u2
+mail: teama5u2@hs-esslingen.de
+uid: teama5u2
+structuralObjectClass: inetOrgPerson
+entryUUID: 5310b188-f5a1-1034-8829-732c9abf7d29
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150922181309Z
+userPassword:: YTUzMTAydTI=
+entryCSN: 20150929072703.710590Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=User u3 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u3 Team a5
+sn: Team a5
+givenName: User u3
+mail: teama5u3@hs-esslingen.de
+uid: teama5u3
+structuralObjectClass: inetOrgPerson
+entryUUID: 5310df50-f5a1-1034-882a-732c9abf7d29
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150922181309Z
+userPassword:: YTUyNjEydTM=
+entryCSN: 20150929072703.712707Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929072703Z
+
+dn: cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+sn: Admin
+givenName: PWM
+uid: pwmadmin
+structuralObjectClass: inetOrgPerson
+entryUUID: 94e65dea-facb-1034-933b-8f3e24a95300
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150929075814Z
+cn: pwmadmin
+mail: joerg.friedrich@hs-esslingen.de
+userPassword:: e3NzaGF9S3NhdDN0OE9ZTTVLTEl3RmRaUlVLMkhJdThxUnd3S0U2cU9HQVE9PQ=
+ =
+entryCSN: 20151012105026.381400Z#000000#000#000000
+modifyTimestamp: 20151012105026Z
+memberOf: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+
+dn: ou=groups,dc=hs-esslingen,dc=de
+objectClass: organizationalUnit
+ou: groups
+description: pwm admin groups branch
+structuralObjectClass: organizationalUnit
+entryUUID: c82284d6-fb16-1034-87d9-7b4601506e05
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150929165632Z
+entryCSN: 20150929165632.951172Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929165632Z
+
+dn: cn=pwmadmin2,ou=people,dc=hs-esslingen,dc=de
+uid: pwmadmin
+mail: pwmadmin@hs-esslingen.de
+sn: Admin
+userPassword:: e3NoYTI1Nn03VWxjMlRaaWJXdVdJY2tVTG1BYld3WTEvOERFSHRFS2FWaXo5Mkx
+ YdlJjPQ==
+cn: pwmadmin2
+givenName: PWM
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: 953ca9b4-049b-1035-954d-1fe44d553efe
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151011193951Z
+entryCSN: 20151011193951.088742Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151011193951Z
+
+dn: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+cn: pwmadmins
+description: pwm admin groups branch
+objectClass: groupOfNames
+objectClass: top
+structuralObjectClass: groupOfNames
+entryUUID: 6882f6d4-04ba-1035-802b-d71914ae4d1c
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151011232030Z
+member: cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de
+member: cn=vikas agrawal,ou=people,dc=hs-esslingen,dc=de
+entryCSN: 20151210200328.964100Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151210200328Z
+
+dn: cn=G2FP2T37OGXOE25E,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: pwmUser
+mail: joerg.friedrich@trackplus.com
+givenName: John
+sn: Friedrich
+cn: G2FP2T37OGXOE25E
+structuralObjectClass: inetOrgPerson
+entryUUID: 36b1029c-050d-1035-86ee-d516556fab87
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012091315Z
+userPassword:: e1NTSEF9WEVqMFhveCttaDhjUHBTTWRudzZIbFU3bXZ2YXIrYmQ=
+pwmResponseSet:: MDAwMiMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiP
+ z48UmVzcG9uc2VTZXQgbWluUmFuZG9tUmVxdWlyZWQ9IjIiIGxvY2FsZT0iZGUiIHZlcnNpb249Ij
+ IiIGNoYWlWZXJzaW9uPSIwLjYuNi1TTkFQU0hPVCIgY2FzZUluc2Vuc2l0aXZlPSJ0cnVlIiBjaGF
+ sbGVuZ2VTZXRJRD0iUFdNLWRlZmluZWQgW1ZlcnNpb24gTWlzc2luZ10iIHRpbWU9IjIwMTUtMTAt
+ MTIgMDk6MTc6MTcgKzAwMDAiPjxyZXNwb25zZSBhZG1pbkRlZmluZWQ9InRydWUiIHJlcXVpcmVkP
+ SJmYWxzZSIgbWluTGVuZ3RoPSI0IiBtYXhMZW5ndGg9IjIwMCI+PGNoYWxsZW5nZT5JbiB3ZWxjaG
+ VyIFN0cmHDn2UgaGFiZW4gU2llIGFscyBLaW5kIGdld29obnQ/PC9jaGFsbGVuZ2U+PGFuc3dlciB
+ zYWx0PSJpdWpocVNOUEliOTM0OHRIbmIzMkR3ZjI5S0l5aEtFUiIgZm9ybWF0PSJTSEE1MTJfU0FM
+ VCIgaGFzaGNvdW50PSIxMDAwMDAiPkI6UmRCSGZ2dUJSM25CYUZ1a3haaEpnVXM1Q1NxZm5GTVUvS
+ GZYOUtGS1dGdnZIL1Vxd0tTVFpUcjlCSDFEU25wbU1DKzhGSUNIK0lVNGZtQjRhejZ3T1E9PTwvYW
+ 5zd2VyPjwvcmVzcG9uc2U+PHJlc3BvbnNlIGFkbWluRGVmaW5lZD0idHJ1ZSIgcmVxdWlyZWQ9ImZ
+ hbHNlIiBtaW5MZW5ndGg9IjQiIG1heExlbmd0aD0iMjAwIj48Y2hhbGxlbmdlPldpZSBsYXV0ZXQg
+ SWhyIEdlYnVydHNvcnQ/PC9jaGFsbGVuZ2U+PGFuc3dlciBzYWx0PSJrenNnMEhVOWRRMzkwbFNNa
+ TYwRkQwamFGeGdTWHF0ayIgZm9ybWF0PSJTSEE1MTJfU0FMVCIgaGFzaGNvdW50PSIxMDAwMDAiPk
+ I6OEVjekl3M09YcUlzQUt6VTBmZ0w0UldXRTI0WklyZWpaNitDRkN4eGdRTWFQeUQ0NDdaUFIyNTJ
+ rK09wYWJMT1lUOTMvWkZJenZIV3VIKzY0czlkTXc9PTwvYW5zd2VyPjwvcmVzcG9uc2U+PHJlc3Bv
+ bnNlIGFkbWluRGVmaW5lZD0idHJ1ZSIgcmVxdWlyZWQ9ImZhbHNlIiBtaW5MZW5ndGg9IjQiIG1he
+ Exlbmd0aD0iMjAwIj48Y2hhbGxlbmdlPldpZSBoaWXDnyBJaHIgYmVzdGVyIEZyZXVuZC9JaHJlIG
+ Jlc3RlIEZyZXVuZGluIGF1cyBkZXIgS2luZGhlaXQ/PC9jaGFsbGVuZ2U+PGFuc3dlciBzYWx0PSJ
+ YQU81Z1U0dTFNeWYyZnNOdFk5ZHhBV3J1a0UxYnZLaiIgZm9ybWF0PSJTSEE1MTJfU0FMVCIgaGFz
+ aGNvdW50PSIxMDAwMDAiPkI6eFVCbVFCdTJzeExiOWNTajhQaEpZaUNkazVhYy9lcnVXVlVBSkF6Y
+ 2x4NUxxdUYyZVBoQ3NjODd5TVBvM2dxU0ZLRGQ4Zm40cS9MUkkvSC81d1RMd1E9PTwvYW5zd2VyPj
+ wvcmVzcG9uc2U+PHJlc3BvbnNlIGFkbWluRGVmaW5lZD0idHJ1ZSIgcmVxdWlyZWQ9ImZhbHNlIiB
+ taW5MZW5ndGg9IjQiIG1heExlbmd0aD0iMjAwIj48Y2hhbGxlbmdlPldhcyBlc3NlbiBTaWUgYW0g
+ bGllYnN0ZW4/PC9jaGFsbGVuZ2U+PGFuc3dlciBzYWx0PSJEY2E2Mk0ySzJmNE1HTmIxZzhtdEFMM
+ kFQaGdhN3ZhWiIgZm9ybWF0PSJTSEE1MTJfU0FMVCIgaGFzaGNvdW50PSIxMDAwMDAiPkI6OEhRTm
+ Zhcmk5ZEZOenhIL01sQkV4L0RCMHR3OUZTcnpnclE4ckVsaGpwaVd2T3V4MlYzY0JYamJnYktwOEx
+ uejhQWGtOaUJOZlpqSHVqd0NlWnp5SlE9PTwvYW5zd2VyPjwvcmVzcG9uc2U+PC9SZXNwb25zZVNl
+ dD4=
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDQ0NjQxMTk1MTk0IiBldmVudENvZGU9IkV2Z
+ W50TG9nX0NyZWF0ZVVzZXIiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4Lj
+ YzLjExMyZxdW90O10iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7dXNlcjgxMTM
+ uaHMtZXNzbGluZ2VuLmRlJnF1b3Q7XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ0NDY0MTQzNzA5
+ MyIgZXZlbnRDb2RlPSJFdmVudExvZ19TZXR1cFJlc3BvbnNlcyIgc3JjSVA9IjEzNC4xMDguNjMuM
+ TEzIiBzcmNIb3N0PSJ1c2VyODExMy5ocy1lc3NsaW5nZW4uZGUiIC8+PC9oaXN0b3J5Pg0K
+entryCSN: 20151012091717.106423Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012091717Z
+
+dn: cn=User u1 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u1 Team a6
+sn: Team a6
+givenName: User u1
+mail: teama6u1@hs-esslingen.de
+uid: teama6u1
+structuralObjectClass: inetOrgPerson
+entryUUID: 3ba84e6c-052c-1035-9abd-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012125517Z
+userPassword:: YTYzOTI4dTE=
+entryCSN: 20151012125517.879501Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012125517Z
+
+dn: cn=User u2 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u2 Team a6
+sn: Team a6
+givenName: User u2
+mail: teama6u2@hs-esslingen.de
+uid: teama6u2
+structuralObjectClass: inetOrgPerson
+entryUUID: 3ba96022-052c-1035-9abe-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012125517Z
+userPassword:: YTYyNDU3dTI=
+entryCSN: 20151012125517.909690Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012125517Z
+
+dn: cn=User u3 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: User u3 Team a6
+sn: Team a6
+givenName: User u3
+mail: teama6u3@hs-esslingen.de
+uid: teama6u3
+structuralObjectClass: inetOrgPerson
+entryUUID: 3babd956-052c-1035-9abf-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012125517Z
+userPassword:: YTY1MjYzdTM=
+entryCSN: 20151012125517.910871Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012125517Z
+
+dn: cn=SA User u1 Team a1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a1
+sn: SA Team a1
+givenName: SA User u1
+mail: steama1u1@hs-esslingen.de
+uid: steama1u1
+structuralObjectClass: inetOrgPerson
+entryUUID: cac7bb48-057a-1035-9ac3-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012221738Z
+userPassword:: YTE1MTY2dTE=
+entryCSN: 20151012222534.693941Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a1
+sn: SA Team a1
+givenName: SA User u2
+mail: steama1u2@hs-esslingen.de
+uid: steama1u2
+structuralObjectClass: inetOrgPerson
+entryUUID: cacb434e-057a-1035-9ac4-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012221738Z
+userPassword:: YTEzOTY4dTI=
+entryCSN: 20151012222534.695099Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a1
+sn: SA Team a1
+givenName: SA User u3
+mail: steama1u3@hs-esslingen.de
+uid: steama1u3
+structuralObjectClass: inetOrgPerson
+entryUUID: cacb92e0-057a-1035-9ac5-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012221738Z
+userPassword:: YTEyNTY0dTM=
+entryCSN: 20151012222534.696362Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team a2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a2
+sn: SA Team a2
+givenName: SA User u1
+mail: sateama2u1@hs-esslingen.de
+uid: sateama2u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6687544-057b-1035-9ac9-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTIzMDQzdTE=
+entryCSN: 20151012222534.697567Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a2
+sn: SA Team a2
+givenName: SA User u2
+mail: sateama2u2@hs-esslingen.de
+uid: sateama2u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66ad6a4-057b-1035-9aca-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTI5NzI2dTI=
+entryCSN: 20151012222534.699246Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a2
+sn: SA Team a2
+givenName: SA User u3
+mail: sateama2u3@hs-esslingen.de
+uid: sateama2u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66b18a8-057b-1035-9acb-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTI4NDIxdTM=
+entryCSN: 20151012222534.700570Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team a3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a3
+sn: SA Team a3
+givenName: SA User u1
+mail: sateama3u1@hs-esslingen.de
+uid: sateama3u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66b61c8-057b-1035-9acc-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTM3Njk1dTE=
+entryCSN: 20151012222534.702064Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a3
+sn: SA Team a3
+givenName: SA User u2
+mail: sateama3u2@hs-esslingen.de
+uid: sateama3u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66ba52a-057b-1035-9acd-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTM3NzE4dTI=
+entryCSN: 20151012222534.703663Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a3
+sn: SA Team a3
+givenName: SA User u3
+mail: sateama3u3@hs-esslingen.de
+uid: sateama3u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66be92c-057b-1035-9ace-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTMzMDY0dTM=
+entryCSN: 20151012222534.704870Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team a4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a4
+sn: SA Team a4
+givenName: SA User u1
+mail: sateama4u1@hs-esslingen.de
+uid: sateama4u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66c2c2a-057b-1035-9acf-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTQ4NTY1dTE=
+entryCSN: 20151012222534.706230Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a4
+sn: SA Team a4
+givenName: SA User u2
+mail: sateama4u2@hs-esslingen.de
+uid: sateama4u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66c6b54-057b-1035-9ad0-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTQxNzExdTI=
+entryCSN: 20151012222534.708125Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a4
+sn: SA Team a4
+givenName: SA User u3
+mail: sateama4u3@hs-esslingen.de
+uid: sateama4u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66ca542-057b-1035-9ad1-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTQ3MjI5dTM=
+entryCSN: 20151012222534.709457Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a5
+sn: SA Team a5
+givenName: SA User u1
+mail: sateama5u1@hs-esslingen.de
+uid: sateama5u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66cfe3e-057b-1035-9ad2-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTU1MjYydTE=
+entryCSN: 20151012222534.710958Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a5
+sn: SA Team a5
+givenName: SA User u2
+mail: sateama5u2@hs-esslingen.de
+uid: sateama5u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66d514a-057b-1035-9ad3-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTU4NjI5dTI=
+entryCSN: 20151012222534.712217Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a5
+sn: SA Team a5
+givenName: SA User u3
+mail: sateama5u3@hs-esslingen.de
+uid: sateama5u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66d9920-057b-1035-9ad4-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTU0NDU0dTM=
+entryCSN: 20151012222534.713588Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a6
+sn: SA Team a6
+givenName: SA User u1
+mail: sateama6u1@hs-esslingen.de
+uid: sateama6u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66de290-057b-1035-9ad5-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTYzODM2dTE=
+entryCSN: 20151012222534.714705Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a6
+sn: SA Team a6
+givenName: SA User u2
+mail: sateama6u2@hs-esslingen.de
+uid: sateama6u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66e249e-057b-1035-9ad6-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTYzODEzdTI=
+entryCSN: 20151012222534.716023Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team a6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a6
+sn: SA Team a6
+givenName: SA User u3
+mail: sateama6u3@hs-esslingen.de
+uid: sateama6u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66e73cc-057b-1035-9ad7-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YTY0MDExdTM=
+entryCSN: 20151012222534.717527Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b1
+sn: SA Team b1
+givenName: SA User u1
+mail: sateamb1u1@hs-esslingen.de
+uid: sateamb1u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66ebbde-057b-1035-9ad8-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjEzNTAxdTE=
+entryCSN: 20151012222534.718910Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b1
+sn: SA Team b1
+givenName: SA User u2
+mail: sateamb1u2@hs-esslingen.de
+uid: sateamb1u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66f0030-057b-1035-9ad9-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjE3NzE2dTI=
+entryCSN: 20151012222534.720045Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b1
+sn: SA Team b1
+givenName: SA User u3
+mail: sateamb1u3@hs-esslingen.de
+uid: sateamb1u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e66f39ce-057b-1035-9ada-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjEyODY5dTM=
+entryCSN: 20151012222534.721681Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b2
+sn: SA Team b2
+givenName: SA User u1
+mail: sateamb2u1@hs-esslingen.de
+uid: sateamb2u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e66f84e2-057b-1035-9adb-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjIyOTc3dTE=
+entryCSN: 20151012222534.723095Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b2
+sn: SA Team b2
+givenName: SA User u2
+mail: sateamb2u2@hs-esslingen.de
+uid: sateamb2u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e66fc2d6-057b-1035-9adc-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjI3MTQ5dTI=
+entryCSN: 20151012222534.724439Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b2
+sn: SA Team b2
+givenName: SA User u3
+mail: sateamb2u3@hs-esslingen.de
+uid: sateamb2u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67007c8-057b-1035-9add-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjIyOTEzdTM=
+entryCSN: 20151012222534.725553Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b3
+sn: SA Team b3
+givenName: SA User u1
+mail: sateamb3u1@hs-esslingen.de
+uid: sateamb3u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6704832-057b-1035-9ade-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjM5Mjg2dTE=
+entryCSN: 20151012222534.727224Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b3
+sn: SA Team b3
+givenName: SA User u2
+mail: sateamb3u2@hs-esslingen.de
+uid: sateamb3u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e6708d24-057b-1035-9adf-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjM0NTkzdTI=
+entryCSN: 20151012222534.728276Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b3
+sn: SA Team b3
+givenName: SA User u3
+mail: sateamb3u3@hs-esslingen.de
+uid: sateamb3u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e670d5e0-057b-1035-9ae0-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjMyNTc3dTM=
+entryCSN: 20151012222534.730033Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b4
+sn: SA Team b4
+givenName: SA User u1
+mail: sateamb4u1@hs-esslingen.de
+uid: sateamb4u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6711fbe-057b-1035-9ae1-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjQyODY0dTE=
+entryCSN: 20151012222534.731355Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b4
+sn: SA Team b4
+givenName: SA User u2
+mail: sateamb4u2@hs-esslingen.de
+uid: sateamb4u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e6716046-057b-1035-9ae2-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjQ0MTUydTI=
+entryCSN: 20151012222534.733122Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b4
+sn: SA Team b4
+givenName: SA User u3
+mail: sateamb4u3@hs-esslingen.de
+uid: sateamb4u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e671b1fe-057b-1035-9ae3-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjQ1MjIwdTM=
+entryCSN: 20151012222534.734552Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b5
+sn: SA Team b5
+givenName: SA User u1
+mail: sateamb5u1@hs-esslingen.de
+uid: sateamb5u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e671edf4-057b-1035-9ae4-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjU1NjcwdTE=
+entryCSN: 20151012222534.736007Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b5
+sn: SA Team b5
+givenName: SA User u2
+mail: sateamb5u2@hs-esslingen.de
+uid: sateamb5u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67229fe-057b-1035-9ae5-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjU3NzAzdTI=
+entryCSN: 20151012222534.737182Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b5
+sn: SA Team b5
+givenName: SA User u3
+mail: sateamb5u3@hs-esslingen.de
+uid: sateamb5u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e6726ebe-057b-1035-9ae6-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjUzNDQ1dTM=
+entryCSN: 20151012222534.741265Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team b6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team b6
+sn: SA Team b6
+givenName: SA User u1
+mail: sateamb6u1@hs-esslingen.de
+uid: sateamb6u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e673a964-057b-1035-9ae7-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjYyMDQ1dTE=
+entryCSN: 20151012222534.743515Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team b6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team b6
+sn: SA Team b6
+givenName: SA User u2
+mail: sateamb6u2@hs-esslingen.de
+uid: sateamb6u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e673f716-057b-1035-9ae8-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjYzNjMzdTI=
+entryCSN: 20151012222534.745340Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team b6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team b6
+sn: SA Team b6
+givenName: SA User u3
+mail: sateamb6u3@hs-esslingen.de
+uid: sateamb6u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67443d8-057b-1035-9ae9-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YjY3MDI2dTM=
+entryCSN: 20151012222534.747465Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c1
+sn: SA Team c1
+givenName: SA User u1
+mail: sateamc1u1@hs-esslingen.de
+uid: sateamc1u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6748d20-057b-1035-9aea-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzEzMzE5dTE=
+entryCSN: 20151012222534.749113Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c1
+sn: SA Team c1
+givenName: SA User u2
+mail: sateamc1u2@hs-esslingen.de
+uid: sateamc1u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e674de2e-057b-1035-9aeb-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzE5NTMzdTI=
+entryCSN: 20151012222534.750485Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c1
+sn: SA Team c1
+givenName: SA User u3
+mail: sateamc1u3@hs-esslingen.de
+uid: sateamc1u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e6752190-057b-1035-9aec-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzE1ODEwdTM=
+entryCSN: 20151012222534.752024Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c2
+sn: SA Team c2
+givenName: SA User u1
+mail: sateamc2u1@hs-esslingen.de
+uid: sateamc2u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e675708c-057b-1035-9aed-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzIxNjQzdTE=
+entryCSN: 20151012222534.753296Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c2
+sn: SA Team c2
+givenName: SA User u2
+mail: sateamc2u2@hs-esslingen.de
+uid: sateamc2u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e675b678-057b-1035-9aee-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzI3OTc3dTI=
+entryCSN: 20151012222534.754816Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c2
+sn: SA Team c2
+givenName: SA User u3
+mail: sateamc2u3@hs-esslingen.de
+uid: sateamc2u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e675f05c-057b-1035-9aef-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzI1ODM2dTM=
+entryCSN: 20151012222534.756377Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c3
+sn: SA Team c3
+givenName: SA User u1
+mail: sateamc3u1@hs-esslingen.de
+uid: sateamc3u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6763ac6-057b-1035-9af0-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzM1NTc4dTE=
+entryCSN: 20151012222534.757677Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c3
+sn: SA Team c3
+givenName: SA User u2
+mail: sateamc3u2@hs-esslingen.de
+uid: sateamc3u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e676775c-057b-1035-9af1-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzM4ODYxdTI=
+entryCSN: 20151012222534.758983Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c3
+sn: SA Team c3
+givenName: SA User u3
+mail: sateamc3u3@hs-esslingen.de
+uid: sateamc3u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e676ca68-057b-1035-9af2-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzMxMzg0dTM=
+entryCSN: 20151012222534.760678Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c4
+sn: SA Team c4
+givenName: SA User u1
+mail: sateamc4u1@hs-esslingen.de
+uid: sateamc4u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6770a50-057b-1035-9af3-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzQyNTQ3dTE=
+entryCSN: 20151012222534.762102Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c4
+sn: SA Team c4
+givenName: SA User u2
+mail: sateamc4u2@hs-esslingen.de
+uid: sateamc4u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e6775942-057b-1035-9af4-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzQxNzY2dTI=
+entryCSN: 20151012222534.763591Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c4
+sn: SA Team c4
+givenName: SA User u3
+mail: sateamc4u3@hs-esslingen.de
+uid: sateamc4u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e6779952-057b-1035-9af5-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzQyOTA3dTM=
+entryCSN: 20151012222534.765073Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c5
+sn: SA Team c5
+givenName: SA User u1
+mail: sateamc5u1@hs-esslingen.de
+uid: sateamc5u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e677ddb8-057b-1035-9af6-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzU4MDg3dTE=
+entryCSN: 20151012222534.766394Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c5
+sn: SA Team c5
+givenName: SA User u2
+mail: sateamc5u2@hs-esslingen.de
+uid: sateamc5u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e6781d78-057b-1035-9af7-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzU1NDgxdTI=
+entryCSN: 20151012222534.767958Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c5
+sn: SA Team c5
+givenName: SA User u3
+mail: sateamc5u3@hs-esslingen.de
+uid: sateamc5u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67863a0-057b-1035-9af8-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzU1NjgydTM=
+entryCSN: 20151012222534.769417Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team c6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team c6
+sn: SA Team c6
+givenName: SA User u1
+mail: sateamc6u1@hs-esslingen.de
+uid: sateamc6u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e678a4f0-057b-1035-9af9-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzY4MDg0dTE=
+entryCSN: 20151012222534.770815Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team c6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team c6
+sn: SA Team c6
+givenName: SA User u2
+mail: sateamc6u2@hs-esslingen.de
+uid: sateamc6u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e678e816-057b-1035-9afa-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzY4NDk3dTI=
+entryCSN: 20151012222534.772146Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team c6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team c6
+sn: SA Team c6
+givenName: SA User u3
+mail: sateamc6u3@hs-esslingen.de
+uid: sateamc6u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e6792628-057b-1035-9afb-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: YzY3NjI3dTM=
+entryCSN: 20151012222534.773649Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d1
+sn: SA Team d1
+givenName: SA User u1
+mail: sateamd1u1@hs-esslingen.de
+uid: sateamd1u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e6797be6-057b-1035-9afc-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDEyODY2dTE=
+entryCSN: 20151012222534.775091Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d1
+sn: SA Team d1
+givenName: SA User u2
+mail: sateamd1u2@hs-esslingen.de
+uid: sateamd1u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e679bc64-057b-1035-9afd-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDE2NzE1dTI=
+entryCSN: 20151012222534.776945Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d1
+sn: SA Team d1
+givenName: SA User u3
+mail: sateamd1u3@hs-esslingen.de
+uid: sateamd1u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67a00a2-057b-1035-9afe-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDE0MjUydTM=
+entryCSN: 20151012222534.778216Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d2
+sn: SA Team d2
+givenName: SA User u1
+mail: sateamd2u1@hs-esslingen.de
+uid: sateamd2u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e67a3fe0-057b-1035-9aff-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDI4MDk1dTE=
+entryCSN: 20151012222534.779728Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d2
+sn: SA Team d2
+givenName: SA User u2
+mail: sateamd2u2@hs-esslingen.de
+uid: sateamd2u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67a8202-057b-1035-9b00-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDIyMTIwdTI=
+entryCSN: 20151012222534.780893Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d2
+sn: SA Team d2
+givenName: SA User u3
+mail: sateamd2u3@hs-esslingen.de
+uid: sateamd2u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67ac49c-057b-1035-9b01-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDI5MjM4dTM=
+entryCSN: 20151012222534.782403Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d3
+sn: SA Team d3
+givenName: SA User u1
+mail: sateamd3u1@hs-esslingen.de
+uid: sateamd3u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e67b034e-057b-1035-9b02-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDMzMTQ5dTE=
+entryCSN: 20151012222534.784093Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d3
+sn: SA Team d3
+givenName: SA User u2
+mail: sateamd3u2@hs-esslingen.de
+uid: sateamd3u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67b4278-057b-1035-9b03-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDMyMDQ5dTI=
+entryCSN: 20151012222534.785599Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d3,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d3
+sn: SA Team d3
+givenName: SA User u3
+mail: sateamd3u3@hs-esslingen.de
+uid: sateamd3u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67b9534-057b-1035-9b04-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDM1NTQ1dTM=
+entryCSN: 20151012222534.787113Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d4
+sn: SA Team d4
+givenName: SA User u1
+mail: sateamd4u1@hs-esslingen.de
+uid: sateamd4u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e67bf63c-057b-1035-9b05-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDQ1NzQwdTE=
+entryCSN: 20151012222534.788532Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d4
+sn: SA Team d4
+givenName: SA User u2
+mail: sateamd4u2@hs-esslingen.de
+uid: sateamd4u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67c3b06-057b-1035-9b06-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDQyMzQ3dTI=
+entryCSN: 20151012222534.789845Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d4,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d4
+sn: SA Team d4
+givenName: SA User u3
+mail: sateamd4u3@hs-esslingen.de
+uid: sateamd4u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67c7c06-057b-1035-9b07-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDQ2MzIydTM=
+entryCSN: 20151012222534.791249Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d5
+sn: SA Team d5
+givenName: SA User u1
+mail: sateamd5u1@hs-esslingen.de
+uid: sateamd5u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e67cc6de-057b-1035-9b08-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDU4MTI5dTE=
+entryCSN: 20151012222534.793128Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d5
+sn: SA Team d5
+givenName: SA User u2
+mail: sateamd5u2@hs-esslingen.de
+uid: sateamd5u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67d0b3a-057b-1035-9b09-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDU3NzA5dTI=
+entryCSN: 20151012222534.794642Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d5,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d5
+sn: SA Team d5
+givenName: SA User u3
+mail: sateamd5u3@hs-esslingen.de
+uid: sateamd5u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67d5d56-057b-1035-9b0a-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDUyMzQ2dTM=
+entryCSN: 20151012222534.796312Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u1 Team d6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team d6
+sn: SA Team d6
+givenName: SA User u1
+mail: sateamd6u1@hs-esslingen.de
+uid: sateamd6u1
+structuralObjectClass: inetOrgPerson
+entryUUID: e67d9e7e-057b-1035-9b0b-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDY3MDcwdTE=
+entryCSN: 20151012222534.797681Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u2 Team d6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team d6
+sn: SA Team d6
+givenName: SA User u2
+mail: sateamd6u2@hs-esslingen.de
+uid: sateamd6u2
+structuralObjectClass: inetOrgPerson
+entryUUID: e67de9c4-057b-1035-9b0c-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDY3MzQ1dTI=
+entryCSN: 20151012222534.799083Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u3 Team d6,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team d6
+sn: SA Team d6
+givenName: SA User u3
+mail: sateamd6u3@hs-esslingen.de
+uid: sateamd6u3
+structuralObjectClass: inetOrgPerson
+entryUUID: e67e2cd6-057b-1035-9b0d-8b3151c7d607
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151012222534Z
+userPassword:: ZDYzNjcxdTM=
+entryCSN: 20151012222534.800826Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151012222534Z
+
+dn: cn=SA User u4 Team b2,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u4 Team b2
+sn: SA Team b2
+givenName: SA User u4
+mail: sateamb2u4@hs-esslingen.de
+uid: sateamb2u4
+userPassword:: YjIzMzMzdTQ=
+structuralObjectClass: inetOrgPerson
+entryUUID: 2c14f644-1035-1035-8af4-e158131e76a5
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151026135659Z
+entryCSN: 20151026135659.954707Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151026135659Z
+
+dn: uid=nagiosconnect,ou=people,dc=hs-esslingen,dc=de
+userPassword:: e1NTSEF9d0Rkalc3ZzFWblpZOThhM3dPcVZVRHBvV0RuWkQxQlo=
+uidNumber: 10400
+gidNumber: 10400
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+uid: nagiosconnect
+gecos: Nagios User Object to test local slapd auth
+cn: nagiosconnect
+homeDirectory: /tmp
+description: Nagios User Object to test local slapd auth
+structuralObjectClass: account
+entryUUID: 2a87341e-1b38-1035-9e32-21f7d8b301d5
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151109141608Z
+entryCSN: 20151109141608.628692Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151109141608Z
+
+dn: cn=SA User u4 Team d1,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u4 Team d1
+sn: SA Team d1
+givenName: SA User u4
+mail: sateamd1u4@hs-esslingen.de
+uid: sateamd1u4
+structuralObjectClass: inetOrgPerson
+entryUUID: 8eb150d4-2095-1035-8189-db76d4217c09
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151116100715Z
+userPassword:: ZDE2MTM3dTQ=
+entryCSN: 20151116100715.824800Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151116100715Z
+
+dn: cn=SA User u1 Team a7,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u1 Team a7
+sn: SA Team a7
+givenName: SA User u1
+mail: teama7u1@hs-esslingen.de
+uid: teama7u1
+structuralObjectClass: inetOrgPerson
+entryUUID: 3cc7e432-25ad-1035-8bb4-cd988ca36b34
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151122213921Z
+userPassword:: YTc4NzUwdTE=
+entryCSN: 20151122213922.055726Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151122213922Z
+
+dn: cn=SA User u2 Team a7,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u2 Team a7
+sn: SA Team a7
+givenName: SA User u2
+mail: teama7u2@hs-esslingen.de
+uid: teama7u2
+structuralObjectClass: inetOrgPerson
+entryUUID: 3cca1d7e-25ad-1035-8bb5-cd988ca36b34
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151122213922Z
+userPassword:: YTc3ODQ0dTI=
+entryCSN: 20151122213922.056571Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151122213922Z
+
+dn: cn=SA User u3 Team a7,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+cn: SA User u3 Team a7
+sn: SA Team a7
+givenName: SA User u3
+mail: teama7u3@hs-esslingen.de
+uid: teama7u3
+structuralObjectClass: inetOrgPerson
+entryUUID: 3ccea6e6-25ad-1035-8bb6-cd988ca36b34
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151122213922Z
+userPassword:: YTcyNDM3dTM=
+entryCSN: 20151122213922.057417Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151122213922Z
+

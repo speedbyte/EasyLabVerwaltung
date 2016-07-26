@@ -1,0 +1,7 @@
+dn: cn=config
+changetype: add
+# simple use of the default value
+# OLC (cn=config) form
+olcDbIndex: default pres,eq
+olcDbIndex: cn,sn,uid
+

@@ -1,0 +1,761 @@
+dn: dc=hs-esslingen,dc=de
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: hs-esslingen.de
+dc: hs-esslingen
+structuralObjectClass: organization
+entryUUID: d961688a-1f58-1032-8686-23fbf061e260
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130312120517Z
+entryCSN: 20130312120517.515533Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130312120517Z
+
+dn: cn=admin,dc=hs-esslingen,dc=de
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+structuralObjectClass: organizationalRole
+entryUUID: d966ce7e-1f58-1032-8687-23fbf061e260
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130312120517Z
+userPassword:: e1NIQX1NWEdxSWo2U3Nubi9CVHBmTjVLR016MWlqMEU9
+entryCSN: 20130703103032.606342Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130703103032Z
+
+dn: ou=staff,dc=hs-esslingen,dc=de
+ou: staff
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: b82b386e-268b-1032-95c3-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321155704Z
+entryCSN: 20130321155704.268222Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130321155704Z
+
+dn: ou=people,dc=hs-esslingen,dc=de
+ou: people
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: da5ff96a-268b-1032-95c4-ddc5d55e17ef
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20130321155801Z
+entryCSN: 20130321155801.656517Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20130321155801Z
+
+dn: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: a57a9a7a-d662-1032-9f92-9f0d2212e313
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20131031102628Z
+uid: vagrawal
+sn: Agrawal
+givenName: Vikas
+mail: vikas.agrawal@hs-esslingen.de
+memberOf: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=helpdesk,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=ezs-students,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama2group,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama3group,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama4group,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama5group,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama6group,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+cn: vagrawal
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 23:03:52 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer salt="TyJhHPIhT0zmc2fmb73IXLcO6sMXXb2u" 
+ format="PBKDF2" hashcount="100000">BQNsvszrP3jI6ZaNMd/IcZhRZNwA/MF+qdUsqY3xVi
+ HKM+kBtD6RafTDihOUoNssmkkZaGCM3fJ9jjotrnGthw==</answer></response><response a
+ dminDefined="true" required="false" minLength="2" maxLength="200"><challenge>
+ What is the name of your favorite teacher?</challenge><answer salt="DuyMdQrjY
+ gxcp7hqq116Yyr4GY61XwCX" format="PBKDF2" hashcount="100000">9HoywDHEetRx3YAW2
+ qCF86GxIRhUPfaT39Xo6DTdhsv3PE9TnUd8hgifBGatqYctnG7Y7HNgcYXBRiz40EXmDw==</answ
+ er></response></ResponseSet>
+userPassword:: e1NTSEF9V0t4Sk14bVV3YzQzS3RWUTBUTHVmYkk3clRKSzA2OWg=
+pwmLastPwdUpdate: 20151217235136Z
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzkzNDMyMTQ2IiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3J
+ jSVA9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSZxdW90O10mcXVvdDtdJnF1b3Q7XSIgc3JjSG9z
+ dD0iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBd
+ HRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC
+ 5ocy1lc3NsaW5nZW4uZGUmcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiAvPjxyZWNvcmQgdGl
+ tZXN0YW1wPSIxNDUwMzkzNDc0ODEzIiBldmVudENvZGU9IkV2ZW50TG9nX0NoYW5nZVBhc3N3b3Jk
+ IiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W
+ 0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSZxdW90O10mcXVvdDtdIi
+ BzcmNIb3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF
+ 1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3NsaW5nZW4uZGUmcXVv
+ dDtdJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB0aW1lc3RhbXA9IjE0NTAzOTYyMDg3MTYiIGV2Z
+ W50Q29kZT0iRXZlbnRMb2dfVXBkYXRlUHJvZmlsZSIgc3JjSVA9IltBdHRyaWJ1dGU6IHNyY0lQPS
+ ZxdW90O1tBdHRyaWJ1dGU6IHNyY0lQPSZxdW90OzEzNC4xMDguNjMuNCZxdW90O10mcXVvdDtdIiB
+ zcmNIb3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1
+ b3Q7dXNlcjgwMDQuaHMtZXNzbGluZ2VuLmRlJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB0aW1lc
+ 3RhbXA9IjE0NTAzOTYyMjY0MTAiIGV2ZW50Q29kZT0iRXZlbnRMb2dfVXBkYXRlUHJvZmlsZSIgc3
+ JjSVA9IltBdHRyaWJ1dGU6IHNyY0lQPSZxdW90OzEzNC4xMDguNjMuNCZxdW90O10iIHNyY0hvc3Q
+ 9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7dXNlcjgwMDQuaHMtZXNzbGluZ2VuLmRlJnF1b3Q7
+ XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ1MDM5NjI5NjI0NCIgZXZlbnRDb2RlPSJFdmVudExvZ
+ 19DaGFuZ2VQYXNzd29yZCIgc3JjSVA9IjEzNC4xMDguNjMuNCIgc3JjSG9zdD0idXNlcjgwMDQuaH
+ MtZXNzbGluZ2VuLmRlIiAvPjwvaGlzdG9yeT4NCg==
+entryCSN: 20151217235136.251493Z#000000#000#000000
+modifyTimestamp: 20151217235136Z
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+
+dn: cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+sn: Admin
+givenName: PWM
+uid: pwmadmin
+structuralObjectClass: inetOrgPerson
+entryUUID: 94e65dea-facb-1034-933b-8f3e24a95300
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150929075814Z
+cn: pwmadmin
+mail: joerg.friedrich@hs-esslingen.de
+memberOf: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+memberOf: cn=helpdesk,ou=groups,dc=hs-esslingen,dc=de
+userPassword:: bGRhcHBhc3N3b3Jk
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 23:35:27 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer salt="efrexTmcCaEI3f55AqgjugJCc5zyeMVg" 
+ format="PBKDF2" hashcount="100000">GyRfMRd/hhhV7NiMERNJy/X7b23KixKhaTFd1KoUrP
+ vuvRx/DCOIUW0tYxaMu4jTb9onnps5LGs1P1YGjVi1Aw==</answer></response><response a
+ dminDefined="true" required="false" minLength="2" maxLength="200"><challenge>
+ What is the name of your favorite teacher?</challenge><answer salt="TZjlH4PFY
+ 5HPsWE2aBI9ZybTLEzgfC4E" format="PBKDF2" hashcount="100000">W02fAmQTkAm8njiX+
+ 4CrV8firaCT8uqYcnCHSRPxP598QtbAEcws+2Ia3rmh6fB3L2XtgCa1fIxQ0zJSmMpRiQ==</answ
+ er></response></ResponseSet>
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzU4NzM4MzM3IiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3J
+ jSVA9JnF1b3Q7MTM0LjEwOC4zNC4xMTEmcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiBzcmNI
+ b3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W
+ 0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3J6bmI0MT
+ ExLmhzLWVzc2xpbmdlbi5kZSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB
+ 0aW1lc3RhbXA9IjE0NTAzNjExNDA5NzIiIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2xlYXJSZXNwb25z
+ ZXMiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvd
+ DtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjUmcXVvdDtdJnF1b3Q7XSZxdW90O1
+ 0iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0
+ mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA1LmhzLWVzc2xpbmdlbi5kZSZx
+ dW90O10mcXVvdDtdJnF1b3Q7XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ1MDM2MTE1MDU4OCIgZ
+ XZlbnRDb2RlPSJFdmVudExvZ19TZXR1cFJlc3BvbnNlcyIgc3JjSVA9IltBdHRyaWJ1dGU6IHNyY0
+ lQPSZxdW90O1tBdHRyaWJ1dGU6IHNyY0lQPSZxdW90OzEzNC4xMDguNjMuNSZxdW90O10mcXVvdDt
+ dIiBzcmNIb3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9
+ JnF1b3Q7dXNlcjgwMDUuaHMtZXNzbGluZ2VuLmRlJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB0a
+ W1lc3RhbXA9IjE0NTAzOTI3NTkxMjciIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2xlYXJSZXNwb25zZX
+ MiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjQmcXVvdDtdIiBzcmN
+ Ib3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA0LmhzLWVzc2xpbmdlbi5kZSZx
+ dW90O10iIC8+PHJlY29yZCB0aW1lc3RhbXA9IjE0NTAzOTUzMjc2MjkiIGV2ZW50Q29kZT0iRXZlb
+ nRMb2dfU2V0dXBSZXNwb25zZXMiIHNyY0lQPSIxMzQuMTA4LjYzLjQiIHNyY0hvc3Q9InVzZXI4MD
+ A0LmhzLWVzc2xpbmdlbi5kZSIgLz48L2hpc3Rvcnk+DQo=
+entryCSN: 20151217233527.637822Z#000000#000#000000
+modifyTimestamp: 20151217233527Z
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+
+dn: ou=groups,dc=hs-esslingen,dc=de
+objectClass: organizationalUnit
+ou: groups
+description: pwm admin groups branch
+structuralObjectClass: organizationalUnit
+entryUUID: c82284d6-fb16-1034-87d9-7b4601506e05
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20150929165632Z
+entryCSN: 20150929165632.951172Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20150929165632Z
+
+dn: cn=pwmadmins,ou=groups,dc=hs-esslingen,dc=de
+cn: pwmadmins
+description: pwm admin groups branch
+objectClass: groupOfNames
+objectClass: top
+structuralObjectClass: groupOfNames
+entryUUID: 6882f6d4-04ba-1035-802b-d71914ae4d1c
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151011232030Z
+member: cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+entryCSN: 20151214144851.598029Z#000000#000#000000
+modifyTimestamp: 20151214144851Z
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+
+dn: uid=nagiosconnect,ou=people,dc=hs-esslingen,dc=de
+userPassword:: e1NTSEF9d0Rkalc3ZzFWblpZOThhM3dPcVZVRHBvV0RuWkQxQlo=
+uidNumber: 10400
+gidNumber: 10400
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+uid: nagiosconnect
+gecos: Nagios User Object to test local slapd auth
+cn: nagiosconnect
+homeDirectory: /tmp
+description: Nagios User Object to test local slapd auth
+structuralObjectClass: account
+entryUUID: 2a87341e-1b38-1035-9e32-21f7d8b301d5
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151109141608Z
+entryCSN: 20151109141608.628692Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151109141608Z
+
+dn: ou=admins,dc=hs-esslingen,dc=de
+ou: admins
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: 3219fb38-36c4-1035-8a0b-47ce49c40c53
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151214153632Z
+entryCSN: 20151214153632.271814Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151214153632Z
+
+dn: cn=PWM-Proxy,ou=admins,dc=hs-esslingen,dc=de
+mail: joerg.friedrich@hs-esslingen.de
+sn: Admin
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: a16ea8b2-36c4-1035-8a0d-47ce49c40c53
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151214153939Z
+cn: PWM-Proxy
+givenName: PWM-Proxy
+userPassword:: bGRhcHBhc3N3b3Jk
+uid: PWM-Proxy
+entryCSN: 20151214154222.634542Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151214154222Z
+
+dn: cn=helpdesk,ou=groups,dc=hs-esslingen,dc=de
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de
+cn: helpdesk
+description: pwm admin groups branch
+objectClass: groupOfNames
+objectClass: top
+structuralObjectClass: groupOfNames
+entryUUID: ec3cbb90-3921-1035-980b-ab9f68b4eeed
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151217155230Z
+entryCSN: 20151217233714.640614Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151217233714Z
+
+dn: cn=PWM-Testuser2,ou=students,ou=people,dc=hs-esslingen,dc=de
+mail: joerg.friedrich@hs-esslingen.de
+sn: Admin
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 14:51:58 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer format="TEXT">qq</answer></response><res
+ ponse adminDefined="true" required="false" minLength="2" maxLength="200"><cha
+ llenge>What is the name of your favorite teacher?</challenge><answer format="
+ TEXT">qq</answer></response></ResponseSet>
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: 6e721ff2-3958-1035-980d-ab9f68b4eeed
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151217222241Z
+givenName: PWM-Testuser2
+uid: PWM-Testuser2
+pwmLastPwdUpdate: 20151217232426Z
+userPassword:: bGRhcHA=
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzYzOTE4NDYzIiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC4zNC4xMTEmcXVvdDtdJnF1b3Q7XSIgc3JjSG9zdD0
+ iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3J6bmI0
+ MTExLmhzLWVzc2xpbmdlbi5kZSZxdW90O10mcXVvdDtdIiAvPjxyZWNvcmQgdGltZXN0YW1wPSIxN
+ DUwMzk0NjY2MTM3IiBldmVudENvZGU9IkV2ZW50TG9nX0NoYW5nZVBhc3N3b3JkIiBzcmNJUD0iW0
+ F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSIgc3JjSG9zdD0iW0F0dHJ
+ pYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3NsaW5nZW4uZGUmcXVvdDtdIiAvPjxy
+ ZWNvcmQgdGltZXN0YW1wPSIxNDUwMzk0ODc4MDU3IiBldmVudENvZGU9IkV2ZW50TG9nX1VwZGF0Z
+ VByb2ZpbGUiIHNyY0lQPSIxMzQuMTA4LjYzLjQiIHNyY0hvc3Q9InVzZXI4MDA0LmhzLWVzc2xpbm
+ dlbi5kZSIgLz48L2hpc3Rvcnk+DQo=
+cn: PWM-Testuser2
+entryCSN: 20151219133040.276731Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219133040Z
+
+dn: cn=PWM-Testuser1,ou=students,ou=people,dc=hs-esslingen,dc=de
+mail: joerg.friedrich@hs-esslingen.de
+sn: Admin
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 14:51:58 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer format="TEXT">qq</answer></response><res
+ ponse adminDefined="true" required="false" minLength="2" maxLength="200"><cha
+ llenge>What is the name of your favorite teacher?</challenge><answer format="
+ TEXT">qq</answer></response></ResponseSet>
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: 1f847fee-395c-1035-9812-ab9f68b4eeed
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151217224906Z
+givenName: PWM-Testuser1
+uid: PWM-Testuser1
+pwmLastPwdUpdate: 20151217230718Z
+userPassword:: e1NTSEF9UWZEb3U5MW40My9Dc1ZYbFNPMGI4a0drempSaFlqMFE=
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzYzOTE4NDYzIiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3J
+ jSVA9JnF1b3Q7MTM0LjEwOC4zNC4xMTEmcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiBzcmNI
+ b3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W
+ 0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3J6bmI0MT
+ ExLmhzLWVzc2xpbmdlbi5kZSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB
+ 0aW1lc3RhbXA9IjE0NTAzOTM2Mzg2NjYiIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2hhbmdlUGFzc3dv
+ cmQiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvd
+ DtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjQmcXVvdDtdJnF1b3Q7XSZxdW90O1
+ 0iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0
+ mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA0LmhzLWVzc2xpbmdlbi5kZSZx
+ dW90O10mcXVvdDtdJnF1b3Q7XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ1MDM5NTUxMDk4MyIgZ
+ XZlbnRDb2RlPSJFdmVudExvZ19IZWxwZGVza1NldFBhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZT
+ ogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSZ
+ xdW90O10iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3Jj
+ SG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3NsaW5nZW4uZGUmcXVvdDtdJnF1b3Q7XSIgLz48cmVjb
+ 3JkIHRpbWVzdGFtcD0iMTQ1MDM5NTU5NDM3NSIgZXZlbnRDb2RlPSJFdmVudExvZ19IZWxwZGVza1
+ NldFBhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF
+ 1b3Q7XSIgc3JjSG9zdD0iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3Ns
+ aW5nZW4uZGUmcXVvdDtdIiAvPjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwNDU2NDMwOTg2IiBldmVud
+ ENvZGU9IkV2ZW50TG9nX0hlbHBkZXNrU2V0UGFzc3dvcmQiIHNyY0lQPSIxMzQuMTA4LjU3LjEwMC
+ Igc3JjSG9zdD0idXNlcjIxMDAuaHMtZXNzbGluZ2VuLmRlIiAvPjwvaGlzdG9yeT4NCg==
+cn: PWM-Testuser1
+entryCSN: 20151219133022.003267Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219133022Z
+
+dn: cn=PWM-Proxy,ou=people,dc=hs-esslingen,dc=de
+mail: joerg.friedrich@hs-esslingen.de
+sn: Admin
+cn: PWM-Proxy
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 14:51:58 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer format="TEXT">qq</answer></response><res
+ ponse adminDefined="true" required="false" minLength="2" maxLength="200"><cha
+ llenge>What is the name of your favorite teacher?</challenge><answer format="
+ TEXT">qq</answer></response></ResponseSet>
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzYzOTE4NDYzIiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iMTM0LjEwOC4zNC4xMTEiIHNyY0hvc3Q9InJ6bm
+ I0MTExLmhzLWVzc2xpbmdlbi5kZSIgLz48L2hpc3Rvcnk+DQo=
+structuralObjectClass: inetOrgPerson
+entryUUID: 51c97e82-395c-1035-9814-ab9f68b4eeed
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151217225031Z
+givenName: PWM-Proxy
+uid: PWM-Proxy
+userPassword:: e1NTSEF9M1U4QTBGQk9kNkRQZVdJOVdyelR0dTZMQ1IycUpaN1U=
+entryCSN: 20151220142618.589343Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220142618Z
+
+dn: cn=mschmid,ou=people,dc=hs-esslingen,dc=de
+pwmLastPwdUpdate: 20151217230718Z
+cn: mschmid
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 14:51:58 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer format="TEXT">qq</answer></response><res
+ ponse adminDefined="true" required="false" minLength="2" maxLength="200"><cha
+ llenge>What is the name of your favorite teacher?</challenge><answer format="
+ TEXT">qq</answer></response></ResponseSet>
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: f185165a-3968-1035-9816-ab9f68b4eeed
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151218002053Z
+sn: Schmid
+givenName: Martin
+uid: mschmid
+mail: ezslab@hs-esslingen.de
+userPassword:: e1NTSEF9TmYrUzE2NkpuakhNSUQzRUUvZ0lZNUpZNHdnR01zOFI=
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzYzOTE4NDYzIiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3J
+ jSVA9JnF1b3Q7MTM0LjEwOC4zNC4xMTEmcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiBzcmNI
+ b3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W
+ 0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3J6bmI0MT
+ ExLmhzLWVzc2xpbmdlbi5kZSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB
+ 0aW1lc3RhbXA9IjE0NTAzOTM2Mzg2NjYiIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2hhbmdlUGFzc3dv
+ cmQiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvd
+ DtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjQmcXVvdDtdJnF1b3Q7XSZxdW90O1
+ 0iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0
+ mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA0LmhzLWVzc2xpbmdlbi5kZSZx
+ dW90O10mcXVvdDtdJnF1b3Q7XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ1MDM5NTUxMDk4MyIgZ
+ XZlbnRDb2RlPSJFdmVudExvZ19IZWxwZGVza1NldFBhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZT
+ ogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSZ
+ xdW90O10iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3Jj
+ SG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3NsaW5nZW4uZGUmcXVvdDtdJnF1b3Q7XSIgLz48cmVjb
+ 3JkIHRpbWVzdGFtcD0iMTQ1MDM5NTU5NDM3NSIgZXZlbnRDb2RlPSJFdmVudExvZ19IZWxwZGVza1
+ NldFBhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7MTM0LjEwOC42My40JnF
+ 1b3Q7XSIgc3JjSG9zdD0iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3Ns
+ aW5nZW4uZGUmcXVvdDtdIiAvPjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwNDM0Mjc5MTg4IiBldmVud
+ ENvZGU9IkV2ZW50TG9nX0hlbHBkZXNrU2V0UGFzc3dvcmQiIHNyY0lQPSIxMzQuMTA4LjYyLjIxOS
+ Igc3JjSG9zdD0idXNlcjcyMTkuaHMtZXNzbGluZ2VuLmRlIiAvPjwvaGlzdG9yeT4NCg==
+entryCSN: 20151218102439.197470Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151218102439Z
+
+dn: cn=friedric,ou=people,dc=hs-esslingen,dc=de
+mail: vikas.agrawal@hs-esslingen.de
+cn: friedric
+pwmResponseSet: 0002#.#.#<?xml version="1.0" encoding="UTF-8"?><ResponseSet mi
+ nRandomRequired="2" locale="en" version="2" chaiVersion="0.6.6-SNAPSHOT" case
+ Insensitive="true" challengeSetID="PWM-defined [Version Missing]" time="2015-
+ 12-17 23:03:52 +0000"><response adminDefined="true" required="false" minLengt
+ h="2" maxLength="200"><challenge>What is the name of the main character in yo
+ ur favorite book?</challenge><answer salt="TyJhHPIhT0zmc2fmb73IXLcO6sMXXb2u" 
+ format="PBKDF2" hashcount="100000">BQNsvszrP3jI6ZaNMd/IcZhRZNwA/MF+qdUsqY3xVi
+ HKM+kBtD6RafTDihOUoNssmkkZaGCM3fJ9jjotrnGthw==</answer></response><response a
+ dminDefined="true" required="false" minLength="2" maxLength="200"><challenge>
+ What is the name of your favorite teacher?</challenge><answer salt="DuyMdQrjY
+ gxcp7hqq116Yyr4GY61XwCX" format="PBKDF2" hashcount="100000">9HoywDHEetRx3YAW2
+ qCF86GxIRhUPfaT39Xo6DTdhsv3PE9TnUd8hgifBGatqYctnG7Y7HNgcYXBRiz40EXmDw==</answ
+ er></response></ResponseSet>
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: f6ceecb0-39f6-1035-9b45-49137707071e
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151218171730Z
+userPassword:: e1NTSEF9Ky9vdmZYVUFNWEZ1cGJ3bG9pMFpDUHNvQVNER1Y2Z2Q=
+pwmLastPwdUpdate: 20151218172123Z
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUwMzkzNDMyMTQ2IiBldmVudENvZGU9IkV2Z
+ W50TG9nX1NldHVwUmVzcG9uc2VzIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dH
+ JpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3J
+ jSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7
+ MTM0LjEwOC42My40JnF1b3Q7XSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiBzc
+ mNIb3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3
+ Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHR
+ yaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5o
+ cy1lc3NsaW5nZW4uZGUmcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10iI
+ C8+PHJlY29yZCB0aW1lc3RhbXA9IjE0NTAzOTM0NzQ4MTMiIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2
+ hhbmdlUGFzc3dvcmQiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiB
+ zcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVv
+ dDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjQmcXVvdDtdJnF1b3Q7XSZxdW90O
+ 10mcXVvdDtdJnF1b3Q7XSIgc3JjSG9zdD0iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDtbQXR0cm
+ lidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTo
+ gc3JjSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA0LmhzLWVzc2xp
+ bmdlbi5kZSZxdW90O10mcXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiAvPjxyZWNvcmQgdGltZ
+ XN0YW1wPSIxNDUwMzk2MjA4NzE2IiBldmVudENvZGU9IkV2ZW50TG9nX1VwZGF0ZVByb2ZpbGUiIH
+ NyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR
+ 0cmlidXRlOiBzcmNJUD0mcXVvdDtbQXR0cmlidXRlOiBzcmNJUD0mcXVvdDsxMzQuMTA4LjYzLjQm
+ cXVvdDtdJnF1b3Q7XSZxdW90O10mcXVvdDtdIiBzcmNIb3N0PSJbQXR0cmlidXRlOiBzcmNIb3N0P
+ SZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdD
+ tbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O3VzZXI4MDA0LmhzLWVzc2xpbmdlbi5kZSZxdW90O10
+ mcXVvdDtdJnF1b3Q7XSZxdW90O10iIC8+PHJlY29yZCB0aW1lc3RhbXA9IjE0NTAzOTYyMjY0MTAi
+ IGV2ZW50Q29kZT0iRXZlbnRMb2dfVXBkYXRlUHJvZmlsZSIgc3JjSVA9IltBdHRyaWJ1dGU6IHNyY
+ 0lQPSZxdW90O1tBdHRyaWJ1dGU6IHNyY0lQPSZxdW90O1tBdHRyaWJ1dGU6IHNyY0lQPSZxdW90Oz
+ EzNC4xMDguNjMuNCZxdW90O10mcXVvdDtdJnF1b3Q7XSIgc3JjSG9zdD0iW0F0dHJpYnV0ZTogc3J
+ jSG9zdD0mcXVvdDtbQXR0cmlidXRlOiBzcmNIb3N0PSZxdW90O1tBdHRyaWJ1dGU6IHNyY0hvc3Q9
+ JnF1b3Q7dXNlcjgwMDQuaHMtZXNzbGluZ2VuLmRlJnF1b3Q7XSZxdW90O10mcXVvdDtdIiAvPjxyZ
+ WNvcmQgdGltZXN0YW1wPSIxNDUwMzk2Mjk2MjQ0IiBldmVudENvZGU9IkV2ZW50TG9nX0NoYW5nZV
+ Bhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZTogc3JjSVA9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSVA
+ 9JnF1b3Q7MTM0LjEwOC42My40JnF1b3Q7XSZxdW90O10iIHNyY0hvc3Q9IltBdHRyaWJ1dGU6IHNy
+ Y0hvc3Q9JnF1b3Q7W0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt1c2VyODAwNC5ocy1lc3NsaW5nZ
+ W4uZGUmcXVvdDtdJnF1b3Q7XSIgLz48cmVjb3JkIHRpbWVzdGFtcD0iMTQ1MDQ1OTE1Mzk5NSIgZX
+ ZlbnRDb2RlPSJFdmVudExvZ19IZWxwZGVza1NldFBhc3N3b3JkIiBzcmNJUD0iW0F0dHJpYnV0ZTo
+ gc3JjSVA9JnF1b3Q7MTM0LjEwOC41Ny4xMDAmcXVvdDtdIiBzcmNIb3N0PSJbQXR0cmlidXRlOiBz
+ cmNIb3N0PSZxdW90O3VzZXIyMTAwLmhzLWVzc2xpbmdlbi5kZSZxdW90O10iIC8+PHJlY29yZCB0a
+ W1lc3RhbXA9IjE0NTA0NTkyODMxMDUiIGV2ZW50Q29kZT0iRXZlbnRMb2dfQ2hhbmdlUGFzc3dvcm
+ QiIHNyY0lQPSIxMzQuMTA4LjU3LjEwMCIgc3JjSG9zdD0idXNlcjIxMDAuaHMtZXNzbGluZ2VuLmR
+ lIiAvPjwvaGlzdG9yeT4NCg==
+uid: friedric
+sn: Friedrich
+givenName: Joerg
+entryCSN: 20151218172503.447360Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151218172503Z
+
+dn: cn=ezs-students,ou=groups,dc=hs-esslingen,dc=de
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-students
+description: pwm admin groups branch
+objectClass: groupOfNames
+objectClass: top
+structuralObjectClass: groupOfNames
+entryUUID: df6d5b9e-3a9e-1035-81c4-05fe60bf3046
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151219131926Z
+entryCSN: 20151219211054.384299Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219211054Z
+
+dn: ou=students,ou=people,dc=hs-esslingen,dc=de
+objectClass: organizationalUnit
+objectClass: top
+structuralObjectClass: organizationalUnit
+entryUUID: a370bab8-3a9f-1035-81c5-05fe60bf3046
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151219132455Z
+ou: students
+entryCSN: 20151219132755.795959Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219132755Z
+
+dn: cn=ezslabstudent1,ou=students,ou=people,dc=hs-esslingen,dc=de
+givenName: Ezslab
+sn: Student
+mail: ezslab.student@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+uid: ezslabstudent1
+cn: ezslabstudent1
+structuralObjectClass: inetOrgPerson
+entryUUID: 53da7ebe-3aa2-1035-81c8-05fe60bf3046
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151219134410Z
+userPassword:: eW91bXVzdGNoYW5nZXlvdXJwYXNzd29yZA==
+entryCSN: 20151219135402.896797Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219135402Z
+
+dn: cn=ezslab,ou=people,dc=hs-esslingen,dc=de
+mail: ezslab.student@hs-esslingen.de
+sn: Student
+userPassword:: eW91bXVzdGNoYW5nZXlvdXJwYXNzd29yZA==
+givenName: Ezslab
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+structuralObjectClass: inetOrgPerson
+entryUUID: 2a1c383e-3add-1035-81ca-05fe60bf3046
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151219204520Z
+uid: ezslab
+cn: ezslab
+entryCSN: 20151219204724.653047Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151219204724Z
+
+dn: cn=teama2group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama2group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama2useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama2useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama2useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: 266edd5c-3b6b-1035-97ea-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220134143Z
+entryCSN: 20151220134143.300402Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220134143Z
+
+dn: cn=teama3group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama3group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama3useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama3useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama3useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: 266ff142-3b6b-1035-97eb-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220134143Z
+entryCSN: 20151220134143.307463Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220134143Z
+
+dn: cn=teama4group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama4group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama4useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama4useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama4useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: 26710aaa-3b6b-1035-97ec-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220134143Z
+entryCSN: 20151220134143.314667Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220134143Z
+
+dn: cn=teama5group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama5group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama5useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama5useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama5useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: 26721a08-3b6b-1035-97ed-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220134143Z
+entryCSN: 20151220134143.321611Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220134143Z
+
+dn: cn=teama6group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama6group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama6useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama6useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama6useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: 26736624-3b6b-1035-97ee-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220134143Z
+entryCSN: 20151220134143.330116Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220134143Z
+
+dn: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+objectClass: groupOfNames
+objectClass: top
+description: pwm admin groups branch
+cn: teama1group
+member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+member: cn=teama1useru1,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama1useru2,ou=people,ou=students,dc=hs-esslingen,dc=de
+member: cn=teama1useru3,ou=people,ou=students,dc=hs-esslingen,dc=de
+structuralObjectClass: groupOfNames
+entryUUID: bc829126-3b70-1035-97ef-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220142142Z
+entryCSN: 20151220142142.571410Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220142142Z
+
+dn: cn=teama1useru1,ou=students,ou=people,dc=hs-esslingen,dc=de
+givenName: Not configured
+sn: Not configured
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberOf: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+uid: teama1useru1
+cn: teama1useru1
+structuralObjectClass: inetOrgPerson
+entryUUID: bc83406c-3b70-1035-97f0-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220142142Z
+userPassword:: eW91bXVzdGNoYW5nZXlvdXJwYXNzd29yZA==
+entryCSN: 20151220142142.576858Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220142142Z
+
+dn: cn=teama1useru2,ou=students,ou=people,dc=hs-esslingen,dc=de
+givenName: Not configured
+sn: Not configured
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberOf: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+uid: teama1useru2
+cn: teama1useru2
+structuralObjectClass: inetOrgPerson
+entryUUID: bc83a098-3b70-1035-97f1-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220142142Z
+userPassword:: eW91bXVzdGNoYW5nZXlvdXJwYXNzd29yZA==
+entryCSN: 20151220142142.580698Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220142142Z
+
+dn: cn=teama1useru3,ou=students,ou=people,dc=hs-esslingen,dc=de
+givenName: Not configured
+sn: Not configured
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberOf: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+uid: teama1useru3
+cn: teama1useru3
+structuralObjectClass: inetOrgPerson
+entryUUID: bc84345e-3b70-1035-97f2-599e0e6ff422
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20151220142142Z
+userPassword:: eW91bXVzdGNoYW5nZXlvdXJwYXNzd29yZA==
+entryCSN: 20151220142142.583794Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20151220142142Z
+

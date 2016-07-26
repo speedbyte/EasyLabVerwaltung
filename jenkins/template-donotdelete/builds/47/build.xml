@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causes>
+        <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+      </causes>
+    </hudson.model.CauseAction>
+    <hudson.scm.SubversionTagAction plugin="subversion@1.54">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <hudson.scm.SubversionSCM_-SvnInfo>
+            <url>https://wwwitrt.hs-esslingen.de/svn/labor/teama1</url>
+            <revision>24</revision>
+          </hudson.scm.SubversionSCM_-SvnInfo>
+          <list/>
+        </entry>
+      </tags>
+    </hudson.scm.SubversionTagAction>
+    <hudson.scm.SVNRevisionState plugin="subversion@1.54">
+      <revisions>
+        <entry>
+          <string>https://wwwitrt.hs-esslingen.de/svn/labor/teama1</string>
+          <long>24</long>
+        </entry>
+      </revisions>
+    </hudson.scm.SVNRevisionState>
+  </actions>
+  <queueId>343</queueId>
+  <timestamp>1447687080766</timestamp>
+  <startTime>1447687080767</startTime>
+  <result>SUCCESS</result>
+  <duration>427</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/home/jenkins/workspace/Team A1</workspace>
+  <hudsonVersion>1.615</hudsonVersion>
+  <scm class="hudson.scm.SubversionChangeLogParser" plugin="subversion@1.54">
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
+  </scm>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
