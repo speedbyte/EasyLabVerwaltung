@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":l:jsh" opt; do
+while getopts ":l:jsh:f:" opt; do
   case $opt in
     l)
       echo "-l was triggered, Parameter: $OPTARG" >&2
@@ -41,17 +41,35 @@ while getopts ":l:jsh" opt; do
       -j \
       -s \
       -h \
+      -f \
        "
-      echo "Option j is meant for Jenkins"
-      echo "Option s is meant for SVN"
-      echo "Option l is meant for LDAP" 
-      echo "Option j and s can only combined with -l fresh option"
+      echo "Option -f is meant for authorization file"
+      echo "Option -j is meant for Jenkins"
+      echo "Option -s is meant for SVN"
+      echo "Option -l is meant for LDAP" 
+      echo "Option -j and s can only combined with -l fresh option"
       echo "Option -l has one mandatory argument, either fresh or incremental"
-      echo "Arguement fresh will delete all the entries in LDAP under ou=students,ou=peoplet"
-      echo "Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups"
+      echo "Arguement fresh will delete all the entries in LDAP under ou=labor,ou=people"
+      echo "Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups and additionally add members if not already present in LDAP"
+      echo "The LDAP entries are added / modified / deleted after reading the entry in the authorization-file.opt"
       echo "Please see the file authorization-file.opt for more information"
       exit 1
       ;;
+    f)
+      echo "-f was triggered, Parameter: $OPTARG" >&2
+      if [ -f $OPTARG ]; then
+	  echo "$OPTARG Authorization file found"
+          AUTHORIZATIONFILE=$OPTARG
+          AUTHORIZATIONGROUP=$(echo $AUTHORIZATIONFILE | cut -d. -f1 | sed s/authorization-file-//g)
+	  if [ "$AUTHORIZATIONGROUP" != "intern" ] && [ "$AUTHORIZATIONGROUP" != "labor" ]; then
+		echo "Either labor or intern authorization file is required.. Exiting"
+		exit 1
+	  fi
+      else
+          echo "$OPTARG Authorization file not found" 
+          exit 1
+      fi
+      ;;		
     :)
       echo "Option -$OPTARG requires an argument." >&2
       exit 1
@@ -65,13 +83,19 @@ if [ $# -eq 0 ]; then
 fi
 # Script to generate Subversion repositories for HE project
 #
-MAXREPOS=25   #each entry in PREFIXREPOLIST would be generated MAXREPOS times
-PREFIXREPOLIST=( "ezs" "sa" ) #"kull" "marchthaler" "trackplusdev" ) # you can add upto 10 labs here
-ITERATIONS=${#PREFIXREPOLIST[@]}
-
-SVNREPOS=/var/repos/LABOR
+if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
+	MAXREPOS=1   #each entry in PREFIXREPOLIST would be generated MAXREPOS times
+	PREFIXREPOLIST=( "helikopterdev" "ezslabscriptsdev" "trackplusdev" ) # you can add upto 10 labs here
+	ITERATIONS=${#PREFIXREPOLIST[@]}
+	SVNREPOS=/var/repos/INTERN
+else
+	MAXREPOS=2
+	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
+	ITERATIONS=${#PREFIXREPOLIST[@]}
+	SVNREPOS=/var/repos/LABOR
+fi
 JENKINS=/usr/share/tomcat7/.jenkins
-ADMINDIR=/home/itlx3304admin
+ADMINDIR=$HOME
 LDAP=/etc/ldap
 currentdate=$(date +"%0Y%0m%0d-%0H%0M%0S")
 if [ "-v" == $1 ]
@@ -102,19 +126,20 @@ do
   if [ ! -d $SVNREPOS ]; then mkdir $do_verbose $SVNREPOS>>logs/lab-svn.log; fi
   if [ -d $SVNREPOS/$g ]; then rm -rf $SVNREPOS/$g>>logs/lab-svn.log; fi 
   svnadmin create --fs-type fsfs $SVNREPOS/$g
-  svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/docs/qa -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/docs/cm -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/scratch -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl/Application -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl/HAL-Host -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl/HAL-Target -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
-  svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
-  svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
+  svnadmin load $SVNREPOS/$g < ezsrepo-template.dump>>logs/lab-svn.log
+  #svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/qa -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/cm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/scratch -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/Application -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Target -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
+  #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
   chgrp -R $do_verbose svn $SVNREPOS/$g>>logs/lab-svn.log
   chmod -R $do_verbose 770 $SVNREPOS/$g>>logs/lab-svn.log
   echo "Completed preparing $g"
@@ -165,10 +190,11 @@ python << EOF > logs/log-prepare-ezs-python.log  2>&1
 #-*- coding: utf-8 -*-
 
 import ConfigParser
-maxrepos = int('$MAXREPOS', 10)
+maxrepos = int('$MAXREPOS', 16)
 iterations = $ITERATIONS
 cp = ConfigParser.ConfigParser()
-cp.read('./authorization-file.opt')
+authorizationfile = "$AUTHORIZATIONFILE"
+cp.read(authorizationfile)
 listofgroups_1 = []
 listofgroups_2 = []
 listofgroups_3 = []
@@ -188,11 +214,15 @@ for y in range(iterations):
 ldiffile = open('./ldif-prepare-ezs-ldap.ldif','w')
 ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif','w')
 
-ldiffile.write( "dn: ou=students,ou=people,dc=hs-esslingen,dc=de\n")
+if ('intern' in authorizationfile):
+	currentOUunit="intern"
+elif ('labor' in authorizationfile):
+	currentOUunit="labor"
+ldiffile.write( "dn: ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 ldiffile.write( "changetype: add\n")
 ldiffile.write( "objectClass: organizationalUnit\n")
 ldiffile.write( "objectClass: top\n")
-ldiffile.write( "ou: students\n")
+ldiffile.write( "ou: "+currentOUunit+"\n")
 ldiffile.write('\n')
 
 for y in range(iterations):
@@ -224,56 +254,60 @@ for y in range(iterations):
 		for i in range(len(groupmembers)):
 	#Add members to team groups.
 			membertoadd = groupmembers[i]
-			ldiffile.write( "member: cn= " + membertoadd + ",ou=students,ou=people,dc=hs-esslingen,dc=de\n")
-			print membertoadd
+                        membertoadd = membertoadd.strip(' ')
+			if ( membertoadd != '' ):
+				ldiffile.write( "member: cn= " + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
+				print membertoadd
+			else:
+				ldiffile.write( "member: cn=dummy,ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
+				print "dummy"
 	#End of adding members to the team groups.
 		ldiffile.write('\n')
 	#End of create team groups.
 
 		for i in range(len(groupmembers)):
 			membertoadd = groupmembers[i]
-	#Delete team group members from LDAP
-	#		ldiffile.write("dn: cn=" + membertoadd + ",ou=students,ou=people,dc=hs-esslingen,dc=de\n")
-	#        	ldiffile.write( "changetype: delete\n")
-	#        	ldiffile.write('\n')
-	#End of delete team group members from LDAP
+			if ( membertoadd != '' ):
 
-	#Add team group members to LDAP
-			ldiffile.write("dn: cn=" + membertoadd + ",ou=students,ou=people,dc=hs-esslingen,dc=de\n")
-			ldiffile.write("changetype: add\n")
-			ldiffile.write("givenName: Not configured\n")
-			ldiffile.write("sn: Not configured\n")
-			ldiffile.write("userPassword: ezsiscool\n")
-			ldiffile.write("mail: Not configured\n")
-			ldiffile.write("objectClass: inetOrgPerson\n")
-			ldiffile.write("objectClass: organizationalPerson\n")
-			ldiffile.write("objectClass: person\n")
-			ldiffile.write("objectClass: top\n")
-			ldiffile.write("objectClass: pwmUser\n")
-			ldiffile.write("memberof: cn= " + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
-			ldiffile.write("uid: " + membertoadd + "\n")
-			ldiffile.write("cn: " + membertoadd + "\n")
-			ldiffile.write('\n')
-	#End of add team group members to LDAP
+			#Add team group members to LDAP
+				ldiffile.write("dn: cn=" + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
+				ldiffile.write("changetype: add\n")
+				ldiffile.write("givenName: Not configured\n")
+				ldiffile.write("sn: Not configured\n")
+				ldiffile.write("userPassword: ezsiscool\n")
+				ldiffile.write("mail: Not configured\n")
+				ldiffile.write("objectClass: inetOrgPerson\n")
+				ldiffile.write("objectClass: organizationalPerson\n")
+				ldiffile.write("objectClass: person\n")
+				ldiffile.write("objectClass: top\n")
+				ldiffile.write("objectClass: pwmUser\n")
+				ldiffile.write("memberof: cn= " + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
+				ldiffile.write("uid: " + membertoadd + "\n")
+				ldiffile.write("cn: " + membertoadd + "\n")
+				ldiffile.write('\n')
+			#End of add team group members to LDAP
 
-	#Modify members password to Standard Password
-			ldifmodfile.write("dn: cn=" + membertoadd + ",ou=students,ou=people,dc=hs-esslingen,dc=de\n")
-			ldifmodfile.write("changetype: modify\n")
-			ldifmodfile.write("replace: userpassword\n")
-			ldifmodfile.write("userpassword: ezsiscool\n")
-			ldifmodfile.write('\n')
-	#End of modify members password
+			#Modify members password to Standard Password
+				ldifmodfile.write("dn: cn=" + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
+				ldifmodfile.write("changetype: modify\n")
+				ldifmodfile.write("replace: userpassword\n")
+				ldifmodfile.write("userpassword: ezsiscool\n")
+				ldifmodfile.write('\n')
+			#End of modify members password
 EOF
 }
 
 
 rm -f logs/*
 if [ "$LDAP_OPTION" == "y" ]; then 
-    echo "Adding and deleting groups and studentsnames in LDAP as per entries in authoritation-file.opt."; 
+    echo "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt."; 
     3_prepare_ldap
     if [ "fresh" == "$LDAP_PARAMETER" ]; then
-        echo "deleting all members under ou=students,ou=people,dc=hs-esslingen,dc=de"
-        ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! 'ou=students,ou=people,dc=hs-esslingen,dc=de'
+	grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
+	if [ "$grouptodelete" == "labor" ]; then
+	        echo "deleting all members under $grouptodelete"
+	        ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
+	fi
 	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
         #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
         cat logs/log-prepare-ezs-python.log;

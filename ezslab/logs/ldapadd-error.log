@@ -1,22 +1,11 @@
+# Error: Already exists (68)
 dn: ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: organizationalUnit
 objectClass: top
 ou: labor
 
-dn: cn=ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup1
-member: cn= viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chmoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= elsd213,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
+# Error: Already exists (68)
 dn: cn=viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -32,6 +21,7 @@ memberof: cn= ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
 uid: viaggsoo
 cn: viaggsoo
 
+# Error: Already exists (68)
 dn: cn=chmoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -47,6 +37,7 @@ memberof: cn= ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
 uid: chmoit00
 cn: chmoit00
 
+# Error: Already exists (68)
 dn: cn=elsd213,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -62,17 +53,7 @@ memberof: cn= ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
 uid: elsd213
 cn: elsd213
 
-dn: cn=ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup2
-member: cn= bini,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
+# Error: Already exists (68)
 dn: cn=bini,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -88,18 +69,7 @@ memberof: cn= ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
 uid: bini
 cn: bini
 
-dn: cn=sagroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup1
-member: cn= viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chmoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
+# Error: Already exists (68)
 dn: cn=viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -115,6 +85,7 @@ memberof: cn= sagroup1,ou=groups,dc=hs-esslingen,dc=de
 uid: viaggsoo
 cn: viaggsoo
 
+# Error: Already exists (68)
 dn: cn=chmoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
@@ -130,17 +101,7 @@ memberof: cn= sagroup1,ou=groups,dc=hs-esslingen,dc=de
 uid: chmoit00
 cn: chmoit00
 
-dn: cn=sagroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup2
-member: cn= bini,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
+# Error: Already exists (68)
 dn: cn=bini,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured

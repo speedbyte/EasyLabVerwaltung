@@ -1,0 +1,371 @@
+SVN-fs-dump-format-version: 2
+
+UUID: e8add820-9d5d-47e2-81c6-b86df097cade
+
+Revision-number: 0
+Prop-content-length: 56
+Content-length: 56
+
+K 8
+svn:date
+V 27
+2016-03-08T18:00:12.745373Z
+PROPS-END
+
+Revision-number: 1
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:12.817934Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: docs
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 2
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:12.890215Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: docs/pm
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 3
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:12.992911Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: docs/se
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 4
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.106443Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: docs/qa
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 5
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.194466Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: docs/cm
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 6
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.231229Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: scratch
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 7
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.261948Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 8
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.298283Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/Application
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 9
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.331585Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/HAL-Host
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 10
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.365702Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/HAL-Target
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 11
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.402197Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/IDE-Host
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 12
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.439567Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/IDE-Target
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 13
+Prop-content-length: 113
+Content-length: 113
+
+K 10
+svn:author
+V 4
+root
+K 8
+svn:date
+V 27
+2016-03-08T18:00:13.482051Z
+K 7
+svn:log
+V 14
+Initial commit
+PROPS-END
+
+Node-path: impl/IDE-Host/validatebuild.sh
+Node-kind: file
+Node-action: add
+Prop-content-length: 10
+Text-content-length: 52
+Text-content-md5: 978f844b4c63e6493472251febe5936f
+Text-content-sha1: 3c808bba967470c494b1ecadf360dc3443a422f7
+Content-length: 62
+
+PROPS-END
+#!bin/bash 
+cd #to your makefile directory
+make all
+
+

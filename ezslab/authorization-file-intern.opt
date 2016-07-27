@@ -1,0 +1,18 @@
+[groups]
+
+#----------------------EDIT ZONE START-----------------------------------------------
+
+helikopterdevgroup1 = ezslab,vagrawal,friedric
+
+trackplusdevgroup1 = aldeit00
+
+ezslabscriptsdevgroup1 = vagrawal
+
+#----------------------EDIT ZONE END-----------------------------------------------
+ 
+[helikopter-vm:/]
+@helikopterdevgroup1 = rw
+
+[ezslabscript:/]
+@ezslabscriptsdevgroup1 = rw
+
