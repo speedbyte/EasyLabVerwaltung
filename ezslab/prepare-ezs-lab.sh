@@ -96,7 +96,7 @@ else
 	SVNREPOS=/var/repos/LABOR
 fi
 JENKINS=/usr/share/tomcat7/.jenkins
-ADMINDIR=$HOME
+ADMINDIR=$(pwd)/../
 LDAP=/etc/ldap
 currentdate=$(date +"%0Y%0m%0d-%0H%0M%0S")
 if [ "-v" == $1 ]

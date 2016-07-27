@@ -69,53 +69,405 @@ memberof: cn= ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
 uid:  febiit00
 cn:  febiit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=chhait07,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
+uid: chhait07
+cn: chhait07
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= jomait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
+uid:  jomait03
+cn:  jomait03
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=wolait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
+uid: wolait01
+cn: wolait01
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= toscit07,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
+uid:  toscit07
+cn:  toscit07
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=papait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
+uid: papait02
+cn: papait02
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= dahait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
+uid:  dahait05
+cn:  dahait05
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=ropeme00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
+uid: ropeme00
+cn: ropeme00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= anvait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
+uid:  anvait00
+cn:  anvait00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=makait10,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
+uid: makait10
+cn: makait10
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= roruit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
+uid:  roruit00
+cn:  roruit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= ciheit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
+uid:  ciheit00
+cn:  ciheit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=ullait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
+uid: ullait00
+cn: ullait00
+
+# Error: Already exists (68)
+dn: cn= frbait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
+uid:  frbait02
+cn:  frbait02
+
+# Error: Already exists (68)
+dn: cn= lugait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
+uid:  lugait00
+cn:  lugait00
+
+# Error: Already exists (68)
+dn: cn=pamuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
+uid: pamuit01
+cn: pamuit01
+
+# Error: Already exists (68)
+dn: cn= jumait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
+uid:  jumait03
+cn:  jumait03
+
+# Error: Already exists (68)
+dn: cn=singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
+uid: singit00
+cn: singit00
+
+# Error: Already exists (68)
+dn: cn= ondeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
+uid:  ondeit00
+cn:  ondeit00
+
+# Error: Already exists (68)
+dn: cn= hiasit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
+uid:  hiasit00
+cn:  hiasit00
+
+# Error: Already exists (68)
+dn: cn=clboit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
+uid: clboit00
+cn: clboit00
+
+# Error: Already exists (68)
+dn: cn= almait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
+uid:  almait05
+cn:  almait05
+
+# Error: Already exists (68)
+dn: cn=tojait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
+uid: tojait02
+cn: tojait02
+
+# Error: Already exists (68)
+dn: cn= reduit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
+uid:  reduit00
+cn:  reduit00
+
+# Error: Already exists (68)
+dn: cn=alkait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
+uid: alkait01
+cn: alkait01
+
+# Error: Already exists (68)
+dn: cn= sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
+uid:  sekeit00
+cn:  sekeit00
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -149,10 +501,6 @@ memberof: cn= ezsgroup14,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -184,10 +532,6 @@ objectClass: pwmUser
 memberof: cn= ezsgroup15,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -221,10 +565,6 @@ memberof: cn= ezsgroup16,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -256,10 +596,6 @@ objectClass: pwmUser
 memberof: cn= ezsgroup17,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -293,10 +629,6 @@ memberof: cn= ezsgroup18,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -328,10 +660,6 @@ objectClass: pwmUser
 memberof: cn= ezsgroup19,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -365,10 +693,6 @@ memberof: cn= ezsgroup20,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -400,10 +724,6 @@ objectClass: pwmUser
 memberof: cn= ezsgroup21,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -437,10 +757,6 @@ memberof: cn= ezsgroup22,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -473,10 +789,6 @@ memberof: cn= ezsgroup23,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -508,10 +820,6 @@ objectClass: pwmUser
 memberof: cn= ezsgroup24,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=ezsgroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -609,10 +917,6 @@ memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
 uid:  febiit00
 cn:  febiit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=chhait07,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -644,10 +948,6 @@ objectClass: pwmUser
 memberof: cn= sagroup3,ou=groups,dc=hs-esslingen,dc=de
 uid:  jomait03
 cn:  jomait03
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup4,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=wolait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -681,10 +981,6 @@ memberof: cn= sagroup4,ou=groups,dc=hs-esslingen,dc=de
 uid:  toscit07
 cn:  toscit07
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=papait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -717,10 +1013,6 @@ memberof: cn= sagroup5,ou=groups,dc=hs-esslingen,dc=de
 uid:  dahait05
 cn:  dahait05
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=ropeme00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -736,10 +1028,6 @@ objectClass: pwmUser
 memberof: cn= sagroup6,ou=groups,dc=hs-esslingen,dc=de
 uid: ropeme00
 cn: ropeme00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=makait10,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -789,10 +1077,6 @@ memberof: cn= sagroup7,ou=groups,dc=hs-esslingen,dc=de
 uid:  ciheit00
 cn:  ciheit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=ullait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -841,10 +1125,6 @@ memberof: cn= sagroup8,ou=groups,dc=hs-esslingen,dc=de
 uid:  jumait03
 cn:  jumait03
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=pamuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -860,10 +1140,6 @@ objectClass: pwmUser
 memberof: cn= sagroup9,ou=groups,dc=hs-esslingen,dc=de
 uid: pamuit01
 cn: pamuit01
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -913,10 +1189,6 @@ memberof: cn= sagroup10,ou=groups,dc=hs-esslingen,dc=de
 uid:  hiasit00
 cn:  hiasit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=clboit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -948,10 +1220,6 @@ objectClass: pwmUser
 memberof: cn= sagroup11,ou=groups,dc=hs-esslingen,dc=de
 uid:  almait05
 cn:  almait05
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=tojait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -985,13 +1253,37 @@ memberof: cn= sagroup12,ou=groups,dc=hs-esslingen,dc=de
 uid:  reduit00
 cn:  reduit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn=flstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sagroup13,ou=groups,dc=hs-esslingen,dc=de
+uid: flstit01
+cn: flstit01
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
+# Error: Already exists (68)
+dn: cn= hayait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: Not configured
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sagroup13,ou=groups,dc=hs-esslingen,dc=de
+uid:  hayait01
+cn:  hayait01
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -1025,10 +1317,6 @@ memberof: cn= sagroup14,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1060,10 +1348,6 @@ objectClass: pwmUser
 memberof: cn= sagroup15,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -1097,10 +1381,6 @@ memberof: cn= sagroup16,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1132,10 +1412,6 @@ objectClass: pwmUser
 memberof: cn= sagroup17,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -1169,10 +1445,6 @@ memberof: cn= sagroup18,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1204,10 +1476,6 @@ objectClass: pwmUser
 memberof: cn= sagroup19,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -1241,10 +1509,6 @@ memberof: cn= sagroup20,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1276,10 +1540,6 @@ objectClass: pwmUser
 memberof: cn= sagroup21,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
@@ -1313,10 +1573,6 @@ memberof: cn= sagroup22,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1349,10 +1605,6 @@ memberof: cn= sagroup23,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
 
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1384,10 +1636,6 @@ objectClass: pwmUser
 memberof: cn= sagroup24,ou=groups,dc=hs-esslingen,dc=de
 uid:  YYYYit00
 cn:  YYYYit00
-
-# Error: No such object (32), matched DN: ou=groups,dc=hs-esslingen,dc=de
-dn: cn=sagroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
 
 # Error: Already exists (68)
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de

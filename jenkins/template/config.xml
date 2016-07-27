@@ -35,7 +35,7 @@
       </hudson.scm.SubversionSCM_-ModuleLocation>
     </locations>
     <browser class="hudson.scm.browsers.WebSVN">
-      <url>https://wwwitrt2.hs-esslingen.de/websvn/listing.php/?repname=templaterepo</url>
+      <url>https://wwwitrt.hs-esslingen.de/websvn/listing.php/?repname=templaterepo</url>
     </browser>
     <excludedRegions></excludedRegions>
     <includedRegions></includedRegions>
