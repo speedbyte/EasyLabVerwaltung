@@ -15,9 +15,16 @@ the shell script prepare-ezs-lab.sh
 
 ACCESS
 
+ACCESS via GIT
+
+Cloning via: git@wwwitrt3.hs-esslingen.de:LaborVerwaltung/LaborVorbereitungSkripte.git
+Cloning is only possible if you have stored your public ssh key in the GITLAB profile section.
+
 SVN
 wwwitrt.hs-esslingen.de/svn/labor/
 svn co --username viaggsoo https://wwwitrt.hs-esslingen.de/svn/labor/teama1
+
+
 
 JENKINS
 wwwitrt.hs-esslingen.de/jenkins
