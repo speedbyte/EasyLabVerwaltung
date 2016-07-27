@@ -190,7 +190,7 @@ python << EOF > logs/log-prepare-ezs-python.log  2>&1
 #-*- coding: utf-8 -*-
 
 import ConfigParser
-maxrepos = int('$MAXREPOS', 16)
+maxrepos = int('$MAXREPOS', 10)
 iterations = $ITERATIONS
 cp = ConfigParser.ConfigParser()
 authorizationfile = "$AUTHORIZATIONFILE"
