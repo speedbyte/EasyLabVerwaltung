@@ -1,0 +1,85 @@
+Started by timer
+Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
+Checking out a fresh workspace because there's no workspace at /var/lib/jenkins_via_tomcat/jobs/template/workspace
+Cleaning local Directory .
+Checking out file:///var/repos/LABOR/templaterepo at revision '2016-07-27T20:18:25.223 +0200'
+ERROR: Failed to check out file:///var/repos/LABOR/templaterepo
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0morg.tmatesoft.svn.core.SVNException: svn: E180001: Unable to open an ra_local session to URL
+svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
+svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.io.fs.FSRepository.openRepository(FSRepository.java:799)
+	at org.tmatesoft.svn.core.internal.io.fs.FSRepository.getLatestRevision(FSRepository.java:122)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.getRevisionNumber(SVNBasicDelegate.java:480)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.getLocations(SVNBasicDelegate.java:833)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.createRepository(SVNBasicDelegate.java:527)
+	at org.tmatesoft.svn.core.internal.wc16.SVNUpdateClient16.doCheckout(SVNUpdateClient16.java:875)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldCheckout.run(SvnOldCheckout.java:66)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldCheckout.run(SvnOldCheckout.java:18)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:21)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1235)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at hudson.scm.subversion.CheckoutUpdater$1.perform(CheckoutUpdater.java:119)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:162)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:170)
+	at hudson.scm.subversion.UpdateUpdater$TaskImpl.perform(UpdateUpdater.java:134)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:162)
+	at hudson.scm.SubversionSCM$CheckOutTask.perform(SubversionSCM.java:988)
+	at hudson.scm.SubversionSCM$CheckOutTask.invoke(SubversionSCM.java:969)
+	at hudson.scm.SubversionSCM$CheckOutTask.invoke(SubversionSCM.java:945)
+	at hudson.FilePath.act(FilePath.java:1018)
+	at hudson.FilePath.act(FilePath.java:996)
+	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:894)
+	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:830)
+	at hudson.scm.SCM.checkout(SCM.java:485)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1269)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
+	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
+	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+java.io.IOException: Failed to check out file:///var/repos/LABOR/templaterepo
+	at hudson.scm.subversion.CheckoutUpdater$1.perform(CheckoutUpdater.java:130)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:162)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:170)
+	at hudson.scm.subversion.UpdateUpdater$TaskImpl.perform(UpdateUpdater.java:134)
+	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:162)
+	at hudson.scm.SubversionSCM$CheckOutTask.perform(SubversionSCM.java:988)
+	at hudson.scm.SubversionSCM$CheckOutTask.invoke(SubversionSCM.java:969)
+	at hudson.scm.SubversionSCM$CheckOutTask.invoke(SubversionSCM.java:945)
+	at hudson.FilePath.act(FilePath.java:1018)
+	at hudson.FilePath.act(FilePath.java:996)
+	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:894)
+	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:830)
+	at hudson.scm.SCM.checkout(SCM.java:485)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1269)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
+	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
+	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+Caused by: org.tmatesoft.svn.core.SVNException: svn: E180001: Unable to open an ra_local session to URL
+svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
+svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:64)
+	at org.tmatesoft.svn.core.internal.wc.SVNErrorManager.error(SVNErrorManager.java:51)
+	at org.tmatesoft.svn.core.internal.io.fs.FSRepository.openRepository(FSRepository.java:799)
+	at org.tmatesoft.svn.core.internal.io.fs.FSRepository.getLatestRevision(FSRepository.java:122)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.getRevisionNumber(SVNBasicDelegate.java:480)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.getLocations(SVNBasicDelegate.java:833)
+	at org.tmatesoft.svn.core.internal.wc16.SVNBasicDelegate.createRepository(SVNBasicDelegate.java:527)
+	at org.tmatesoft.svn.core.internal.wc16.SVNUpdateClient16.doCheckout(SVNUpdateClient16.java:875)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldCheckout.run(SvnOldCheckout.java:66)
+	at org.tmatesoft.svn.core.internal.wc2.old.SvnOldCheckout.run(SvnOldCheckout.java:18)
+	at org.tmatesoft.svn.core.internal.wc2.SvnOperationRunner.run(SvnOperationRunner.java:21)
+	at org.tmatesoft.svn.core.wc2.SvnOperationFactory.run(SvnOperationFactory.java:1235)
+	at org.tmatesoft.svn.core.wc2.SvnOperation.run(SvnOperation.java:294)
+	at hudson.scm.subversion.CheckoutUpdater$1.perform(CheckoutUpdater.java:119)
+	... 20 more
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: FAILURE

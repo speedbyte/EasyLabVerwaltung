@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":l:jsf:h" opt; do
+while getopts ":l:jsvf:h" opt; do
   case $opt in
     l)
       echo "-l was triggered, Parameter: $OPTARG" >&2
@@ -71,6 +71,10 @@ while getopts ":l:jsf:h" opt; do
           exit 1
       fi
       ;;		
+    v)
+      echo "-f was triggered, Parameter: $OPTARG" >&2
+      VERBOSE='on'
+      ;;
     :)
       echo "Option -$OPTARG requires an argument." >&2
       exit 1
@@ -96,23 +100,26 @@ else
 	SVNREPOS=/var/repos/LABOR
 fi
 JENKINS=/usr/share/tomcat7/.jenkins
-ADMINDIR=$(pwd)/../
+ADMINDIR=$(pwd)/..
 LDAP=/etc/ldap
 currentdate=$(date +"%0Y%0m%0d-%0H%0M%0S")
-if [ "-v" == $1 ]
-then
-  VERBOSE='on'
-fi
 if [ "$VERBOSE" == "on" ]; then do_verbose='-v'; else do_verbose=''; fi
 
 function 1_prepare_svnrepos
 {
 echo "-----------------SVN LOG ------------------------\n\n" > logs/lab-svn.log
 SVNGROUP=svn
-BACKUPSVNREPO=$ADMINDIR/svn/backups/repos-$currentdate
-mv $do_verbose $SVNREPOS $BACKUPSVNREPO>>logs/lab-svn.log 
-mkdir $do_verbose $SVNREPOS>>logs/lab-svn.log
-cp -R $do_verbose $ADMINDIR/svn/template /var/repos/LABOR/>>logs/lab-svn.log
+echo "Do you want a backup of the SVN repos (Y/N)"
+read ANSWER
+if [ "ANSWER" == "Y" ]; then
+	echo "Backup SVN repos.. This can take a long time...."
+	mv $do_verbose $SVNREPOS $ADMINDIR/svn/backups/repos-$currentdate>>logs/lab-svn.log 
+else
+	rm -rf $do_verbose $SVNREPOS>>logs/lab-svn.log 
+fi
+
+mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log
+cp -R $do_verbose $ADMINDIR/svn/template $SVNREPOS>>logs/lab-svn.log
 chown -R $do_verbose root:svn $SVNREPOS/template>>logs/lab-svn.log
 chmod -R $do_verbose 770 $SVNREPOS/template>>logs/lab-svn.log
 count=1
@@ -124,7 +131,7 @@ do
   g=$PREFIXREPO$type$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "Creating svn repo $g"
-  if [ ! -d $SVNREPOS ]; then mkdir $do_verbose $SVNREPOS>>logs/lab-svn.log; fi
+  if [ ! -d $SVNREPOS ]; then mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log; fi
   if [ -d $SVNREPOS/$g ]; then rm -rf $SVNREPOS/$g>>logs/lab-svn.log; fi 
   svnadmin create --fs-type fsfs $SVNREPOS/$g
   svnadmin load $SVNREPOS/$g < ezsrepo-template.dump>>logs/lab-svn.log
@@ -157,8 +164,15 @@ echo "-----------------JENKINS LOG ------------------------\n\n" > logs/lab-jenk
 SJENKINSGROUP=tomcat7
 
 rm -rf $ADMINDIR/jenkins/template/*>>logs/lab-jenkins.log
-mv $do_verbose $JENKINS/jobs/template/*.* $ADMINDIR/jenkins/template/>>logs/lab-jenkins.log
-mv $JENKINS/jobs $ADMINDIR/jenkins/backups/jobs-$currentdate>>logs/lab-jenkins.log
+mv $do_verbose $JENKINS/jobs/template/* $ADMINDIR/jenkins/template/>>logs/lab-jenkins.log
+echo "Do you want a backup of the Jenkins jobs (Y/N)"
+read ANSWER
+if [ "ANSWER" == "Y" ]; then
+	echo "Backup Jenkins jobs.. This can take a long time...."
+	mv $JENKINS/jobs $ADMINDIR/jenkins/backups/jobs-$currentdate>>logs/lab-jenkins.log
+else
+	rm -rf $do_verbose $JENKINS/jobs>>logs/lab-jenkins.log
+fi
 mkdir $JENKINS/jobs>>logs/lab-jenkins.log
 cp -r $do_verbose $ADMINDIR/jenkins/template  $JENKINS/jobs/>>logs/lab-jenkins.log
 chown -R tomcat7:tomcat7 $JENKINS/jobs>>logs/lab-jenkins.log
@@ -177,6 +191,7 @@ do
   r=$PREFIXREPO$repo$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
   cp -r $do_verbose $JENKINS/jobs/template $JENKINS/jobs/$g>>logs/lab-jenkins.log && sed -i.bak s/templategroup/$h/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && sed -i.bak s/templaterepo/$r/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && rm -r $do_verbose $JENKINS/jobs/$g/config.xml.bak>>logs/lab-jenkins.log && chown -R $do_verbose tomcat7:tomcat7 $JENKINS/jobs/$g>>logs/lab-jenkins.log
+  echo "Created jenkins jobs $h"
 done
 echo -----------JENKINS JOBS under $JENKINS/jobs/-------------------
 find $JENKINS/jobs -maxdepth 1 -type d  -printf '%T@ %P\n' | sort -n |  awk '/[a-zA-Z]/{print}'
