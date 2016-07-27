@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":l:jsh:f:" opt; do
+while getopts ":l:jsf:h" opt; do
   case $opt in
     l)
       echo "-l was triggered, Parameter: $OPTARG" >&2
@@ -42,17 +42,18 @@ while getopts ":l:jsh:f:" opt; do
       -s \
       -h \
       -f \
-       "
-      echo "Option -f is meant for authorization file"
-      echo "Option -j is meant for Jenkins"
-      echo "Option -s is meant for SVN"
-      echo "Option -l is meant for LDAP" 
-      echo "Option -j and s can only combined with -l fresh option"
-      echo "Option -l has one mandatory argument, either fresh or incremental"
-      echo "Arguement fresh will delete all the entries in LDAP under ou=labor,ou=people"
-      echo "Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups and additionally add members if not already present in LDAP"
-      echo "The LDAP entries are added / modified / deleted after reading the entry in the authorization-file.opt"
-      echo "Please see the file authorization-file.opt for more information"
+       " 
+      echo
+      echo "=====> use this option -f to explicitly select the authorization file" 
+      echo
+      echo "=====> use this option -j if you want to recreate jenkins jobs. This option can only be used in combination with -l fresh option. Beware that all jenkins jobs would be put in the backup folder and new jenkins jobs would be created." 
+      echo
+      echo "=====> use this option -s if you want to recreate svn repos. This option can only be used in combination with -l fresh option. Beware that all svn repos would be put in the backup folder and new svn repos would be created." 
+      echo
+      echo "=====> Option -l has one mandatory argument, either fresh or incremental. Arguement fresh will delete all the entries in LDAP under ou=labor,ou=people and Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups and additionally add members if not already present in LDAP" 
+      echo
+      echo "=====> The LDAP entries are added / modified / deleted after reading the entry in the authorization file"
+      echo "Please see the file authorization file ( normally authorization-file.opt )  for more information"
       exit 1
       ;;
     f)
@@ -89,7 +90,7 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=2
+	MAXREPOS=25
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
