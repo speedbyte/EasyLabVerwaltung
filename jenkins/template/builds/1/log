@@ -2,7 +2,7 @@ Started by timer
 Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
 Checking out a fresh workspace because there's no workspace at /var/lib/jenkins_via_tomcat/jobs/template/workspace
 Cleaning local Directory .
-Checking out file:///var/repos/LABOR/templaterepo at revision '2016-07-27T20:18:25.223 +0200'
+Checking out file:///var/repos/LABOR/templaterepo at revision '2016-07-27T20:18:26.172 +0200'
 ERROR: Failed to check out file:///var/repos/LABOR/templaterepo
 [8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0morg.tmatesoft.svn.core.SVNException: svn: E180001: Unable to open an ra_local session to URL
 svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'

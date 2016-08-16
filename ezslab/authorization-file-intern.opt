@@ -10,9 +10,7 @@ ezslabscriptsdevgroup1 = vagrawal
 
 #----------------------EDIT ZONE END-----------------------------------------------
  
-[helikopter-vm:/]
+[helikopter-images:/]
 @helikopterdevgroup1 = rw
 
-[ezslabscript:/]
-@ezslabscriptsdevgroup1 = rw
 

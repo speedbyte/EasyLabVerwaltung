@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts ":l:jsvf:h" opt; do
+while getopts ":l:jsgvf:h" opt; do
   case $opt in
     l)
       echo "-l was triggered, Parameter: $OPTARG" >&2
@@ -31,7 +31,17 @@ while getopts ":l:jsvf:h" opt; do
           exit 1
       fi
       ;;
-    \?)
+    g)
+      echo "-g was triggered, Parameter: $OPTARG" >&2
+      if [ "fresh" == "$LDAP_PARAMETER" ]; then 
+          echo "git repos would be generated" >&2
+          GIT_OPTION="y"
+      else
+	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
+          exit 1
+      fi
+      ;;
+     \?)
       echo "Invalid option: -$OPTARG" >&2
       exit 1
       ;;
@@ -157,6 +167,22 @@ echo -----------SVN REPOS under $SVNREPOS-------------------
 find /var/repos/LABOR -maxdepth 1 -type d  -printf '%T@ %P\n' | sort -n |  awk '/[a-zA-Z]/{print}'
 echo
 }
+
+function 3_prepare_gitrepos
+{
+count=1
+type=repo
+for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
+do
+  index=$(($(($i-1))/$MAXREPOS))
+  PREFIXREPO=${PREFIXREPOLIST[$index]}
+  g=$PREFIXREPO$type$count
+  if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
+  echo "Creating git repo $g"
+  curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+done 
+}
+
 
 function 2_prepare_jenkins
 {
@@ -291,7 +317,7 @@ for y in range(iterations):
 				ldiffile.write("givenName: Not configured\n")
 				ldiffile.write("sn: Not configured\n")
 				ldiffile.write("userPassword: ezsiscool\n")
-				ldiffile.write("mail: Not configured\n")
+				ldiffile.write("mail: " + membertoadd + "@hs-esslingen.de\n")
 				ldiffile.write("objectClass: inetOrgPerson\n")
 				ldiffile.write("objectClass: organizationalPerson\n")
 				ldiffile.write("objectClass: person\n")
@@ -320,7 +346,8 @@ if [ "$LDAP_OPTION" == "y" ]; then
     3_prepare_ldap
     if [ "fresh" == "$LDAP_PARAMETER" ]; then
 	grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
-	if [ "$grouptodelete" == "labor" ]; then
+	if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
+		grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
 	        echo "deleting all members under $grouptodelete"
 	        ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
 	fi
@@ -340,8 +367,12 @@ if [ "fresh" == "$LDAP_PARAMETER" ]; then
     if [ "y" == "$JENKINS_OPTION" ]; then 
         2_prepare_jenkins; 
     fi
+    if [ "y" == "$GIT_OPTION" ]; then 
+        3_prepare_gitrepos; 
+    fi
 fi
 echo "Following log-files has been generated"
 ls -lt logs/
 
-
+#curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=ezsrepo4" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+#curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/:id/members/:user_id?access_level=30

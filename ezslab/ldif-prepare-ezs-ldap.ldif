@@ -21,7 +21,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -36,7 +36,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -63,7 +63,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: tomuit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -78,7 +78,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  febiit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -105,7 +105,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: chhait07@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -120,7 +120,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  jomait03@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -147,7 +147,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: wolait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -162,7 +162,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  toscit07@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -189,7 +189,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: papait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -204,7 +204,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  dahait05@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -231,7 +231,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: ropeme00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -246,7 +246,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  anvait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -274,7 +274,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: makait10@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -289,7 +289,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  roruit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -304,7 +304,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  ciheit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -332,7 +332,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: ullait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -347,7 +347,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  frbait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -362,7 +362,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  lugait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -389,7 +389,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: pamuit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -404,7 +404,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  jumait03@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -432,7 +432,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: singit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -447,7 +447,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  ondeit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -462,7 +462,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  hiasit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -489,7 +489,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: clboit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -504,7 +504,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  almait05@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -531,7 +531,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: tojait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -546,7 +546,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  reduit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -573,7 +573,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: alkait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -588,7 +588,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  sekeit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -615,7 +615,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -630,7 +630,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -657,7 +657,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -672,7 +672,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -699,7 +699,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -714,7 +714,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -741,7 +741,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -756,7 +756,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -783,7 +783,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -798,7 +798,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -825,7 +825,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -840,7 +840,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -867,7 +867,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -882,7 +882,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -909,7 +909,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -924,7 +924,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -951,7 +951,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -966,7 +966,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -993,7 +993,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1008,7 +1008,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1035,7 +1035,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1050,7 +1050,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1077,7 +1077,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1092,7 +1092,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1119,7 +1119,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1134,7 +1134,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1161,7 +1161,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: tomuit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1176,7 +1176,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  febiit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1203,7 +1203,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: chhait07@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1218,7 +1218,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  jomait03@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1245,7 +1245,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: wolait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1260,7 +1260,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  toscit07@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1287,7 +1287,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: papait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1302,7 +1302,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  dahait05@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1328,7 +1328,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: ropeme00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1356,7 +1356,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: makait10@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1371,7 +1371,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  roruit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1386,7 +1386,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  ciheit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1414,7 +1414,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: ullait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1429,7 +1429,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  frbait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1444,7 +1444,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  jumait03@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1470,7 +1470,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: pamuit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1498,7 +1498,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: singit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1513,7 +1513,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  ondeit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1528,7 +1528,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  hiasit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1555,7 +1555,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: clboit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1570,7 +1570,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  almait05@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1597,7 +1597,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: tojait02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1612,7 +1612,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  reduit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1639,7 +1639,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: flstit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1654,7 +1654,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  hayait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1681,7 +1681,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1696,7 +1696,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1723,7 +1723,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1738,7 +1738,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1765,7 +1765,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1780,7 +1780,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1807,7 +1807,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1822,7 +1822,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1849,7 +1849,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1864,7 +1864,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1891,7 +1891,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1906,7 +1906,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1933,7 +1933,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1948,7 +1948,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1975,7 +1975,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -1990,7 +1990,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2017,7 +2017,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2032,7 +2032,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2059,7 +2059,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2074,7 +2074,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2101,7 +2101,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2116,7 +2116,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2143,7 +2143,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail: XXXXit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -2158,7 +2158,7 @@ changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: Not configured
+mail:  YYYYit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
