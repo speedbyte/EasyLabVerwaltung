@@ -1,12 +1,14 @@
 #!/bin/bash
 
+EZSLAB_PERSONAL_TOKEN=syi79ZTx-3CpxyD1rGsM
+
 while getopts ":l:jsgvf:h" opt; do
   case $opt in
     l)
       echo "-l was triggered, Parameter: $OPTARG" >&2
       LDAP_OPTION="y"
       LDAP_PARAMETER=$OPTARG
-      if (( "fresh" != "$LDAP_PARAMETER" || "incremental" != "$LDAP_PARAMETER" )); then
+      if (( "fresh" != "$LDAP_PARAMETER" || "incremental" != "$LDAP_PARAMETER" || "gitldap" != "$LDAP_PARAMETER" )); then
       	  echo "-l expects only following two parameters: fresh or incremental. Type -h for more information. Exiting script"
 	  exit 1
       fi
@@ -33,13 +35,13 @@ while getopts ":l:jsgvf:h" opt; do
       ;;
     g)
       echo "-g was triggered, Parameter: $OPTARG" >&2
-      if [ "fresh" == "$LDAP_PARAMETER" ]; then 
+      #if [ "fresh" == "$LDAP_PARAMETER" ]; then 
           echo "git repos would be generated" >&2
           GIT_OPTION="y"
-      else
-	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
-          exit 1
-      fi
+      #else
+#	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
+#         exit 1
+#      fi
       ;;
      \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -104,8 +106,9 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=25
+	MAXREPOS=3
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
+	PREFIXREPOLIST_PYTHON=( "ezs,sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
 fi
@@ -170,6 +173,8 @@ echo
 
 function 3_prepare_gitrepos
 {
+user=ezslab
+pass="njn\$43EL"
 count=1
 type=repo
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
@@ -178,8 +183,27 @@ do
   PREFIXREPO=${PREFIXREPOLIST[$index]}
   g=$PREFIXREPO$type$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
-  echo "Creating git repo $g"
-  curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+  if [ "fresh" == "$LDAP_PARAMETER" ]; then
+  	echo "First deleting projects" 
+	curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+	wait ${!}
+  	echo
+	curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+	wait ${!}
+	echo
+  elif [ "incremental" == "$LDAP_PARAMETER" ]; then
+  	echo "Creating git repo $g"
+	curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+  	#curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
+  	wait ${!}
+	echo
+  	cd ../labtemplate/template
+  	git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/$g
+  	git push origin master
+  	cd ../../ezslab
+  fi
+#  echo "Adding users"
+#  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
 }
 
@@ -226,117 +250,12 @@ find $JENKINS/jobs -maxdepth 1 -type d  -printf '%T@ %P\n' | sort -n |  awk '/[a
 function 3_prepare_ldap
 {
 #Script to add ldap groups in the ldap 
-#python 3-prepare-ldap.py
-python << EOF > logs/log-prepare-ezs-python.log  2>&1
-#!/bin/python
-#-*- coding: utf-8 -*-
-
-import ConfigParser
-maxrepos = int('$MAXREPOS', 10)
-iterations = $ITERATIONS
-cp = ConfigParser.ConfigParser()
-authorizationfile = "$AUTHORIZATIONFILE"
-cp.read(authorizationfile)
-listofgroups_1 = []
-listofgroups_2 = []
-listofgroups_3 = []
-listofgroups_4 = []
-listofgroups_5 = []
-listofgroups_6 = []
-listofgroups_7 = []
-listofgroups_8 = []
-listofgroups_9 = []
-listofgroups_10 = []
-
-listofgroups_prefix = [ "${PREFIXREPOLIST[0]}","${PREFIXREPOLIST[1]}","${PREFIXREPOLIST[2]}","${PREFIXREPOLIST[3]}","${PREFIXREPOLIST[4]}","${PREFIXREPOLIST[5]}","${PREFIXREPOLIST[6]}","${PREFIXREPOLIST[7]}","${PREFIXREPOLIST[8]}","${PREFIXREPOLIST[9]}","${PREFIXREPOLIST[10]}"]    
-listofgroups = [ listofgroups_1, listofgroups_2, listofgroups_3, listofgroups_4, listofgroups_5, listofgroups_6,listofgroups_7, listofgroups_8, listofgroups_9, listofgroups_10 ]
-for y in range(iterations):
-	for x in range(1,maxrepos+1):
-	    listofgroups[y].append(listofgroups_prefix[y] + 'group'+ str(x))
-ldiffile = open('./ldif-prepare-ezs-ldap.ldif','w')
-ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif','w')
-
-if ('intern' in authorizationfile):
-	currentOUunit="intern"
-elif ('labor' in authorizationfile):
-	currentOUunit="labor"
-ldiffile.write( "dn: ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
-ldiffile.write( "changetype: add\n")
-ldiffile.write( "objectClass: organizationalUnit\n")
-ldiffile.write( "objectClass: top\n")
-ldiffile.write( "ou: "+currentOUunit+"\n")
-ldiffile.write('\n')
-
-for y in range(iterations):
-	for x in range(maxrepos):
-		groupname = listofgroups[y][x]
-		try:
-                	groupmembers = cp.get('groups',groupname)
-		except:
-			print "No group entry for %s found in the authorization file, Skipping....." %(groupname)
-		        continue	
-		groupmembers = groupmembers.split(',')
-		#print groupmembers
-
-	#Delete existing team groups.
-		# add the group and add group members
-		ldiffile.write( "dn: cn=" + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
-		ldiffile.write( "changetype: delete\n")
-		ldiffile.write('\n')
-	#End of delete existing team groups.
-
-		print "Creating group "+groupname + " and adding below members to the group"
-	#Create team groups.
-		ldiffile.write( "dn: cn=" + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
-		ldiffile.write( "changetype: add\n")
-		ldiffile.write( "objectClass: groupOfNames\n")
-		ldiffile.write( "objectClass: top\n")
-		ldiffile.write( "description: group of lab students\n")
-		ldiffile.write( "cn: "+ groupname + "\n")
-		for i in range(len(groupmembers)):
-	#Add members to team groups.
-			membertoadd = groupmembers[i]
-                        membertoadd = membertoadd.strip(' ')
-			if ( membertoadd != '' ):
-				ldiffile.write( "member: cn= " + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
-				print membertoadd
-			else:
-				ldiffile.write( "member: cn=dummy,ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
-				print "dummy"
-	#End of adding members to the team groups.
-		ldiffile.write('\n')
-	#End of create team groups.
-
-		for i in range(len(groupmembers)):
-			membertoadd = groupmembers[i]
-			if ( membertoadd != '' ):
-
-			#Add team group members to LDAP
-				ldiffile.write("dn: cn=" + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
-				ldiffile.write("changetype: add\n")
-				ldiffile.write("givenName: Not configured\n")
-				ldiffile.write("sn: Not configured\n")
-				ldiffile.write("userPassword: ezsiscool\n")
-				ldiffile.write("mail: " + membertoadd + "@hs-esslingen.de\n")
-				ldiffile.write("objectClass: inetOrgPerson\n")
-				ldiffile.write("objectClass: organizationalPerson\n")
-				ldiffile.write("objectClass: person\n")
-				ldiffile.write("objectClass: top\n")
-				ldiffile.write("objectClass: pwmUser\n")
-				ldiffile.write("memberof: cn= " + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
-				ldiffile.write("uid: " + membertoadd + "\n")
-				ldiffile.write("cn: " + membertoadd + "\n")
-				ldiffile.write('\n')
-			#End of add team group members to LDAP
-
-			#Modify members password to Standard Password
-				ldifmodfile.write("dn: cn=" + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
-				ldifmodfile.write("changetype: modify\n")
-				ldifmodfile.write("replace: userpassword\n")
-				ldifmodfile.write("userpassword: ezsiscool\n")
-				ldifmodfile.write('\n')
-			#End of modify members password
-EOF
+#python << EOF > logs/log-prepare-ezs-python.log  2>&1
+python ldap-python.py $ITERATIONS $MAXREPOS $AUTHORIZATIONFILE $PREFIXREPOLIST_PYTHON
+if [ "y" == "$GIT_OPTION" ]; then 
+	python gitlab-python.py
+fi
+#EOF
 }
 
 
@@ -367,10 +286,11 @@ if [ "fresh" == "$LDAP_PARAMETER" ]; then
     if [ "y" == "$JENKINS_OPTION" ]; then 
         2_prepare_jenkins; 
     fi
-    if [ "y" == "$GIT_OPTION" ]; then 
-        3_prepare_gitrepos; 
-    fi
 fi
+if [ "y" == "$GIT_OPTION" ]; then 
+    3_prepare_gitrepos; 
+fi
+
 echo "Following log-files has been generated"
 ls -lt logs/
 
