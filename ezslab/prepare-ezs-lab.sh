@@ -8,7 +8,7 @@ while getopts ":l:jsgvf:h" opt; do
       echo "-l was triggered, Parameter: $OPTARG" >&2
       LDAP_OPTION="y"
       LDAP_PARAMETER=$OPTARG
-      if (( "fresh" != "$LDAP_PARAMETER" || "incremental" != "$LDAP_PARAMETER" || "gitldap" != "$LDAP_PARAMETER" )); then
+      if (( "fresh" != "$LDAP_PARAMETER" || "incremental" != "$LDAP_PARAMETER" )); then
       	  echo "-l expects only following two parameters: fresh or incremental. Type -h for more information. Exiting script"
 	  exit 1
       fi
@@ -108,10 +108,12 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 else
 	MAXREPOS=3
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
-	PREFIXREPOLIST_PYTHON=( "ezs,sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
 fi
+
+
+#source script-config.opt
 JENKINS=/usr/share/tomcat7/.jenkins
 ADMINDIR=$(pwd)/..
 LDAP=/etc/ldap
@@ -171,7 +173,7 @@ find /var/repos/LABOR -maxdepth 1 -type d  -printf '%T@ %P\n' | sort -n |  awk '
 echo
 }
 
-function 3_prepare_gitrepos
+function 3_prepare_gitrepos_delete_repos
 {
 user=ezslab
 pass="njn\$43EL"
@@ -183,25 +185,39 @@ do
   PREFIXREPO=${PREFIXREPOLIST[$index]}
   g=$PREFIXREPO$type$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
-  if [ "fresh" == "$LDAP_PARAMETER" ]; then
-  	echo "First deleting projects" 
-	curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
-	wait ${!}
-  	echo
-	curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
-	wait ${!}
-	echo
-  elif [ "incremental" == "$LDAP_PARAMETER" ]; then
-  	echo "Creating git repo $g"
-	curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
-  	#curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
-  	wait ${!}
-	echo
-  	cd ../labtemplate/template
-  	git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/$g
-  	git push origin master
-  	cd ../../ezslab
-  fi
+  echo "deleting project $g" 
+  curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  wait ${!}
+  echo
+  curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  wait ${!}
+  echo
+  echo "Adding users"
+#  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
+done 
+}
+
+function 3_prepare_gitrepos_create_repos
+{
+user=ezslab
+pass="njn\$43EL"
+count=1
+type=repo
+for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
+do
+  index=$(($(($i-1))/$MAXREPOS))
+  PREFIXREPO=${PREFIXREPOLIST[$index]}
+  g=$PREFIXREPO$type$count
+  if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
+  echo "Creating project $g"
+  curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+  #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
+  wait ${!}
+  echo
+  cd ../labtemplate/template
+  git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/$g
+  git push origin master
+  cd ../../ezslab
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
@@ -251,10 +267,7 @@ function 3_prepare_ldap
 {
 #Script to add ldap groups in the ldap 
 #python << EOF > logs/log-prepare-ezs-python.log  2>&1
-python ldap-python.py $ITERATIONS $MAXREPOS $AUTHORIZATIONFILE $PREFIXREPOLIST_PYTHON
-if [ "y" == "$GIT_OPTION" ]; then 
-	python gitlab-python.py
-fi
+python ldap-python.py $AUTHORIZATIONFILE 
 #EOF
 }
 
@@ -277,6 +290,9 @@ if [ "$LDAP_OPTION" == "y" ]; then
 	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
         #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
         cat logs/log-prepare-ezs-python.log;
+	if [ "y" == "$GIT_OPTION" ]; then 
+		python gitlab-python.py; 
+	fi
     fi
 fi
 if [ "fresh" == "$LDAP_PARAMETER" ]; then
@@ -286,11 +302,12 @@ if [ "fresh" == "$LDAP_PARAMETER" ]; then
     if [ "y" == "$JENKINS_OPTION" ]; then 
         2_prepare_jenkins; 
     fi
+    if [ "y" == "$GIT_OPTION" ]; then 
+        3_prepare_gitrepos_delete_repos;
+	sleep 10;
+        3_prepare_gitrepos_create_repos;
+    fi
 fi
-if [ "y" == "$GIT_OPTION" ]; then 
-    3_prepare_gitrepos; 
-fi
-
 echo "Following log-files has been generated"
 ls -lt logs/
 

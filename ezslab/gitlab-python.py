@@ -25,15 +25,17 @@ print user_id
 #newproject = self.git.createproject(name)
 #list_of_all_projects = git.getprojectsall(page=2)
 list_of_all_projects = git.getprojectsall()
-print list_of_all_projects
-print len(list_of_all_projects)	
+#print list_of_all_projects
+#print len(list_of_all_projects)	
 try:
 	for y in range(10):
 		list_of_all_projects = git.getprojectsall(page=y)
 		for x in range(20):
 			project_name = list_of_all_projects[x]["name"]
 			project_id = list_of_all_projects[x]["id"]
-			print project_id, project_name
+			#print project_id, project_name
+			if ( "ezsrepo" in project_name  or  "sarepo" in project_name ):
+				print project_id, project_name
 except:
 	print "No more pages"
 	#project_id = project['id']

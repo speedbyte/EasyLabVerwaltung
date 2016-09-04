@@ -1,0 +1,9 @@
+[authorization-file-labor.opt]
+MAXREPOS = 3
+ITERATIONS = 2
+PREFIXREPOLIST = ezs,sa
+
+[authorization-file-intern.opt]
+MAXREPOS = 1
+ITERATIONS = 1
+PREFIXREPOLIST = helikopter

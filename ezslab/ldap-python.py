@@ -3,13 +3,24 @@
 
 import ConfigParser
 import sys
-maxrepos = sys.argv[2]
-maxrepos = int(maxrepos, 10)
-iterations = int(sys.argv[1], 10) # $ITERATIONS
-prefixrepolist = sys.argv[4]
+
 cp = ConfigParser.ConfigParser()
-authorizationfile = sys.argv[3] 
+cp_script = ConfigParser.ConfigParser()
+
+cp_script.read('script-config.opt')
+
+authorizationfile = sys.argv[1]
+
+maxrepos = cp_script.get(authorizationfile, 'MAXREPOS')
+maxrepos = int(maxrepos, 10)
+
+iterations = cp_script.get(authorizationfile, 'ITERATIONS')
+iterations = int(iterations, 10) # $ITERATIONS
+
+prefixrepolist = cp_script.get(authorizationfile, 'PREFIXREPOLIST')
+
 cp.read(authorizationfile)
+
 listofgroups_1 = []
 listofgroups_2 = []
 listofgroups_3 = []
@@ -20,8 +31,7 @@ listofgroups_7 = []
 listofgroups_8 = []
 listofgroups_9 = []
 listofgroups_10 = []
-print iterations, prefixrepolist, maxrepos, authorizationfile
-print "finished"
+
 listofgroups_prefix = prefixrepolist.split(',')
 listofgroups = [ listofgroups_1, listofgroups_2, listofgroups_3, listofgroups_4, listofgroups_5, listofgroups_6,listofgroups_7, listofgroups_8, listofgroups_9, listofgroups_10 ]
 for y in range(iterations):
