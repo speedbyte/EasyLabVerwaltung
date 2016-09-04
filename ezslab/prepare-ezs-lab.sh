@@ -106,7 +106,7 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=3
+	MAXREPOS=25
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
@@ -273,6 +273,19 @@ python ldap-python.py $AUTHORIZATIONFILE
 
 
 rm -f logs/*
+if [ "fresh" == "$LDAP_PARAMETER" ]; then
+    if [ "y" == "$SVN_OPTION" ]; then 
+        1_prepare_svnrepos; 
+    fi
+    if [ "y" == "$JENKINS_OPTION" ]; then 
+        2_prepare_jenkins; 
+    fi
+    if [ "y" == "$GIT_OPTION" ]; then 
+        3_prepare_gitrepos_delete_repos;
+	sleep 10;
+        3_prepare_gitrepos_create_repos;
+    fi
+fi
 if [ "$LDAP_OPTION" == "y" ]; then 
     echo "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt."; 
     3_prepare_ldap
@@ -288,24 +301,8 @@ if [ "$LDAP_OPTION" == "y" ]; then
         cat logs/log-prepare-ezs-python.log;
     elif [ "incremental" == "$LDAP_PARAMETER" ]; then
 	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
-        #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
-        cat logs/log-prepare-ezs-python.log;
-	if [ "y" == "$GIT_OPTION" ]; then 
-		python gitlab-python.py; 
-	fi
-    fi
-fi
-if [ "fresh" == "$LDAP_PARAMETER" ]; then
-    if [ "y" == "$SVN_OPTION" ]; then 
-        1_prepare_svnrepos; 
-    fi
-    if [ "y" == "$JENKINS_OPTION" ]; then 
-        2_prepare_jenkins; 
-    fi
-    if [ "y" == "$GIT_OPTION" ]; then 
-        3_prepare_gitrepos_delete_repos;
-	sleep 10;
-        3_prepare_gitrepos_create_repos;
+	#ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+	cat logs/log-prepare-ezs-python.log;
     fi
 fi
 echo "Following log-files has been generated"

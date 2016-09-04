@@ -28,6 +28,241 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
+dn: cn=wolait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= toscit07,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=papait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= dahait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=ropeme00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= anvait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=makait10,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= roruit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= ciheit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=ullait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= frbait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= lugait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=pamuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= jumait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= ondeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= hiasit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=clboit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= almait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=tojait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= reduit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=alkait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
 dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
@@ -54,6 +289,231 @@ replace: userpassword
 userpassword: ezsiscool
 
 dn: cn= jomait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=wolait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= toscit07,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=papait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= dahait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=ropeme00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=makait10,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= roruit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= ciheit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=ullait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= frbait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= jumait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=pamuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= ondeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= hiasit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=clboit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= almait05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=tojait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= reduit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=flstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= hayait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=ZZZZit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= YYYYit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool

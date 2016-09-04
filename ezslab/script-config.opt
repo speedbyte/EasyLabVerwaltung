@@ -1,5 +1,5 @@
 [authorization-file-labor.opt]
-MAXREPOS = 3
+MAXREPOS = 25 
 ITERATIONS = 2
 PREFIXREPOLIST = ezs,sa
 

@@ -1,6 +1,9 @@
 #!/bin/python
 #-*- coding: utf-8 -*-
-
+import gitlab
+import os
+import random
+import string
 import ConfigParser
 import sys
 
@@ -32,11 +35,27 @@ listofgroups_8 = []
 listofgroups_9 = []
 listofgroups_10 = []
 
+listofprojects_1 = []
+listofprojects_2 = []
+listofprojects_3 = []
+listofprojects_4 = []
+listofprojects_5 = []
+listofprojects_6 = []
+listofprojects_7 = []
+listofprojects_8 = []
+listofprojects_9 = []
+listofprojects_10 = []
+
 listofgroups_prefix = prefixrepolist.split(',')
+listofprojects_prefix = prefixrepolist.split(',')
 listofgroups = [ listofgroups_1, listofgroups_2, listofgroups_3, listofgroups_4, listofgroups_5, listofgroups_6,listofgroups_7, listofgroups_8, listofgroups_9, listofgroups_10 ]
+listofprojects = [ listofprojects_1, listofprojects_2, listofprojects_3, listofprojects_4, listofprojects_5, listofprojects_6,listofprojects_7, listofprojects_8, listofprojects_9, listofprojects_10 ]
+
 for y in range(iterations):
 	for x in range(1,maxrepos+1):
 	    listofgroups[y].append(listofgroups_prefix[y] + 'group'+ str(x))
+	    listofprojects[y].append(listofprojects_prefix[y] + 'repo'+ str(x))
+
 ldiffile = open('./ldif-prepare-ezs-ldap.ldif','w')
 ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif','w')
 
@@ -51,9 +70,13 @@ ldiffile.write( "objectClass: top\n")
 ldiffile.write( "ou: "+currentOUunit+"\n")
 ldiffile.write('\n')
 
+
+git = gitlab.Gitlab( 'https://wwwitrt3.hs-esslingen.de:8443', 'syi79ZTx-3CpxyD1rGsM')
+
 for y in range(iterations):
 	for x in range(maxrepos):
 		groupname = listofgroups[y][x]
+		reponame = listofprojects[y][x]
 		try:
                 	groupmembers = cp.get('groups',groupname)
 		except:
@@ -77,6 +100,12 @@ for y in range(iterations):
 		ldiffile.write( "objectClass: top\n")
 		ldiffile.write( "description: group of lab students\n")
 		ldiffile.write( "cn: "+ groupname + "\n")
+		projectfound = git.projects.get('LaborAufgaben/'+reponame)
+		print "project found " , projectfound.id
+		members = projectfound.members.list()
+		if ( len(members) > 0 ):
+			for number_of_members in range(len(members)) :
+				members[number_of_members].delete()	
 		for i in range(len(groupmembers)):
 	#Add members to team groups.
 			membertoadd = groupmembers[i]
@@ -84,6 +113,20 @@ for y in range(iterations):
 			if ( membertoadd != '' ):
 				ldiffile.write( "member: cn= " + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 				print membertoadd
+				memberfound = git.users.list(username=membertoadd)
+				print "userfound" , memberfound
+				if (len(memberfound) > 0 ):
+					user = memberfound[0]
+					user_id = user.id
+				else:
+					print "Creating new member in GITLAB", membertoadd
+					user = git.users.create({'email': membertoadd+'@hs-esslingen.de',
+								'password': 'ezsiscool',
+								'username': membertoadd,
+								'name': membertoadd})
+					user_id = user.id
+				print user_id
+				member = projectfound.members.create({'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})	
 			else:
 				ldiffile.write( "member: cn=dummy,ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 				print "dummy"
