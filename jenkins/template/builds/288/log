@@ -2,7 +2,7 @@ Started by timer
 Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
 Checking out a fresh workspace because there's no workspace at /var/lib/jenkins_via_tomcat/jobs/template/workspace
 Cleaning local Directory .
-Checking out file:///var/repos/LABOR/templaterepo at revision '2016-07-27T20:18:26.172 +0200'
+Checking out file:///var/repos/LABOR/templaterepo at revision '2016-09-03T18:18:25.143 +0200'
 ERROR: Failed to check out file:///var/repos/LABOR/templaterepo
 [8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0morg.tmatesoft.svn.core.SVNException: svn: E180001: Unable to open an ra_local session to URL
 svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
@@ -32,15 +32,15 @@ svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
 	at hudson.FilePath.act(FilePath.java:996)
 	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:894)
 	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:830)
-	at hudson.scm.SCM.checkout(SCM.java:485)
-	at hudson.model.AbstractProject.checkout(AbstractProject.java:1269)
+	at hudson.scm.SCM.checkout(SCM.java:495)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1278)
 	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
 	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
 	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
-	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.Run.execute(Run.java:1720)
 	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
 	at hudson.model.ResourceController.execute(ResourceController.java:98)
-	at hudson.model.Executor.run(Executor.java:410)
+	at hudson.model.Executor.run(Executor.java:404)
 java.io.IOException: Failed to check out file:///var/repos/LABOR/templaterepo
 	at hudson.scm.subversion.CheckoutUpdater$1.perform(CheckoutUpdater.java:130)
 	at hudson.scm.subversion.WorkspaceUpdater$UpdateTask.delegateTo(WorkspaceUpdater.java:162)
@@ -54,15 +54,15 @@ java.io.IOException: Failed to check out file:///var/repos/LABOR/templaterepo
 	at hudson.FilePath.act(FilePath.java:996)
 	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:894)
 	at hudson.scm.SubversionSCM.checkout(SubversionSCM.java:830)
-	at hudson.scm.SCM.checkout(SCM.java:485)
-	at hudson.model.AbstractProject.checkout(AbstractProject.java:1269)
+	at hudson.scm.SCM.checkout(SCM.java:495)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1278)
 	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
 	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
 	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
-	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.Run.execute(Run.java:1720)
 	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
 	at hudson.model.ResourceController.execute(ResourceController.java:98)
-	at hudson.model.Executor.run(Executor.java:410)
+	at hudson.model.Executor.run(Executor.java:404)
 Caused by: org.tmatesoft.svn.core.SVNException: svn: E180001: Unable to open an ra_local session to URL
 svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'
 svn: E180001: Unable to open repository 'file:///var/repos/LABOR/templaterepo'

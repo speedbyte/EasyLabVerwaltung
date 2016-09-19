@@ -1,0 +1,28 @@
+Started by user [8mha:AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyOEgY+/dLi1CL9ssT0osTyxBwAUy1zOMMAAAA=[0mvagrawal
+Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
+Cloning the remote Git repository
+Cloning repository git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git
+ > git init /usr/share/tomcat7/.jenkins/jobs/template/workspace # timeout=10
+Fetching upstream changes from git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git # timeout=10
+Fetching upstream changes from git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/template.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision a2615ce5bd9cfff25d8f51f809e6450e3845a13d (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a2615ce5bd9cfff25d8f51f809e6450e3845a13d
+First time build. Skipping changelog.
+[workspace] $ /bin/bash -xe /tmp/tomcat7-tomcat7-tmp/hudson414022527979073746.sh
++ bash -ex validatebuild.sh
++ cd lab-template/Ampel/Template/IDE-Host/AmpelMake
+validatebuild.sh: line 2: cd: lab-template/Ampel/Template/IDE-Host/AmpelMake: No such file or directory
+Build step 'Execute shell' marked build as failure
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: FAILURE
