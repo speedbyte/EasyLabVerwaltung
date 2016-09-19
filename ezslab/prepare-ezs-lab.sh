@@ -232,6 +232,7 @@ SJENKINSGROUP=tomcat7
 
 rm -rf $ADMINDIR/jenkins/template/*>>logs/lab-jenkins.log
 mv $do_verbose $JENKINS/jobs/template/* $ADMINDIR/jenkins/template/>>logs/lab-jenkins.log
+chown -R $(whoami):$(whoami) $ADMINDIR/jenkins/template/ 
 echo "Do you want a backup of the Jenkins jobs (Y/N)"
 read ANSWER
 if [ "ANSWER" == "Y" ]; then
