@@ -1,3 +1,3 @@
-[submodule "examplerepo"]
-	path = examplerepo
-	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/examplerepo.git
+[submodule "examples-repo"]
+	path = examples-repo
+	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/examples-repo.git
