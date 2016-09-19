@@ -1,0 +1,323 @@
+*** EVALUATION ***
+ANSI-C/cC++ Compiler for HC12 V-5.0.40 Build 10020, Jan 21 2010
+
+    1:  /* 
+    2:   * A primitive CAN driver for the Dragon 12 board.
+    3:   *
+    4:   * Author: Joerg Friedrich
+    5:   * Copyright: HS Esslingen, November 20122
+    6:   *
+    7:   * License: Gnu Lesser Public License (LGPL)
+    8:   *
+    9:   * $Id:$
+   10:   * $Rev:$
+   11:   *
+   12:   */
+   13:   
+   14:  #include <hidef.h>      	/* common defines and macros */
+   15:  #include <mc9s12dp256.h>	/* derivative information */
+   16:  
+   17:   
+   18:  static unsigned char rdata[8];   /* for data received */
+   19:  static unsigned char rid[4];
+   20:  static unsigned char rdataLength;
+   21:  static unsigned char newCANMessage = 0; 
+   22:   
+   23:  interrupt 38 void CAN0_RECInterruptHandler(void) {
+*** EVALUATION ***
+
+Function: CAN0_RECInterruptHandler
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\candriver.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\candriver.c.o -WmsgSd1106
+
+   24:  
+   25:  	if (CAN0RFLG_RXF==1) {
+  0000 1f0000015b   [5]     BRCLR _CAN0RFLG,#1,*+96 ;abs = 0060
+   26:  	    
+   27:  	  rdata[0] = CAN0RXDSR0;
+  0005 f60000       [3]     LDAB  _CAN0RXDSR0
+  0008 7b0000       [3]     STAB  rdata
+   28:  	  rdata[1] = CAN0RXDSR0;
+  000b f60000       [3]     LDAB  _CAN0RXDSR0
+  000e 7b0000       [3]     STAB  rdata:1
+   29:  	  rdata[2] = CAN0RXDSR0;
+  0011 f60000       [3]     LDAB  _CAN0RXDSR0
+  0014 7b0000       [3]     STAB  rdata:2
+   30:  	  rdata[3] = CAN0RXDSR0;
+  0017 f60000       [3]     LDAB  _CAN0RXDSR0
+  001a 7b0000       [3]     STAB  rdata:3
+   31:  	  rdata[4] = CAN0RXDSR0;
+  001d f60000       [3]     LDAB  _CAN0RXDSR0
+  0020 7b0000       [3]     STAB  rdata:4
+   32:  	  rdata[5] = CAN0RXDSR0;
+  0023 f60000       [3]     LDAB  _CAN0RXDSR0
+  0026 7b0000       [3]     STAB  rdata:5
+   33:  	  rdata[6] = CAN0RXDSR0;
+  0029 f60000       [3]     LDAB  _CAN0RXDSR0
+  002c 7b0000       [3]     STAB  rdata:6
+   34:  	  rdata[7] = CAN0RXDSR0;
+  002f f60000       [3]     LDAB  _CAN0RXDSR0
+  0032 7b0000       [3]     STAB  rdata:7
+   35:   	
+   36:  	  rdataLength = CAN0RXDLR;
+  0035 f60000       [3]     LDAB  _CAN0RXDLR
+  0038 7b0000       [3]     STAB  rdataLength
+   37:  	
+   38:  	  rid[0] = CAN0RXIDR0;
+  003b f60000       [3]     LDAB  _CAN0RXIDR0
+  003e 7b0000       [3]     STAB  rid
+   39:  	  rid[1] = CAN0RXIDR1;
+  0041 f60000       [3]     LDAB  _CAN0RXIDR1
+  0044 7b0000       [3]     STAB  rid:1
+   40:  	  rid[2] = CAN0RXIDR2;
+  0047 f60000       [3]     LDAB  _CAN0RXIDR2
+  004a 7b0000       [3]     STAB  rid:2
+   41:  	  rid[3] = CAN0RXIDR3;
+  004d f60000       [3]     LDAB  _CAN0RXIDR3
+  0050 7b0000       [3]     STAB  rid:3
+   42:  	
+   43:  	  CAN0RFLG_RXF = 1;    /* release receive buffer */
+  0053 1c000001     [4]     BSET  _CAN0RFLG,#1
+   44:      CAN0CTL0_RXFRM = 0;  /* clear received frame flag */
+  0057 1d000080     [4]     BCLR  _CAN0CTL0,#128
+   45:      newCANMessage = 1;
+  005b c601         [1]     LDAB  #1
+  005d 7b0000       [3]     STAB  newCANMessage
+   46:  	}
+   47:  }
+  0060 0b           [8]     RTI   
+   48:  
+   49:  
+   50:  void initCAN(void) 
+   51:  {
+*** EVALUATION ***
+
+Function: initCAN
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\candriver.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\candriver.c.o -WmsgSd1106
+
+   52:    asm sei                  /* make atomic       */
+  0000 1410         [1]     SEI   
+   53:    CAN0CTL1_CANE = 1;		   /* enable msCAN      */
+  0002 1c000080     [4]     BSET  _CAN0CTL1,#128
+   54:  
+   55:    CAN0CTL0_INITRQ = 1;    /* Start CAN Init Mode  */
+  0006 1c000001     [4]     BSET  _CAN0CTL0,#1
+   56:    
+   57:    while (CAN0CTL1_INITAK==0) {
+  000a 1f000001fb   [5]     BRCLR _CAN0CTL1,#1,*+0 ;abs = 000a
+   58:       /* wait for initialization to complete */    
+   59:    }
+   60:    
+   61:    CAN0CTL1_LISTEN = 0;    /* LISTEN=0, get out of Listen-only mode   */
+  000f 1d000010     [4]     BCLR  _CAN0CTL1,#16
+   62:    CAN0CTL1_CLKSRC = 0;    /* CLKSRC=0, use oscillator clock          */
+  0013 1d000040     [4]     BCLR  _CAN0CTL1,#64
+   63:    CAN0IDAC = 0x10;        /* four 16 bit filters, which we are not using anyways  */
+  0017 ccff10       [2]     LDD   #65296
+  001a 7b0000       [3]     STAB  _CAN0IDAC
+   64:  
+   65:    CAN0IDMR0 = 0xFF;       /* Ignore all acceptance register bits     */
+  001d 7a0000       [3]     STAA  _CAN0IDMR0
+   66:    CAN0IDMR1 = 0xFF;       /* ...  */
+  0020 7a0000       [3]     STAA  _CAN0IDMR1
+   67:    CAN0IDMR2 = 0xFF;
+  0023 7a0000       [3]     STAA  _CAN0IDMR2
+   68:    CAN0IDMR3 = 0xFF;
+  0026 7a0000       [3]     STAA  _CAN0IDMR3
+   69:    CAN0IDMR4 = 0xFF;
+  0029 7a0000       [3]     STAA  _CAN0IDMR4
+   70:    CAN0IDMR5 = 0xFF;
+  002c 7a0000       [3]     STAA  _CAN0IDMR5
+   71:    CAN0IDMR6 = 0xFF;
+  002f 7a0000       [3]     STAA  _CAN0IDMR6
+   72:    CAN0IDMR7 = 0xFF;
+  0032 7a0000       [3]     STAA  _CAN0IDMR7
+   73:  
+   74:    CAN0BTR0  = 0xC1;
+  0035 c6c1         [1]     LDAB  #193
+  0037 7b0000       [3]     STAB  _CAN0BTR0
+   75:    CAN0BTR1  = 0x49;
+  003a c649         [1]     LDAB  #73
+  003c 7b0000       [3]     STAB  _CAN0BTR1
+   76:  
+   77:    CAN0CTL0_INITRQ = 0;     /* INITRQ=0, Leave Initialization mode */
+  003f 1d000001     [4]     BCLR  _CAN0CTL0,#1
+   78:    
+   79:    while(CAN0CTL1_INITAK==1) {
+  0043 1e000001fb   [5]     BRSET _CAN0CTL1,#1,*+0 ;abs = 0043
+   80:                             /* wait for end of initialization      */
+   81:  	};   
+   82:    CAN0RIER |= 0x01;        /* Arm RxF, interrupt on  */
+  0048 1c000001     [4]     BSET  _CAN0RIER,#1
+   83:    asm cli;                 /* leave atomic mode */
+  004c 10ef         [1]     CLI   
+   84:    return;
+   85:  }
+  004e 3d           [5]     RTS   
+   86:  
+   87:  
+   88:  
+   89:  
+   90:  int writeCAN(unsigned char* id, unsigned char* data, unsigned char plength) 
+   91:  {
+*** EVALUATION ***
+
+Function: writeCAN
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\candriver.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\candriver.c.o -WmsgSd1106
+
+  0000 37           [2]     PSHB  
+   92:  	if (plength > 7) {
+  0001 c107         [1]     CMPB  #7
+  0003 2207         [3/1]   BHI   *+9 ;abs = 000c
+   93:  	  return -1;
+   94:  	}
+   95:  	
+   96:  	if ((CAN0TFLG & 0x07)==0) {
+  0005 1f00000702   [5]     BRCLR _CAN0TFLG,#7,*+7 ;abs = 000c
+  000a 2005         [3]     BRA   *+7 ;abs = 0011
+   97:  	  return -1;
+  000c ccffff       [2]     LDD   #65535
+  000f 205d         [3]     BRA   *+95 ;abs = 006e
+   98:  	}
+   99:  	
+  100:  	CAN0TBSEL_TX0=1;		
+  0011 1c000001     [4]     BSET  _CAN0TBSEL,#1
+  101:  	
+  102:  	if (CAN0TBSEL_TX0==1) {
+  0015 1f00000105   [5]     BRCLR _CAN0TBSEL,#1,*+10 ;abs = 001f
+  103:  	 	  CAN0TBSEL=0x01;		   /* Select transmit buffer 1 */
+  001a c601         [1]     LDAB  #1
+  001c 7b0000       [3]     STAB  _CAN0TBSEL
+  104:  	}
+  105:  	
+  106:  	CAN0TXIDR0 = id[0];	     /*                          */
+  001f ee85         [3]     LDX   5,SP
+  0021 e600         [3]     LDAB  0,X
+  0023 7b0000       [3]     STAB  _CAN0TXIDR0
+  107:  	CAN0TXIDR1 = id[1];
+  0026 e601         [3]     LDAB  1,X
+  0028 7b0000       [3]     STAB  _CAN0TXIDR1
+  108:  	CAN0TXIDR2 = id[2];
+  002b e602         [3]     LDAB  2,X
+  002d 7b0000       [3]     STAB  _CAN0TXIDR2
+  109:  	CAN0TXIDR3 = id[3];
+  0030 e603         [3]     LDAB  3,X
+  0032 7b0000       [3]     STAB  _CAN0TXIDR3
+  110:  	
+  111:  	CAN0TXDSR0 = data[0];	  /* always write 8 byte */
+  0035 ee83         [3]     LDX   3,SP
+  0037 e600         [3]     LDAB  0,X
+  0039 7b0000       [3]     STAB  _CAN0TXDSR0
+  112:  	CAN0TXDSR1 = data[1];   /* may write nonsense but no problem! */
+  003c e601         [3]     LDAB  1,X
+  003e 7b0000       [3]     STAB  _CAN0TXDSR1
+  113:  	CAN0TXDSR2 = data[2];
+  0041 e602         [3]     LDAB  2,X
+  0043 7b0000       [3]     STAB  _CAN0TXDSR2
+  114:  	CAN0TXDSR3 = data[3];
+  0046 e603         [3]     LDAB  3,X
+  0048 7b0000       [3]     STAB  _CAN0TXDSR3
+  115:  	CAN0TXDSR4 = data[4];
+  004b e604         [3]     LDAB  4,X
+  004d 7b0000       [3]     STAB  _CAN0TXDSR4
+  116:  	CAN0TXDSR5 = data[5];
+  0050 e605         [3]     LDAB  5,X
+  0052 7b0000       [3]     STAB  _CAN0TXDSR5
+  117:  	CAN0TXDSR6 = data[6];
+  0055 e606         [3]     LDAB  6,X
+  0057 7b0000       [3]     STAB  _CAN0TXDSR6
+  118:  	CAN0TXDSR7 = data[7];
+  005a e607         [3]     LDAB  7,X
+  005c 7b0000       [3]     STAB  _CAN0TXDSR7
+  119:  	CAN0TXDLR = plength;		/* Data length register	*/
+  005f e680         [3]     LDAB  0,SP
+  0061 7b0000       [3]     STAB  _CAN0TXDLR
+  120:  	CAN0TXTBPR = 0;			
+  0064 790000       [3]     CLR   _CAN0TXTBPR
+  121:  	CAN0TFLG = 0x01;		    /* Set transmit flag */
+  0067 c601         [1]     LDAB  #1
+  0069 7b0000       [3]     STAB  _CAN0TFLG
+  122:  	return 0;	
+  006c c7           [1]     CLRB  
+  006d 87           [1]     CLRA  
+  123:  }
+  006e 1b81         [2]     LEAS  1,SP
+  0070 3d           [5]     RTS   
+  124:    
+  125:  
+  126:    
+  127:  int readCAN(unsigned char* id, unsigned char* data, unsigned char *plength)
+  128:  {
+*** EVALUATION ***
+
+Function: readCAN
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\candriver.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\candriver.c.o -WmsgSd1106
+
+  0000 6cad         [2]     STD   3,-SP
+  129:     char i = 0;
+  0002 6982         [2]     CLR   2,SP
+  130:     
+  131:     if (!newCANMessage) {
+  0004 f60000       [3]     LDAB  newCANMessage
+  0007 2605         [3/1]   BNE   *+7 ;abs = 000e
+  132:       return -1;
+  0009 ccffff       [2]     LDD   #65535
+  000c 204b         [3]     BRA   *+77 ;abs = 0059
+  133:     }
+  134:     
+  135:     newCANMessage = 0;
+  000e 790000       [3]     CLR   newCANMessage
+  136:     
+  137:     while (i < rdataLength && i < *plength) {
+  0011 2012         [3]     BRA   *+20 ;abs = 0025
+  138:       data[i] = rdata[i];
+  0013 e682         [3]     LDAB  2,SP
+  0015 b714         [1]     SEX   B,D
+  0017 b745         [1]     TFR   D,X
+  0019 e385         [3]     ADDD  5,SP
+  001b b746         [1]     TFR   D,Y
+  001d e6e20000     [4]     LDAB  rdata,X
+  0021 6b40         [2]     STAB  0,Y
+  139:       ++i;
+  0023 6282         [3]     INC   2,SP
+  0025 e682         [3]     LDAB  2,SP
+  0027 b715         [1]     SEX   B,X
+  0029 f60000       [3]     LDAB  rdataLength
+  002c 87           [1]     CLRA  
+  002d 3b           [2]     PSHD  
+  002e aeb1         [3]     CPX   2,SP+
+  0030 2c09         [3/1]   BGE   *+11 ;abs = 003b
+  0032 ed80         [3]     LDY   0,SP
+  0034 e640         [3]     LDAB  0,Y
+  0036 3b           [2]     PSHD  
+  0037 aeb1         [3]     CPX   2,SP+
+  0039 2dd8         [3/1]   BLT   *-38 ;abs = 0013
+  140:     }
+  141:     
+  142:     *plength = rdataLength;
+  003b ee80         [3]     LDX   0,SP
+  003d f60000       [3]     LDAB  rdataLength
+  0040 6b00         [2]     STAB  0,X
+  143:     id[0] = rid[0];
+  0042 ee87         [3]     LDX   7,SP
+  0044 f60000       [3]     LDAB  rid
+  0047 6b00         [2]     STAB  0,X
+  144:     id[1] = rid[1];
+  0049 f60000       [3]     LDAB  rid:1
+  004c 6b01         [2]     STAB  1,X
+  145:     id[2] = rid[2];
+  004e f60000       [3]     LDAB  rid:2
+  0051 6b02         [2]     STAB  2,X
+  146:     id[3] = rid[3];
+  0053 f60000       [3]     LDAB  rid:3
+  0056 6b03         [2]     STAB  3,X
+  147:     return 0; 
+  0058 c7           [1]     CLRB  
+  148:  }
+  0059 1b83         [2]     LEAS  3,SP
+  005b 3d           [5]     RTS   
+  149:  
+  150:  	

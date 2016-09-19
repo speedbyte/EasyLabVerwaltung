@@ -1,0 +1,46 @@
+/*****************************************************************************/
+/*                                             COPYRIGHT (c) MOTOROLA 2003   */
+/* FILE NAME: _MC9S12Dx256_FLAT.PRM                                          */
+/*                                                                           */
+/* PURPOSE: Example Linker file for building a non-banked Flash target.      */
+/*                                                                           */
+/* TARGET DEVICE: 68HC912Dx256                                               */
+/*                                                                           */
+/* COMPILER:    Metrowerks                                                   */
+/*                                                                           */
+/* DESCRIPTION: Linker Parameter file for Metrowerks Code Warrior.           */
+/*                                                                           */
+/*     			                                                     */
+/* AUTHOR: r32151               LOCATION: EKB      LAST EDIT DATE: 03.11.03  */
+/*                                                                           */
+/*****************************************************************************/
+
+NAMES 
+END
+
+SECTIONS  
+    RAM      = READ_WRITE 0x1000 TO 0x3FFF;      /*  12K */
+    EEPROM   = NO_INIT    0x0400 TO 0x0FFF       /*  3K - first 1K hidden under registers */
+	       ALIGN 2 [<= 2: 2] [>2: 4];        /*  default alignment = 2 */
+                                                 /*  char & int assigned to x2 boundary */
+                                                 /*  elements > 3 bytes to x4 boundary */
+                                                 /*  < 100% use of EEPROM if byte data used */      
+   
+    /* unbanked FLASH ROM */
+    ROM_4000 = READ_ONLY  0x4000 TO 0x7FFF;      /*  16K */
+    ROM_C000 = READ_ONLY  0xC000 TO 0xFEFF;      /* ~16K */
+END
+
+
+PLACEMENT
+    _PRESTART, STARTUP,
+    ROM_VAR, STRINGS,
+    NON_BANKED, DEFAULT_ROM,
+    COPY                    INTO  ROM_4000, ROM_C000; 
+    DEFAULT_RAM             INTO  RAM;
+    EEPROM_DATA             INTO  EEPROM;
+END
+
+STACKSIZE 0x0400                                 /*  1K bytes = 1/12 of RAM */
+
+VECTOR   0    _Startup                          /* vector 0x00 (RESET) */

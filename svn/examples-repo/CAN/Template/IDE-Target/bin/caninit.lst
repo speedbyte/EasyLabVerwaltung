@@ -1,0 +1,168 @@
+ANSI-C/cC++ Compiler for HC12 V-5.0.24 Build 4047, Feb 17 2004
+
+    1:  #include <hidef.h>      /* common defines and macros */
+    2:  
+    3:  #include <mc9s12dp256.h>     /* derivative information */
+    4:  
+    5:  
+    6:  __interrupt void CANREC(void) 
+    7:    { 
+
+Function: CANREC
+Source  : Z:\CANPRUEBA03-01-2006\can\Sources\caninit.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=Z:\CANPRUEBA03-01-2006\can;Z:\CANPRUEBA03-01-2006\can\bin;Z:\CANPRUEBA03-01-2006\can\prm;Z:\CANPRUEBA03-01-2006\can\cmd;Z:\CANPRUEBA03-01-2006\can\Sources;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\lib;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\src;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -EnvOBJPATH=Z:\CANPRUEBA03-01-2006\can\bin -EnvTEXTPATH=Z:\CANPRUEBA03-01-2006\can\bin -Lasm=%n.lst -Ms -ObjN=Z:\CANPRUEBA03-01-2006\can\can_Data\Monitor\ObjectCode\caninit.c.o -WmsgSd1106
+
+    8:    PORTB=PORTB||0x80;   
+  0000 d600         LDAB  _PORTAB:1
+  0002 c601         LDAB  #1
+  0004 5b00         STAB  _PORTAB:1
+    9:    }
+  0006 0b           RTI   
+   10:  
+   11:  
+   12:  void CANInit (void) 
+   13:    {
+
+Function: CANInit
+Source  : Z:\CANPRUEBA03-01-2006\can\Sources\caninit.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=Z:\CANPRUEBA03-01-2006\can;Z:\CANPRUEBA03-01-2006\can\bin;Z:\CANPRUEBA03-01-2006\can\prm;Z:\CANPRUEBA03-01-2006\can\cmd;Z:\CANPRUEBA03-01-2006\can\Sources;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\lib;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\src;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -EnvOBJPATH=Z:\CANPRUEBA03-01-2006\can\bin -EnvTEXTPATH=Z:\CANPRUEBA03-01-2006\can\bin -Lasm=%n.lst -Ms -ObjN=Z:\CANPRUEBA03-01-2006\can\can_Data\Monitor\ObjectCode\caninit.c.o -WmsgSd1106
+
+   14:    asm sei // make atomiC
+  0000 1410         SEI   
+   15:    CAN0CTL1_CANE = 1;		//Enable msCAN
+  0002 1c000080     BSET  _CAN0CTL1,#128
+   16:    CAN0CTL0_SLPRQ = 1;   //go to sleep first
+  0006 1c000002     BSET  _CAN0CTL0,#2
+   17:    while (CAN0CTL1_SLPAK==0)
+  000a 1f000002fb   BRCLR _CAN0CTL1,#2,*+0 ;abs = 000a
+   18:       {
+   19:       }
+   20:    CAN0CTL0_SLPRQ=0;
+  000f 1d000002     BCLR  _CAN0CTL0,#2
+   21:    CAN0CTL0_INITRQ = 1;  //Start CAN Init Mode
+  0013 1c000001     BSET  _CAN0CTL0,#1
+   22:    while (CAN0CTL1_INITAK==0) 
+  0017 1f000001fb   BRCLR _CAN0CTL1,#1,*+0 ;abs = 0017
+   23:      {
+   24:      }
+   25:    CAN0CTL1_LISTEN = 0;   // LISTEN=0, get out of Listen-only mode
+  001c 1d000010     BCLR  _CAN0CTL1,#16
+   26:    CAN0CTL1_CLKSRC = 0;    // CLKSRC=0, use oscillator clock
+  0020 1d000040     BCLR  _CAN0CTL1,#64
+   27:    CAN0IDAC = 0x10; //FOUR  16-BIT FILTERS
+  0024 c610         LDAB  #16
+  0026 7b0000       STAB  _CAN0IDAC
+   28:    CAN0IDMR0 = 0xFF;
+  0029 86ff         LDAA  #255
+  002b 7a0000       STAA  _CAN0IDMR0
+   29:    CAN0IDMR1 = 0xFF;
+  002e 7a0000       STAA  _CAN0IDMR1
+   30:    CAN0IDMR2 = 0xFF;
+  0031 7a0000       STAA  _CAN0IDMR2
+   31:    CAN0IDMR3 = 0xFF;
+  0034 7a0000       STAA  _CAN0IDMR3
+   32:    CAN0IDMR4 = 0xFF;
+  0037 7a0000       STAA  _CAN0IDMR4
+   33:    CAN0IDMR5 = 0xFF;
+  003a 7a0000       STAA  _CAN0IDMR5
+   34:    CAN0IDMR6 = 0xFF;
+  003d 7a0000       STAA  _CAN0IDMR6
+   35:    CAN0IDMR7 = 0xFF;
+  0040 7a0000       STAA  _CAN0IDMR7
+   36:    CAN0BTR0=0xC7;
+  0043 c6c7         LDAB  #199
+  0045 7b0000       STAB  _CAN0BTR0
+   37:    CAN0BTR1=0x49;
+  0048 c649         LDAB  #73
+  004a 7b0000       STAB  _CAN0BTR1
+   38:    CAN0CTL0_INITRQ = 0; // INITRQ=0, Leave Initialization mode
+  004d 1d000001     BCLR  _CAN0CTL0,#1
+   39:    while(CAN0CTL1_INITAK==1){}; // wait for the end of initialization
+  0051 1e000001fb   BRSET _CAN0CTL1,#1,*+0 ;abs = 0051
+   40:    CAN0RIER |= 0x01; // Arm RxF, interrupt on  
+  0056 1c000001     BSET  _CAN0RIER,#1
+   41:    PORTB=5;
+  005a c605         LDAB  #5
+  005c 5b00         STAB  _PORTAB:1
+   42:    asm cli;
+  005e 10ef         CLI   
+   43:    return;
+   44:    }
+  0060 3d           RTS   
+   45:    
+   46:    
+   47:    
+   48:  void CANSend(char dato) 
+   49:    {
+
+Function: CANSend
+Source  : Z:\CANPRUEBA03-01-2006\can\Sources\caninit.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=Z:\CANPRUEBA03-01-2006\can;Z:\CANPRUEBA03-01-2006\can\bin;Z:\CANPRUEBA03-01-2006\can\prm;Z:\CANPRUEBA03-01-2006\can\cmd;Z:\CANPRUEBA03-01-2006\can\Sources;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\lib;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\src;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -EnvOBJPATH=Z:\CANPRUEBA03-01-2006\can\bin -EnvTEXTPATH=Z:\CANPRUEBA03-01-2006\can\bin -Lasm=%n.lst -Ms -ObjN=Z:\CANPRUEBA03-01-2006\can\can_Data\Monitor\ObjectCode\caninit.c.o -WmsgSd1106
+
+  0000 37           PSHB  
+   50:    /*
+   51:    char *pt=(char*)&_CAN0TXDSR0; // points to transmit message buffer
+   52:    while((CAN0TFLG&0x07))
+   53:          {
+   54:          } // Wait for transmit buffer available
+   55:    CAN0TBSEL = 0x01;// CAN0TFLG; // Request selection of empty transmit buf
+   56:    CAN0TXIDR0 = id>>3; // Write Identifier into ID registers
+   57:    CAN0TXIDR1 = id<<5; // with RTR and IDE=0
+   58:    CAN0TXDLR = length; // 0 to 8 bytes
+   59:    while(length)
+   60:      {
+   61:      *pt++ = *data++; // copy data into data registers
+   62:      length--;
+   63:      }
+   64:    CAN0TXTBPR = priority; // set priority of this message
+   65:    CAN0TFLG = CAN0TBSEL; // flag buffer as ready for transmission
+   66:    							*/
+   67:  CAN0TBSEL_TX0=1;
+  0001 1c000001     BSET  _CAN0TBSEL,#1
+   68:  
+   69:  CAN0TBSEL=0x01;
+  0005 c601         LDAB  #1
+  0007 7b0000       STAB  _CAN0TBSEL
+   70:  //Can0.cantbsel.byte = 0x01; //TX0 Buffer in Foreground
+   71:  CAN0TXIDR0 = 0x01;
+  000a 7b0000       STAB  _CAN0TXIDR0
+   72:  CAN0TXIDR1 = 0x01;
+  000d 7b0000       STAB  _CAN0TXIDR1
+   73:  CAN0TXIDR2 = 0x01;
+  0010 7b0000       STAB  _CAN0TXIDR2
+   74:  CAN0TXDSR0 = dato;
+  0013 32           PULA  
+  0014 7a0000       STAA  _CAN0TXDSR0
+   75:  CAN0TXDSR1 = 5;
+  0017 8605         LDAA  #5
+  0019 7a0000       STAA  _CAN0TXDSR1
+   76:  CAN0TXDSR2 = 2;
+  001c 58           ASLB  
+  001d 7b0000       STAB  _CAN0TXDSR2
+   77:  CAN0TXDSR3 = 8;
+  0020 c608         LDAB  #8
+  0022 7b0000       STAB  _CAN0TXDSR3
+   78:  CAN0TXDSR4 = 0;
+  0025 790000       CLR   _CAN0TXDSR4
+   79:  CAN0TXDSR5 = 1;
+  0028 c601         LDAB  #1
+  002a 7b0000       STAB  _CAN0TXDSR5
+   80:  CAN0TXDSR6 = 9;
+  002d c609         LDAB  #9
+  002f 7b0000       STAB  _CAN0TXDSR6
+   81:  CAN0TXDSR7 = 4;
+  0032 57           ASRB  
+  0033 7b0000       STAB  _CAN0TXDSR7
+   82:  CAN0TXDLR = 8;
+  0036 58           ASLB  
+  0037 7b0000       STAB  _CAN0TXDLR
+   83:  CAN0TXTBPR = 0;
+  003a 790000       CLR   _CAN0TXTBPR
+   84:  
+   85:  //Can0.txbuf.tsr = 0x0000; //CAN Time Stamp register
+   86:  
+   87:  CAN0TFLG = 0x01;
+  003d c601         LDAB  #1
+  003f 7b0000       STAB  _CAN0TFLG
+   88:    }
+  0042 3d           RTS   

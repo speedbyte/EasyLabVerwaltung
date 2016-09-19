@@ -1,0 +1,89 @@
+ANSI-C/cC++ Compiler for HC12 V-5.0.35 Build 8093, Apr  3 2008
+
+    1:  #include "adc.h"                        /* ADC_ISR */
+    2:  #include "candriver.h"                  /* CANREC */
+    3:  
+    4:  
+    5:  extern void near _Startup(void);       /* Startup routine */
+    6:  
+    7:  #pragma CODE_SEG __NEAR_SEG NON_BANKED /* Interrupt section for this module. Placement will be in NON_BANKED area. */
+    8:  __interrupt void UnimplementedISR(void)
+    9:  {
+
+Function: UnimplementedISR
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\HAL-Target\isr_vectors.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\isr_vectors.c.o
+
+   10:     /* Unimplemented ISRs trap.*/
+   11:     asm BGND;
+  0000 00           [5]     BGND  
+   12:  }
+  0001 0b           [8]     RTI   
+   13:  
+   14:  typedef void (*near tIsrFunc)(void);
+   15:  const tIsrFunc _vect[] @0xFF80 = {     /* Interrupt table */
+   16:          UnimplementedISR,                 /* vector 0x40 */
+   17:          UnimplementedISR,                 /* vector 0x3F */
+   18:          UnimplementedISR,                 /* vector 0x3E */
+   19:          UnimplementedISR,                 /* vector 0x3D */
+   20:          UnimplementedISR,                 /* vector 0x3C */
+   21:          UnimplementedISR,                 /* vector 0x3B */
+   22:          UnimplementedISR,                 /* vector 0x3A */
+   23:          UnimplementedISR,                 /* vector 0x39 */
+   24:          UnimplementedISR,                 /* vector 0x38 */
+   25:          UnimplementedISR,                 /* vector 0x37 */
+   26:          UnimplementedISR,                 /* vector 0x36 */
+   27:          UnimplementedISR,                 /* vector 0x35 */
+   28:          UnimplementedISR,                 /* vector 0x34 */
+   29:          UnimplementedISR,                 /* vector 0x33 */
+   30:          UnimplementedISR,                 /* vector 0x32 */
+   31:          UnimplementedISR,                 /* vector 0x31 */
+   32:          UnimplementedISR,                 /* vector 0x30 */
+   33:          UnimplementedISR,                 /* vector 0x2F */
+   34:          UnimplementedISR,                 /* vector 0x2E */
+   35:          UnimplementedISR,                 /* vector 0x2D */
+   36:          UnimplementedISR,                 /* vector 0x2C */
+   37:          UnimplementedISR,                 /* vector 0x2B */
+   38:          UnimplementedISR,                 /* vector 0x2A */
+   39:          UnimplementedISR,                 /* vector 0x29 */
+   40:          UnimplementedISR,                 /* vector 0x28 */
+   41:          UnimplementedISR,//CANREC,                           /* vector 0x27 */
+   42:          UnimplementedISR,                 /* vector 0x26 */
+   43:          UnimplementedISR,                 /* vector 0x25 */
+   44:          UnimplementedISR,                 /* vector 0x24 */
+   45:          UnimplementedISR,                 /* vector 0x23 */
+   46:          UnimplementedISR,                 /* vector 0x22 */
+   47:          UnimplementedISR,                 /* vector 0x21 */
+   48:          UnimplementedISR,                 /* vector 0x20 */
+   49:          UnimplementedISR,                 /* vector 0x1F */
+   50:          UnimplementedISR,                 /* vector 0x1D */
+   51:          UnimplementedISR,                 /* vector 0x1C */
+   52:          UnimplementedISR,                 /* vector 0x1B */
+   53:          UnimplementedISR,                 /* vector 0x1A */
+   54:          UnimplementedISR,                 /* vector 0x19 (PORT H) */
+   55:          UnimplementedISR,                 /* vector 0x18 (PORT J) */
+   56:          UnimplementedISR,                 /* vector 0x17 (ATD1) */
+   57:          ADC_ISR,                          /* vector 0x16 (ATD0) */
+   58:          UnimplementedISR,                 /* vector 0x15 (SCI1) */
+   59:          UnimplementedISR,                 /* vector 0x14 (SCI0) */
+   60:          UnimplementedISR,                 /* vector 0x13 */
+   61:          UnimplementedISR,                 /* vector 0x12 */
+   62:          UnimplementedISR,                 /* vector 0x11 */
+   63:          UnimplementedISR,                 /* vector 0x10 (TOF) */
+   64:          UnimplementedISR,                 /* vector 0x0F (TIE, C7I)  */
+   65:          UnimplementedISR,                 /* vector 0x0E (TIE, C6I)  */
+   66:          UnimplementedISR,                 /* vector 0x0C (TIE, C5I)  */
+   67:          UnimplementedISR,                 /* vector 0x0C (TIE, C4I)  */
+   68:          UnimplementedISR,                 /* vector 0x0B (TIE, C3I)  */
+   69:          UnimplementedISR,                 /* vector 0x0A (TIE, C2I)  */
+   70:          UnimplementedISR,                 /* vector 0x09 (TIE, C1I)  */
+   71:          UnimplementedISR,                 /* vector 0x08 (TIE, C0I) */
+   72:          UnimplementedISR,                 /* vector 0x07 (RTIE) */
+   73:          UnimplementedISR,                 /* vector 0x06 */
+   74:          UnimplementedISR,                 /* vector 0x05 */
+   75:          UnimplementedISR,                 /* vector 0x04 */
+   76:          UnimplementedISR,                 /* vector 0x03 */
+   77:          UnimplementedISR,                 /* vector 0x02 */
+   78:          UnimplementedISR,                 /* vector 0x01 */
+   79:          _Startup                          /* vector 0x00 (RESET) */
+   80:     };

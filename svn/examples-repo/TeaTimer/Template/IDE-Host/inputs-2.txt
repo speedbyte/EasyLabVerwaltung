@@ -1,0 +1,9 @@
+// Scenario 2
+AD:0
++100    // advance by 1 s
+AD:28   // expected output: (7) 0:05
+SW5+10  // start countdown
++1000   // 10 s
+SW5+10  // reset to initial state
++1000
+AD:64   // expected preset: 15 s

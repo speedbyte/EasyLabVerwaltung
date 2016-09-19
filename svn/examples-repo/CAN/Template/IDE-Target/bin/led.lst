@@ -1,0 +1,83 @@
+*** EVALUATION ***
+ANSI-C/cC++ Compiler for HC12 V-5.0.40 Build 10020, Jan 21 2010
+
+    1:  /* 
+    2:   * A primitive LED driver for the Dragon 12 board.
+    3:   *
+    4:   * Author: Joerg Friedrich
+    5:   * Copyright: HS Esslingen, November 2008
+    6:   *
+    7:   * License: Gnu Lesser Public License (LGPL)
+    8:   *
+    9:   * $Id:$
+   10:   * $Rev:$
+   11:   *
+   12:   */
+   13:  
+   14:  #include <mc9s12dp256.h>        /* derivative information */
+   15:  #include "led.h"
+   16:  
+   17:  static char ledValue = 0;
+   18:  
+   19:  /* Initialize PORT B */
+   20:  void initLED(void) {
+*** EVALUATION ***
+
+Function: initLED
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\led.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\led.c.o -WmsgSd1106
+
+   21:    
+   22:    /* set port B as output (LEDs) */
+   23:    
+   24:    DDRB  = 0xff;       /* Port B is output */
+  0000 c6ff         [1]     LDAB  #255
+  0002 5b00         [2]     STAB  _DDRAB:1
+   25:    DDRH = 0x00;
+  0004 790000       [3]     CLR   _DDRH
+   26:    
+   27:    DDRJ = 0xff;	      /* Data Direction Register Port J */
+  0007 7b0000       [3]     STAB  _DDRJ
+   28:    DDRP = 0xff;
+  000a 7b0000       [3]     STAB  _DDRP
+   29:    PTP = 0xFF;
+  000d 7b0000       [3]     STAB  _PTP
+   30:    PTJ_PTJ1 	  = 0;    /* Turn On the LED line */
+  0010 1d000002     [4]     BCLR  _PTJ,#2
+   31:  
+   32:    /* allow all interrupts to take place */
+   33:    asm cli  
+  0014 10ef         [1]     CLI   
+   34:    
+   35:  };
+  0016 3d           [5]     RTS   
+   36:  
+   37:  /* write to the LEDs */
+   38:  void writeLED(char value) {
+*** EVALUATION ***
+
+Function: writeLED
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\led.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\led.c.o -WmsgSd1106
+
+   39:    ledValue = value;
+  0000 7b0000       [3]     STAB  ledValue
+   40:    PORTB = ledValue;
+  0003 5b00         [2]     STAB  _PORTAB:1
+   41:  };
+  0005 3d           [5]     RTS   
+   42:  
+   43:  /* read current LED status */
+   44:  char readLED(void) {
+*** EVALUATION ***
+
+Function: readLED
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\led.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\led.c.o -WmsgSd1106
+
+   45:    return ledValue;
+  0000 f60000       [3]     LDAB  ledValue
+   46:  };
+  0003 3d           [5]     RTS   
+   47:  
+   48:  

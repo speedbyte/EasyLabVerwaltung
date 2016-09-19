@@ -1,0 +1,27 @@
+// Scenario 1
+AD:0
++100     // advance by 1 s
+AD:28    // expected output: (7) 0:05
++100     // 
+AD:1024  // expected output: 4:00
++100
+AD:960   // expected output: 4:00
++100
+AD:425   // expected output: 1:45
+SW5+10   // start (when released)
++4500    // count down 45 s
+SW5+1    // stop (when pressed), bounce
++1
+SW5+1    // bounce
++3
+SW5+2    // bounce
++2
+SW5+3
++100
+AD:28    // preset must not change
+SW5+10   // continue
++1000    // 10 s
+SW5+2010 // reset to initial state
+AD:32    // expected preset: 10 s
+SW5+10   // start with new preset
++12000   // continue until beep	

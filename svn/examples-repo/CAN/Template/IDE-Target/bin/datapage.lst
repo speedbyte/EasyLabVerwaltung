@@ -1,0 +1,976 @@
+ANSI-C/cC++ Compiler for HC12 V-5.0.35 Build 8093, Apr  3 2008
+
+    1:  /******************************************************************************
+    2:    FILE        : datapage.c
+    3:    PURPOSE     : paged data access runtime routines
+    4:    MACHINE     : Motorola 68HC12 (Target)
+    5:    LANGUAGE    : ANSI-C
+    6:    HISTORY     : 21.7.96 first version created
+    7:  ******************************************************************************/
+    8:  
+    9:  /*
+   10:     According to the -Cp option of the compiler the
+   11:     __DPAGE__, __PPAGE__ and __EPAGE__ macros are defined.
+   12:     If none of them is given as argument, then no page accesses should occur and
+   13:     this runtime routine should not be used !
+   14:     To be on the save side, the runtime routines are created anyway.
+   15:     If some of the -Cp options are given an adapted versions which only covers the
+   16:     needed cases is produced.
+   17:  */
+   18:  
+   19:  /* if no compiler option -Cp is given, it is assumed that all possible are given : */
+   20:  
+   21:  /* Compile with option -DHCS12 to activate this code */
+   22:  #if defined(HCS12) || defined(_HCS12) /* HCS12 family has PPAGE register only at 0x30 */
+   23:  #define PPAGE_ADDR (0x30+REGISTER_BASE)
+   24:  #ifndef __PPAGE__ /* may be set already by option -CPPPAGE */
+   25:  #define __PPAGE__
+   26:  #endif
+   27:  /* Compile with option -DDG128 to activate this code */
+   28:  #elif defined DG128 /* HC912DG128 derivative has PPAGE register only at 0xFF */
+   29:  #define PPAGE_ADDR (0xFF+REGISTER_BASE)
+   30:  #ifndef __PPAGE__ /* may be set already by option -CPPPAGE */
+   31:  #define __PPAGE__
+   32:  #endif
+   33:  #elif defined(HC812A4)
+   34:  /* all setting default to A4 already */
+   35:  #endif
+   36:  
+   37:  
+   38:  #if !defined(__EPAGE__) && !defined(__PPAGE__) && !defined(__DPAGE__)
+   39:  /* as default use all page registers */
+   40:  #define __DPAGE__
+   41:  #define __EPAGE__
+   42:  #define __PPAGE__
+   43:  #endif
+   44:  
+   45:  /* modify the following defines to your memory configuration */
+   46:  
+   47:  #define EPAGE_LOW_BOUND   0x400u
+   48:  #define EPAGE_HIGH_BOUND  0x7ffu
+   49:  
+   50:  #define DPAGE_LOW_BOUND   0x7000u
+   51:  #define DPAGE_HIGH_BOUND  0x7fffu
+   52:  
+   53:  #define PPAGE_LOW_BOUND   (DPAGE_HIGH_BOUND+1)
+   54:  #define PPAGE_HIGH_BOUND  0xBFFFu
+   55:  
+   56:  #define REGISTER_BASE      0x0u
+   57:  #ifndef DPAGE_ADDR
+   58:  #define DPAGE_ADDR        (0x34u+REGISTER_BASE)
+   59:  #endif
+   60:  #ifndef EPAGE_ADDR
+   61:  #define EPAGE_ADDR        (0x36u+REGISTER_BASE)
+   62:  #endif
+   63:  #ifndef PPAGE_ADDR
+   64:  #define PPAGE_ADDR        (0x35u+REGISTER_BASE)
+   65:  #endif
+   66:  
+   67:  /*
+   68:    The following parts about the defines are assumed in the code of _GET_PAGE_REG :
+   69:    - the memory region controlled by DPAGE is above the area controlled by the EPAGE and
+   70:      below the area controlled by the PPAGE.
+   71:    - the lower bound of the PPAGE area is equal to be the higher bound of the DPAGE area + 1
+   72:  */
+   73:  #if EPAGE_LOW_BOUND >= EPAGE_HIGH_BOUND || EPAGE_HIGH_BOUND >= DPAGE_LOW_BOUND || DPAGE_LOW_BOUND >= DPAGE_HIGH_BOUND || DPAGE_HIGH_BOUND >= PPAGE_LOW_BOUND || PPAGE_LOW_BOUND >= PPAGE_HIGH_BOUND
+   74:  #error /* please adapt _GET_PAGE_REG for this non default page configuration */
+   75:  #endif
+   76:  
+   77:  #if DPAGE_HIGH_BOUND+1 != PPAGE_LOW_BOUND
+   78:  #error /* please adapt _GET_PAGE_REG for this non default page configuration */
+   79:  #endif
+   80:  
+   81:  #include "hidef.h"
+   82:  #include "non_bank.sgm"
+   83:  #include "runtime.sgm"
+   84:  
+   85:  /* this module does either control if any access is in the bounds of the specified page or */
+   86:  /* ,if only one page is specified, just use this page. */
+   87:  /* This behavior is controlled by the define USE_SEVERAL_PAGES. */
+   88:  /* If !USE_SEVERAL_PAGES does increase the performance significantly */
+   89:  /* NOTE : When !USE_SEVERAL_PAGES, the page is also set for accesses outside of the area controlled */
+   90:  /*        by this single page. But this is usually no problem because the page is set again before any other access */
+   91:  
+   92:  #if !defined(__DPAGE__) && !defined(__EPAGE__) && !defined(__PPAGE__)
+   93:  /* no page at all is specified */
+   94:  /* only specifing the right pages will speed up these functions a lot */
+   95:  #define USE_SEVERAL_PAGES 1
+   96:  #elif defined(__DPAGE__) && defined(__EPAGE__) || defined(__DPAGE__) && defined(__PPAGE__) || defined(__EPAGE__) && defined(__PPAGE__)
+   97:  /* more than one page register is used */
+   98:  #define USE_SEVERAL_PAGES 1
+   99:  #else
+  100:  
+  101:  #define USE_SEVERAL_PAGES 0
+  102:  
+  103:  #if defined(__DPAGE__) /* check which pages are used  */
+  104:  #define PAGE_ADDR PPAGE_ADDR
+  105:  #elif defined(__EPAGE__)
+  106:  #define PAGE_ADDR EPAGE_ADDR
+  107:  #elif defined(__PPAGE__)
+  108:  #define PAGE_ADDR PPAGE_ADDR
+  109:  #else /* we dont know which page, decide it at runtime */
+  110:  #error /* must not happen */
+  111:  #endif
+  112:  
+  113:  #endif
+  114:  
+  115:  
+  116:  #if USE_SEVERAL_PAGES /* only needed for several pages support */
+  117:  /*--------------------------- _GET_PAGE_REG --------------------------------
+  118:    Runtime routine to detect the right register depending on the 16 bit offset part
+  119:    of an address.
+  120:    This function is only used by the functions below.
+  121:  
+  122:    Depending on the compiler options -Cp different versions of _GET_PAGE_REG are produced.
+  123:  
+  124:    Arguments :
+  125:    - Y : offset part of an address
+  126:  
+  127:    Result :
+  128:    if address Y is controlled by a page register :
+  129:    - X : address of page register if Y is controlled by an page register
+  130:    - Zero flag cleared
+  131:    - all other registers remain unchanged
+  132:  
+  133:    if address Y is not controlled by a page register :
+  134:    - Zero flag is set
+  135:    - all registers remain unchanged
+  136:  
+  137:    --------------------------- _GET_PAGE_REG ----------------------------------*/
+  138:  
+  139:  #if defined(__DPAGE__)
+  140:  
+  141:  #ifdef __cplusplus
+  142:  extern "C"
+  143:  #endif
+  144:  #pragma NO_ENTRY
+  145:  #pragma NO_EXIT
+  146:  #pragma NO_FRAME
+  147:  
+  148:  static void NEAR _GET_PAGE_REG(void) { /*lint -esym(528, _GET_PAGE_REG) used in asm code */
+  149:    asm {
+  150:  L_DPAGE:
+  151:          CPY  #DPAGE_LOW_BOUND     ; test of lower bound of DPAGE
+  152:  #if defined(__EPAGE__)
+  153:          BLO  L_EPAGE              ; EPAGE accesses are possible
+  154:  #else
+  155:          BLO  L_NOPAGE             ; no paged memory below accesses
+  156:  #endif
+  157:          CPY  #DPAGE_HIGH_BOUND    ; test of higher bound DPAGE/lower bound PPAGE
+  158:  #if defined(__PPAGE__)
+  159:          BHI  L_PPAGE              ; EPAGE accesses are possible
+  160:  #else
+  161:          BHI  L_NOPAGE             ; no paged memory above accesses
+  162:  #endif
+  163:  FOUND_DPAGE:
+  164:          LDX  #DPAGE_ADDR          ; load page register address and clear zero flag
+  165:          RTS
+  166:  
+  167:  #if defined(__PPAGE__)
+  168:  L_PPAGE:
+  169:          CPY  #PPAGE_HIGH_BOUND    ; test of higher bound of PPAGE
+  170:          BHI  L_NOPAGE
+  171:  FOUND_PPAGE:
+  172:          LDX  #PPAGE_ADDR          ; load page register address and clear zero flag
+  173:          RTS
+  174:  #endif
+  175:  
+  176:  #if defined(__EPAGE__)
+  177:  L_EPAGE:
+  178:          CPY #EPAGE_LOW_BOUND      ; test of lower bound of EPAGE
+  179:          BLO L_NOPAGE
+  180:          CPY #EPAGE_HIGH_BOUND     ; test of higher bound of EPAGE
+  181:          BHI L_NOPAGE
+  182:  
+  183:  FOUND_EPAGE:
+  184:          LDX #EPAGE_ADDR           ; load page register address and clear zero flag
+  185:          RTS
+  186:  #endif
+  187:  
+  188:  L_NOPAGE:
+  189:          ORCC #0x04                ; sets zero flag
+  190:          RTS
+  191:    }
+  192:  }
+  193:  
+  194:  #else /* !defined(__DPAGE__) */
+  195:  
+  196:  #if defined( __PPAGE__ )
+  197:  
+  198:  #ifdef __cplusplus
+  199:  extern "C"
+  200:  #endif
+  201:  #pragma NO_ENTRY
+  202:  #pragma NO_EXIT
+  203:  #pragma NO_FRAME
+  204:  
+  205:  static void NEAR _GET_PAGE_REG(void) {	/*lint -esym(528, _GET_PAGE_REG) used in asm code */
+  206:    asm {
+  207:  L_PPAGE:
+  208:          CPY  #PPAGE_LOW_BOUND     ; test of lower bound of PPAGE
+  209:  #if defined( __EPAGE__ )
+  210:          BLO  L_EPAGE
+  211:  #else
+  212:          BLO  L_NOPAGE             ; no paged memory below
+  213:  #endif
+  214:          CPY  #PPAGE_HIGH_BOUND    ; test of higher bound PPAGE
+  215:          BHI  L_NOPAGE
+  216:  FOUND_PPAGE:
+  217:          LDX  #PPAGE_ADDR          ; load page register address and clear zero flag
+  218:          RTS
+  219:  #if defined( __EPAGE__ )
+  220:  L_EPAGE:
+  221:          CPY #EPAGE_LOW_BOUND      ; test of lower bound of EPAGE
+  222:          BLO L_NOPAGE
+  223:          CPY #EPAGE_HIGH_BOUND     ; test of higher bound of EPAGE
+  224:          BHI L_NOPAGE
+  225:  FOUND_EPAGE:
+  226:          LDX #EPAGE_ADDR           ; load page register address and clear zero flag
+  227:          RTS
+  228:  #endif
+  229:  
+  230:  L_NOPAGE:                         ; not in any allowed page area
+  231:                                    ; its a far access to a non paged variable
+  232:          ORCC #0x04                ; sets zero flag
+  233:          RTS
+  234:    }
+  235:  }
+  236:  
+  237:  #else /* !defined(__DPAGE__ ) && !defined( __PPAGE__) */
+  238:  #if defined(__EPAGE__)
+  239:  
+  240:  #ifdef __cplusplus
+  241:  extern "C"
+  242:  #endif
+  243:  #pragma NO_ENTRY
+  244:  #pragma NO_EXIT
+  245:  #pragma NO_FRAME
+  246:  
+  247:  static void NEAR _GET_PAGE_REG(void) { /*lint -esym(528, _GET_PAGE_REG) used in asm code */
+  248:    asm {
+  249:  L_EPAGE:
+  250:          CPY #EPAGE_LOW_BOUND      ; test of lower bound of EPAGE
+  251:          BLO L_NOPAGE
+  252:          CPY #EPAGE_HIGH_BOUND     ; test of higher bound of EPAGE
+  253:          BHI L_NOPAGE
+  254:  FOUND_EPAGE:
+  255:          LDX #EPAGE_ADDR           ; load page register address and clear zero flag
+  256:          RTS
+  257:  
+  258:  L_NOPAGE:                         ; not in any allowed page area
+  259:                                    ; its a far access to a non paged variable
+  260:          ORCC #0x04                ; sets zero flag
+  261:          RTS
+  262:    }
+  263:  }
+  264:  
+  265:  #endif /*  defined(__EPAGE__) */
+  266:  #endif /*  defined(__PPAGE__) */
+  267:  #endif /*  defined(__DPAGE__) */
+  268:  
+  269:  #endif /* USE_SEVERAL_PAGES */
+  270:  
+  271:  /*--------------------------- _SET_PAGE --------------------------------
+  272:    Runtime routine to set the right page register. This routine is used if the compiler
+  273:    does not know the right page register, i.e. if the option -Cp is used for more than
+  274:    one pageregister or if the runtime option is used for one of the -Cp options.
+  275:  
+  276:    Arguments :
+  277:    - offset part of an address in the Y register
+  278:    - page part of an address in the B register
+  279:  
+  280:    Result :
+  281:    - page part written into the correct page register.
+  282:    - the old page register content is destroyed
+  283:    - all processor registers remains unchanged
+  284:    --------------------------- _SET_PAGE ----------------------------------*/
+  285:  
+  286:  #ifdef __cplusplus
+  287:  extern "C"
+  288:  #endif
+  289:  #pragma NO_ENTRY
+  290:  #pragma NO_EXIT
+  291:  #pragma NO_FRAME
+  292:  
+  293:  void NEAR _SET_PAGE(void) {
+
+Function: _SET_PAGE
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  294:  #if USE_SEVERAL_PAGES
+  295:    asm {
+  296:            PSHX                  ; save X register
+  297:            __PIC_JSR(_GET_PAGE_REG)
+  298:            BEQ    L_NOPAGE
+  299:            STAB   0,X            ; set page register
+  300:  L_NOPAGE:
+  301:            PULX                  ; restore X register
+  302:            RTS
+  303:    }
+  304:  #else /* USE_SEVERAL_PAGES */
+  305:    asm {
+  306:            STAB   PAGE_ADDR      ; set page register
+  0000 5b30         [2]     STAB  48
+  307:            RTS
+  0002 3d           [5]     RTS   
+  308:    }
+  309:  #endif /* USE_SEVERAL_PAGES */
+  310:  }
+  311:  
+  312:  /*--------------------------- _LOAD_FAR_8 --------------------------------
+  313:    This runtime routine is used to access paged memory via a runtime function.
+  314:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  315:  
+  316:    Arguments :
+  317:    - offset part of an address in the Y register
+  318:    - page part of an address in the B register
+  319:  
+  320:    Result :
+  321:    - value to be read in the B register
+  322:    - all other registers remains unchanged
+  323:    - all page register still contain the same value
+  324:    --------------------------- _LOAD_FAR_8 ----------------------------------*/
+  325:  
+  326:  #ifdef __cplusplus
+  327:  extern "C"
+  328:  #endif
+  329:  #pragma NO_ENTRY
+  330:  #pragma NO_EXIT
+  331:  #pragma NO_FRAME
+  332:  
+  333:  void NEAR _LOAD_FAR_8(void) {
+
+Function: _LOAD_FAR_8
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  334:  #if USE_SEVERAL_PAGES
+  335:    asm {
+  336:            PSHX                ; save X register
+  337:            __PIC_JSR(_GET_PAGE_REG)
+  338:            BEQ    L_NOPAGE
+  339:            PSHA                ; save A register
+  340:            LDAA   0,X          ; save page register
+  341:            STAB   0,X          ; set page register
+  342:            LDAB   0,Y          ; actual load, overwrites page
+  343:            STAA   0,X          ; restore page register
+  344:            PULA                ; restore A register
+  345:            PULX                ; restore X register
+  346:            RTS
+  347:  L_NOPAGE:
+  348:            LDAB   0,Y          ; actual load, overwrites page
+  349:            PULX                ; restore X register
+  350:            RTS
+  351:    }
+  352:  #else /* USE_SEVERAL_PAGES */
+  353:    asm {
+  354:            PSHA                ; save A register
+  0000 36           [2]     PSHA  
+  355:            LDAA   PAGE_ADDR    ; save page register
+  0001 9630         [3]     LDAA  48
+  356:            STAB   PAGE_ADDR    ; set page register
+  0003 5b30         [2]     STAB  48
+  357:            LDAB   0,Y          ; actual load, overwrites page
+  0005 e640         [3]     LDAB  0,Y
+  358:            STAA   PAGE_ADDR    ; restore page register
+  0007 5a30         [2]     STAA  48
+  359:            PULA                ; restore A register
+  0009 32           [3]     PULA  
+  360:            RTS
+  000a 3d           [5]     RTS   
+  361:    }
+  362:  #endif /* USE_SEVERAL_PAGES */
+  363:  }
+  364:  
+  365:  /*--------------------------- _LOAD_FAR_16 --------------------------------
+  366:    This runtime routine is used to access paged memory via a runtime function.
+  367:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  368:  
+  369:    Arguments :
+  370:    - offset part of an address in the Y register
+  371:    - page part of an address in the B register
+  372:  
+  373:    Result :
+  374:    - value to be read in the Y register
+  375:    - all other registers remains unchanged
+  376:    - all page register still contain the same value
+  377:    --------------------------- _LOAD_FAR_16 ----------------------------------*/
+  378:  
+  379:  #ifdef __cplusplus
+  380:  extern "C"
+  381:  #endif
+  382:  #pragma NO_ENTRY
+  383:  #pragma NO_EXIT
+  384:  #pragma NO_FRAME
+  385:  
+  386:  void NEAR _LOAD_FAR_16(void) {
+
+Function: _LOAD_FAR_16
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  387:  #if USE_SEVERAL_PAGES
+  388:    asm {
+  389:            PSHX                 ; save X register
+  390:            __PIC_JSR(_GET_PAGE_REG)
+  391:            BEQ   L_NOPAGE
+  392:            PSHA                 ; save A register
+  393:            LDAA  0,X            ; save page register
+  394:            STAB  0,X            ; set page register
+  395:            LDY   0,Y            ; actual load, overwrites address
+  396:            STAA  0,X            ; restore page register
+  397:            PULA                 ; restore A register
+  398:            PULX                 ; restore X register
+  399:            RTS
+  400:  L_NOPAGE:
+  401:            LDY   0,Y              ; actual load, overwrites address
+  402:            PULX                 ; restore X register
+  403:            RTS
+  404:    }
+  405:  #else /* USE_SEVERAL_PAGES */
+  406:    asm {
+  407:            PSHA                ; save A register
+  0000 36           [2]     PSHA  
+  408:            LDAA   PAGE_ADDR    ; save page register
+  0001 9630         [3]     LDAA  48
+  409:            STAB   PAGE_ADDR    ; set page register
+  0003 5b30         [2]     STAB  48
+  410:            LDY    0,Y          ; actual load, overwrites address
+  0005 ed40         [3]     LDY   0,Y
+  411:            STAA   PAGE_ADDR    ; restore page register
+  0007 5a30         [2]     STAA  48
+  412:            PULA                ; restore A register
+  0009 32           [3]     PULA  
+  413:            RTS
+  000a 3d           [5]     RTS   
+  414:    }
+  415:  #endif /* USE_SEVERAL_PAGES */
+  416:  }
+  417:  /*--------------------------- _LOAD_FAR_24 --------------------------------
+  418:    This runtime routine is used to access paged memory via a runtime function.
+  419:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  420:  
+  421:    Arguments :
+  422:    - offset part of an address in the Y register
+  423:    - page part of an address in the B register
+  424:  
+  425:    Result :
+  426:    - value to be read in the Y:B registers
+  427:    - all other registers remains unchanged
+  428:    - all page register still contain the same value
+  429:    --------------------------- _LOAD_FAR_24 ----------------------------------*/
+  430:  
+  431:  #ifdef __cplusplus
+  432:  extern "C"
+  433:  #endif
+  434:  #pragma NO_ENTRY
+  435:  #pragma NO_EXIT
+  436:  #pragma NO_FRAME
+  437:  
+  438:  void NEAR _LOAD_FAR_24(void) {
+
+Function: _LOAD_FAR_24
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  439:  #if USE_SEVERAL_PAGES
+  440:    asm {
+  441:            PSHX                 ; save X register
+  442:            __PIC_JSR(_GET_PAGE_REG)
+  443:            BEQ   L_NOPAGE
+  444:            PSHA                 ; save A register
+  445:            LDAA  0,X            ; save page register
+  446:            STAB  0,X            ; set page register
+  447:            LDAB  0,Y            ; actual load, overwrites page of address
+  448:            LDY   1,Y            ; actual load, overwrites offset of address
+  449:            STAA  0,X            ; restore page register
+  450:            PULA                 ; restore A register
+  451:            PULX                 ; restore X register
+  452:            RTS
+  453:  L_NOPAGE:
+  454:            LDAB  0,Y            ; actual load, overwrites page of address
+  455:            LDY   1,Y            ; actual load, overwrites offset of address
+  456:            PULX                 ; restore X register
+  457:            RTS
+  458:    }
+  459:  #else /* USE_SEVERAL_PAGES */
+  460:    asm {
+  461:            PSHA                 ; save A register
+  0000 36           [2]     PSHA  
+  462:            LDAA   PAGE_ADDR     ; save page register
+  0001 9630         [3]     LDAA  48
+  463:            STAB   PAGE_ADDR     ; set page register
+  0003 5b30         [2]     STAB  48
+  464:            LDAB   0,Y           ; actual load, overwrites page of address
+  0005 e640         [3]     LDAB  0,Y
+  465:            LDY    1,Y           ; actual load, overwrites offset of address
+  0007 ed41         [3]     LDY   1,Y
+  466:            STAA   PAGE_ADDR     ; restore page register
+  0009 5a30         [2]     STAA  48
+  467:            PULA                 ; restore A register
+  000b 32           [3]     PULA  
+  468:            RTS
+  000c 3d           [5]     RTS   
+  469:    }
+  470:  #endif /* USE_SEVERAL_PAGES */
+  471:  
+  472:  }
+  473:  
+  474:  /*--------------------------- _LOAD_FAR_32 --------------------------------
+  475:    This runtime routine is used to access paged memory via a runtime function.
+  476:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  477:  
+  478:    Arguments :
+  479:    - offset part of an address in the Y register
+  480:    - page part of an address in the B register
+  481:  
+  482:    Result :
+  483:    - low 16 bit of value to be read in the D registers
+  484:    - high 16 bit of value to be read in the Y registers
+  485:    - all other registers remains unchanged
+  486:    - all page register still contain the same value
+  487:    --------------------------- _LOAD_FAR_32 ----------------------------------*/
+  488:  
+  489:  #ifdef __cplusplus
+  490:  extern "C"
+  491:  #endif
+  492:  #pragma NO_ENTRY
+  493:  #pragma NO_EXIT
+  494:  #pragma NO_FRAME
+  495:  
+  496:  void NEAR _LOAD_FAR_32(void) {
+
+Function: _LOAD_FAR_32
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  497:  #if USE_SEVERAL_PAGES
+  498:    asm {
+  499:            PSHX                 ; save X register
+  500:            __PIC_JSR(_GET_PAGE_REG)
+  501:            BEQ   L_NOPAGE
+  502:            LDAA  0,X            ; save page register
+  503:            PSHA                 ; put it onto the stack
+  504:            STAB  0,X            ; set page register
+  505:            LDD   2,Y            ; actual load, low word
+  506:            LDY   0,Y            ; actual load, high word
+  507:            MOVB  1,SP+,0,X      ; restore page register
+  508:            PULX                 ; restore X register
+  509:            RTS
+  510:  L_NOPAGE:
+  511:            LDD   2,Y            ; actual load, low word
+  512:            LDY   0,Y            ; actual load, high word
+  513:            PULX                 ; restore X register
+  514:            RTS
+  515:    }
+  516:  #else /* USE_SEVERAL_PAGES */
+  517:    asm {
+  518:            LDAA   PAGE_ADDR     ; save page register
+  0000 9630         [3]     LDAA  48
+  519:            PSHA                 ; put it onto the stack
+  0002 36           [2]     PSHA  
+  520:            STAB   PAGE_ADDR     ; set page register
+  0003 5b30         [2]     STAB  48
+  521:            LDD   2,Y            ; actual load, low word
+  0005 ec42         [3]     LDD   2,Y
+  522:            LDY   0,Y            ; actual load, high word
+  0007 ed40         [3]     LDY   0,Y
+  523:            MOVB  1,SP+,PAGE_ADDR; restore page register
+  0009 180db00030   [5]     MOVB  1,SP+,48
+  524:            RTS
+  000e 3d           [5]     RTS   
+  525:    }
+  526:  #endif /* USE_SEVERAL_PAGES */
+  527:  }
+  528:  
+  529:  /*--------------------------- _STORE_FAR_8 --------------------------------
+  530:    This runtime routine is used to access paged memory via a runtime function.
+  531:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  532:  
+  533:    Arguments :
+  534:    - offset part of an address in the Y register
+  535:    - page part of an address in the B register
+  536:    - value to be stored in the B register
+  537:  
+  538:    Result :
+  539:    - value stored at the address
+  540:    - all registers remains unchanged
+  541:    - all page register still contain the same value
+  542:    --------------------------- _STORE_FAR_8 ----------------------------------*/
+  543:  
+  544:  #ifdef __cplusplus
+  545:  extern "C"
+  546:  #endif
+  547:  #pragma NO_ENTRY
+  548:  #pragma NO_EXIT
+  549:  #pragma NO_FRAME
+  550:  
+  551:  void NEAR _STORE_FAR_8(void) {
+
+Function: _STORE_FAR_8
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  552:  #if USE_SEVERAL_PAGES
+  553:    asm {
+  554:            PSHX                   ; save X register
+  555:            __PIC_JSR(_GET_PAGE_REG)
+  556:            BEQ   L_NOPAGE
+  557:            PSHB                   ; save B register
+  558:            LDAB  0,X              ; save page register
+  559:            MOVB  0,SP, 0,X        ; set page register
+  560:            STAA  0,Y              ; store the value passed in A
+  561:            STAB  0,X              ; restore page register
+  562:            PULB                   ; restore B register
+  563:            PULX                   ; restore X register
+  564:            RTS
+  565:  L_NOPAGE:
+  566:            STAA 0,Y               ; store the value passed in A
+  567:            PULX                   ; restore X register
+  568:            RTS
+  569:    }
+  570:  #else /* USE_SEVERAL_PAGES */
+  571:    asm {
+  572:            PSHB                 ; save A register
+  0000 37           [2]     PSHB  
+  573:            LDAB   PAGE_ADDR     ; save page register
+  0001 d630         [3]     LDAB  48
+  574:            MOVB  0,SP,PAGE_ADDR ; set page register
+  0003 180d800030   [5]     MOVB  0,SP,48
+  575:            STAA  0,Y            ; store the value passed in A
+  0008 6a40         [2]     STAA  0,Y
+  576:            STAB   PAGE_ADDR     ; restore page register
+  000a 5b30         [2]     STAB  48
+  577:            PULB                   ; restore B register
+  000c 33           [3]     PULB  
+  578:            RTS
+  000d 3d           [5]     RTS   
+  579:    }
+  580:  #endif /* USE_SEVERAL_PAGES */
+  581:  }
+  582:  
+  583:  /*--------------------------- _STORE_FAR_16 --------------------------------
+  584:    This runtime routine is used to access paged memory via a runtime function.
+  585:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  586:  
+  587:    Arguments :
+  588:    - offset part of an address in the Y register
+  589:    - page part of an address in the B register
+  590:    - value to be stored in the X register
+  591:  
+  592:    Result :
+  593:    - value stored at the address
+  594:    - all registers remains unchanged
+  595:    - all page register still contain the same value
+  596:    --------------------------- _STORE_FAR_16 ----------------------------------*/
+  597:  
+  598:  #ifdef __cplusplus
+  599:  extern "C"
+  600:  #endif
+  601:  #pragma NO_ENTRY
+  602:  #pragma NO_EXIT
+  603:  #pragma NO_FRAME
+  604:  
+  605:  void NEAR _STORE_FAR_16(void) {
+
+Function: _STORE_FAR_16
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  606:  #if USE_SEVERAL_PAGES
+  607:    asm {
+  608:            PSHX                  ; save X register
+  609:            __PIC_JSR(_GET_PAGE_REG)
+  610:            BEQ    L_NOPAGE
+  611:  
+  612:            PSHA
+  613:            LDAA   0,X            ; save page register
+  614:            STAB   0,X            ; set page register
+  615:            MOVW   1,SP, 0,Y      ; store the value passed in X
+  616:            STAA   0,X            ; restore page register
+  617:            PULA                  ; restore A register
+  618:            PULX                  ; restore X register
+  619:            RTS
+  620:  
+  621:  L_NOPAGE:
+  622:            STX 0,Y               ; store the value passed in X
+  623:            PULX                  ; restore X register
+  624:            RTS
+  625:    }
+  626:  #else /* USE_SEVERAL_PAGES */
+  627:    asm {
+  628:            PSHA                 ; save A register
+  0000 36           [2]     PSHA  
+  629:            LDAA   PAGE_ADDR     ; save page register
+  0001 9630         [3]     LDAA  48
+  630:            STAB   PAGE_ADDR     ; set page register
+  0003 5b30         [2]     STAB  48
+  631:            STX    0,Y           ; store the value passed in X
+  0005 6e40         [2]     STX   0,Y
+  632:            STAA   PAGE_ADDR     ; restore page register
+  0007 5a30         [2]     STAA  48
+  633:            PULA                 ; restore A register
+  0009 32           [3]     PULA  
+  634:            RTS
+  000a 3d           [5]     RTS   
+  635:    }
+  636:  #endif /* USE_SEVERAL_PAGES */
+  637:  }
+  638:  /*--------------------------- _STORE_FAR_24 --------------------------------
+  639:    This runtime routine is used to access paged memory via a runtime function.
+  640:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  641:  
+  642:    Arguments :
+  643:    - offset part of an address in the Y register
+  644:    - page part of an address in the B register
+  645:    - value to be stored in the X:A registers (X : low 16 bit, A : high 8 bit)
+  646:  
+  647:    Result :
+  648:    - value stored at the address
+  649:    - all registers remains unchanged
+  650:    - all page register still contain the same value
+  651:    --------------------------- _STORE_FAR_24 ----------------------------------*/
+  652:  
+  653:  #ifdef __cplusplus
+  654:  extern "C"
+  655:  #endif
+  656:  #pragma NO_ENTRY
+  657:  #pragma NO_EXIT
+  658:  #pragma NO_FRAME
+  659:  
+  660:  void NEAR _STORE_FAR_24(void) {
+
+Function: _STORE_FAR_24
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  661:  #if USE_SEVERAL_PAGES
+  662:    asm {
+  663:            PSHX                  ; save X register
+  664:            __PIC_JSR(_GET_PAGE_REG)
+  665:            BEQ    L_NOPAGE
+  666:  
+  667:            PSHA
+  668:            LDAA   0,X            ; save page register
+  669:            STAB   0,X            ; set page register
+  670:            MOVW   1,SP, 1,Y      ; store the value passed in X
+  671:            MOVB   0,SP, 0,Y      ; store the value passed in A
+  672:            STAA   0,X            ; restore page register
+  673:            PULA                  ; restore A register
+  674:            PULX                  ; restore X register
+  675:            RTS
+  676:  
+  677:  L_NOPAGE:
+  678:            STX    1,Y            ; store the value passed in X
+  679:            STAA   0,Y            ; store the value passed in X
+  680:            PULX                  ; restore X register
+  681:            RTS
+  682:    }
+  683:  #else /* USE_SEVERAL_PAGES */
+  684:    asm {
+  685:            PSHA                 ; save A register
+  0000 36           [2]     PSHA  
+  686:            LDAA   PAGE_ADDR     ; save page register
+  0001 9630         [3]     LDAA  48
+  687:            STAB   PAGE_ADDR     ; set page register
+  0003 5b30         [2]     STAB  48
+  688:            MOVB   0,SP, 0,Y     ; store the value passed in A
+  0005 180a8040     [5]     MOVB  0,SP,0,Y
+  689:            STX    1,Y           ; store the value passed in X
+  0009 6e41         [2]     STX   1,Y
+  690:            STAA   PAGE_ADDR     ; restore page register
+  000b 5a30         [2]     STAA  48
+  691:            PULA                 ; restore A register
+  000d 32           [3]     PULA  
+  692:            RTS
+  000e 3d           [5]     RTS   
+  693:    }
+  694:  #endif /* USE_SEVERAL_PAGES */
+  695:  }
+  696:  /*--------------------------- _STORE_FAR_32 --------------------------------
+  697:    This runtime routine is used to access paged memory via a runtime function.
+  698:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  699:  
+  700:    Arguments :
+  701:    - offset part of an address in the Y register
+  702:    - page part of an address is on the stack at 3,SP (just below the return address)
+  703:    - value to be stored in the X:D registers (D : low 16 bit, X : high 16 bit)
+  704:  
+  705:    Result :
+  706:    - value stored at the address
+  707:    - all registers remains unchanged
+  708:    - the page part is removed from the stack
+  709:    - all page register still contain the same value
+  710:    --------------------------- _STORE_FAR_32 ----------------------------------*/
+  711:  
+  712:  #ifdef __cplusplus
+  713:  extern "C"
+  714:  #endif
+  715:  #pragma NO_ENTRY
+  716:  #pragma NO_EXIT
+  717:  #pragma NO_FRAME
+  718:  
+  719:  void NEAR _STORE_FAR_32(void) {
+
+Function: _STORE_FAR_32
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  720:  #if USE_SEVERAL_PAGES
+  721:    asm {
+  722:            PSHX                  ; save X register
+  723:            __PIC_JSR(_GET_PAGE_REG)
+  724:            BEQ    L_NOPAGE
+  725:  
+  726:            PSHD
+  727:            LDAA   0,X            ; save page register
+  728:            MOVB   6,SP, 0,X      ; set page register
+  729:            MOVW   2,SP, 0,Y      ; store the value passed in X (high word)
+  730:            MOVW   0,SP, 2,Y      ; store the value passed in D (low word)
+  731:            STAA   0,X            ; restore page register
+  732:            PULD                  ; restore A register
+  733:            BRA done
+  734:  
+  735:  L_NOPAGE:
+  736:            MOVW   0,SP, 0,Y      ; store the value passed in X (high word)
+  737:            STD          2,Y      ; store the value passed in D (low word)
+  738:  done:
+  739:            PULX                  ; restore X register
+  740:            MOVW   0,SP, 1,+SP    ; move return address
+  741:            RTS
+  742:    }
+  743:  #else /* USE_SEVERAL_PAGES */
+  744:    asm {
+  745:            PSHD                    ; save D register
+  0000 3b           [2]     PSHD  
+  746:            LDAA   PAGE_ADDR        ; save page register
+  0001 9630         [3]     LDAA  48
+  747:            LDAB   4,SP             ; load page part of address
+  0003 e684         [3]     LDAB  4,SP
+  748:            STAB   PAGE_ADDR        ; set page register
+  0005 5b30         [2]     STAB  48
+  749:            STX    0,Y              ; store the value passed in X
+  0007 6e40         [2]     STX   0,Y
+  750:            MOVW   0,SP, 2,Y        ; store the value passed in D (low word)
+  0009 18028042     [5]     MOVW  0,SP,2,Y
+  751:            STAA   PAGE_ADDR        ; restore page register
+  000d 5a30         [2]     STAA  48
+  752:            PULD                    ; restore D register
+  000f 3a           [3]     PULD  
+  753:            MOVW   0,SP, 1,+SP    ; move return address
+  0010 180280a0     [5]     MOVW  0,SP,1,+SP
+  754:            RTS
+  0014 3d           [5]     RTS   
+  755:    }
+  756:  #endif /* USE_SEVERAL_PAGES */
+  757:  }
+  758:  
+  759:  /*--------------------------- _FAR_COPY --------------------------------
+  760:    This runtime routine is used to access paged memory via a runtime function.
+  761:    It may also be used if the compiler  option -Cp is not used with the runtime argument.
+  762:  
+  763:    Arguments :
+  764:    - offset part of the source int the X register
+  765:    - page part of the source in the A register
+  766:    - offset part of the dest int the Y register
+  767:    - page part of the dest in the B register
+  768:    - number of bytes to be copied at 2,SP. The number of bytes is always > 0
+  769:  
+  770:    Result :
+  771:    - memory area copied
+  772:    - no registers are saved, i.e. all registers may be destroied
+  773:    - all page register still contain the same value
+  774:  
+  775:  
+  776:    stack-structure at the loop-label:
+  777:       0,SP : destination offset
+  778:       2,SP : source page
+  779:       3,SP : destination page
+  780:       4,SP : source offset
+  781:       6,SP : return address
+  782:       8,SP : counter, > 0
+  783:    --------------------------- _FAR_COPY ----------------------------------*/
+  784:  
+  785:  #ifdef __cplusplus
+  786:  extern "C"
+  787:  #endif
+  788:  #pragma NO_ENTRY
+  789:  #pragma NO_EXIT
+  790:  #pragma NO_FRAME
+  791:  
+  792:  void NEAR _FAR_COPY(void) {
+
+Function: _FAR_COPY
+Source  : G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target\datapage.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\prm;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\cmd;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\Sources;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\lib;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\src;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\HAL-Target;G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\Application;D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Freescale\CodeWarrior for HCS12 V4.7\lib\HC12c\include" -EnvOBJPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -EnvTEXTPATH=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=G:\docs\hse\Vorlesungen\Echtzeitsysteme\Beispiele\CodeWarrior\CAN-Example\IDE-Target\can-example_Data\Monitor\ObjectCode\datapage.c.o
+
+  793:  #if USE_SEVERAL_PAGES
+  794:    asm {
+  795:          DEX                   ; source addr-=1, because loop counter ends at 1
+  796:          PSHX                  ; save source offset
+  797:          PSHD                  ; save both pages
+  798:          DEY                   ; destination addr-=1, because loop counter ends at 1
+  799:          PSHY                  ; save destination offset
+  800:          LDX     8,SP          ; load counter, assuming counter > 0
+  801:  
+  802:  loop:
+  803:          LDD     4,SP          ; load source offset
+  804:          LEAY    D,X           ; calcutate actual source address
+  805:          LDAB    2,SP          ; load source page
+  806:          __PIC_JSR (_LOAD_FAR_8); load 1 source byte
+  807:          PSHB                  ; save value
+  808:          LDD     0+1,SP        ; load destination offset
+  809:          LEAY    D,X           ; calcutate acual destination address
+  810:          PULA                  ; restore value
+  811:          LDAB    3,SP          ; load destination page
+  812:          __PIC_JSR (_STORE_FAR_8); store one byte
+  813:          DEX
+  814:          BNE     loop
+  815:          LDX     6,SP          ; load return address
+  816:          LEAS    10,SP         ; release stack
+  817:          JMP     0,X           ; return
+  818:    }
+  819:  #else
+  820:    asm {
+  821:          PSHD                   ; store page registers
+  0000 3b           [2]     PSHD  
+  822:          TFR   X,D
+  0001 b754         [1]     TFR   X,D
+  823:          ADDD  4,SP             ; calculate source end address
+  0003 e384         [3]     ADDD  4,SP
+  824:          STD   4,SP
+  0005 6c84         [2]     STD   4,SP
+  825:          PULB                   ; reload source page
+  0007 33           [3]     PULB  
+  826:          LDAA  PAGE_ADDR        ; save page register
+  0008 9630         [3]     LDAA  48
+  827:          PSHA
+  000a 36           [2]     PSHA  
+  828:  loop:
+  829:          STAB  PAGE_ADDR        ; set source page
+  000b 5b30         [2]     STAB  48
+  830:          LDAA  1,X+             ; load value
+  000d a630         [3]     LDAA  1,X+
+  831:          MOVB  1,SP, PAGE_ADDR  ; set destination page
+  000f 180d810030   [5]     MOVB  1,SP,48
+  832:          STAA  1,Y+
+  0014 6a70         [2]     STAA  1,Y+
+  833:          CPX   4,SP
+  0016 ae84         [3]     CPX   4,SP
+  834:          BNE   loop
+  0018 26f1         [3/1]   BNE   *-13 ;abs = 000b
+  835:  
+  836:          LDAA  2,SP+            ; restore old page value and release stack
+  001a a6b1         [3]     LDAA  2,SP+
+  837:          STAA  PAGE_ADDR        ; store it into page register
+  001c 5a30         [2]     STAA  48
+  838:          LDX   4,SP+            ; release stack and load return address
+  001e eeb3         [3]     LDX   4,SP+
+  839:          JMP   0,X              ; return
+  0020 0500         [3]     JMP   0,X
+  840:    }
+  841:  #endif
+  842:  }
+  843:  
+  844:  

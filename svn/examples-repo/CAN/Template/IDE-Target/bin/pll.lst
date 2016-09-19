@@ -1,0 +1,95 @@
+ANSI-C/cC++ Compiler for HC12 V-5.0.24 Build 4047, Feb 17 2004
+
+    1:  /*************************PLL.C***************************
+    2:  *   boosts the CPU clock to 48 MHz                       *
+    3:  *                                                        *
+    4:  *   Created by Theodore Deden on 20 January 2004.        *
+    5:  *   Modified by Theodore Deden on 9 February 2004.       *
+    6:  *   Last Modified by Jonathan Valvano 2/16/04.            *
+    7:  *                                                        *
+    8:  *   Distributed underthe provisions of the GNU GPL ver 2 *
+    9:  *   Copying, redistributing, modifying is encouraged.    *
+   10:  *                                                        *
+   11:  *********************************************************/
+   12:  
+   13:  // modified to make PLL_Init depend on _BUSCLOCK (defined in pll.h)
+   14:  // PLL now running at 48 MHz to be consistent with HCS12 Serial Monitor
+   15:  // fw-07-04
+   16:  
+   17:  #include <hidef.h>              /* common defines and macros */
+   18:  #include <mc9s12dp256.h>        /* derivative information */
+   19:  #include "pll.h"                /* macro _BUSCLOCK */
+   20:  
+   21:  //********* PLL_Init ****************
+   22:  // Set PLL clock to 48 MHz, and switch 9S12 to run at this rate
+   23:  // Inputs: none
+   24:  // Outputs: none
+   25:  // Errors: will hang if PLL does not stabilize 
+   26:  void PLL_Init(void){
+
+Function: PLL_Init
+Source  : Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\Sources\pll.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt;Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\bin;Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\prm;Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\cmd;Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\Sources;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\lib;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\src;D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -Env"LIBPATH=D:\Programme\Metrowerks\CodeWarrior CW12_V3.1\lib\HC12c\include" -EnvOBJPATH=Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\bin -EnvTEXTPATH=Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\bin -Lasm=%n.lst -Ms -ObjN=Z:\CANPRUEBA03-01-2006\CAN_Final\myADC_interrupt\myADC_interrupt\myADC_interrupt_Data\Monitor\ObjectCode\pll.c.o -WmsgSd1106
+
+   27:  
+   28:    /* ensure we're running the controller at an appropriate clock speed */
+   29:    #if (_BUSCLOCK != 24 && _BUSCLOCK != 4)
+   30:    #error pll.h: _BUSCLOCK has to be set to 4 (MHz) or 24 (MHz)
+   31:    #endif
+   32:    
+   33:    /* set PLL clock speed */
+   34:    #if _BUSCLOCK == 24
+   35:    SYNR = 0x05;      // PLLOSC = 48 MHz
+  0000 c605         LDAB  #5
+  0002 5b00         STAB  _SYNR
+   36:    #else
+   37:    SYNR = 0x00;      // PLLOSC = 8 MHz
+   38:    #endif
+   39:    
+   40:    REFDV = 0x00;
+  0004 790000       CLR   _REFDV
+   41:    
+   42:    /* PLLCLK = 2 * OSCCLK * (SYNR + 1) / (REFDV + 1)
+   43:  	   Values above give PLLCLK of 48 MHz with 4 MHz crystal. 
+   44:  	   (OSCCLK is Crystal Clock Frequency)                    */
+   45:    
+   46:    CLKSEL = 0x00;
+  0007 790000       CLR   _CLKSEL
+   47:    
+   48:    /*Meaning for CLKSEL:
+   49:    Bit 7: PLLSEL = 0 Keep using OSCCLK until we are ready to switch to PLLCLK
+   50:    Bit 6: PSTP   = 0 Do not need to go to Pseudo-Stop Mode
+   51:    Bit 5: SYSWAI = 0 In wait mode system clocks stop.
+   52:    But 4: ROAWAI = 0 Do not reduce oscillator amplitude in wait mode.
+   53:    Bit 3: PLLWAI = 0 Do not turn off PLL in wait mode
+   54:    Bit 2: CWAI	= 0 Do not stop the core during wait mode
+   55:    Bit 1: RTIWAI = 0 Do not stop the RTI in wait mode
+   56:    Bit 0: COPWAI = 0 Do not stop the COP in wait mode
+   57:    */
+   58:    
+   59:    
+   60:    PLLCTL = 0xD1;
+  000a 86d1         LDAA  #209
+  000c 5a00         STAA  _PLLCTL
+   61:    
+   62:    /*Meaning for PLLCTL:
+   63:    Bit 7: CME   = 1; Clock monitor enable - reset if bad clock when set
+   64:    Bit 6: PLLON = 1; PLL On bit
+   65:    Bit 5: AUTO  = 0; No automatic control of bandwidth, manual through ACQ
+   66:    But 4: ACQ   = 1; 1 for high bandwidth filter (acquisition); 0 for low (tracking)
+   67:    Bit 3:            (Not Used by 9s12c32)
+   68:    Bit 2: PRE   = 0; RTI stops during Pseudo Stop Mode
+   69:    Bit 1: PCE   = 0; COP diabled during Pseudo STOP mode
+   70:    Bit 0: SCME  = 1; Crystal Clock Failure -> Self Clock mode NOT reset.
+   71:    
+   72:    */
+   73:    
+   74:    while((CRGFLG&0x08) == 0){ 	  // Wait for PLLCLK to stabilize.
+  000e 4f0008fc     BRCLR _CRGFLG,#8,*+0 ;abs = 000e
+   75:    }  
+   76:    CLKSEL_PLLSEL = 1;  // Switch to PLL clock
+  0012 4c0080       BSET  _CLKSEL,#128
+   77:  }
+  0015 3d           RTS   
+   78:  
+   79:  

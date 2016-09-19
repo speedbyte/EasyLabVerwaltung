@@ -134,9 +134,11 @@ else
 fi
 
 mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log
-cp -R $do_verbose $ADMINDIR/svn/examplerepo $SVNREPOS>>logs/lab-svn.log
-chown -R $do_verbose root:svn $SVNREPOS/examplerepo>>logs/lab-svn.log
-chmod -R $do_verbose 770 $SVNREPOS/examplerepo>>logs/lab-svn.log
+if [ -d $SVNREPOS/examples-repo ]; then rm -rf $SVNREPOS/examples-repo>>logs/lab-svn.log; fi 
+svnadmin create --fs-type fsfs $SVNREPOS/examples-repo
+svnadmin load $SVNREPOS/examples-repo < $ADMINDIR/svn/ezsrepo-svn-examples.dump>>logs/lab-svn.log
+chown -R $do_verbose root:svn $SVNREPOS/examples-repo>>logs/lab-svn.log
+chmod -R $do_verbose 770 $SVNREPOS/examples-repo>>logs/lab-svn.log
 count=1
 type=repo
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
@@ -163,7 +165,7 @@ do
   #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
   #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
   #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
-  chgrp -R $do_verbose svn $SVNREPOS/$g>>logs/lab-svn.log
+  chown -R $do_verbose root:svn $SVNREPOS/$g>>logs/lab-svn.log
   chmod -R $do_verbose 770 $SVNREPOS/$g>>logs/lab-svn.log
   echo "Completed preparing $g"
   echo

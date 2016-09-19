@@ -1,0 +1,125 @@
+*** EVALUATION ***
+ANSI-C/cC++ Compiler for HC12 V-5.0.40 Build 10020, Jan 21 2010
+
+    1:  /* 
+    2:   * Example program to demonstrate usage of the primitive
+    3:   * CAN driver, using the potis to drive the LEDs.
+    4:   * Turning the poti changes the number of LEDs lighting up
+    5:   * on the partner board.
+    6:   *
+    7:   * Author: Joerg Friedrich
+    8:   * Copyright: HS Esslingen, November 2008
+    9:   *
+   10:   * License: Gnu Lesser Public License (LGPL)
+   11:   *
+   12:   * $Id:$
+   13:   * $Rev:$
+   14:   *
+   15:   */
+   16:   
+   17:  #include "adc.h"                
+   18:  #include "candriver.h"
+   19:  #include "led.h"
+   20:  
+   21:  void main(void) {
+*** EVALUATION ***
+
+Function: main
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application\main.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\main.c.o
+
+  0000 1bf1e4       [2]     LEAS  -28,SP
+   22:  
+   23:  int  i;
+   24:  char led;
+   25:  
+   26:  
+   27:  unsigned char id[4] = {0,0,0,0}; 
+  0003 6988         [2]     CLR   8,SP
+  0005 6989         [2]     CLR   9,SP
+  0007 698a         [2]     CLR   10,SP
+  0009 698b         [2]     CLR   11,SP
+   28:  unsigned char sdata[8];
+   29:  unsigned char rdata[8];
+   30:  unsigned char rid[4];
+   31:  unsigned char rlength;
+   32:  
+   33:  
+   34:    
+   35:    id[0]=0x22;  /* Just some value, read from configuration switch in real life! */
+  000b c622         [1]     LDAB  #34
+  000d 6b88         [2]     STAB  8,SP
+   36:  
+   37:    /* initialize Hardware */
+   38:    initCAN();    
+  000f 160000       [4]     JSR   initCAN
+   39:    initADC0();
+  0012 160000       [4]     JSR   initADC0
+   40:    initLED(); 
+  0015 160000       [4]     JSR   initLED
+   41:  
+   42:   
+   43:    /* forever */
+   44:    for(;;) {
+   45:    
+   46:      /* determine LED bit pattern */
+   47:      for(i=0, led=0x00; i<(getADC0_Data() & 0x3FF); i += 0x3FF/8) 
+  0018 c7           [1]     CLRB  
+  0019 87           [1]     CLRA  
+  001a 6c82         [2]     STD   2,SP
+  001c 6b81         [2]     STAB  1,SP
+  001e 200e         [3]     BRA   *+16 ;abs = 002e
+   48:        {
+   49:        
+   50:        /* assemble LED bit pattern */
+   51:        led = led<<1 | 0x01;
+  0020 e681         [3]     LDAB  1,SP
+  0022 58           [1]     LSLB  
+  0023 ca01         [1]     ORAB  #1
+  0025 6b81         [2]     STAB  1,SP
+  0027 ec82         [3]     LDD   2,SP
+  0029 c3007f       [2]     ADDD  #127
+  002c 6c82         [2]     STD   2,SP
+  002e 160000       [4]     JSR   getADC0_Data
+  0031 8403         [1]     ANDA  #3
+  0033 ac82         [3]     CPD   2,SP
+  0035 22e9         [3/1]   BHI   *-21 ;abs = 0020
+   52:        }
+   53:  
+   54:      /* set LED array to new value */
+   55:     
+   56:      sdata[0]=led;
+  0037 e681         [3]     LDAB  1,SP
+  0039 6b8c         [2]     STAB  12,SP
+   57:      writeCAN(id, sdata, 1);
+  003b 1a88         [2]     LEAX  8,SP
+  003d 34           [2]     PSHX  
+  003e 1a8e         [2]     LEAX  14,SP
+  0040 34           [2]     PSHX  
+  0041 c601         [1]     LDAB  #1
+  0043 160000       [4]     JSR   writeCAN
+   58:      
+   59:      rlength = sizeof(rdata);
+  0046 c608         [1]     LDAB  #8
+  0048 6ba3         [2]     STAB  4,+SP
+   60:      
+   61:      while (readCAN(rid, rdata, &rlength)==-1)
+  004a 1a84         [2]     LEAX  4,SP
+  004c 34           [2]     PSHX  
+  004d 1af016       [2]     LEAX  22,SP
+  0050 34           [2]     PSHX  
+  0051 1a84         [2]     LEAX  4,SP
+  0053 b754         [1]     TFR   X,D
+  0055 160000       [4]     JSR   readCAN
+  0058 1b84         [2]     LEAS  4,SP
+  005a 0494ed       [3]     IBEQ  D,*-16 ;abs = 004a
+   62:        {
+   63:  
+   64:        }
+   65:      writeLED(rdata[0]);
+  005d e6f014       [3]     LDAB  20,SP
+  0060 160000       [4]     JSR   writeLED
+  0063 20b3         [3]     BRA   *-75 ;abs = 0018
+   66:      
+   67:    }
+   68:  }

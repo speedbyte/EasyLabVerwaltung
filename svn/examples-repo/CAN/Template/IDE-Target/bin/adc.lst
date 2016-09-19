@@ -1,0 +1,107 @@
+*** EVALUATION ***
+ANSI-C/cC++ Compiler for HC12 V-5.0.40 Build 10020, Jan 21 2010
+
+    1:  /* 
+    2:   * A primitive ADC driver for the Dragon 12 board.
+    3:   *
+    4:   * Author: Joerg Friedrich
+    5:   * Copyright: HS Esslingen, November 2008
+    6:   *
+    7:   * License: Gnu Lesser Public License (LGPL)
+    8:   *
+    9:   * $Id:$
+   10:   * $Rev:$
+   11:   *
+   12:   */
+   13:  
+   14:  #include <mc9s12dp256.h>        /* derivative information */
+   15:  
+   16:  
+   17:  /* define global result variable */
+   18:  static unsigned int  ADC0_Data;
+   19:  
+   20:  unsigned int getADC0_Data() {
+*** EVALUATION ***
+
+Function: getADC0_Data
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\adc.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\adc.c.o -WmsgSd1106
+
+   21:     return ADC0_Data; 
+  0000 fc0000       [3]     LDD   ADC0_Data
+   22:  }
+  0003 3d           [5]     RTS   
+   23:  
+   24:  /* ******* ADC0 Interrupthandler ************ */
+   25:  // store conversion result in ADC_Data and restart conversion
+   26:  interrupt 22 void ADC0_Interrupthandler(void) { 
+*** EVALUATION ***
+
+Function: ADC0_Interrupthandler
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\adc.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\adc.c.o -WmsgSd1106
+
+   27:    
+   28:    /* return value in global variable 'ADC0_Data' */
+   29:    ADC0_Data = ATD0DR0; 
+  0000 dc00         [3]     LDD   _ATD0DR0
+  0002 7c0000       [3]     STD   ADC0_Data
+   30:    ATD0CTL5 = 0x87;         // start sequence, channel AN07, result right-aligned
+  0005 c687         [1]     LDAB  #135
+  0007 5b00         [2]     STAB  _ATD0CTL45:1
+   31:  
+   32:  }
+  0009 0b           [8]     RTI   
+   33:  
+   34:  
+   35:  
+   36:  
+   37:  //******** ADC_Init *************** 
+   38:  // Initialize ADC
+   39:  void initADC0(void){
+*** EVALUATION ***
+
+Function: initADC0
+Source  : \\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target\adc.c
+Options : -Cc -D_HCS12 -D__NO_FLOAT__ -D_HCS12_SERIALMON -Env"GENPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\prm;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\cmd;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\Sources;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\lib;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\src;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\HAL-Target;\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\Application;C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -Env"LIBPATH=C:\Programme\Freescale\CodeWarrior for S12(X) V5.0\lib\HC12c\include" -EnvOBJPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -EnvTEXTPATH=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\bin -Lasm=%n.lst -Ms -ObjN=\\psf\Home\Documents\HSE\Vorlesungen\Echtzeitsysteme\Examples\CAN\IDE-Target\can-example_Data\Monitor\ObjectCode\adc.c.o -WmsgSd1106
+
+   40:  
+   41:    ATD0CTL2 = 0x82; // enable ADC
+  0000 cc0582       [2]     LDD   #1410
+  0003 5b00         [2]     STAB  _ATD0CTL23
+   42:    // bit 7 ADPU=1 enable
+   43:    // bit 6 AFFC=0 ATD Fast Flag Clear All
+   44:    // bit 5 AWAI=0 ATD Power Down in Wait Mode
+   45:    // bit 4 ETRIGLE=0 External Trigger Level/Edge Control
+   46:    // bit 3 ETRIGP=0 External Trigger Polarity
+   47:    // bit 2 ETRIGE=0 External Trigger Mode Enable
+   48:    // bit 1 ASCIE=0 ATD Sequence Complete Interrupt Enable
+   49:    // bit 0 ASCIF=0 ATD Sequence Complete Interrupt Flag
+   50:    
+   51:    ATD0CTL4 = 0x05; // enable ADC
+  0005 5a00         [2]     STAA  _ATD0CTL45
+   52:    // bit 7 SRES8=0 A/D Resolution Select
+   53:    //             1 = 8 bit resolution
+   54:    //             0 = 10 bit resolution
+   55:    // bit 6 SMP1=0 Sample Time Select 
+   56:    // bit 5 SMP0=0 2 clock period
+   57:    // bit 4 PRS4=0 ATD Clock Prescaler divide by 12
+   58:    // bit 3 PRS3=0 ATD Clock Prescaler
+   59:    // bit 2 PRS2=1 ATD Clock Prescaler
+   60:    // bit 1 PRS1=0 ATD Clock Prescaler
+   61:    // bit 0 PRS0=1 ATD Clock Prescaler
+   62:    
+   63:    /* clear global return variable */
+   64:    ADC0_Data = 0;
+  0007 c7           [1]     CLRB  
+  0008 87           [1]     CLRA  
+  0009 7c0000       [3]     STD   ADC0_Data
+   65:  
+   66:    /* start conversion */
+   67:    ATD0CTL5 = 0x87;         // start sequence, channel AN07, result right-aligned
+  000c c687         [1]     LDAB  #135
+  000e 5b00         [2]     STAB  _ATD0CTL45:1
+   68:    
+   69:  }
+  0010 3d           [5]     RTS   
+   70:  
