@@ -152,19 +152,6 @@ do
   if [ -d $SVNREPOS/$g ]; then rm -rf $SVNREPOS/$g>>logs/lab-svn.log; fi 
   svnadmin create --fs-type fsfs $SVNREPOS/$g
   svnadmin load $SVNREPOS/$g < $ADMINDIR/svn/ezsrepo-svn-template.dump>>logs/lab-svn.log
-  #svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/docs/qa -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/docs/cm -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/scratch -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl/Application -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Host -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Target -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
-  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
-  #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
   chown -R $do_verbose root:svn $SVNREPOS/$g>>logs/lab-svn.log
   chmod -R $do_verbose 770 $SVNREPOS/$g>>logs/lab-svn.log
   echo "Completed preparing $g"
@@ -216,10 +203,10 @@ do
   #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
   wait ${!}
   echo
-  cd ../examplerepo
+  cd ../git/template-repo
   git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/"$g".git
   git push origin master
-  cd ../ezslab
+  cd ../../ezslab
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
