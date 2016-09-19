@@ -106,7 +106,7 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=25
+	MAXREPOS=5
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
@@ -164,16 +164,25 @@ echo
 
 function 3_prepare_gitrepos_delete_repos
 {
+echo "Do you want a backup of the GIT repos (Y/N)"
+read ANSWER
+if [ "ANSWER" == "Y" ]; then
+	echo "Backup GIT repos.. This can take a long time...."
+else
+	echo "Not Backup GIT repos.. This can take a long time...."
+fi
+
 user=ezslab
 pass="njn\$43EL"
 count=1
 type=repo
-for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
+DUMMYMAXREPOS=25
+for ((i=1;i<=$(($DUMMYMAXREPOS*$ITERATIONS));i++));
 do
-  index=$(($(($i-1))/$MAXREPOS))
+  index=$(($(($i-1))/$DUMMYMAXREPOS))
   PREFIXREPO=${PREFIXREPOLIST[$index]}
   g=$PREFIXREPO$type$count
-  if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
+  if [ $count -ge $DUMMYMAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "deleting project $g" 
   curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
