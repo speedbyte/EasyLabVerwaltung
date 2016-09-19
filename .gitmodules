@@ -1,3 +1,3 @@
 [submodule "templaterepo"]
 	path = templaterepo
-	url = git@wwwitrt3.hs-esslingen.de:LaborAufgaben/templaterepo.git
+	url = https://wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/templaterepo.git
