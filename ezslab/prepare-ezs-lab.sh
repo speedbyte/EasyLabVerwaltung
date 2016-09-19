@@ -134,9 +134,9 @@ else
 fi
 
 mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log
-cp -R $do_verbose $ADMINDIR/svn/template $SVNREPOS>>logs/lab-svn.log
-chown -R $do_verbose root:svn $SVNREPOS/template>>logs/lab-svn.log
-chmod -R $do_verbose 770 $SVNREPOS/template>>logs/lab-svn.log
+cp -R $do_verbose $ADMINDIR/svn/examplerepo $SVNREPOS>>logs/lab-svn.log
+chown -R $do_verbose root:svn $SVNREPOS/examplerepo>>logs/lab-svn.log
+chmod -R $do_verbose 770 $SVNREPOS/examplerepo>>logs/lab-svn.log
 count=1
 type=repo
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
@@ -149,7 +149,7 @@ do
   if [ ! -d $SVNREPOS ]; then mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log; fi
   if [ -d $SVNREPOS/$g ]; then rm -rf $SVNREPOS/$g>>logs/lab-svn.log; fi 
   svnadmin create --fs-type fsfs $SVNREPOS/$g
-  svnadmin load $SVNREPOS/$g < ezsrepo-svn-template.dump>>logs/lab-svn.log
+  svnadmin load $SVNREPOS/$g < $ADMINDIR/svn/ezsrepo-svn-template.dump>>logs/lab-svn.log
   #svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
   #svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
   #svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
@@ -214,14 +214,14 @@ do
   #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
   wait ${!}
   echo
-  cd ../templaterepo
-  git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/$g
+  cd ../examplerepo
+  git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/"$g".git
   git push origin master
   cd ../ezslab
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
-git remote set-url origin https://$user@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/template-repo
+git remote set-url origin https://$user@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/examplerepo.git
 }
 
 
