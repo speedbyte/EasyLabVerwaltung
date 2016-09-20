@@ -201,7 +201,6 @@ count=1
 type=repo
 cd ../git/template-repo
 echo $(git remote -v)
-read PAUSE
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
 do
   index=$(($(($i-1))/$MAXREPOS))
