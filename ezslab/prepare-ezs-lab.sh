@@ -171,7 +171,6 @@ if [ "ANSWER" == "Y" ]; then
 else
 	echo "Not Backup GIT repos.. This can take a long time...."
 fi
-
 user=ezslab
 pass="njn\$43EL"
 count=1
@@ -190,7 +189,6 @@ do
   curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
   echo
-  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
 }
@@ -201,6 +199,9 @@ user=ezslab
 pass="njn\$43EL"
 count=1
 type=repo
+cd ../git/template-repo
+echo $(git remote -v)
+read PAUSE
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
 do
   index=$(($(($i-1))/$MAXREPOS))
@@ -212,14 +213,13 @@ do
   #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
   wait ${!}
   echo
-  cd ../git/template-repo
   git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/"$g".git
   git push origin master
-  cd ../../ezslab
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
-git remote set-url origin https://$user@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/examplerepo.git
+git remote set-url origin https://$user@wwwitrt3.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
+cd ../../ezslab
 }
 
 
