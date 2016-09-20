@@ -1,0 +1,331 @@
+[groups]
+ezsadmins = ezslab, vagrawal, friedric
+saadmins = friedric, vagrawal
+
+#----------------------EDIT ZONE START---------------------------------------------
+#Start adding the names of the users here 
+
+ezsgroup1 = XXXXit00, YYYYit00
+ezsgroup2 = tomuix00, febiix00
+ezsgroup3 = chhaix07, jomaix03
+ezsgroup4 = wolaix01, toscix07
+ezsgroup5 = papaix02, dahaix05
+ezsgroup6 = ropeme00, anvaix00
+ezsgroup7 = makaix10, roruix00, ciheix00
+ezsgroup8 = ullaix00, frbaix02, lugaix00
+ezsgroup9 = pamuix01, jumaix03
+ezsgroup10 = singix00, ondeix00, hiasix00
+ezsgroup11 = clboix00, almaix05
+ezsgroup12 = tojaix02, reduix00
+ezsgroup13 = alkaix01, sekeix00
+ezsgroup14 = XXXXit00, YYYYit00
+ezsgroup15 = XXXXit00, YYYYit00
+ezsgroup16 = XXXXit00, YYYYit00
+ezsgroup17 = XXXXit00, YYYYit00
+ezsgroup18 = XXXXit00, YYYYit00
+ezsgroup19 = XXXXit00, YYYYit00
+ezsgroup20 = XXXXit00, YYYYit00
+ezsgroup21 = XXXXit00, YYYYit00
+ezsgroup22 = XXXXit00, YYYYit00
+ezsgroup23 = XXXXit00, YYYYit00
+ezsgroup24 = XXXXit00, YYYYit00
+ezsgroup25 = XXXXit00, YYYYit00
+
+
+#---------------------Start SA ------------
+
+sagroup1 = XXXXit00, YYYYit00
+sagroup2 = tomuix00, febiix00
+sagroup3 = chhaix07, jomaix03
+sagroup4 = wolaix01, toscix07
+sagroup5 = papaix02, dahaix05
+sagroup6 = ropeme00
+sagroup7 = makaix10, roruix00, ciheix00
+sagroup8 = ullaix00, frbaix02, jumaix03
+sagroup9 = pamuix01
+sagroup10 = singix00, ondeix00, hiasix00
+sagroup11 = clboix00, almaix05
+sagroup12 = tojaix02, reduix00
+sagroup13 = flstix01, hayaix01
+sagroup14 = XXXXit00, YYYYit00
+sagroup15 = XXXXit00, YYYYit00
+sagroup16 = XXXXit00, YYYYit00
+sagroup17 = ZZZZit00, YYYYit00
+sagroup18 = XXXXit00, YYYYit00
+sagroup19 = XXXXit00, YYYYit00
+sagroup20 = XXXXit00, YYYYit00
+sagroup21 = XXXXit00, YYYYit00
+sagroup22 = XXXXit00, YYYYit00
+sagroup23 = XXXXit00, YYYYit00
+sagroup24 = XXXXit00, YYYYit00
+sagroup25 = XXXXit00, YYYYit00
+
+
+#----------------------EDIT ZONE END-----------------------------------------------
+
+ezsgroupall = @ezsgroup1, @ezsgroup2, @ezsgroup3, @ezsgroup4, @ezsgroup5, @ezsgroup6, @ezsgroup7, @ezsgroup8, @ezsgroup9, @ezsgroup10, @ezsgroup11, @ezsgroup12, @ezsgroup13, @ezsgroup14, @ezsgroup15, @ezsgroup16, @ezsgroup17, @ezsgroup18, @ezsgroup19, @ezsgroup20, @ezsgroup21, @ezsgroup22, @ezsgroup23, @ezsgroup24, @ezsgroup25 
+ 
+sagroupall = @sagroup1, @sagroup2, @sagroup3, @sagroup4, @sagroup5, @sagroup6, @sagroup7, @sagroup8, @sagroup9, @sagroup10, @sagroup11, @sagroup12, @sagroup13, @sagroup14, @sagroup15, @sagroup16, @sagroup17, @sagroup18, @sagroup19, @sagroup20, @sagroup21, @sagroup22, @sagroup23, @sagroup24, @sagroup25
+ 
+[template:/]
+@ezsadmins = rw
+@ezsgroupall = r
+
+[ezsrepo1:/]
+@ezsgroup1 = rw
+@ezsadmins = r
+
+[ezsrepo2:/]
+@ezsgroup2 = rw
+@ezsadmins = r
+
+[ezsrepo3:/]
+@ezsgroup3 = rw
+@ezsadmins = r
+
+[ezsrepo4:/]
+@ezsgroup4 = rw
+@ezsadmins = r
+
+[ezsrepo5:/]
+@ezsgroup5 = rw
+@ezsadmins = r
+
+[ezsrepo6:/]
+@ezsgroup6 = rw
+@ezsadmins = r
+
+[ezsrepo7:/]
+@ezsgroup7 = rw
+@ezsadmins = r
+
+[ezsrepo8:/]
+@ezsgroup8 = rw
+@ezsadmins = r
+
+[ezsrepo9:/]
+@ezsgroup9 = rw
+@ezsadmins = r
+
+[ezsrepo10:/]
+@ezsgroup10 = rw
+@ezsadmins = r
+
+[ezsrepo11:/]
+@ezsgroup11 = rw
+@ezsadmins = r
+
+[ezsrepo12:/]
+@ezsgroup12 = rw
+@ezsadmins = r
+
+[ezsrepo13:/]
+@ezsgroup13 = rw
+@ezsadmins = r
+
+[ezsrepo14:/]
+@ezsgroup14 = rw
+@ezsadmins = r
+
+[ezsrepo15:/]
+@ezsgroup15 = rw
+@ezsadmins = r
+
+[ezsrepo16:/]
+@ezsgroup16 = rw
+@ezsadmins = r
+
+[ezsrepo17:/]
+@ezsgroup17 = rw
+@ezsadmins = r
+
+[ezsrepo18:/]
+@ezsgroup18 = rw
+@ezsadmins = r
+
+[ezsrepo19:/]
+@ezsgroup19 = rw
+@ezsadmins = r
+
+[ezsrepo20:/]
+@ezsgroup20 = rw
+@ezsadmins = r
+
+[ezsrepo21:/]
+@ezsgroup21 = rw
+@ezsadmins = r
+
+[ezsrepo22:/]
+@ezsgroup22 = rw
+@ezsadmins = r
+
+[ezsrepo23:/]
+@ezsgroup23 = rw
+@ezsadmins = r
+
+[ezsrepo24:/]
+@ezsgroup24 = rw
+@ezsadmins = r
+
+[ezsrepo25:/]
+@ezsgroup25 = rw
+@ezsadmins = r
+
+#--------------------SA REPOS -------------------------
+
+[sarepo1:/]
+@sagroup1 = rw
+@saadmins = r
+
+[sarepo2:/]
+@sagroup2 = rw
+@saadmins = r
+
+[sarepo3:/]
+@sagroup3 = rw
+@saadmins = r
+
+[sarepo4:/]
+@sagroup4 = rw
+@saadmins = r
+
+[sarepo5:/]
+@sagroup5 = rw
+@saadmins = r
+
+[sarepo6:/]
+@sagroup6 = rw
+@saadmins = r
+
+[sarepo7:/]
+@sagroup7 = rw
+@saadmins = r
+
+[sarepo8:/]
+@sagroup8 = rw
+@saadmins = r
+
+[sarepo9:/]
+@sagroup9 = rw
+@saadmins = r
+
+[sarepo10:/]
+@sagroup10 = rw
+@saadmins = r
+
+[sarepo11:/]
+@sagroup11 = rw
+@saadmins = r
+
+[sarepo12:/]
+@sagroup12 = rw
+@saadmins = r
+
+[sarepo13:/]
+@sagroup13 = rw
+@saadmins = r
+
+[sarepo14:/]
+@sagroup14 = rw
+@saadmins = r
+
+[sarepo15:/]
+@sagroup15 = rw
+@saadmins = r
+
+[sarepo16:/]
+@sagroup16 = rw
+@saadmins = r
+
+[sarepo17:/]
+@sagroup17 = rw
+@saadmins = r
+
+[sarepo18:/]
+@sagroup18 = rw
+@saadmins = r
+
+[sarepo19:/]
+@sagroup19 = rw
+@saadmins = r
+
+[sarepo20:/]
+@sagroup20 = rw
+@saadmins = r
+
+[sarepo21:/]
+@sagroup21 = rw
+@saadmins = r
+
+[sarepo22:/]
+@sagroup22 = rw
+@saadmins = r
+
+[sarepo23:/]
+@sagroup23 = rw
+@saadmins = r
+
+[sarepo24:/]
+@sagroup24 = rw
+@saadmins = r
+
+[sarepo25:/]
+@sagroup25 = rw
+@saadmins = r
+
+
+
+## add a new group ezs-students with one member
+
+#dn: cn=ezs-students,ou=groups,dc=hs-esslingen,dc=de
+#changetype: add
+#objectClass: groupOfNames
+#objectClass: top
+#description: pwm admin groups branch
+#cn: ezs-students
+#member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+
+
+## add the OU students under people
+
+#dn: ou=students,ou=people,dc=hs-esslingen,dc=de
+#changetype: add
+#ou: students
+#objectClass: organizationalUnit
+#objectClass: top
+
+
+##add a new member under students
+
+
+#dn: cn=$(student-to-add),ou=students,ou=people,dc=hs-esslingen,dc=de
+#changetype: add
+#givenName: Ezslab
+#sn: Student 
+#userPassword:: e1NTSEF9UWZEb3U5MW40My9Dc1ZYbFNPMGI4a0drempSaFlqMFE=
+#mail: ezslab-student@hs-esslingen.de
+#objectClass: inetOrgPerson
+#objectClass: organizationalPerson
+#objectClass: person
+#objectClass: top
+#objectClass: pwmUser
+#memberof: cn=$(group-to-add),ou=groups,dc=hs-esslingen,dc=de
+#uid: $(student-to-add)
+#cn: $(student-to-add)
+
+## modify the added member
+
+#DN: cn=ezslabstudent1,ou=students,ou=people,dc=hs-esslingen,dc=de
+#changetype: modify
+#replace: userpassword
+#userpassword: youmustchangeyourpassword
+
+##add a member to the group ezs-students
+
+#dn: cn=$(member-to-add),ou=groups,ou=students,dc=hs-esslingen,dc=de
+#changetype: modify
+#add: member
+#member: cn=$(member-to-add),ou=people,ou=students,dc=hs-esslingen,dc=de
+
+
+
