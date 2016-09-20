@@ -1,0 +1,22 @@
+Started by timer
+Building in workspace /usr/share/tomcat7/.jenkins/jobs/template/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/templaterepo.git # timeout=10
+Fetching upstream changes from git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/templaterepo.git
+ > git --version # timeout=10
+using GIT_SSH to set credentials 
+ > git -c core.askpass=true fetch --tags --progress git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/templaterepo.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0dc25a6e9a57828ba2c9edda24fb8c57f5ed3dbb (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0dc25a6e9a57828ba2c9edda24fb8c57f5ed3dbb
+ > git rev-list 0dc25a6e9a57828ba2c9edda24fb8c57f5ed3dbb # timeout=10
+[workspace] $ /bin/bash -xe /tmp/tomcat7-tomcat7-tmp/hudson979643841199443368.sh
++ bash -ex validatebuild.sh
++ cd lab-template/Ampel/Template/IDE-Host/AmpelMake
+validatebuild.sh: line 2: cd: lab-template/Ampel/Template/IDE-Host/AmpelMake: No such file or directory
+Build step 'Execute shell' marked build as failure
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: FAILURE
