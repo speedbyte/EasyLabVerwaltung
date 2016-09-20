@@ -1,6 +1,6 @@
 [groups]
 ezsadmins = ezslab, vagrawal, friedric
-saadmins = friedric, vagrawal
+saadmins = friedric
 
 #----------------------EDIT ZONE START---------------------------------------------
 #Start adding the names of the users here 
