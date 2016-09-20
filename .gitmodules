@@ -1,6 +1,6 @@
 [submodule "git/examples-repo"]
 	path = git/examples-repo
-	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/examples-repo.git
+	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborVerwaltung/examples-repo.git
 [submodule "git/template-repo"]
 	path = git/template-repo
-	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/template-repo.git
+	url = https://ezslab@wwwitrt3.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
