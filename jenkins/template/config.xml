@@ -28,7 +28,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>git@wwwitrt3.hs-esslingen.de:/LaborAufgaben/templaterepo.git</url>
+        <url>git@wwwitrt3.hs-esslingen.de:LaborVerwaltung/template-repo.git</url>
         <credentialsId>7392856e-bcf4-4535-8c32-04329479684f</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>

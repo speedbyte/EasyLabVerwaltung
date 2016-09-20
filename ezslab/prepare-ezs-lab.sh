@@ -229,7 +229,7 @@ echo "-----------------JENKINS LOG ------------------------\n\n" > logs/lab-jenk
 SJENKINSGROUP=tomcat7
 
 rm -rf $ADMINDIR/jenkins/template/*>>logs/lab-jenkins.log
-mv $do_verbose $JENKINS/jobs/template/* $ADMINDIR/jenkins/template/>>logs/lab-jenkins.log
+mv $do_verbose $JENKINS/jobs/template/config.xml $ADMINDIR/jenkins/template/>>logs/lab-jenkins.log
 chown -R $(whoami):$(whoami) $ADMINDIR/jenkins/template/ 
 echo "Do you want a backup of the Jenkins jobs (Y/N)"
 read ANSWER
@@ -256,7 +256,7 @@ do
   h=$PREFIXREPO$group$count
   r=$PREFIXREPO$repo$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
-  cp -r $do_verbose $JENKINS/jobs/template $JENKINS/jobs/$g>>logs/lab-jenkins.log && sed -i.bak s/templategroup/$h/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && sed -i.bak s/templaterepo/$r/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && rm -r $do_verbose $JENKINS/jobs/$g/config.xml.bak>>logs/lab-jenkins.log && chown -R $do_verbose tomcat7:tomcat7 $JENKINS/jobs/$g>>logs/lab-jenkins.log
+  cp -r $do_verbose $JENKINS/jobs/template $JENKINS/jobs/$g>>logs/lab-jenkins.log && sed -i.bak s/templategroup/$h/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && sed -i.bak s/template-repo/$r/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log  && sed -i.bak s/Verwaltung/Aufgaben/g $JENKINS/jobs/$g/config.xml>>logs/lab-jenkins.log && rm -r $do_verbose $JENKINS/jobs/$g/config.xml.bak>>logs/lab-jenkins.log && chown -R $do_verbose tomcat7:tomcat7 $JENKINS/jobs/$g>>logs/lab-jenkins.log
   echo "Created jenkins jobs $h"
 done
 echo -----------JENKINS JOBS under $JENKINS/jobs/-------------------
