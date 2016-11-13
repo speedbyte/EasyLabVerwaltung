@@ -72,6 +72,8 @@ ldiffile.write('\n')
 
 
 git = gitlab.Gitlab( 'https://wwwitrt3.hs-esslingen.de:8443', 'syi79ZTx-3CpxyD1rGsM')
+runners = git.runners.list()
+print runners[0].id
 
 for y in range(iterations):
 	for x in range(maxrepos):

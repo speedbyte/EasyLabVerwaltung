@@ -53,17 +53,20 @@ while getopts ":l:jsgvf:h" opt; do
       -j \
       -s \
       -h \
+      -g \
       -f \
        " 
       echo
-      echo "=====> use this option -f to explicitly select the authorization file" 
+      echo "=====> Option -l has one mandatory argument, either fresh or incremental. Arguement fresh will delete all the entries in LDAP under ou=labor,ou=people and Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups and additionally add members if not already present in LDAP" 
       echo
       echo "=====> use this option -j if you want to recreate jenkins jobs. This option can only be used in combination with -l fresh option. Beware that all jenkins jobs would be put in the backup folder and new jenkins jobs would be created." 
       echo
       echo "=====> use this option -s if you want to recreate svn repos. This option can only be used in combination with -l fresh option. Beware that all svn repos would be put in the backup folder and new svn repos would be created." 
       echo
-      echo "=====> Option -l has one mandatory argument, either fresh or incremental. Arguement fresh will delete all the entries in LDAP under ou=labor,ou=people and Arguement incremental will not delete any entry in LDAP, but modify the entries under ou=groups and additionally add members if not already present in LDAP" 
+      echo "=====> use this option -g if you want to create git repos. This option can only be used in combination with -l fresh option." 
+      echo "=====> The LDAP entries are added / modified / deleted after reading the entry in the authorization file"
       echo
+      echo "=====> use this option -f to explicitly select the authorization file" 
       echo "=====> The LDAP entries are added / modified / deleted after reading the entry in the authorization file"
       echo "Please see the file authorization file ( normally authorization-file.opt )  for more information"
       exit 1
@@ -106,7 +109,7 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=5
+	MAXREPOS=35
 	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
 	ITERATIONS=${#PREFIXREPOLIST[@]}
 	SVNREPOS=/var/repos/LABOR
@@ -175,7 +178,7 @@ user=ezslab
 pass="njn\$43EL"
 count=1
 type=repo
-DUMMYMAXREPOS=25
+DUMMYMAXREPOS=35
 for ((i=1;i<=$(($DUMMYMAXREPOS*$ITERATIONS));i++));
 do
   index=$(($(($i-1))/$DUMMYMAXREPOS))

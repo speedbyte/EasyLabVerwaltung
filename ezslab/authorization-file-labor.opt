@@ -1,64 +1,64 @@
 [groups]
 ezsadmins = ezslab, vagrawal, friedric
-saadmins = friedric
+saadmins = friedric, vagrawal
 
 #----------------------EDIT ZONE START---------------------------------------------
 #Start adding the names of the users here 
 
-ezsgroup1 = XXXXit00, YYYYit00
-ezsgroup2 = tomuit00, febiit00
-ezsgroup3 = chhait07, jomait03
-ezsgroup4 = wolait01, toscit07
-ezsgroup5 = papait02, dahait05
-ezsgroup6 = ropeme00, anvait00
-ezsgroup7 = makait10, roruit00, ciheit00
-ezsgroup8 = ullait00, frbait02, lugait00
-ezsgroup9 = pamuit01, jumait03
-ezsgroup10 = singit00, ondeit00, hiasit00
-ezsgroup11 = clboit00, almait05
-ezsgroup12 = tojait02, reduit00
-ezsgroup13 = alkait01, sekeit00
-ezsgroup14 = XXXXit00, YYYYit00
-ezsgroup15 = XXXXit00, YYYYit00
-ezsgroup16 = XXXXit00, YYYYit00
-ezsgroup17 = XXXXit00, YYYYit00
-ezsgroup18 = XXXXit00, YYYYit00
-ezsgroup19 = XXXXit00, YYYYit00
-ezsgroup20 = XXXXit00, YYYYit00
-ezsgroup21 = XXXXit00, YYYYit00
-ezsgroup22 = XXXXit00, YYYYit00
-ezsgroup23 = XXXXit00, YYYYit00
-ezsgroup24 = XXXXit00, YYYYit00
-ezsgroup25 = XXXXit00, YYYYit00
+ezsgroup1 = XXXXix00, YYYYix00
+ezsgroup2 = tomuix00, febiix00
+ezsgroup3 = chhaix07, jomaix03
+ezsgroup4 = wolaix01, toscix07
+ezsgroup5 = papaix02, dahaix05
+ezsgroup6 = ropeme00, anvaix00
+ezsgroup7 = makait10, roruix00, ciheix00
+ezsgroup8 = ullaix00, frbaix02, lugaix00
+ezsgroup9 = pamuix01, jumaix03
+ezsgroup10 = singix00, ondeix00, hiasix00
+ezsgroup11 = clboix00, almaix05
+ezsgroup12 = tojaix02, reduix00
+ezsgroup13 = alkaix01, sekeix00
+ezsgroup14 = XXXXix00, YYYYix00
+ezsgroup15 = XXXXix00, YYYYix00
+ezsgroup16 = XXXXix00, YYYYix00
+ezsgroup17 = XXXXix00, YYYYix00
+ezsgroup18 = XXXXix00, YYYYix00
+ezsgroup19 = XXXXix00, YYYYix00
+ezsgroup20 = XXXXix00, YYYYix00
+ezsgroup21 = XXXXix00, YYYYix00
+ezsgroup22 = XXXXix00, YYYYix00
+ezsgroup23 = XXXXix00, YYYYix00
+ezsgroup24 = XXXXix00, YYYYix00
+ezsgroup25 = XXXXix00, YYYYix00
 
 
 #---------------------Start SA ------------
 
-sagroup1 = XXXXit00, YYYYit00
-sagroup2 = tomuit00, febiit00
-sagroup3 = chhait07, jomait03
-sagroup4 = wolait01, toscit07
-sagroup5 = papait02, dahait05
+sagroup1 = XXXXix00, YYYYix00
+sagroup2 = tomuix00, febiix00
+sagroup3 = chhaix07, jomaix03
+sagroup4 = wolaix01, toscix07
+sagroup5 = papaix02, dahaix05
 sagroup6 = ropeme00
-sagroup7 = makait10, roruit00, ciheit00
-sagroup8 = ullait00, frbait02, jumait03
-sagroup9 = pamuit01
-sagroup10 = singit00, ondeit00, hiasit00
-sagroup11 = clboit00, almait05
-sagroup12 = tojait02, reduit00
-sagroup13 = flstit01, hayait01
-sagroup14 = XXXXit00, YYYYit00
-sagroup15 = XXXXit00, YYYYit00
-sagroup16 = XXXXit00, YYYYit00
-sagroup17 = ZZZZit00, YYYYit00
-sagroup18 = XXXXit00, YYYYit00
-sagroup19 = XXXXit00, YYYYit00
-sagroup20 = XXXXit00, YYYYit00
-sagroup21 = XXXXit00, YYYYit00
-sagroup22 = XXXXit00, YYYYit00
-sagroup23 = XXXXit00, YYYYit00
-sagroup24 = XXXXit00, YYYYit00
-sagroup25 = XXXXit00, YYYYit00
+sagroup7 = makait10, roruix00, ciheix00
+sagroup8 = ullaix00, frbaix02, jumaix03
+sagroup9 = pamuix01
+sagroup10 = singix00, ondeix00, hiasix00
+sagroup11 = clboix00, almaix05
+sagroup12 = tojaix02, reduix00
+sagroup13 = flstix01, hayaix01
+sagroup14 = XXXXix00, YYYYix00
+sagroup15 = XXXXix00, YYYYix00
+sagroup16 = XXXXix00, YYYYix00
+sagroup17 = ZZZZix00, YYYYix00
+sagroup18 = XXXXix00, YYYYix00
+sagroup19 = XXXXix00, YYYYix00
+sagroup20 = XXXXix00, YYYYix00
+sagroup21 = XXXXix00, YYYYix00
+sagroup22 = XXXXix00, YYYYix00
+sagroup23 = XXXXix00, YYYYix00
+sagroup24 = XXXXix00, YYYYix00
+sagroup25 = XXXXix00, YYYYix00
 
 
 #----------------------EDIT ZONE END-----------------------------------------------
