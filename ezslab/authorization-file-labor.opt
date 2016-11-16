@@ -1,6 +1,6 @@
 [groups]
 ezsadmins = ezslab, vagrawal, friedric
-saadmins = friedric, vagrawal
+saadmins = ezslab, friedric, vagrawal
 
 #----------------------EDIT ZONE START---------------------------------------------
 #Start adding the names of the users here 
@@ -30,7 +30,7 @@ saadmins = friedric, vagrawal
 #Gianluca Panetta	gipait00@hs-esslingen.de
 
 ezsgroup1 = alviit00, paheit01
-ezsgroup2 = axscit00, chfrit00
+ezsgroup2 = axscit00, chfrit00, viaggsoo
 ezsgroup3 = muduit03, shabit00, kakait01
 ezsgroup4 = peclit00, rosait01
 ezsgroup5 = roeiit00, arhait00, olstit01
@@ -198,11 +198,11 @@ ezsgroup35 = XXXXit00
 
 sagroup1 = dasiit01, laprit00, paleit00
 sagroup2 = frmeit00, anwoit03
-sagroup3 = erscit02, miscit07, chmiit01
+sagroup3 = erscit02, mifiit01, chmiit01
 sagroup4 = anmeit01, lihait00, scarit00
 sagroup5 = erghwi00, akyuwi00, phtuwi00
-sagroup6 = bjkait00 
-sagroup7 = adtoit00, coscit00
+sagroup6 = bjkait00, dikiit01, miscit07
+sagroup7 = adtoit00, coscit00, toboit02
 sagroup8 = soscit00, sebuit02
 sagroup9 = robeit03, jahoit00, stsiit01
 sagroup10 = nukoit00, ibamit00, ererit02
@@ -224,7 +224,7 @@ sagroup25 = mibuit03, yagoit00
 sagroup26 = yucoit00, feguit00, alhait04
 sagroup27 = fagrit00, samait01
 sagroup28 = olwait00
-sagroup29 = miwait02. pebeit00
+sagroup29 = miwait02, pebeit00
 sagroup30 = dahoit02, luheit01
 sagroup31 = tokrit00, ledoit00
 sagroup32 = leceit00, hadeit01

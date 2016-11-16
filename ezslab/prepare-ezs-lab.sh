@@ -15,7 +15,7 @@ while getopts ":l:jsgvf:h" opt; do
       ;;
     j)
       echo "-j was triggered, Parameter: $OPTARG" >&2
-      if [ "fresh" == "$LDAP_PARAMETER" ]; then 
+      if [ "" == "$LDAP_PARAMETER" ]; then 
       	  echo "jenkins jobs would be generated" >&2
           JENKINS_OPTION="y"
       else
@@ -303,6 +303,10 @@ if [ "$LDAP_OPTION" == "y" ]; then
     elif [ "incremental" == "$LDAP_PARAMETER" ]; then
 	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
 	#ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+    fi
+else
+    if [ "y" == "$JENKINS_OPTION" ]; then
+        2_prepare_jenkins;
     fi
 fi
 echo "Following log-files has been generated"
