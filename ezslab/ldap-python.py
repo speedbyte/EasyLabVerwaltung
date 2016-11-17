@@ -13,6 +13,7 @@ cp_script = ConfigParser.ConfigParser()
 cp_script.read('script-config.opt')
 
 authorizationfile = sys.argv[1]
+git_option = sys.argv[2]
 
 maxrepos = cp_script.get(authorizationfile, 'MAXREPOS')
 maxrepos = int(maxrepos, 10)
@@ -115,20 +116,21 @@ for y in range(iterations):
 			if ( membertoadd != '' ):
 				ldiffile.write( "member: cn= " + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 				print membertoadd
-				memberfound = git.users.list(username=membertoadd)
-				print "userfound" , memberfound
-				if (len(memberfound) > 0 ):
-					user = memberfound[0]
-					user_id = user.id
-				else:
-					print "Creating new member in GITLAB", membertoadd
-					user = git.users.create({'email': membertoadd+'@hs-esslingen.de',
-								'password': 'ezsiscool',
-								'username': membertoadd,
-								'name': membertoadd})
-					user_id = user.id
-				print user_id
-				member = projectfound.members.create({'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})	
+				if ( git_option == 'y' ):
+					memberfound = git.users.list(username=membertoadd)
+					print "userfound" , memberfound
+					if (len(memberfound) > 0 ):
+						user = memberfound[0]
+						user_id = user.id
+					else:
+						print "Creating new member in GITLAB", membertoadd
+						user = git.users.create({'email': membertoadd+'@hs-esslingen.de',
+									'password': 'ezsiscool',
+									'username': membertoadd,
+									'name': membertoadd})
+						user_id = user.id
+					print user_id
+					member = projectfound.members.create({'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})	
 			else:
 				ldiffile.write( "member: cn=dummy,ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 				print "dummy"

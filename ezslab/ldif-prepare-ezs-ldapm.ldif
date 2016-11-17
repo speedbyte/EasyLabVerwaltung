@@ -213,7 +213,12 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=jomait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= chhait07,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool
@@ -343,7 +348,7 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
-dn: cn=nukoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=mukoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool
@@ -508,6 +513,11 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
+dn: cn= chfrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
 dn: cn=nahait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
@@ -533,7 +543,7 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
-dn: cn= yagoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= yagoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool
@@ -553,7 +563,7 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
-dn: cn=fagrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=fegrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool
@@ -564,6 +574,11 @@ replace: userpassword
 userpassword: ezsiscool
 
 dn: cn=olwait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
+dn: cn= juklit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword
 userpassword: ezsiscool

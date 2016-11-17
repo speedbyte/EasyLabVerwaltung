@@ -1,6 +1,7 @@
 #!/bin/bash
 
 EZSLAB_PERSONAL_TOKEN=syi79ZTx-3CpxyD1rGsM
+GIT_OPTION="n"
 
 while getopts ":l:jsgvf:h" opt; do
   case $opt in
@@ -269,7 +270,7 @@ function 3_prepare_ldap
 {
 #Script to add ldap groups in the ldap 
 #python << EOF > logs/log-prepare-ezs-python.log  2>&1
-python ldap-python.py $AUTHORIZATIONFILE 
+python ldap-python.py $AUTHORIZATIONFILE $GIT_OPTION 
 #EOF
 }
 
