@@ -248,6 +248,11 @@ changetype: modify
 replace: userpassword
 userpassword: ezsiscool
 
+dn: cn= jozeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: modify
+replace: userpassword
+userpassword: ezsiscool
+
 dn: cn=erscit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: modify
 replace: userpassword

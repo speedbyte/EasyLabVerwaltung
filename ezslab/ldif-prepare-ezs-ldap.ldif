@@ -1143,6 +1143,7 @@ description: group of lab students
 cn: sagroup2
 member: cn= frmeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 member: cn= anwoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= jozeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
 dn: cn=frmeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -1173,6 +1174,21 @@ objectClass: pwmUser
 memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
 uid:  anwoit03
 cn:  anwoit03
+
+dn: cn= jozeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  jozeit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
+uid:  jozeit00
+cn:  jozeit00
 
 dn: cn=sagroup3,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
