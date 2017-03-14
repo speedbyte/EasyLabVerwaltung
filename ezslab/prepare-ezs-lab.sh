@@ -10,17 +10,17 @@ while getopts ":l:jsgvf:h" opt; do
       LDAP_OPTION="y"
       LDAP_PARAMETER=$OPTARG
       if (( "fresh" != "$LDAP_PARAMETER" || "incremental" != "$LDAP_PARAMETER" )); then
-      	  echo "-l expects only following two parameters: fresh or incremental. Type -h for more information. Exiting script"
-	  exit 1
+         echo "-l expects only following two parameters: fresh or incremental. Type -h for more information. Exiting script"
+   exit 1
       fi
       ;;
     j)
       echo "-j was triggered, Parameter: $OPTARG" >&2
       if [ "" == "$LDAP_PARAMETER" ]; then 
-      	  echo "jenkins jobs would be generated" >&2
+         echo "jenkins jobs would be generated" >&2
           JENKINS_OPTION="y"
       else
-	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
+   echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
           exit 1
       fi
       ;;
@@ -30,7 +30,7 @@ while getopts ":l:jsgvf:h" opt; do
           echo "svn repos would be generated" >&2
           SVN_OPTION="y"
       else
-	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
+   echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
           exit 1
       fi
       ;;
@@ -40,7 +40,7 @@ while getopts ":l:jsgvf:h" opt; do
           echo "git repos would be generated" >&2
           GIT_OPTION="y"
       #else
-#	  echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
+#   echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
 #         exit 1
 #      fi
       ;;
@@ -75,18 +75,18 @@ while getopts ":l:jsgvf:h" opt; do
     f)
       echo "-f was triggered, Parameter: $OPTARG" >&2
       if [ -f $OPTARG ]; then
-	  echo "$OPTARG Authorization file found"
+   echo "$OPTARG Authorization file found"
           AUTHORIZATIONFILE=$OPTARG
           AUTHORIZATIONGROUP="labor"#$(echo $AUTHORIZATIONFILE | cut -d. -f1 | sed s/authorization-file-//g)
-	  if [ "$AUTHORIZATIONGROUP" != "intern" ] && [ "$AUTHORIZATIONGROUP" != "labor" ]; then
-		echo "Either labor or intern authorization file is required.. Exiting"
-		exit 1
-	  fi
+   if [ "$AUTHORIZATIONGROUP" != "intern" ] && [ "$AUTHORIZATIONGROUP" != "labor" ]; then
+  echo "Either labor or intern authorization file is required.. Exiting"
+  exit 1
+   fi
       else
           echo "$OPTARG Authorization file not found" 
           exit 1
       fi
-      ;;		
+      ;;  
     v)
       echo "-f was triggered, Parameter: $OPTARG" >&2
       VERBOSE='on'
@@ -99,21 +99,21 @@ while getopts ":l:jsgvf:h" opt; do
 done
 
 if [ $# -eq 0 ]; then
-	echo "The script takes a minimum of one arguement, 0 given. Please type -h to see the help file"
+ echo "The script takes a minimum of one arguement, 0 given. Please type -h to see the help file"
         exit 1
 fi
 # Script to generate Subversion repositories for HE project
 #
 if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
-	MAXREPOS=1   #each entry in PREFIXREPOLIST would be generated MAXREPOS times
-	PREFIXREPOLIST=( "helikopterdev" "ezslabscriptsdev" "trackplusdev" ) # you can add upto 10 labs here
-	ITERATIONS=${#PREFIXREPOLIST[@]}
-	SVNREPOS=/var/repos/INTERN
+ MAXREPOS=1   #each entry in PREFIXREPOLIST would be generated MAXREPOS times
+ PREFIXREPOLIST=( "helikopterdev" "ezslabscriptsdev" "trackplusdev" ) # you can add upto 10 labs here
+ ITERATIONS=${#PREFIXREPOLIST[@]}
+ SVNREPOS=/var/repos/INTERN
 else
-	MAXREPOS=35
-	PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
-	ITERATIONS=${#PREFIXREPOLIST[@]}
-	SVNREPOS=/var/repos/LABOR
+ MAXREPOS=35
+ PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
+ ITERATIONS=${#PREFIXREPOLIST[@]}
+ SVNREPOS=/var/repos/LABOR
 fi
 
 
@@ -131,10 +131,10 @@ SVNGROUP=svn
 echo "Do you want a backup of the SVN repos (Y/N)"
 read ANSWER
 if [ "ANSWER" == "Y" ]; then
-	echo "Backup SVN repos.. This can take a long time...."
-	mv $do_verbose $SVNREPOS $ADMINDIR/svn/backups/repos-$currentdate>>logs/lab-svn.log 
+ echo "Backup SVN repos.. This can take a long time...."
+ mv $do_verbose $SVNREPOS $ADMINDIR/svn/backups/repos-$currentdate>>logs/lab-svn.log 
 else
-	rm -rf $do_verbose $SVNREPOS>>logs/lab-svn.log 
+ rm -rf $do_verbose $SVNREPOS>>logs/lab-svn.log 
 fi
 
 mkdir -p $do_verbose $SVNREPOS>>logs/lab-svn.log
@@ -171,9 +171,9 @@ function 3_prepare_gitrepos_delete_repos
 echo "Do you want a backup of the GIT repos (Y/N)"
 read ANSWER
 if [ "ANSWER" == "Y" ]; then
-	echo "Backup GIT repos.. This can take a long time...."
+ echo "Backup GIT repos.. This can take a long time...."
 else
-	echo "Not Backup GIT repos.. This can take a long time...."
+ echo "Not Backup GIT repos.. This can take a long time...."
 fi
 user=ezslab
 pass="njn\$43EL"
@@ -237,10 +237,10 @@ chown -R $(whoami):$(whoami) $ADMINDIR/jenkins/template/
 echo "Do you want a backup of the Jenkins jobs (Y/N)"
 read ANSWER
 if [ "ANSWER" == "Y" ]; then
-	echo "Backup Jenkins jobs.. This can take a long time...."
-	mv $JENKINS/jobs $ADMINDIR/jenkins/backups/jobs-$currentdate>>logs/lab-jenkins.log
+ echo "Backup Jenkins jobs.. This can take a long time...."
+ mv $JENKINS/jobs $ADMINDIR/jenkins/backups/jobs-$currentdate>>logs/lab-jenkins.log
 else
-	rm -rf $do_verbose $JENKINS/jobs>>logs/lab-jenkins.log
+ rm -rf $do_verbose $JENKINS/jobs>>logs/lab-jenkins.log
 fi
 mkdir $JENKINS/jobs>>logs/lab-jenkins.log
 cp -r $do_verbose $ADMINDIR/jenkins/template  $JENKINS/jobs/>>logs/lab-jenkins.log
@@ -293,17 +293,17 @@ if [ "$LDAP_OPTION" == "y" ]; then
     echo "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt."; 
     3_prepare_ldap
     if [ "fresh" == "$LDAP_PARAMETER" ]; then
-	grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
-	if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
-		grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
-	        echo "deleting all members under $grouptodelete"
-	        ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
-	fi
-	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+ grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
+ if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
+  grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
+         echo "deleting all members under $grouptodelete"
+         ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
+ fi
+ ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
         #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     elif [ "incremental" == "$LDAP_PARAMETER" ]; then
-	ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
-	#ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+ ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+ #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     fi
 else
     if [ "y" == "$JENKINS_OPTION" ]; then
