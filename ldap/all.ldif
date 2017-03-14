@@ -1,0 +1,116 @@
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcAccess
+olcAccess: {0}to attrs=userPassword,shadowLastChange,pwmResponseSet by dn="cn=admin,dc=hs-esslingen,dc=de" write by dn="cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de" write by anonymous auth by self write by * none
+olcAccess: {1}to dn.base="" by * read
+olcAccess: {2}to * by dn="cn=admin,dc=hs-esslingen,dc=de" write by dn="cn=pwmadmin,ou=people,dc=hs-esslingen,dc=de" write by * read
+
+
+
+
+
+---------------
+
+
+
+
+
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcDbIndex
+# simple use of the default value
+olcDbIndex: default pres,eq
+olcDbIndex: objectClass,cn,sn,uid,member,uniqueMember,memberUid
+
+
+
+
+
+
+-----------------
+
+
+dn: cn=config
+changetype: add
+# simple use of the default value
+# OLC (cn=config) form
+olcDbIndex: default pres,eq
+olcDbIndex: cn,sn,uid
+
+
+-----------------
+
+
+
+dn: olcDatabase={2}hdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {2}hdb
+olcDbDirectory: /var/lib/ldap
+olcSuffix: dc=hs-esslingen,dc=de
+olcLastMod: TRUE
+olcRootDN: cn=admin,dc=hs-esslingen,dc=de
+olcRootPW:: e1NTSEF9dVdFUEZMYkFaZWoxZTkxdFdMUjI4M2ZVNGJpS2xSbmM=
+olcDbCheckpoint: 512 30
+olcDbConfig: {0}set_cachesize 0 2097152 0
+olcDbConfig: {1}set_lk_max_objects 1500
+olcDbConfig: {2}set_lk_max_locks 1500
+olcDbConfig: {3}set_lk_max_lockers 1500
+olcDbIndex: uid pres,eq
+olcDbIndex: cn,sn pres,eq,approx,sub
+olcDbIndex: objectClass eq
+olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by anonymous auth by dn="cn=admin,dc=hs-esslingen,dc=de" write by * none
+olcAccess: {1}to dn.base="" by * read
+olcAccess: {2}to * by dn="cn=admin,dc=hs-esslingen,dc=de" write by * read 
+
+
+----------------------
+
+
+
+dn: cn=config
+changetype: modify
+replace: olcLogLevel
+# handles multiple values on one line, like "olcLogLevel: stats sync"
+olcLogLevel: 256
+
+
+-----------------
+
+
+
+#!RESULT OK
+#!CONNECTION ldap://itlx3304.hs-esslingen.de:389
+#!DATE 2016-01-08T09:15:37.511
+dn: cn=ezslabstudents,ou=groups,dc=hs-esslingen,dc=de
+changetype: modify
+add: member
+member: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama2group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama3group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama4group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama5group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama6group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama7group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama8group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama9group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama10group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama11group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama12group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama13group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama14group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama15group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama16group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama17group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama18group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama19group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama20group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama21group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama22group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama23group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama24group,ou=groups,dc=hs-esslingen,dc=de
+member: cn=teama25group,ou=groups,dc=hs-esslingen,dc=de
+
+
+
+
