@@ -1,112 +1,64 @@
 [groups]
 ezsadmins = ezslab, vagrawal, friedric
-saadmins = friedric
+saadmins = friedric, vagrawal
 
 #----------------------EDIT ZONE START---------------------------------------------
 #Start adding the names of the users here 
 
-ezsgroup1 = viaggsoo,chmoit00,elsd213  
-
-ezsgroup2 = bini 
-
-ezsgroup3 = teama3u1,teama3u2,teama3u3
-
-ezsgroup4 = teama4u1,teama4u2,teama4u3
-
-ezsgroup5 = teama5u1,teama5u2,teama5u3
-
-ezsgroup6 = teama6u1,teama6u2,teama6u3
-
-ezsgroup7 = viaggsoo,chmoit00  
-
-ezsgroup8 = bini 
-
-ezsgroup9 = teama3u1,teama3u2,teama3u3
-
-ezsgroup10 = teama4u1,teama4u2,teama4u3
-
-ezsgroup11 = teama5u1,teama5u2,teama5u3
-
-ezsgroup12 = teama6u1,teama6u2,teama6u3
-
-ezsgroup13 = viaggsoo,chmoit00  
-
-ezsgroup14 = bini 
-
-ezsgroup15 = teama3u1,teama3u2,teama3u3
-
-ezsgroup16 = teama4u1,teama4u2,teama4u3
-
-ezsgroup17 = teama5u1,teama5u2,teama5u3
-
-ezsgroup18 = teama6u1,teama6u2,teama6u3
-
-ezsgroup19 = viaggsoo,chmoit00  
-
-ezsgroup20 = bini 
-
-ezsgroup21 = teama3u1,teama3u2,teama3u3
-
-ezsgroup22 = teama4u1,teama4u2,teama4u3
-
-ezsgroup23 = teama5u1,teama5u2,teama5u3
-
-ezsgroup24 = teama6u1,teama6u2,teama6u3
-
-ezsgroup25 = teama6u1,teama6u2,teama6u3
+ezsgroup1 = XXXXit00, YYYYit00
+ezsgroup2 = tomuit00, febiit00
+ezsgroup3 = chhait07, jomait03
+ezsgroup4 = wolait01, toscit07
+ezsgroup5 = papait02, dahait05
+ezsgroup6 = ropeme00, anvait00
+ezsgroup7 = makait10, roruit00, ciheit00
+ezsgroup8 = ullait00, frbait02, lugait00
+ezsgroup9 = pamuit01, jumait03
+ezsgroup10 = singit00, ondeit00, hiasit00
+ezsgroup11 = clboit00, almait05
+ezsgroup12 = tojait02, reduit00
+ezsgroup13 = alkait01, sekeit00
+ezsgroup14 = XXXXit00, YYYYit00
+ezsgroup15 = XXXXit00, YYYYit00
+ezsgroup16 = XXXXit00, YYYYit00
+ezsgroup17 = XXXXit00, YYYYit00
+ezsgroup18 = XXXXit00, YYYYit00
+ezsgroup19 = XXXXit00, YYYYit00
+ezsgroup20 = XXXXit00, YYYYit00
+ezsgroup21 = XXXXit00, YYYYit00
+ezsgroup22 = XXXXit00, YYYYit00
+ezsgroup23 = XXXXit00, YYYYit00
+ezsgroup24 = XXXXit00, YYYYit00
+ezsgroup25 = XXXXit00, YYYYit00
 
 
 #---------------------Start SA ------------
 
-sagroup1 = viaggsoo,chmoit00  
-
-sagroup2 = bini 
-
-sagroup3 = teama3u1,teama3u2,teama3u3
-
-sagroup4 = teama4u1,teama4u2,teama4u3
-
-sagroup5 = teama5u1,teama5u2,teama5u3
-
-sagroup6 = teama6u1,teama6u2,teama6u3
-
-sagroup7 = viaggsoo,chmoit00  
-
-sagroup8 = bini 
-
-sagroup9 = teama3u1,teama3u2,teama3u3
-
-sagroup10 = teama4u1,teama4u2,teama4u3
-
-sagroup11 = teama5u1,teama5u2,teama5u3
-
-sagroup12 = teama6u1,teama6u2,teama6u3
-
-sagroup13 = viaggsoo,chmoit00  
-
-sagroup14 = bini 
-
-sagroup15 = teama3u1,teama3u2,teama3u3
-
-sagroup16 = teama4u1,teama4u2,teama4u3
-
-sagroup17 = teama5u1,teama5u2,teama5u3
-
-sagroup18 = teama6u1,teama6u2,teama6u3
-
-sagroup19 = viaggsoo,chmoit00  
-
-sagroup20 = bini 
-
-sagroup21 = teama3u1,teama3u2,teama3u3
-
-sagroup22 = teama4u1,teama4u2,teama4u3
-
-sagroup23 = teama5u1,teama5u2,teama5u3
-
-sagroup24 = teama6u1,teama6u2,teama6u3
-
-sagroup25 = teama6u1,teama6u2,teama6u3
+sagroup1 = XXXXit00, YYYYit00
+sagroup2 = tomuit00, febiit00
+sagroup3 = chhait07, jomait03
+sagroup4 = wolait01, toscit07
+sagroup5 = papait02, dahait05
+sagroup6 = ropeme00
+sagroup7 = makait10, roruit00, ciheit00
+sagroup8 = ullait00, frbait02, jumait03
+sagroup9 = pamuit01
+sagroup10 = singit00, ondeit00, hiasit00
+sagroup11 = clboit00, almait05
+sagroup12 = tojait02, reduit00
+sagroup13 = flstit01, hayait01
+sagroup14 = XXXXit00, YYYYit00
+sagroup15 = XXXXit00, YYYYit00
+sagroup16 = XXXXit00, YYYYit00
+sagroup17 = XXXXit00, YYYYit00
+sagroup18 = XXXXit00, YYYYit00
+sagroup19 = XXXXit00, YYYYit00
+sagroup20 = XXXXit00, YYYYit00
+sagroup21 = XXXXit00, YYYYit00
+sagroup22 = XXXXit00, YYYYit00
+sagroup23 = XXXXit00, YYYYit00
+sagroup24 = XXXXit00, YYYYit00
+sagroup25 = XXXXit00, YYYYit00
 
 
 #------------------ Start Misc -----------------

@@ -1,0 +1,3 @@
+[submodule "Submodules/StudentConfiguration"]
+	path = Submodules/StudentConfiguration
+	url = git@gitlab.hs-esslingen.de:LaborVerwaltung/StudentConfiguration.git
