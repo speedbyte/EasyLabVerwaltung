@@ -203,7 +203,7 @@ user=ezslab
 pass="njn\$43EL"
 count=1
 type=repo
-cd ../git/template-repo
+cd ../Submodules/template-repo
 echo $(git remote -v)
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
 do
@@ -221,7 +221,7 @@ do
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
-git remote set-url origin https://$user@wwwitrt3.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
+git remote set-url origin https://$user@wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
 cd ../../ezslab
 }
 
@@ -285,7 +285,7 @@ if [ "fresh" == "$LDAP_PARAMETER" ]; then
     fi
     if [ "y" == "$GIT_OPTION" ]; then 
         3_prepare_gitrepos_delete_repos;
-	sleep 10;
+        sleep 10;
         3_prepare_gitrepos_create_repos;
     fi
 fi

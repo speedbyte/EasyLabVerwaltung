@@ -14,13 +14,13 @@ cp_script.read('script-config.opt')
 
 authorizationfile = sys.argv[1]
 
-maxrepos = cp_script.get(authorizationfile, 'MAXREPOS')
+maxrepos = cp_script.get('labor', 'MAXREPOS')
 maxrepos = int(maxrepos, 10)
 
-iterations = cp_script.get(authorizationfile, 'ITERATIONS')
+iterations = cp_script.get('labor', 'ITERATIONS')
 iterations = int(iterations, 10) # $ITERATIONS
 
-prefixrepolist = cp_script.get(authorizationfile, 'PREFIXREPOLIST')
+prefixrepolist = cp_script.get('labor', 'PREFIXREPOLIST')
 
 cp.read(authorizationfile)
 
@@ -59,10 +59,7 @@ for y in range(iterations):
 ldiffile = open('./ldif-prepare-ezs-ldap.ldif','w')
 ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif','w')
 
-if ('intern' in authorizationfile):
-	currentOUunit="intern"
-elif ('labor' in authorizationfile):
-	currentOUunit="labor"
+currentOUunit="labor"
 ldiffile.write( "dn: ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
 ldiffile.write( "changetype: add\n")
 ldiffile.write( "objectClass: organizationalUnit\n")
