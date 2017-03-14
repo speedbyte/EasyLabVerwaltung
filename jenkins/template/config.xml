@@ -27,15 +27,15 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5.5">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>file:///var/repos/LABOR/templaterepo</remote>
-        <credentialsId></credentialsId>
+        <remote>https://wwwitrt.hs-esslingen.de/svn/labor/template-repo</remote>
+        <credentialsId>b04efe6e-1249-4622-afbc-7c85e299e233</credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
-        <ignoreExternalsOption>false</ignoreExternalsOption>
+        <ignoreExternalsOption>true</ignoreExternalsOption>
       </hudson.scm.SubversionSCM_-ModuleLocation>
     </locations>
     <browser class="hudson.scm.browsers.WebSVN">
-      <url>https://wwwitrt2.hs-esslingen.de/websvn/listing.php/?repname=templaterepo</url>
+      <url>https://wwwitrt3.hs-esslingen.de/websvn/listing.php/?repname=template-repo</url>
     </browser>
     <excludedRegions></excludedRegions>
     <includedRegions></includedRegions>
@@ -62,7 +62,7 @@
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.tasks.Mailer plugin="mailer@1.11">
+    <hudson.tasks.Mailer plugin="mailer@1.17">
       <recipients></recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>

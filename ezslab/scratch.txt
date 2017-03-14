@@ -1,0 +1,14 @@
+  #svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/qa -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/cm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/scratch -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/Application -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Target -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
+  #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
+
