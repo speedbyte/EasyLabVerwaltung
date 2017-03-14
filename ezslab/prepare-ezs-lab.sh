@@ -203,7 +203,7 @@ user=ezslab
 pass="njn\$43EL"
 count=1
 type=repo
-cd ../Submodules/template-repo
+cd ../submodules/template-repo
 echo $(git remote -v)
 for ((i=1;i<=$(($MAXREPOS*$ITERATIONS));i++));
 do

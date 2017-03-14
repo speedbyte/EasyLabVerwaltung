@@ -4,3 +4,9 @@
 [submodule "submodules/StudentConfiguration"]
 	path = submodules/StudentConfiguration
 	url = git@gitlab.hs-esslingen.de:LaborVerwaltung/StudentConfiguration.git
+[submodule "submodules/template-repo"]
+	path = submodules/template-repo
+	url = https://wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
+[submodule "submodules/examples-repo"]
+	path = submodules/examples-repo
+	url = https://wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/examples-repo.git
