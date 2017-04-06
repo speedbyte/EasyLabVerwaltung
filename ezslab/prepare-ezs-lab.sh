@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EZSLAB_PERSONAL_TOKEN=syi79ZTx-3CpxyD1rGsM
+EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt
 GIT_OPTION="n"
 
 while getopts ":l:jsgvf:h" opt; do
@@ -36,13 +36,8 @@ while getopts ":l:jsgvf:h" opt; do
       ;;
     g)
       echo "-g was triggered, Parameter: $OPTARG" >&2
-      #if [ "fresh" == "$LDAP_PARAMETER" ]; then 
-          echo "git repos would be generated" >&2
-          GIT_OPTION="y"
-      #else
-#   echo "This option can only be used in combination with -l fresh. Type -h for more information. Exiting Script"
-#         exit 1
-#      fi
+      echo "git function enabled" >&2
+      GIT_OPTION="y"
       ;;
      \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -77,7 +72,7 @@ while getopts ":l:jsgvf:h" opt; do
       if [ -f $OPTARG ]; then
    echo "$OPTARG Authorization file found"
           AUTHORIZATIONFILE=$OPTARG
-          AUTHORIZATIONGROUP="labor"#$(echo $AUTHORIZATIONFILE | cut -d. -f1 | sed s/authorization-file-//g)
+          AUTHORIZATIONGROUP="labor"
    if [ "$AUTHORIZATIONGROUP" != "intern" ] && [ "$AUTHORIZATIONGROUP" != "labor" ]; then
   echo "Either labor or intern authorization file is required.. Exiting"
   exit 1
@@ -111,7 +106,7 @@ if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
  SVNREPOS=/var/repos/INTERN
 else
  MAXREPOS=35
- PREFIXREPOLIST=( "ezs" "sa" ) # you can add upto 10 labs here
+ PREFIXREPOLIST=( "ezs-stud-" "sa-stud-" ) # you can add upto 10 labs here
  ITERATIONS=${#PREFIXREPOLIST[@]}
  SVNREPOS=/var/repos/LABOR
 fi
@@ -187,10 +182,10 @@ do
   g=$PREFIXREPO$type$count
   if [ $count -ge $DUMMYMAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "deleting project $g" 
-  curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
   echo
-  curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
   echo
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
@@ -212,11 +207,11 @@ do
   g=$PREFIXREPO$type$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "Creating project $g"
-  curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
+  curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects"
   #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
   wait ${!}
   echo
-  git remote set-url origin https://$user:$pass@wwwitrt3.hs-esslingen.de:8443/LaborAufgaben/"$g".git
+  git remote set-url origin https://$user:$pass@wwwitrt.hs-esslingen.de:8443/LaborAufgaben/"$g".git
   git push origin master
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
@@ -313,5 +308,5 @@ fi
 echo "Following log-files has been generated"
 ls -lt logs/
 
-#curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=ezsrepo4" --data-urlencode "namespace_id=10" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects"
-#curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/:id/members/:user_id?access_level=30
+#curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=ezsrepo4" --data-urlencode "namespace_id=10" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects"
+#curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/:id/members/:user_id?access_level=30

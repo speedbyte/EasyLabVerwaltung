@@ -15,13 +15,13 @@ cp_script.read('script-config.opt')
 authorizationfile = sys.argv[1]
 git_option = sys.argv[2]
 
-maxrepos = cp_script.get(authorizationfile, 'MAXREPOS')
+maxrepos = cp_script.get('labor', 'MAXREPOS')
 maxrepos = int(maxrepos, 10)
 
-iterations = cp_script.get(authorizationfile, 'ITERATIONS')
+iterations = cp_script.get('labor', 'ITERATIONS')
 iterations = int(iterations, 10) # $ITERATIONS
 
-prefixrepolist = cp_script.get(authorizationfile, 'PREFIXREPOLIST')
+prefixrepolist = cp_script.get('labor', 'PREFIXREPOLIST')
 
 cp.read(authorizationfile)
 
@@ -72,7 +72,7 @@ ldiffile.write( "ou: "+currentOUunit+"\n")
 ldiffile.write('\n')
 
 
-git = gitlab.Gitlab( 'https://wwwitrt3.hs-esslingen.de:8443', 'syi79ZTx-3CpxyD1rGsM')
+git = gitlab.Gitlab( 'https://wwwitrt.hs-esslingen.de:8443', 'Lzx9BbajbRkxhTZjknDt')
 runners = git.runners.list()
 print runners[0].id
 
@@ -81,10 +81,10 @@ for y in range(iterations):
   groupname = listofgroups[y][x]
   reponame = listofprojects[y][x]
   try:
-                 groupmembers = cp.get('groups',groupname)
+        groupmembers = cp.get('groups',groupname)
   except:
-   print "No group entry for %s found in the authorization file, Skipping....." %(groupname)
-          continue 
+   	print "No group entry for %s found in the authorization file, Skipping....." %(groupname)
+   	continue 
   groupmembers = groupmembers.split(',')
   #print groupmembers
 
@@ -112,7 +112,7 @@ for y in range(iterations):
   for i in range(len(groupmembers)):
  #Add members to team groups.
    membertoadd = groupmembers[i]
-                        membertoadd = membertoadd.strip(' ')
+   membertoadd = membertoadd.strip(' ')
    if ( membertoadd != '' ):
     ldiffile.write( "member: cn= " + membertoadd + ",ou="+currentOUunit+",ou=people,dc=hs-esslingen,dc=de\n")
     print membertoadd

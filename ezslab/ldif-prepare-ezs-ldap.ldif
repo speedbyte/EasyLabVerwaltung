@@ -4,133 +4,91 @@ objectClass: organizationalUnit
 objectClass: top
 ou: labor
 
-dn: cn=ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group1,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group1,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: ezsgroup1
-member: cn= alviit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= paheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-stud-group1
+member: cn= magait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= phgegl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= dascit14,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=alviit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=magait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: alviit00@hs-esslingen.de
+mail: magait04@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
-uid: alviit00
-cn: alviit00
+memberof: cn= ezs-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid: magait04
+cn: magait04
 
-dn: cn= paheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= phgegl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  paheit01@hs-esslingen.de
+mail:  phgegl00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup1,ou=groups,dc=hs-esslingen,dc=de
-uid:  paheit01
-cn:  paheit01
+memberof: cn= ezs-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid:  phgegl00
+cn:  phgegl00
 
-dn: cn=ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
+dn: cn= dascit14,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  dascit14@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid:  dascit14
+cn:  dascit14
+
+dn: cn=ezs-stud-group2,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group2,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: ezsgroup2
-member: cn= axscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chfrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=axscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: axscit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
-uid: axscit00
-cn: axscit00
-
-dn: cn= chfrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  chfrit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
-uid:  chfrit00
-cn:  chfrit00
-
-dn: cn= viaggsoo,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  viaggsoo@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
-uid:  viaggsoo
-cn:  viaggsoo
-
-dn: cn=ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup3
-member: cn= muduit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-stud-group2
+member: cn= seteit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 member: cn= shabit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= kakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= sapeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=muduit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=seteit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: muduit03@hs-esslingen.de
+mail: seteit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
-uid: muduit03
-cn: muduit03
+memberof: cn= ezs-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+uid: seteit00
+cn: seteit00
 
 dn: cn= shabit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -143,2537 +101,226 @@ objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
+memberof: cn= ezs-stud-group2,ou=groups,dc=hs-esslingen,dc=de
 uid:  shabit00
 cn:  shabit00
 
-dn: cn= kakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= sapeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  kakait01@hs-esslingen.de
+mail:  sapeit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup3,ou=groups,dc=hs-esslingen,dc=de
-uid:  kakait01
-cn:  kakait01
+memberof: cn= ezs-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+uid:  sapeit01
+cn:  sapeit01
 
-dn: cn=ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group3,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group3,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: ezsgroup4
-member: cn= peclit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= rosait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-stud-group3
+member: cn= civait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= krmait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= mikoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=peclit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=civait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: peclit00@hs-esslingen.de
+mail: civait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
-uid: peclit00
-cn: peclit00
+memberof: cn= ezs-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid: civait00
+cn: civait00
 
-dn: cn= rosait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= krmait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  rosait01@hs-esslingen.de
+mail:  krmait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= ezsgroup4,ou=groups,dc=hs-esslingen,dc=de
-uid:  rosait01
-cn:  rosait01
+memberof: cn= ezs-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid:  krmait00
+cn:  krmait00
 
-dn: cn=ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup5
-member: cn= roeiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= arhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= olstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=roeiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: roeiit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-uid: roeiit00
-cn: roeiit00
-
-dn: cn= arhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  arhait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-uid:  arhait00
-cn:  arhait00
-
-dn: cn= olstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  olstit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup5,ou=groups,dc=hs-esslingen,dc=de
-uid:  olstit01
-cn:  olstit01
-
-dn: cn=ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup6
-member: cn= rosoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=rosoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: rosoit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
-uid: rosoit00
-cn: rosoit00
-
-dn: cn= sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  sekeit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup6,ou=groups,dc=hs-esslingen,dc=de
-uid:  sekeit00
-cn:  sekeit00
-
-dn: cn=ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup7
-member: cn= gipait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=gipait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: gipait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup7,ou=groups,dc=hs-esslingen,dc=de
-uid: gipait00
-cn: gipait00
-
-dn: cn=ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup8
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup8,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup9
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup9,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup10
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup10,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup11
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup11,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup12
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup12,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup13
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup13,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup14
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup14,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup15
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup15,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup16
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup16,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup17
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup17,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup18
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup18,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup19
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup19,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup20
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup20,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup21
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup21,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup22
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup22,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup23
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup23,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup24
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup24,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup25
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup25,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup26,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup26,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup26
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup26,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup27,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup27,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup27
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup27,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup28,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup28,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup28
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup28,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup29,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup29,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup29
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup29,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup30,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup30,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup30
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup30,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup31,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup31,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup31
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup31,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup32,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup32,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup32
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup32,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup33,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup33,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup33
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup33,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup34,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup34,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup34
-member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: XXXXit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup34,ou=groups,dc=hs-esslingen,dc=de
-uid: XXXXit00
-cn: XXXXit00
-
-dn: cn=ezsgroup35,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=ezsgroup35,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: ezsgroup35
-member: cn= jomait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chhait07,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=jomait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: jomait03@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup35,ou=groups,dc=hs-esslingen,dc=de
-uid: jomait03
-cn: jomait03
-
-dn: cn= chhait07,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  chhait07@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= ezsgroup35,ou=groups,dc=hs-esslingen,dc=de
-uid:  chhait07
-cn:  chhait07
-
-dn: cn=sagroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup1,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup1
-member: cn= dasiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= laprit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= paleit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=dasiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: dasiit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup1,ou=groups,dc=hs-esslingen,dc=de
-uid: dasiit01
-cn: dasiit01
-
-dn: cn= laprit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  laprit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup1,ou=groups,dc=hs-esslingen,dc=de
-uid:  laprit00
-cn:  laprit00
-
-dn: cn= paleit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  paleit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup1,ou=groups,dc=hs-esslingen,dc=de
-uid:  paleit00
-cn:  paleit00
-
-dn: cn=sagroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup2,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup2
-member: cn= frmeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= anwoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= jozeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=frmeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: frmeit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
-uid: frmeit00
-cn: frmeit00
-
-dn: cn= anwoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  anwoit03@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
-uid:  anwoit03
-cn:  anwoit03
-
-dn: cn= jozeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  jozeit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup2,ou=groups,dc=hs-esslingen,dc=de
-uid:  jozeit00
-cn:  jozeit00
-
-dn: cn=sagroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup3,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup3
-member: cn= erscit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= mifiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chmiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=erscit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: erscit02@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup3,ou=groups,dc=hs-esslingen,dc=de
-uid: erscit02
-cn: erscit02
-
-dn: cn= mifiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  mifiit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup3,ou=groups,dc=hs-esslingen,dc=de
-uid:  mifiit01
-cn:  mifiit01
-
-dn: cn= chmiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  chmiit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup3,ou=groups,dc=hs-esslingen,dc=de
-uid:  chmiit01
-cn:  chmiit01
-
-dn: cn=sagroup4,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup4,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup4
-member: cn= anmeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= lihait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= scarit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=anmeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: anmeit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup4,ou=groups,dc=hs-esslingen,dc=de
-uid: anmeit01
-cn: anmeit01
-
-dn: cn= lihait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  lihait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup4,ou=groups,dc=hs-esslingen,dc=de
-uid:  lihait00
-cn:  lihait00
-
-dn: cn= scarit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  scarit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup4,ou=groups,dc=hs-esslingen,dc=de
-uid:  scarit00
-cn:  scarit00
-
-dn: cn=sagroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup5,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup5
-member: cn= erghwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= akyuwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= phtuwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=erghwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: erghwi00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup5,ou=groups,dc=hs-esslingen,dc=de
-uid: erghwi00
-cn: erghwi00
-
-dn: cn= akyuwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  akyuwi00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup5,ou=groups,dc=hs-esslingen,dc=de
-uid:  akyuwi00
-cn:  akyuwi00
-
-dn: cn= phtuwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  phtuwi00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup5,ou=groups,dc=hs-esslingen,dc=de
-uid:  phtuwi00
-cn:  phtuwi00
-
-dn: cn=sagroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup6,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup6
-member: cn= bjkait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= dikiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= miscit07,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=bjkait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: bjkait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup6,ou=groups,dc=hs-esslingen,dc=de
-uid: bjkait00
-cn: bjkait00
-
-dn: cn= dikiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  dikiit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup6,ou=groups,dc=hs-esslingen,dc=de
-uid:  dikiit01
-cn:  dikiit01
-
-dn: cn= miscit07,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  miscit07@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup6,ou=groups,dc=hs-esslingen,dc=de
-uid:  miscit07
-cn:  miscit07
-
-dn: cn=sagroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup7,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup7
-member: cn= adtoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= coscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= toboit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=adtoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: adtoit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup7,ou=groups,dc=hs-esslingen,dc=de
-uid: adtoit00
-cn: adtoit00
-
-dn: cn= coscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  coscit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup7,ou=groups,dc=hs-esslingen,dc=de
-uid:  coscit00
-cn:  coscit00
-
-dn: cn= toboit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  toboit02@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup7,ou=groups,dc=hs-esslingen,dc=de
-uid:  toboit02
-cn:  toboit02
-
-dn: cn=sagroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup8,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup8
-member: cn= soscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= sebuit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=soscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: soscit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup8,ou=groups,dc=hs-esslingen,dc=de
-uid: soscit00
-cn: soscit00
-
-dn: cn= sebuit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  sebuit02@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup8,ou=groups,dc=hs-esslingen,dc=de
-uid:  sebuit02
-cn:  sebuit02
-
-dn: cn=sagroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup9,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup9
-member: cn= robeit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= jahoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= stsiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=robeit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: robeit03@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup9,ou=groups,dc=hs-esslingen,dc=de
-uid: robeit03
-cn: robeit03
-
-dn: cn= jahoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  jahoit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup9,ou=groups,dc=hs-esslingen,dc=de
-uid:  jahoit00
-cn:  jahoit00
-
-dn: cn= stsiit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  stsiit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup9,ou=groups,dc=hs-esslingen,dc=de
-uid:  stsiit01
-cn:  stsiit01
-
-dn: cn=sagroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup10,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup10
-member: cn= mukoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= ibamit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= ererit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=mukoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: mukoit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup10,ou=groups,dc=hs-esslingen,dc=de
-uid: mukoit00
-cn: mukoit00
-
-dn: cn= ibamit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  ibamit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup10,ou=groups,dc=hs-esslingen,dc=de
-uid:  ibamit00
-cn:  ibamit00
-
-dn: cn= ererit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  ererit02@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup10,ou=groups,dc=hs-esslingen,dc=de
-uid:  ererit02
-cn:  ererit02
-
-dn: cn=sagroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup11,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup11
-member: cn= maweit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= vaorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= faflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=maweit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: maweit05@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup11,ou=groups,dc=hs-esslingen,dc=de
-uid: maweit05
-cn: maweit05
-
-dn: cn= vaorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  vaorit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup11,ou=groups,dc=hs-esslingen,dc=de
-uid:  vaorit00
-cn:  vaorit00
-
-dn: cn= faflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  faflit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup11,ou=groups,dc=hs-esslingen,dc=de
-uid:  faflit00
-cn:  faflit00
-
-dn: cn=sagroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup12,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup12
-member: cn= bukait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= jukoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=bukait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: bukait01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup12,ou=groups,dc=hs-esslingen,dc=de
-uid: bukait01
-cn: bukait01
-
-dn: cn= jukoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  jukoit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup12,ou=groups,dc=hs-esslingen,dc=de
-uid:  jukoit01
-cn:  jukoit01
-
-dn: cn=sagroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup13,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup13
-member: cn= alcait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= onalit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= akciit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=alcait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: alcait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup13,ou=groups,dc=hs-esslingen,dc=de
-uid: alcait00
-cn: alcait00
-
-dn: cn= onalit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  onalit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup13,ou=groups,dc=hs-esslingen,dc=de
-uid:  onalit00
-cn:  onalit00
-
-dn: cn= akciit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  akciit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup13,ou=groups,dc=hs-esslingen,dc=de
-uid:  akciit00
-cn:  akciit00
-
-dn: cn=sagroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup14,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup14
-member: cn= faweit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= mahait12,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= vistit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=faweit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: faweit02@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup14,ou=groups,dc=hs-esslingen,dc=de
-uid: faweit02
-cn: faweit02
-
-dn: cn= mahait12,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  mahait12@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup14,ou=groups,dc=hs-esslingen,dc=de
-uid:  mahait12
-cn:  mahait12
-
-dn: cn= vistit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  vistit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup14,ou=groups,dc=hs-esslingen,dc=de
-uid:  vistit00
-cn:  vistit00
-
-dn: cn=sagroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup15,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup15
-member: cn= luwait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= aterit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=luwait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: luwait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup15,ou=groups,dc=hs-esslingen,dc=de
-uid: luwait00
-cn: luwait00
-
-dn: cn= aterit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  aterit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup15,ou=groups,dc=hs-esslingen,dc=de
-uid:  aterit00
-cn:  aterit00
-
-dn: cn=sagroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup16,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup16
-member: cn= viorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= lezait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= sialwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=viorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: viorit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup16,ou=groups,dc=hs-esslingen,dc=de
-uid: viorit00
-cn: viorit00
-
-dn: cn= lezait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  lezait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup16,ou=groups,dc=hs-esslingen,dc=de
-uid:  lezait00
-cn:  lezait00
-
-dn: cn= sialwi00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  sialwi00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup16,ou=groups,dc=hs-esslingen,dc=de
-uid:  sialwi00
-cn:  sialwi00
-
-dn: cn=sagroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup17,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup17
-member: cn= sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=sekeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: sekeit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup17,ou=groups,dc=hs-esslingen,dc=de
-uid: sekeit00
-cn: sekeit00
-
-dn: cn=sagroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup18,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup18
-member: cn= kakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= muduit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=kakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: kakait01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup18,ou=groups,dc=hs-esslingen,dc=de
-uid: kakait01
-cn: kakait01
-
-dn: cn= muduit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  muduit03@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup18,ou=groups,dc=hs-esslingen,dc=de
-uid:  muduit03
-cn:  muduit03
-
-dn: cn=sagroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup19,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup19
-member: cn= shabit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= mamait19,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=shabit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: shabit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup19,ou=groups,dc=hs-esslingen,dc=de
-uid: shabit00
-cn: shabit00
-
-dn: cn= mamait19,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  mamait19@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup19,ou=groups,dc=hs-esslingen,dc=de
-uid:  mamait19
-cn:  mamait19
-
-dn: cn= singit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  singit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup19,ou=groups,dc=hs-esslingen,dc=de
-uid:  singit00
-cn:  singit00
-
-dn: cn=sagroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup20,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup20
-member: cn= cabait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= rofrit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=cabait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: cabait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup20,ou=groups,dc=hs-esslingen,dc=de
-uid: cabait00
-cn: cabait00
-
-dn: cn= rofrit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  rofrit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup20,ou=groups,dc=hs-esslingen,dc=de
-uid:  rofrit01
-cn:  rofrit01
-
-dn: cn=sagroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup21,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup21
-member: cn= arhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= roeiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= olstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=arhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: arhait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup21,ou=groups,dc=hs-esslingen,dc=de
-uid: arhait00
-cn: arhait00
-
-dn: cn= roeiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  roeiit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup21,ou=groups,dc=hs-esslingen,dc=de
-uid:  roeiit00
-cn:  roeiit00
-
-dn: cn= olstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  olstit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup21,ou=groups,dc=hs-esslingen,dc=de
-uid:  olstit01
-cn:  olstit01
-
-dn: cn=sagroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup22,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup22
-member: cn= paheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= alviit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= axscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= chfrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=paheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: paheit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup22,ou=groups,dc=hs-esslingen,dc=de
-uid: paheit01
-cn: paheit01
-
-dn: cn= alviit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  alviit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup22,ou=groups,dc=hs-esslingen,dc=de
-uid:  alviit00
-cn:  alviit00
-
-dn: cn= axscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  axscit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup22,ou=groups,dc=hs-esslingen,dc=de
-uid:  axscit00
-cn:  axscit00
-
-dn: cn= chfrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  chfrit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup22,ou=groups,dc=hs-esslingen,dc=de
-uid:  chfrit00
-cn:  chfrit00
-
-dn: cn=sagroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup23,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup23
-member: cn= nahait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= phorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=nahait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: nahait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup23,ou=groups,dc=hs-esslingen,dc=de
-uid: nahait00
-cn: nahait00
-
-dn: cn= phorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  phorit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup23,ou=groups,dc=hs-esslingen,dc=de
-uid:  phorit00
-cn:  phorit00
-
-dn: cn=sagroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup24,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup24
-member: cn= mageit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= thguit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=mageit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: mageit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup24,ou=groups,dc=hs-esslingen,dc=de
-uid: mageit00
-cn: mageit00
-
-dn: cn= thguit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  thguit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup24,ou=groups,dc=hs-esslingen,dc=de
-uid:  thguit01
-cn:  thguit01
-
-dn: cn=sagroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup25,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup25
-member: cn= mibuit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= yagoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=mibuit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: mibuit03@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup25,ou=groups,dc=hs-esslingen,dc=de
-uid: mibuit03
-cn: mibuit03
-
-dn: cn= yagoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  yagoit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup25,ou=groups,dc=hs-esslingen,dc=de
-uid:  yagoit01
-cn:  yagoit01
-
-dn: cn=sagroup26,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup26,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup26
-member: cn= yucoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= feguit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= alhait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=yucoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: yucoit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup26,ou=groups,dc=hs-esslingen,dc=de
-uid: yucoit00
-cn: yucoit00
-
-dn: cn= feguit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  feguit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup26,ou=groups,dc=hs-esslingen,dc=de
-uid:  feguit00
-cn:  feguit00
-
-dn: cn= alhait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  alhait04@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup26,ou=groups,dc=hs-esslingen,dc=de
-uid:  alhait04
-cn:  alhait04
-
-dn: cn=sagroup27,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup27,ou=groups,dc=hs-esslingen,dc=de
+dn: cn= mikoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup27
-member: cn= fegrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= samait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=fegrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: fegrit00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup27,ou=groups,dc=hs-esslingen,dc=de
-uid: fegrit00
-cn: fegrit00
-
-dn: cn= samait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  samait01@hs-esslingen.de
+mail:  mikoit03@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup27,ou=groups,dc=hs-esslingen,dc=de
-uid:  samait01
-cn:  samait01
+memberof: cn= ezs-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid:  mikoit03
+cn:  mikoit03
 
-dn: cn=sagroup28,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group4,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup28,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group4,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup28
-member: cn= olwait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= juklit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-
-dn: cn=olwait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail: olwait00@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup28,ou=groups,dc=hs-esslingen,dc=de
-uid: olwait00
-cn: olwait00
+cn: ezs-stud-group4
+member: cn= toflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= daeiit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= labrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn= juklit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=toflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  juklit01@hs-esslingen.de
+mail: toflit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup28,ou=groups,dc=hs-esslingen,dc=de
-uid:  juklit01
-cn:  juklit01
-
-dn: cn=sagroup29,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup29,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup29
-member: cn= miwait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= pebeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+memberof: cn= ezs-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid: toflit00
+cn: toflit00
 
-dn: cn=miwait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= daeiit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: miwait02@hs-esslingen.de
+mail:  daeiit02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup29,ou=groups,dc=hs-esslingen,dc=de
-uid: miwait02
-cn: miwait02
+memberof: cn= ezs-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid:  daeiit02
+cn:  daeiit02
 
-dn: cn= pebeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= labrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  pebeit00@hs-esslingen.de
+mail:  labrit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup29,ou=groups,dc=hs-esslingen,dc=de
-uid:  pebeit00
-cn:  pebeit00
+memberof: cn= ezs-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid:  labrit00
+cn:  labrit00
 
-dn: cn=sagroup30,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group5,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup30,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group5,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup30
-member: cn= dahoit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= luheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-stud-group5
+member: cn= jafait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= angoit04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= romuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=dahoit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=jafait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: dahoit02@hs-esslingen.de
+mail: jafait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup30,ou=groups,dc=hs-esslingen,dc=de
-uid: dahoit02
-cn: dahoit02
-
-dn: cn= luheit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
-changetype: add
-givenName: Not configured
-sn: Not configured
-userPassword: ezsiscool
-mail:  luheit01@hs-esslingen.de
-objectClass: inetOrgPerson
-objectClass: organizationalPerson
-objectClass: person
-objectClass: top
-objectClass: pwmUser
-memberof: cn= sagroup30,ou=groups,dc=hs-esslingen,dc=de
-uid:  luheit01
-cn:  luheit01
-
-dn: cn=sagroup31,ou=groups,dc=hs-esslingen,dc=de
-changetype: delete
-
-dn: cn=sagroup31,ou=groups,dc=hs-esslingen,dc=de
-changetype: add
-objectClass: groupOfNames
-objectClass: top
-description: group of lab students
-cn: sagroup31
-member: cn= tokrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= ledoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+memberof: cn= ezs-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid: jafait00
+cn: jafait00
 
-dn: cn=tokrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= angoit04,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: tokrit00@hs-esslingen.de
+mail:  angoit04@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup31,ou=groups,dc=hs-esslingen,dc=de
-uid: tokrit00
-cn: tokrit00
+memberof: cn= ezs-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid:  angoit04
+cn:  angoit04
 
-dn: cn= ledoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= romuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  ledoit00@hs-esslingen.de
+mail:  romuit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup31,ou=groups,dc=hs-esslingen,dc=de
-uid:  ledoit00
-cn:  ledoit00
+memberof: cn= ezs-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid:  romuit01
+cn:  romuit01
 
-dn: cn=sagroup32,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group6,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup32,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group6,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup32
-member: cn= leceit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: ezs-stud-group6
+member: cn= yuyuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 member: cn= hadeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= romuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=leceit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=yuyuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: leceit00@hs-esslingen.de
+mail: yuyuit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup32,ou=groups,dc=hs-esslingen,dc=de
-uid: leceit00
-cn: leceit00
+memberof: cn= ezs-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+uid: yuyuit00
+cn: yuyuit00
 
 dn: cn= hadeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
@@ -2686,165 +333,2726 @@ objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup32,ou=groups,dc=hs-esslingen,dc=de
+memberof: cn= ezs-stud-group6,ou=groups,dc=hs-esslingen,dc=de
 uid:  hadeit01
 cn:  hadeit01
 
-dn: cn=sagroup33,ou=groups,dc=hs-esslingen,dc=de
+dn: cn= romuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  romuit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+uid:  romuit00
+cn:  romuit00
+
+dn: cn=ezs-stud-group7,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup33,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=ezs-stud-group7,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup33
+cn: ezs-stud-group7
+member: cn= pabiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= inbait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= daflit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=pabiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: pabiit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid: pabiit03
+cn: pabiit03
+
+dn: cn= inbait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  inbait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid:  inbait00
+cn:  inbait00
+
+dn: cn= daflit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  daflit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid:  daflit01
+cn:  daflit01
+
+dn: cn=ezs-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group8
+member: cn= dahoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= chhait08,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= dastit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=dahoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: dahoit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid: dahoit03
+cn: dahoit03
+
+dn: cn= chhait08,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  chhait08@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid:  chhait08
+cn:  chhait08
+
+dn: cn= dastit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  dastit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid:  dastit03
+cn:  dastit03
+
+dn: cn=ezs-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group9
+member: cn= flstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= nutuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=flstit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: flstit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+uid: flstit01
+cn: flstit01
+
+dn: cn= nutuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  nutuit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+uid:  nutuit00
+cn:  nutuit00
+
+dn: cn=ezs-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group10
+member: cn= hayait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= gusugl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= tiduit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=hayait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: hayait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid: hayait01
+cn: hayait01
+
+dn: cn= gusugl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  gusugl00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid:  gusugl00
+cn:  gusugl00
+
+dn: cn= tiduit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  tiduit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid:  tiduit00
+cn:  tiduit00
+
+dn: cn=ezs-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group11
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group12
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group13
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group14
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group15
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group16
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group17
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group18
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group19
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group20
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group21
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group22
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group23
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group24
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group25
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group26
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group27
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group28
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group29
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group30
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group31
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group32
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group33
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group34
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=ezs-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=ezs-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: ezs-stud-group35
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= ezs-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=sa-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group1
+member: cn= chzeit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= biweit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= adalit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=chzeit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: chzeit02@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid: chzeit02
+cn: chzeit02
+
+dn: cn= biweit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  biweit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid:  biweit00
+cn:  biweit00
+
+dn: cn= adalit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  adalit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group1,ou=groups,dc=hs-esslingen,dc=de
+uid:  adalit00
+cn:  adalit00
+
+dn: cn=sa-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group2
+member: cn= pariit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= guyeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= nakait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=pariit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: pariit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+uid: pariit00
+cn: pariit00
+
+dn: cn= guyeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  guyeit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+uid:  guyeit00
+cn:  guyeit00
+
+dn: cn= nakait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  nakait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group2,ou=groups,dc=hs-esslingen,dc=de
+uid:  nakait00
+cn:  nakait00
+
+dn: cn=sa-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group3
+member: cn= emcait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= magyit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= phfuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=emcait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: emcait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid: emcait00
+cn: emcait00
+
+dn: cn= magyit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  magyit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid:  magyit00
+cn:  magyit00
+
+dn: cn= phfuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  phfuit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group3,ou=groups,dc=hs-esslingen,dc=de
+uid:  phfuit01
+cn:  phfuit01
+
+dn: cn=sa-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group4
+member: cn= phhait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= geklit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= dakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=phhait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: phhait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid: phhait01
+cn: phhait01
+
+dn: cn= geklit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  geklit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid:  geklit00
+cn:  geklit00
+
+dn: cn= dakait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  dakait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group4,ou=groups,dc=hs-esslingen,dc=de
+uid:  dakait01
+cn:  dakait01
+
+dn: cn=sa-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group5
+member: cn= luhuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= maheit11,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= chliit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=luhuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: luhuit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid: luhuit00
+cn: luhuit00
+
+dn: cn= maheit11,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  maheit11@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid:  maheit11
+cn:  maheit11
+
+dn: cn= chliit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  chliit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group5,ou=groups,dc=hs-esslingen,dc=de
+uid:  chliit01
+cn:  chliit01
+
+dn: cn=sa-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group6
+member: cn= vaorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= faflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= maweit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=vaorit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: vaorit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+uid: vaorit00
+cn: vaorit00
+
+dn: cn= faflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  faflit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+uid:  faflit00
+cn:  faflit00
+
+dn: cn= maweit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  maweit05@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group6,ou=groups,dc=hs-esslingen,dc=de
+uid:  maweit05
+cn:  maweit05
+
+dn: cn=sa-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group7
+member: cn= robait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= miseit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= bukait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=robait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: robait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid: robait01
+cn: robait01
+
+dn: cn= miseit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  miseit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid:  miseit01
+cn:  miseit01
+
+dn: cn= bukait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  bukait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group7,ou=groups,dc=hs-esslingen,dc=de
+uid:  bukait01
+cn:  bukait01
+
+dn: cn=sa-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group8
+member: cn= mefrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= limait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= tobait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=mefrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: mefrit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid: mefrit00
+cn: mefrit00
+
+dn: cn= limait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  limait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid:  limait01
+cn:  limait01
+
+dn: cn= tobait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  tobait02@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group8,ou=groups,dc=hs-esslingen,dc=de
+uid:  tobait02
+cn:  tobait02
+
+dn: cn=sa-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group9
+member: cn= jukoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= mobeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=jukoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: jukoit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+uid: jukoit01
+cn: jukoit01
+
+dn: cn= mobeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  mobeit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group9,ou=groups,dc=hs-esslingen,dc=de
+uid:  mobeit00
+cn:  mobeit00
+
+dn: cn=sa-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group10
+member: cn= patsit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= festit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= baumit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=patsit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: patsit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid: patsit00
+cn: patsit00
+
+dn: cn= festit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  festit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid:  festit00
+cn:  festit00
+
+dn: cn= baumit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  baumit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group10,ou=groups,dc=hs-esslingen,dc=de
+uid:  baumit00
+cn:  baumit00
+
+dn: cn=sa-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group11
+member: cn= pabiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= inbait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= daflit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=pabiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: pabiit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+uid: pabiit03
+cn: pabiit03
+
+dn: cn= inbait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  inbait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+uid:  inbait00
+cn:  inbait00
+
+dn: cn= daflit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  daflit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group11,ou=groups,dc=hs-esslingen,dc=de
+uid:  daflit01
+cn:  daflit01
+
+dn: cn=sa-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group12
+member: cn= fakiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= eroeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= guscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=fakiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: fakiit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+uid: fakiit00
+cn: fakiit00
+
+dn: cn= eroeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  eroeit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+uid:  eroeit01
+cn:  eroeit01
+
+dn: cn= guscit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  guscit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group12,ou=groups,dc=hs-esslingen,dc=de
+uid:  guscit00
+cn:  guscit00
+
+dn: cn=sa-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group13
+member: cn= seteit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= gaarit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= sapeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=seteit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: seteit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+uid: seteit00
+cn: seteit00
+
+dn: cn= gaarit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  gaarit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+uid:  gaarit01
+cn:  gaarit01
+
+dn: cn= sapeit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  sapeit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group13,ou=groups,dc=hs-esslingen,dc=de
+uid:  sapeit01
+cn:  sapeit01
+
+dn: cn=sa-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group14
+member: cn= imstit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= chniit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= phmiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=imstit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: imstit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+uid: imstit00
+cn: imstit00
+
+dn: cn= chniit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  chniit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+uid:  chniit01
+cn:  chniit01
+
+dn: cn= phmiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  phmiit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group14,ou=groups,dc=hs-esslingen,dc=de
+uid:  phmiit00
+cn:  phmiit00
+
+dn: cn=sa-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group15
+member: cn= nipfit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= arsait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= chgait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=nipfit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: nipfit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+uid: nipfit00
+cn: nipfit00
+
+dn: cn= arsait03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  arsait03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+uid:  arsait03
+cn:  arsait03
+
+dn: cn= chgait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  chgait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group15,ou=groups,dc=hs-esslingen,dc=de
+uid:  chgait01
+cn:  chgait01
+
+dn: cn=sa-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group16
+member: cn= toflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= jafait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= labrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=toflit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: toflit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+uid: toflit00
+cn: toflit00
+
+dn: cn= jafait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  jafait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+uid:  jafait00
+cn:  jafait00
+
+dn: cn= labrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  labrit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group16,ou=groups,dc=hs-esslingen,dc=de
+uid:  labrit00
+cn:  labrit00
+
+dn: cn=sa-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group17
+member: cn= mascit31,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= phgegl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= dascit14,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=mascit31,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: mascit31@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+uid: mascit31
+cn: mascit31
+
+dn: cn= phgegl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  phgegl00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+uid:  phgegl00
+cn:  phgegl00
+
+dn: cn= dascit14,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  dascit14@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group17,ou=groups,dc=hs-esslingen,dc=de
+uid:  dascit14
+cn:  dascit14
+
+dn: cn=sa-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group18
+member: cn= maryit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= thkait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 member: cn= sihait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= rokuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=sihait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=maryit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: sihait00@hs-esslingen.de
+mail: maryit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup33,ou=groups,dc=hs-esslingen,dc=de
-uid: sihait00
-cn: sihait00
+memberof: cn= sa-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+uid: maryit01
+cn: maryit01
 
-dn: cn= rokuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= thkait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  rokuit00@hs-esslingen.de
+mail:  thkait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup33,ou=groups,dc=hs-esslingen,dc=de
-uid:  rokuit00
-cn:  rokuit00
+memberof: cn= sa-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+uid:  thkait01
+cn:  thkait01
 
-dn: cn=sagroup34,ou=groups,dc=hs-esslingen,dc=de
+dn: cn= sihait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  sihait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group18,ou=groups,dc=hs-esslingen,dc=de
+uid:  sihait00
+cn:  sihait00
+
+dn: cn=sa-stud-group19,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup34,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=sa-stud-group19,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup34
-member: cn= macsit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= siscit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= sikeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: sa-stud-group19
+member: cn= dosiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= stsait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= pavait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=macsit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=dosiit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: macsit00@hs-esslingen.de
+mail: dosiit00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup34,ou=groups,dc=hs-esslingen,dc=de
-uid: macsit00
-cn: macsit00
+memberof: cn= sa-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+uid: dosiit00
+cn: dosiit00
 
-dn: cn= siscit05,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= stsait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  siscit05@hs-esslingen.de
+mail:  stsait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup34,ou=groups,dc=hs-esslingen,dc=de
-uid:  siscit05
-cn:  siscit05
+memberof: cn= sa-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+uid:  stsait00
+cn:  stsait00
 
-dn: cn= sikeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= pavait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  sikeit00@hs-esslingen.de
+mail:  pavait01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup34,ou=groups,dc=hs-esslingen,dc=de
-uid:  sikeit00
-cn:  sikeit00
+memberof: cn= sa-stud-group19,ou=groups,dc=hs-esslingen,dc=de
+uid:  pavait01
+cn:  pavait01
 
-dn: cn=sagroup35,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=sa-stud-group20,ou=groups,dc=hs-esslingen,dc=de
 changetype: delete
 
-dn: cn=sagroup35,ou=groups,dc=hs-esslingen,dc=de
+dn: cn=sa-stud-group20,ou=groups,dc=hs-esslingen,dc=de
 changetype: add
 objectClass: groupOfNames
 objectClass: top
 description: group of lab students
-cn: sagroup35
-member: cn= madeit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= sesait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
-member: cn= nikuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+cn: sa-stud-group20
+member: cn= svhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= andoit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= fakuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 
-dn: cn=madeit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn=svhait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail: madeit02@hs-esslingen.de
+mail: svhait00@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup35,ou=groups,dc=hs-esslingen,dc=de
-uid: madeit02
-cn: madeit02
+memberof: cn= sa-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+uid: svhait00
+cn: svhait00
 
-dn: cn= sesait02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= andoit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  sesait02@hs-esslingen.de
+mail:  andoit02@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup35,ou=groups,dc=hs-esslingen,dc=de
-uid:  sesait02
-cn:  sesait02
+memberof: cn= sa-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+uid:  andoit02
+cn:  andoit02
 
-dn: cn= nikuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+dn: cn= fakuit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
 changetype: add
 givenName: Not configured
 sn: Not configured
 userPassword: ezsiscool
-mail:  nikuit01@hs-esslingen.de
+mail:  fakuit01@hs-esslingen.de
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
 objectClass: top
 objectClass: pwmUser
-memberof: cn= sagroup35,ou=groups,dc=hs-esslingen,dc=de
-uid:  nikuit01
-cn:  nikuit01
+memberof: cn= sa-stud-group20,ou=groups,dc=hs-esslingen,dc=de
+uid:  fakuit01
+cn:  fakuit01
+
+dn: cn=sa-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group21
+member: cn= dascit12,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= juscit06,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= maweit06,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=dascit12,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: dascit12@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+uid: dascit12
+cn: dascit12
+
+dn: cn= juscit06,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  juscit06@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+uid:  juscit06
+cn:  juscit06
+
+dn: cn= maweit06,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  maweit06@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group21,ou=groups,dc=hs-esslingen,dc=de
+uid:  maweit06
+cn:  maweit06
+
+dn: cn=sa-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group22
+member: cn= lekoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= anmiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= sespit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=lekoit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: lekoit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+uid: lekoit00
+cn: lekoit00
+
+dn: cn= anmiit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  anmiit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+uid:  anmiit03
+cn:  anmiit03
+
+dn: cn= sespit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  sespit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group22,ou=groups,dc=hs-esslingen,dc=de
+uid:  sespit00
+cn:  sespit00
+
+dn: cn=sa-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group23
+member: cn= begrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= adbeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=begrit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: begrit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+uid: begrit00
+cn: begrit00
+
+dn: cn= adbeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  adbeit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group23,ou=groups,dc=hs-esslingen,dc=de
+uid:  adbeit00
+cn:  adbeit00
+
+dn: cn=sa-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group24
+member: cn= magait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= krmait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= mikoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=magait04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: magait04@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+uid: magait04
+cn: magait04
+
+dn: cn= krmait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  krmait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+uid:  krmait00
+cn:  krmait00
+
+dn: cn= mikoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  mikoit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group24,ou=groups,dc=hs-esslingen,dc=de
+uid:  mikoit03
+cn:  mikoit03
+
+dn: cn=sa-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group25
+member: cn= dahoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= chhait08,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= dastit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=dahoit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: dahoit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+uid: dahoit03
+cn: dahoit03
+
+dn: cn= chhait08,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  chhait08@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+uid:  chhait08
+cn:  chhait08
+
+dn: cn= dastit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  dastit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group25,ou=groups,dc=hs-esslingen,dc=de
+uid:  dastit03
+cn:  dastit03
+
+dn: cn=sa-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group26
+member: cn= dilait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= fisuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= paseit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=dilait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: dilait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+uid: dilait01
+cn: dilait01
+
+dn: cn= fisuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  fisuit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+uid:  fisuit00
+cn:  fisuit00
+
+dn: cn= paseit02,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  paseit02@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group26,ou=groups,dc=hs-esslingen,dc=de
+uid:  paseit02
+cn:  paseit02
+
+dn: cn=sa-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group27
+member: cn= haheit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= maahit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= vaweit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=haheit03,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: haheit03@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+uid: haheit03
+cn: haheit03
+
+dn: cn= maahit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  maahit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+uid:  maahit00
+cn:  maahit00
+
+dn: cn= vaweit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  vaweit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group27,ou=groups,dc=hs-esslingen,dc=de
+uid:  vaweit01
+cn:  vaweit01
+
+dn: cn=sa-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group28
+member: cn= esoeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= gusugl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= meatit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=esoeit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: esoeit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+uid: esoeit00
+cn: esoeit00
+
+dn: cn= gusugl00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  gusugl00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+uid:  gusugl00
+cn:  gusugl00
+
+dn: cn= meatit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  meatit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group28,ou=groups,dc=hs-esslingen,dc=de
+uid:  meatit00
+cn:  meatit00
+
+dn: cn=sa-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group29
+member: cn= jamoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= butait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= nateit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=jamoit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: jamoit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+uid: jamoit01
+cn: jamoit01
+
+dn: cn= butait00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  butait00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+uid:  butait00
+cn:  butait00
+
+dn: cn= nateit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  nateit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group29,ou=groups,dc=hs-esslingen,dc=de
+uid:  nateit00
+cn:  nateit00
+
+dn: cn=sa-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group30
+member: cn= leceit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= angoit04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+member: cn= anwait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=leceit01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: leceit01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+uid: leceit01
+cn: leceit01
+
+dn: cn= angoit04,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  angoit04@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+uid:  angoit04
+cn:  angoit04
+
+dn: cn= anwait01,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail:  anwait01@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group30,ou=groups,dc=hs-esslingen,dc=de
+uid:  anwait01
+cn:  anwait01
+
+dn: cn=sa-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group31
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group31,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=sa-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group32
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group32,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=sa-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group33
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group33,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=sa-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group34
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group34,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
+
+dn: cn=sa-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+changetype: delete
+
+dn: cn=sa-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+changetype: add
+objectClass: groupOfNames
+objectClass: top
+description: group of lab students
+cn: sa-stud-group35
+member: cn= XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+
+dn: cn=XXXXit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+changetype: add
+givenName: Not configured
+sn: Not configured
+userPassword: ezsiscool
+mail: XXXXit00@hs-esslingen.de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+memberof: cn= sa-stud-group35,ou=groups,dc=hs-esslingen,dc=de
+uid: XXXXit00
+cn: XXXXit00
 

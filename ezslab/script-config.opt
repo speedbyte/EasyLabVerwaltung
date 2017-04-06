@@ -1,4 +1,4 @@
 [labor]
 MAXREPOS = 35 
 ITERATIONS = 2
-PREFIXREPOLIST = ezs,sa
+PREFIXREPOLIST = ezs-stud-,sa-stud-
