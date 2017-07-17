@@ -3,10 +3,10 @@
 	url = https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/StudentConfiguration.git
 [submodule "submodules/template-repo"]
 	path = submodules/template-repo
-	url = https://vagrawal@wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
+	url = git@gitlab.hs-esslingen.de:IT-Allgemein-LaborVerwaltung/template-repo.git
 [submodule "submodules/examples-repo"]
 	path = submodules/examples-repo
-	url = https://vagrawal@wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/examples-repo.git
+	url = git@gitlab.hs-esslingen.de:IT-Allgemein-LaborVerwaltung/examples-repo.git
 [submodule "GettingStarted"]
 	path = submodules/GettingStarted
 	url = git@gitlab.hs-esslingen.de:IT-Allgemein-LaborVerwaltung/Documents

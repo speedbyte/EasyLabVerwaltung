@@ -16,12 +16,14 @@ authorizationfile = sys.argv[1]
 git_option = sys.argv[2]
 
 maxrepos = cp_script.get('labor', 'MAXREPOS')
-maxrepos = int(maxrepos, 10)
+maxrepos = int(maxrepos, 10)  # hack so that the script would run. string to int coversion problem  
 
 iterations = cp_script.get('labor', 'ITERATIONS')
-iterations = int(iterations, 10) # $ITERATIONS
+iterations = int(iterations, 10) # $ITERATIONS . hack so that the script would run, string to int converstion problem
 
 prefixrepolist = cp_script.get('labor', 'PREFIXREPOLIST')
+gitlab_server_url = cp_script.get('labor', 'GITLAB_SERVER')
+gitlab_server_token = cp_script.get('labor', 'GITLAB_SERVER_TOKEN')
 
 cp.read(authorizationfile)
 
@@ -72,7 +74,7 @@ ldiffile.write( "ou: "+currentOUunit+"\n")
 ldiffile.write('\n')
 
 
-git = gitlab.Gitlab( 'https://wwwitrt.hs-esslingen.de:8443', 'Lzx9BbajbRkxhTZjknDt')
+git = gitlab.Gitlab( 'https://'+gitlab_server_url, gitlab_server_token)
 runners = git.runners.list()
 print runners[0].id
 
