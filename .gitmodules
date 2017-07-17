@@ -7,3 +7,6 @@
 [submodule "submodules/examples-repo"]
 	path = submodules/examples-repo
 	url = https://vagrawal@wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/examples-repo.git
+[submodule "GettingStarted"]
+	path = submodules/GettingStarted
+	url = git@gitlab.hs-esslingen.de:IT-Allgemein-LaborVerwaltung/Documents
