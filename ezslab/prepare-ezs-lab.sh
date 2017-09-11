@@ -1,7 +1,16 @@
 #!/bin/bash
 
-EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt
-EZSLAB_GITLAB_SERVER=wwwitrt.hs-esslingen.de:8443
+if [ "$(hostname)" == "itlx3304" ]; then
+	EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt
+	EZSLAB_GITLAB_SERVER=wwwitrt4.hs-esslingen.de:8443
+elif [ "$(hostname)" == "itlx3354" ]; then
+	EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt
+	EZSLAB_GITLAB_SERVER=wwwitrt.hs-esslingen.de:8443
+fi
+echo $EZSLAB_PERSONAL_TOKEN
+echo $EZSLAB_GITLAB_SERVER 
+exit
+
 GIT_OPTION="n"
 
 while getopts ":l:jsgvf:h" opt; do
@@ -290,17 +299,17 @@ if [ "$LDAP_OPTION" == "y" ]; then
     echo "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt."; 
     3_prepare_ldap
     if [ "fresh" == "$LDAP_PARAMETER" ]; then
- grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
- if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
-  grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
-         echo "deleting all members under $grouptodelete"
-         ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
- fi
- ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
-        #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+        grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
+	    if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
+		    grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
+		    echo "deleting all members under $grouptodelete"
+		    ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
+	    fi
+	    ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+	    #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     elif [ "incremental" == "$LDAP_PARAMETER" ]; then
- ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
- #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+	    ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+	    #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     fi
 else
     if [ "y" == "$JENKINS_OPTION" ]; then
