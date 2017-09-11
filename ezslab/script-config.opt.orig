@@ -1,0 +1,7 @@
+[labor]
+MAXREPOS = 25 
+ITERATIONS = 2
+PREFIXREPOLIST = lab1,lab2
+
+[gitlab]
+GITLAB_PERSONAL_TOKEN=xxxxxxxxxxxxxxx
