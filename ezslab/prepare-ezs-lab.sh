@@ -158,6 +158,7 @@ echo "Do you want a backup of the GIT repos (Y/N)"
 read ANSWER
 if [ "ANSWER" == "Y" ]; then
  echo "Backup GIT repos.. This can take a long time...."
+ # git rename repos
 else
  echo "Not Backup GIT repos.. This can take a long time...."
 fi
@@ -173,10 +174,10 @@ do
   g=$PREFIXREPO$type$count
   if [ $count -ge $DUMMYMAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "deleting project $g" 
-  curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  curl --request DELETE --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://$EZSLAB_GITLAB_SERVER/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
   echo
-  curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/LaborAufgaben%2F$g"
+  curl --request GET --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" "https://$EZSLAB_GITLAB_SERVER/api/v3/projects/LaborAufgaben%2F$g"
   wait ${!}
   echo
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
@@ -198,16 +199,16 @@ do
   g=$PREFIXREPO$type$count
   if [ $count -ge $MAXREPOS ]; then count=1; else count=$(($count+1)); fi
   echo "Creating project $g"
-  curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects"
+  curl --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" --data-urlencode "name=$g" --data-urlencode "namespace_id=10" "https://$EZSLAB_GITLAB_SERVER/api/v3/projects"
   #curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
   wait ${!}
   echo
-  git remote set-url origin https://$user:$pass@wwwitrt.hs-esslingen.de:8443/LaborAufgaben/"$g".git
+  git remote set-url origin https://$user:$pass@$EZSLAB_GITLAB_SERVER/LaborAufgaben/"$g".git
   git push origin master
 #  echo "Adding users"
 #  curl --request POST --header "PRIVATE-TOKEN: $EZSLAB_PERSONAL_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 done 
-git remote set-url origin https://$user@wwwitrt.hs-esslingen.de:8443/LaborVerwaltung/template-repo.git
+git remote set-url origin https://$user@$EZSLAB_GITLAB_SERVER/LaborVerwaltung/template-repo.git
 cd ../../ezslab
 }
 
