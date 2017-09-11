@@ -2,8 +2,6 @@
 MAXREPOS = 35 
 ITERATIONS = 2
 PREFIXREPOLIST = ezs-stud-,sa-stud-
+[gitlab]
 GITLAB_SERVER=wwwitrt.hs-esslingen.de:8443
 GITLAB_SERVER_TOKEN=Lzx9BbajbRkxhTZjknDt
-GITLAB_SERVER_WWWITRT4=wwwitrt4.hs-esslingen.de:8443
-GITLAB_SERVER_TOKEN_WWITRT4=Lzx9BbajbRkxhTZjknDt
-

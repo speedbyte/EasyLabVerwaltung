@@ -5,67 +5,83 @@ PREPARE
 ----------------------
 This is a read me to prepare the ezs lab.
 
-The first thing is to change the authorization-file.opt and enter the ids of the students.
-Then the file prepare-ezs-lab.sh has to be called by issuing the command sudo bash prepare-ezs-lab.sh.
+The first thing is to rename the authorization-file.opt.orig into authorization-file.opt and enter the ids of the students.
+Then rename script-config.opt.orig into script.config and enter the relevant information.
+Then the file prepare-labs.sh has to be called by issuing the command sudo bash prepare-labs.sh.
 The execution of the file is done in 4 stages:
 
-STAGE 1
+STAGE 1 : Prepare Verbose
+PARAMETER : -v ON
 
-First stage is if you want to switch on the verbose or not. Type 'on' for verbose on and 'off' for verbose off.
+First stage is if you want to switch on the verbose or not. Type 'ON' for verbose on and 'OFF' for verbose off.
 If you have verbose as on, all the commands are executed with -v option otherwise there is no verbose of the executed commands. 
 The stdout is sent to the folder logs/. However stderr is still on the console.
  
-STAGE 2 
+STAGE 2 : Prepare LDAP Entries
+PARAMETER : -l fresh
+PARAMETER : -l incremental 
 
 This stage is to delete and create the entries in the LDAP. This stage reads the file authorizatzion-file.opt
 and creates new ldap entries under ou=students,ou=people,dc=hs-esslingen,dc=de. The students are automatically assigned the group membership.
-In this stage, type freshldap if you want to delete all the students and start from fresh. If you are doing everything from 
+In this stage, type -l fresh if you want to delete all the students and start from fresh. If you are doing everything from 
 scratch, then further stages ( svn and jenkins ) would be processed otherwise not.
-The default is that you want to add or delete individual members.
+The default is that you want to add or delete individual members (-l incremental )
 
-STAGE 3
+STAGE 2.1 : Prepare SVN Repos
+PARAMETER : -s
 
-You come in this stage only if you have opted for a freshldap.
+You come in this stage only if you have opted for a -l fresh.
 This stage is the deletion and the creation of the svn repositories. You will be prompted if you want to continue 
 this step. If you type y, then the repositories would be deleted. Here you can select, which repositories you would
-like to have deleted.
+like to have deleted. The program will also ask if you want to make a back up of the repositories
 The SVN repositories would be created according to the number of teams written in the bash file. 
-Please note that there is no way to add a new repository, hence 25 repositories has been added here which might be the maximum 
-for one semester.
+Please note that there is no way to add a new repository, hence  add maximum number of repositories and donot use them.
+In the default example 25 repositories has been added here which might be the maximum for one semester. This can however be adjusted in the option file script-config.opt.
 
-STAGE 4
+STAGE 2.2 : Prepare Jenkins Jobs
+PARAMETER : -j
 
-You come in this stage, only if you have opted for a freshldap.
+You come in this stage, only if you have opted for a -l fresh.
 This stage is the deletion of the Jenkins Jobs. Once deleted, new Jenkins jobs would be created and the 
 rights to view, build the jobs would be automatically assigned to them. Here too, 25 jobs has been created which might be the maximum.
-Type y to continue.
+The program will also ask if you want to make a back up of the jobs 
+
+
+STAGE 2.3 : Prepare Git Repositories and Git Users
+PARAMETER : -g
+
+You come in this stage, only if you have opted for a -l fresh.
+This stage is the deletion of all the repositories under then namespace LaborAufgaben in the Gitlab. 
+This stage or basically the program never deletes all the users who had previously access to the namespace LaborAufgaben. 
+If the user does not need access to the repository anymore, then he will simply see nothing when he logs in the gitlab
+New users and repositories will be created. The name of the users and the repsoitories is taken from the opt file. 
+
+STAGE 3
+PARAMETER : -f
+
+Provide the authorization file with all the ids and their groups
 
 -----------------------------
 
 ACCESS
 
 SVN
-wwwitrt.hs-esslingen.de/svn/labor/
-svn co --username viaggsoo https://wwwitrt.hs-esslingen.de/svn/labor/teama1
+https://hostname/path_to_the_svn_repos -> Please change the hostname according to your environment
+svn co --username <username> https://hostname/path_to_the_svn_repos
 
 JENKINS
-wwwitrt.hs-esslingen.de/jenkins
+https://hostname/jenkins -> Please change the hostname according to your environment
 
-To access as admin, type ezslab and the password njn$43EL in Shibboleth.
-You will get a complete access of all the teams and their configuration
-
-To access as student, type viaggsoo and the password pfl$51GU in Shibboleth.
-You will get the access of only the repository and jobs where viaggsoo in authoritation-file.opt.
 
 PWM
 Change your password by typing in 
-wwwitrt2.hs-esslingen.de/pwm
-For admin access to PWM, type pwmadmin as username and password marc276%!
-For Configuration editor, type marc276%! as password.
+https://hostname/pwm -> Please change the hostname according to your environment
 
-To change the password of a student, please login as pwmadmin and go to Helpdesk. Type the name of the student
-and change his password. 
 
+GIT
+https://hostname/gitlab  -> Please change the hostname according to your environment
+git clone https://username@hostname/gitlab/path_to_the_git_repo 
 ------------------------------
 
-
+The template-repo is the repo through which the a lab repo for the students will be generated. 
+The example-repo on the other hand is the example code what the students can refer to.
