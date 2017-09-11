@@ -1,8 +1,10 @@
 #!/bin/bash
 
-EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt
+LDAP_OPTION="y"
+JENKINS_OPTION="y"
+SVN_OPTION="y"
 GIT_OPTION="n"
-
+ 
 while getopts ":l:jsgvf:h" opt; do
   case $opt in
     l)
@@ -70,21 +72,17 @@ while getopts ":l:jsgvf:h" opt; do
     f)
       echo "-f was triggered, Parameter: $OPTARG" >&2
       if [ -f $OPTARG ]; then
-   echo "$OPTARG Authorization file found"
+          echo "$OPTARG Authorization file found"
           AUTHORIZATIONFILE=$OPTARG
-          AUTHORIZATIONGROUP="labor"
-   if [ "$AUTHORIZATIONGROUP" != "intern" ] && [ "$AUTHORIZATIONGROUP" != "labor" ]; then
-  echo "Either labor or intern authorization file is required.. Exiting"
-  exit 1
-   fi
+      fi
       else
           echo "$OPTARG Authorization file not found" 
           exit 1
       fi
       ;;  
     v)
-      echo "-f was triggered, Parameter: $OPTARG" >&2
-      VERBOSE='on'
+      echo "-v was triggered, Parameter: $OPTARG" >&2
+      VERBOSE='ON'
       ;;
     :)
       echo "Option -$OPTARG requires an argument." >&2
@@ -99,17 +97,10 @@ if [ $# -eq 0 ]; then
 fi
 # Script to generate Subversion repositories for HE project
 #
-if [ "$AUTHORIZATIONGROUP" == "intern" ]; then
- MAXREPOS=1   #each entry in PREFIXREPOLIST would be generated MAXREPOS times
- PREFIXREPOLIST=( "helikopterdev" "ezslabscriptsdev" "trackplusdev" ) # you can add upto 10 labs here
- ITERATIONS=${#PREFIXREPOLIST[@]}
- SVNREPOS=/var/repos/INTERN
-else
- MAXREPOS=35
- PREFIXREPOLIST=( "ezs-stud-" "sa-stud-" ) # you can add upto 10 labs here
- ITERATIONS=${#PREFIXREPOLIST[@]}
- SVNREPOS=/var/repos/LABOR
-fi
+MAXREPOS=35
+PREFIXREPOLIST=( "ezs-stud-" "sa-stud-" ) # you can add upto 10 labs here
+ITERATIONS=${#PREFIXREPOLIST[@]}
+SVNREPOS=/var/repos/LABOR
 
 
 #source script-config.opt
@@ -117,7 +108,7 @@ JENKINS=/usr/share/tomcat7/.jenkins
 ADMINDIR=$(pwd)/..
 LDAP=/etc/ldap
 currentdate=$(date +"%0Y%0m%0d-%0H%0M%0S")
-if [ "$VERBOSE" == "on" ]; then do_verbose='-v'; else do_verbose=''; fi
+if [ "$VERBOSE" == "ON" ]; then do_verbose='-v'; else do_verbose=''; fi
 
 function 1_prepare_svnrepos
 {
@@ -263,12 +254,11 @@ find $JENKINS/jobs -maxdepth 1 -type d  -printf '%T@ %P\n' | sort -n |  awk '/[a
 
 function 3_prepare_ldap
 {
-#Script to add ldap groups in the ldap 
-#python << EOF > logs/log-prepare-ezs-python.log  2>&1
-python ldap-python.py $AUTHORIZATIONFILE $GIT_OPTION 
-#EOF
+    #Script to add ldap groups in the ldap 
+    #python << EOF > logs/log-prepare-ezs-python.log  2>&1
+    python ldap-python.py $AUTHORIZATIONFILE $GIT_OPTION 
+    #EOF
 }
-
 
 rm -f logs/*
 if [ "fresh" == "$LDAP_PARAMETER" ]; then
@@ -288,25 +278,21 @@ if [ "$LDAP_OPTION" == "y" ]; then
     echo "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt."; 
     3_prepare_ldap
     if [ "fresh" == "$LDAP_PARAMETER" ]; then
- grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
- if [ "$AUTHORIZATIONGROUP" == "labor" ]; then
-  grouptodelete="ou=$AUTHORIZATIONGROUP,ou=people,dc=hs-esslingen,dc=de"
-         echo "deleting all members under $grouptodelete"
-         ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
- fi
- ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+        grouptodelete="ou=labor,ou=people,dc=hs-esslingen,dc=de"
+        echo "deleting all members under $grouptodelete"
+        ldapdelete -r -v -x -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! $grouptodelete
+        ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
         #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     elif [ "incremental" == "$LDAP_PARAMETER" ]; then
- ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
- #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+        ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldap.ldif
+        #ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
     fi
-else
-    if [ "y" == "$JENKINS_OPTION" ]; then
-        2_prepare_jenkins;
+    else
+        if [ "y" == "$JENKINS_OPTION" ]; then
+            2_prepare_jenkins;
+        fi
     fi
-fi
-echo "Following log-files has been generated"
-ls -lt logs/
-
-#curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=ezsrepo4" --data-urlencode "namespace_id=10" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects"
-#curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/:id/members/:user_id?access_level=30
+    echo "Following log-files has been generated"
+    ls -lt logs/
+    #curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "name=ezsrepo4" --data-urlencode "namespace_id=10" "https://wwwitrt.hs-esslingen.de:8443/api/v3/projects"
+    #curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" https://wwwitrt.hs-esslingen.de:8443/api/v3/projects/:id/members/:user_id?access_level=30

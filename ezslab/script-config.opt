@@ -2,3 +2,6 @@
 MAXREPOS = 35 
 ITERATIONS = 2
 PREFIXREPOLIST = ezs-stud-,sa-stud-
+
+[gitlab]
+GITLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt

@@ -1,335 +1,231 @@
 [groups]
-ezsadmins = ezslab, vagrawal, friedric
-saadmins = friedric, vagrawal
+lab1admins = admin1, admin2 
+lab2admins = admin1, admin3
 
 #----------------------EDIT ZONE START---------------------------------------------
 #Start adding the names of the users here 
+#---------------------Start Lab1 ------------
 
-ezsgroup1 = XXXXit00, YYYYit00
-ezsgroup2 = tomuit00, febiit00
-ezsgroup3 = chhait07, jomait03
-ezsgroup4 = wolait01, toscit07
-ezsgroup5 = papait02, dahait05
-ezsgroup6 = ropeme00, anvait00
-ezsgroup7 = makait10, roruit00, ciheit00
-ezsgroup8 = ullait00, frbait02, lugait00
-ezsgroup9 = pamuit01, jumait03
-ezsgroup10 = singit00, ondeit00, hiasit00
-ezsgroup11 = clboit00, almait05
-ezsgroup12 = tojait02, reduit00
-ezsgroup13 = alkait01, sekeit00
-ezsgroup14 = XXXXit00, YYYYit00
-ezsgroup15 = XXXXit00, YYYYit00
-ezsgroup16 = XXXXit00, YYYYit00
-ezsgroup17 = XXXXit00, YYYYit00
-ezsgroup18 = XXXXit00, YYYYit00
-ezsgroup19 = XXXXit00, YYYYit00
-ezsgroup20 = XXXXit00, YYYYit00
-ezsgroup21 = XXXXit00, YYYYit00
-ezsgroup22 = XXXXit00, YYYYit00
-ezsgroup23 = XXXXit00, YYYYit00
-ezsgroup24 = XXXXit00, YYYYit00
-ezsgroup25 = XXXXit00, YYYYit00
+lab1group1 = XXXXit00, YYYYit00
+lab1group2 = XXXXit00, YYYYit00
+# Increment the group number one by one in the same format as above
 
+#---------------------Start Lab2 ------------
 
-#---------------------Start SA ------------
-
-sagroup1 = XXXXit00, YYYYit00
-sagroup2 = tomuit00, febiit00
-sagroup3 = chhait07, jomait03
-sagroup4 = wolait01, toscit07
-sagroup5 = papait02, dahait05
-sagroup6 = ropeme00
-sagroup7 = makait10, roruit00, ciheit00
-sagroup8 = ullait00, frbait02, jumait03
-sagroup9 = pamuit01
-sagroup10 = singit00, ondeit00, hiasit00
-sagroup11 = clboit00, almait05
-sagroup12 = tojait02, reduit00
-sagroup13 = flstit01, hayait01
-sagroup14 = XXXXit00, YYYYit00
-sagroup15 = XXXXit00, YYYYit00
-sagroup16 = XXXXit00, YYYYit00
-sagroup17 = XXXXit00, YYYYit00
-sagroup18 = XXXXit00, YYYYit00
-sagroup19 = XXXXit00, YYYYit00
-sagroup20 = XXXXit00, YYYYit00
-sagroup21 = XXXXit00, YYYYit00
-sagroup22 = XXXXit00, YYYYit00
-sagroup23 = XXXXit00, YYYYit00
-sagroup24 = XXXXit00, YYYYit00
-sagroup25 = XXXXit00, YYYYit00
-
-
-#------------------ Start Misc -----------------
-
-trackplusdevgroup1 = aldeit00
+lab2group1 = XXXXit00, YYYYit00
+lab1group2 = XXXXit00, YYYYit00
+# Increment the group number one by one in the same format as above
 
 #----------------------EDIT ZONE END-----------------------------------------------
 
-ezsgroupall = @ezsgroup1, @ezsgroup2, @ezsgroup3, @ezsgroup4, @ezsgroup5, @ezsgroup6, @ezsgroup7, @ezsgroup8, @ezsgroup9, @ezsgroup10, @ezsgroup11, @ezsgroup12, @ezsgroup13, @ezsgroup14, @ezsgroup15, @ezsgroup16, @ezsgroup17, @ezsgroup18, @ezsgroup19, @ezsgroup20, @ezsgroup21, @ezsgroup22, @ezsgroup23, @ezsgroup24, @ezsgroup25 
+lab1groupall = @lab1group1, @lab1group2, @lab1group3, @lab1group4, @lab1group5, @lab1group6, @lab1group7, @lab1group8, @lab1group9, @lab1group10, @lab1group11, @lab1group12, @lab1group13, @lab1group14, @lab1group15, @lab1group16, @lab1group17, @lab1group18, @lab1group19, @lab1group20, @lab1group21, @lab1group22, @lab1group23, @lab1group24, @lab1group25 
  
-sagroupall = @sagroup1, @sagroup2, @sagroup3, @sagroup4, @sagroup5, @sagroup6, @sagroup7, @sagroup8, @sagroup9, @sagroup10, @sagroup11, @sagroup12, @sagroup13, @sagroup14, @sagroup15, @sagroup16, @sagroup17, @sagroup18, @sagroup19, @sagroup20, @sagroup21, @sagroup22, @sagroup23, @sagroup24, @sagroup25
+lab2groupall = @lab2group1, @lab2group2, @lab2group3, @lab2group4, @lab2group5, @lab2group6, @lab2group7, @lab2group8, @lab2group9, @lab2group10, @lab2group11, @lab2group12, @lab2group13, @lab2group14, @lab2group15, @lab2group16, @lab2group17, @lab2group18, @lab2group19, @lab2group20, @lab2group21, @lab2group22, @lab2group23, @lab2group24, @lab2group25
  
 [template:/]
-@ezsadmins = rw
-@ezsgroupall = r
+@lab1admins = rw
+@lab1groupall = r
 
-[ezsrepo1:/]
-@ezsgroup1 = rw
-@ezsadmins = r
+[lab1repo1:/]
+@lab1group1 = rw
+@lab1admins = r
 
-[ezsrepo2:/]
-@ezsgroup2 = rw
-@ezsadmins = r
+[lab1repo2:/]
+@lab1group2 = rw
+@lab1admins = r
 
-[ezsrepo3:/]
-@ezsgroup3 = rw
-@ezsadmins = r
+[lab1repo3:/]
+@lab1group3 = rw
+@lab1admins = r
 
-[ezsrepo4:/]
-@ezsgroup4 = rw
-@ezsadmins = r
+[lab1repo4:/]
+@lab1group4 = rw
+@lab1admins = r
 
-[ezsrepo5:/]
-@ezsgroup5 = rw
-@ezsadmins = r
+[lab1repo5:/]
+@lab1group5 = rw
+@lab1admins = r
 
-[ezsrepo6:/]
-@ezsgroup6 = rw
-@ezsadmins = r
+[lab1repo6:/]
+@lab1group6 = rw
+@lab1admins = r
 
-[ezsrepo7:/]
-@ezsgroup7 = rw
-@ezsadmins = r
+[lab1repo7:/]
+@lab1group7 = rw
+@lab1admins = r
 
-[ezsrepo8:/]
-@ezsgroup8 = rw
-@ezsadmins = r
+[lab1repo8:/]
+@lab1group8 = rw
+@lab1admins = r
 
-[ezsrepo9:/]
-@ezsgroup9 = rw
-@ezsadmins = r
+[lab1repo9:/]
+@lab1group9 = rw
+@lab1admins = r
 
-[ezsrepo10:/]
-@ezsgroup10 = rw
-@ezsadmins = r
+[lab1repo10:/]
+@lab1group10 = rw
+@lab1admins = r
 
-[ezsrepo11:/]
-@ezsgroup11 = rw
-@ezsadmins = r
+[lab1repo11:/]
+@lab1group11 = rw
+@lab1admins = r
 
-[ezsrepo12:/]
-@ezsgroup12 = rw
-@ezsadmins = r
+[lab1repo12:/]
+@lab1group12 = rw
+@lab1admins = r
 
-[ezsrepo13:/]
-@ezsgroup13 = rw
-@ezsadmins = r
+[lab1repo13:/]
+@lab1group13 = rw
+@lab1admins = r
 
-[ezsrepo14:/]
-@ezsgroup14 = rw
-@ezsadmins = r
+[lab1repo14:/]
+@lab1group14 = rw
+@lab1admins = r
 
-[ezsrepo15:/]
-@ezsgroup15 = rw
-@ezsadmins = r
+[lab1repo15:/]
+@lab1group15 = rw
+@lab1admins = r
 
-[ezsrepo16:/]
-@ezsgroup16 = rw
-@ezsadmins = r
+[lab1repo16:/]
+@lab1group16 = rw
+@lab1admins = r
 
-[ezsrepo17:/]
-@ezsgroup17 = rw
-@ezsadmins = r
+[lab1repo17:/]
+@lab1group17 = rw
+@lab1admins = r
 
-[ezsrepo18:/]
-@ezsgroup18 = rw
-@ezsadmins = r
+[lab1repo18:/]
+@lab1group18 = rw
+@lab1admins = r
 
-[ezsrepo19:/]
-@ezsgroup19 = rw
-@ezsadmins = r
+[lab1repo19:/]
+@lab1group19 = rw
+@lab1admins = r
 
-[ezsrepo20:/]
-@ezsgroup20 = rw
-@ezsadmins = r
+[lab1repo20:/]
+@lab1group20 = rw
+@lab1admins = r
 
-[ezsrepo21:/]
-@ezsgroup21 = rw
-@ezsadmins = r
+[lab1repo21:/]
+@lab1group21 = rw
+@lab1admins = r
 
-[ezsrepo22:/]
-@ezsgroup22 = rw
-@ezsadmins = r
+[lab1repo22:/]
+@lab1group22 = rw
+@lab1admins = r
 
-[ezsrepo23:/]
-@ezsgroup23 = rw
-@ezsadmins = r
+[lab1repo23:/]
+@lab1group23 = rw
+@lab1admins = r
 
-[ezsrepo24:/]
-@ezsgroup24 = rw
-@ezsadmins = r
+[lab1repo24:/]
+@lab1group24 = rw
+@lab1admins = r
 
-[ezsrepo25:/]
-@ezsgroup25 = rw
-@ezsadmins = r
+[lab1repo25:/]
+@lab1group25 = rw
+@lab1admins = r
 
 #--------------------SA REPOS -------------------------
 
-[sarepo1:/]
-@sagroup1 = rw
-@saadmins = r
+[lab2repo1:/]
+@lab2group1 = rw
+@lab2admins = r
 
-[sarepo2:/]
-@sagroup2 = rw
-@saadmins = r
+[lab2repo2:/]
+@lab2group2 = rw
+@lab2admins = r
 
-[sarepo3:/]
-@sagroup3 = rw
-@saadmins = r
+[lab2repo3:/]
+@lab2group3 = rw
+@lab2admins = r
 
-[sarepo4:/]
-@sagroup4 = rw
-@saadmins = r
+[lab2repo4:/]
+@lab2group4 = rw
+@lab2admins = r
 
-[sarepo5:/]
-@sagroup5 = rw
-@saadmins = r
+[lab2repo5:/]
+@lab2group5 = rw
+@lab2admins = r
 
-[sarepo6:/]
-@sagroup6 = rw
-@saadmins = r
+[lab2repo6:/]
+@lab2group6 = rw
+@lab2admins = r
 
-[sarepo7:/]
-@sagroup7 = rw
-@saadmins = r
+[lab2repo7:/]
+@lab2group7 = rw
+@lab2admins = r
 
-[sarepo8:/]
-@sagroup8 = rw
-@saadmins = r
+[lab2repo8:/]
+@lab2group8 = rw
+@lab2admins = r
 
-[sarepo9:/]
-@sagroup9 = rw
-@saadmins = r
+[lab2repo9:/]
+@lab2group9 = rw
+@lab2admins = r
 
-[sarepo10:/]
-@sagroup10 = rw
-@saadmins = r
+[lab2repo10:/]
+@lab2group10 = rw
+@lab2admins = r
 
-[sarepo11:/]
-@sagroup11 = rw
-@saadmins = r
+[lab2repo11:/]
+@lab2group11 = rw
+@lab2admins = r
 
-[sarepo12:/]
-@sagroup12 = rw
-@saadmins = r
+[lab2repo12:/]
+@lab2group12 = rw
+@lab2admins = r
 
-[sarepo13:/]
-@sagroup13 = rw
-@saadmins = r
+[lab2repo13:/]
+@lab2group13 = rw
+@lab2admins = r
 
-[sarepo14:/]
-@sagroup14 = rw
-@saadmins = r
+[lab2repo14:/]
+@lab2group14 = rw
+@lab2admins = r
 
-[sarepo15:/]
-@sagroup15 = rw
-@saadmins = r
+[lab2repo15:/]
+@lab2group15 = rw
+@lab2admins = r
 
-[sarepo16:/]
-@sagroup16 = rw
-@saadmins = r
+[lab2repo16:/]
+@lab2group16 = rw
+@lab2admins = r
 
-[sarepo17:/]
-@sagroup17 = rw
-@saadmins = r
+[lab2repo17:/]
+@lab2group17 = rw
+@lab2admins = r
 
-[sarepo18:/]
-@sagroup18 = rw
-@saadmins = r
+[lab2repo18:/]
+@lab2group18 = rw
+@lab2admins = r
 
-[sarepo19:/]
-@sagroup19 = rw
-@saadmins = r
+[lab2repo19:/]
+@lab2group19 = rw
+@lab2admins = r
 
-[sarepo20:/]
-@sagroup20 = rw
-@saadmins = r
+[lab2repo20:/]
+@lab2group20 = rw
+@lab2admins = r
 
-[sarepo21:/]
-@sagroup21 = rw
-@saadmins = r
+[lab2repo21:/]
+@lab2group21 = rw
+@lab2admins = r
 
-[sarepo22:/]
-@sagroup22 = rw
-@saadmins = r
+[lab2repo22:/]
+@lab2group22 = rw
+@lab2admins = r
 
-[sarepo23:/]
-@sagroup23 = rw
-@saadmins = r
+[lab2repo23:/]
+@lab2group23 = rw
+@lab2admins = r
 
-[sarepo24:/]
-@sagroup24 = rw
-@saadmins = r
+[lab2repo24:/]
+@lab2group24 = rw
+@lab2admins = r
 
-[sarepo25:/]
-@sagroup25 = rw
-@saadmins = r
-
-
-
-## add a new group ezs-students with one member
-
-#dn: cn=ezs-students,ou=groups,dc=hs-esslingen,dc=de
-#changetype: add
-#objectClass: groupOfNames
-#objectClass: top
-#description: pwm admin groups branch
-#cn: ezs-students
-#member: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
-
-
-## add the OU students under people
-
-#dn: ou=students,ou=people,dc=hs-esslingen,dc=de
-#changetype: add
-#ou: students
-#objectClass: organizationalUnit
-#objectClass: top
-
-
-##add a new member under students
-
-
-#dn: cn=$(student-to-add),ou=students,ou=people,dc=hs-esslingen,dc=de
-#changetype: add
-#givenName: Ezslab
-#sn: Student 
-#userPassword:: e1NTSEF9UWZEb3U5MW40My9Dc1ZYbFNPMGI4a0drempSaFlqMFE=
-#mail: ezslab-student@hs-esslingen.de
-#objectClass: inetOrgPerson
-#objectClass: organizationalPerson
-#objectClass: person
-#objectClass: top
-#objectClass: pwmUser
-#memberof: cn=$(group-to-add),ou=groups,dc=hs-esslingen,dc=de
-#uid: $(student-to-add)
-#cn: $(student-to-add)
-
-## modify the added member
-
-#DN: cn=ezslabstudent1,ou=students,ou=people,dc=hs-esslingen,dc=de
-#changetype: modify
-#replace: userpassword
-#userpassword: youmustchangeyourpassword
-
-##add a member to the group ezs-students
-
-#dn: cn=$(member-to-add),ou=groups,ou=students,dc=hs-esslingen,dc=de
-#changetype: modify
-#add: member
-#member: cn=$(member-to-add),ou=people,ou=students,dc=hs-esslingen,dc=de
-
+[lab2repo25:/]
+@lab2group25 = rw
+@lab2admins = r
 
 
