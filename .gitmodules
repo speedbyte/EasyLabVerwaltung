@@ -10,3 +10,9 @@
 [submodule "GettingStarted"]
 	path = submodules/GettingStarted
 	url = https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/Documents
+[submodule "chisubmit"]
+	path = external-labverwaltung-software/chisubmit
+	url = https://github.com/uchicago-cs/chisubmit
+[submodule "assigner"]
+	path = external-labverwaltung-software/assigner
+	url = https://github.com/redkyn/assigner.git
