@@ -1,0 +1,174 @@
+Comserver
+GWUSER ssh  -i /root/.ssh/comserver gwuser@itlx3301.hs.esslingen.de getent passwd  cat /etc/nsswitch.conf user gsuser itlx3301 home -keys root from  comserver visudo gwuser -> nur diese skipt ausführen  PREPARE_EZS_ENV.sh /usr/local/bin PREPARE_EZS_ENV.sh ->  /usr/local/sbin -> PREPARE_EZS_ENV -> /itlx3304.hs-esslingen.de  als gwuser führt PREPARE_EZS_ENV.sh. comserver spricht mit dem itlx3301  intern. /home/rsns01/staff/it/vagrawal/unix
+
+
+curl --request DELETE --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/projects/ezslab%2fezsrepo5"
+
+curl --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" --data-urlencode "email=jon@doe.com&password=defaultpassword&username=jdoe&name=Jon Doe" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/users"
+
+GET
+curl -k --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh" "https://wwwitrt3.hs-esslingen.de:8443/api/v3/users"
+
+
+#$ mount -t cifs //filer1.hs-esslingen.de/work /home/work -o
+username=IHRLOGINNAME,workgroup=RZNT,rw 
+#$ mount -t cifs //filer2.hs-esslingen.de/public /home/public -o username=IHRLOGINNAME,workgroup=RZNT,rw 
+#$ mount -t cifs //filer1.hs-esslingen.de/IHRLOGINNAME /home/unix -o username=IHRLOGINNAME,workgroup=RZNT,rw 
+#$ mount -t cifs //filer1.hs-esslingen.de/IHRLOGINNAME$ /home/win -o username=IHRLOGINNAME,workgroup=RZNT,rw 
+
+
+
+Jenkins
+/etc/default/jenkins -> change the port number wget -q -O – https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add – sudo sh -c ‘echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list’ sudo apt-get update sudo apt-get install jenkins
+Problem with Master node going offline: The setting can be found at http://<jenkins_host>/jenkins/computer/configure and reduce the limit of the disk space.
+CBA ( Container based Authentification )
+Logs: catalina.out localhost-even-log.2015…
+InstalEnclation:  /usr/share/tomcat/.jenkins Home tomcat7 : /usr/share/tomcat7 How does  tomcat7 finds jenkins -> /var/lib/jenkins-via-tomcat ->  jenkins.war under /var/lib/webapps/
+Jenkins is based on tomcat7 https://wwwitrt.hs-esslingen.de/jenkins/reload  will restart jenkins You can simply copy , rename configuration files  and reload jenkins to take affect.Change config.xml file in home/jenkins  From projectbasedmatrix to unsecured. You have to restart the tomcat7  by sudo service tomcat7 restart equivalent to /etc/init.d/tomcat7  restart ProjectMatrixAuthorizationStrategy
+When this happens, you can fix this by the following steps:
+Stop  Jenkins (the easiest way to do this is to kill the servlet container.)  Go to JENKINS_HOME in the file system and find config.xml file. Open  this file in the editor. Look for the true element in this file. Replace  true with false Remove the elements authorizationStrategy and  securityRealm Start Jenkins When Jenkins comes back, it’s in the  unsecured mode where everyone gets full access to the system.
+If this is still not working, trying renaming or deleting config.xml.
+url/reload url/restart url/computer/configure
+
+
+ServerAdmin
+Trackplus:
+/home/trackplus/plugins/portal-5.0/config.php
+uncomment  /usr/sbin/httpd.worker test with 127.0.0.1 tomcat worker.properties  define how the worker i.e jenkins or track etc should work.
+GWUSER ssh -i /root/.ssh/comserver gwuser@itlx3301.hs.esslingen.de sudo /usr/local/sbin
+user gwuser itlx3301 visudo gwuser -> nur diese skipt ausführen PREPARE_EZS_ENV.sh
+SVN repo: svn+ssh://teamedu1@itlx3301.hs-esslingen.de/var/repos/teamed
+Ok,  you have a static ip or are you using dynamic DNS? In any case, I guess  you are reaching those services via a domain name. If that’s the case  here’s some steps that might get you going:
+/usr/local/bin  PREPARE_EZS_ENV.sh -> /usr/local/sbin -> PREPARE_EZS_ENV ->  /itlx3304.hs-esslingen.de als gwuser führt PREPARE_EZS_ENV.sh. comserver  spricht mit dem itlx3301 intern. /home/rsns01/staff/it/vagrawal/unix
+socat – UDP-DATAGRAM:255.255.255.255:24000,broadcast lscpu check for endianness little endian
+.htaccess wird jedes mal gelesen, conf.d is only during the startup. authentification, authorizazion
+JkMount  is used ro run Java based web applications and hence jk_module needs to  be enabled /etc/default/jenkins -> change the port number
+
+
+
+LDAP:
+dn: cn=vagrawal,ou=people,dc=hs-esslingen,dc=de
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: pwmUser
+uid: vagrawal
+structuralObjectClass: inetOrgPerson
+entryUUID: 888e99be-4a61-1035-8063-fb9c9e73bf9d
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20160108144040Z
+userPassword:: e1NTSEF9aVJIa25OZllJa29xZTA3eFhJSllFNzJwNit2THdIV3U=
+pwmLastPwdUpdate: 20160120131515Z
+pwmEventLog:: MDAwMSMuIy4jPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4N
+ CjxoaXN0b3J5PjxyZWNvcmQgdGltZXN0YW1wPSIxNDUzMjk1Njg0NzIxIiBldmVudENvZGU9IkV2Z
+ W50TG9nX0hlbHBkZXNrU2V0UGFzc3dvcmQiIHNyY0lQPSJbQXR0cmlidXRlOiBzcmNJUD0mcXVvdD
+ sxMzQuMTA4LjYzLjI4JnF1b3Q7XSIgc3JjSG9zdD0iW0F0dHJpYnV0ZTogc3JjSG9zdD0mcXVvdDt
+ 1c2VyODAyOC5ocy1lc3NsaW5nZW4uZGUmcXVvdDtdIiAvPjxyZWNvcmQgdGltZXN0YW1wPSIxNDUz
+ Mjk1NzE1NTMxIiBldmVudENvZGU9IkV2ZW50TG9nX0NoYW5nZVBhc3N3b3JkIiBzcmNJUD0iMTM0L
+ jEwOC42My4yOCIgc3JjSG9zdD0idXNlcjgwMjguaHMtZXNzbGluZ2VuLmRlIiAvPjwvaGlzdG9yeT
+ 4NCg==
+cn: vagrawal
+memberOf: cn=ezslabscriptsdevgroup1,ou=groups,dc=hs-esslingen,dc=de
+sn: Agrawal
+givenName: Vikas
+mail: vagrawal@hs-esslingen.de
+entryCSN: 20160716211226.717645Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20160716211226Z
+
+
+
+dn: cn=tomuit00,ou=labor,ou=people,dc=hs-esslingen,dc=de
+givenName: Not configured
+sn: Not configured
+userPassword:: ZXpzaXNjb29s
+mail: Not configured
+
+
+
+
+uid: tomuit00
+cn: tomuit00
+structuralObjectClass: inetOrgPerson
+entryUUID: 338447a6-e864-1035-89c5-2d74a0e7c6eb
+creatorsName: cn=admin,dc=hs-esslingen,dc=de
+createTimestamp: 20160727163749Z
+entryCSN: 20160727163749.934545Z#000000#000#000000
+modifyTimestamp: 20160727163749Z
+memberOf: cn=ezsgroup2,ou=groups,dc=hs-esslingen,dc=de
+--
+createTimestamp: 20160727193203Z
+entryCSN: 20160727193203.826403Z#000000#000#000000
+modifiersName: cn=admin,dc=hs-esslingen,dc=de
+modifyTimestamp: 20160727193203Z
+
+
+
+LDAP
+sudo  ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn=config  ldap://localhost:389/dc=hs-esslingen,dc=de?uid?sub?  ldap://localhost:389/dc=hs-esslingen,dc=de?uid?sub?(uid=vagrawal) It  gives all the users under the domain component dc=hs-esslingen,dc=de sub  is the short form of subtree and it displays only uid If you want all  the givenname then replace uid with givenName If you want all then  replace uid with  basedn ? attribute ? scope ( base, one, sub )?  filter such as uid=vagrawal. If no filter is applied the default is  (objectClass=)
+For example, consider an URL of ldap://ldap.airius.com/o=Airius?cn?sub?(posixid=). When a client attempts to connect using a username of Babs Jenson, the resulting search filter will be (&(posixid=)(cn=Babs Jenson)).
+#test  if OpenLDAP/slapd is running correctly: This wont work if the service  is not running. sudo ldapsearch -Y EXTERNAL -H ldapi:/// -b  cn=configslaptest -f slapd.conf ( checks for errors in the conf file )  slapcat -d -1 ( all the information currently for ldap ) slapd -d -1 (  also starts the daemon if not yet started ) ldapsearch -x -h localhost  -b “dc=hs-esslingen,dc=de” “(objectClass=*)” ldapsearch -x -h localhost  -b “dc=hs-esslingen,dc=de” ldapsearch -x -h localhost ldapsearch -LLL -x  -h ldap.hs-esslingen.de uid=”friedric” -b “o=Hochschule Esslingen,c=de”  -D”hseID=vikas.agrawal,ou=Personen,o=Hochschule Esslingen,c=DE” -W  ldapsearch -LLL -x -h “localhost” uid=”teama1u1″ -b  “dc=hs-esslingen,dc=de” -D”cn=admin,dc=hs-esslingen,dc=de” -W ldapadd -x  -c -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldap.ldif 2>  ldap.log > ldap.log ldapmodify -x -c -D  cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldapm.ldif 2>>  ldap.log > ldap.log
+haven’t tried olcLogFile but by default,  OpenLDAP log all information to syslog’s local4 facility. Add the  following line to /etc/syslog.conf:
+local4.* /var/log/ldap.log
+Restart  the syslog service and check out this log. sudo service slapd restart  sudo service sysklogd reload The configuration file is mentioned in  /etc/init.d/slapd
+Apache: ldap://localhost/uid?sub?cat /etc/default/slapd su openldap -l -s /bin/bash
+It is possible to add multiple entries in one go like
+dn: cn=ezslabstudents,ou=groups,dc=hs-esslingen,dc=de changetype: modify add: member
+#member: cn=teama1group,ou=groups,dc=hs-esslingen,dc=de
+#member: cn=teama2group,ou=groups,dc=hs-esslingen,dc=de
+#member: cn=teama3group,ou=groups,dc=hs-esslingen,dc=de
+#member: cn=teama4group,ou=groups,dc=hs-esslingen,dc=de
+#member: cn=teama5group,ou=groups,dc=hs-esslingen,dc=de
+#member: cn=teama6group,ou=groups,dc=hs-esslingen,dc=de
+ldapadd -x -c -D cn=admin,dc=hs-esslingen,dc=de -W -f filename.ldif slapd -d 1 or slapd -d 255
+cat /etc/default/slapd
+cat new-db.ldif
+dn:  olcDatabase={2}hdb,cn=config objectClass: olcDatabaseConfig  objectClass: olcHdbConfig olcDatabase: {2}hdb olcDbDirectory:  /var/lib/ldap olcSuffix: dc=hs-esslingen,dc=de olcLastMod: TRUE  olcRootDN: cn=admin,dc=hs-esslingen,dc=de olcRootPW::  e1NTSEF9dVdFUEZMYkFaZWoxZTkxdFdMUjI4M2ZVNGJpS2xSbmM= olcDbCheckpoint:  512 30 olcDbConfig: {0}set_cachesize 0 2097152 0 olcDbConfig:  {1}set_lk_max_objects 1500 olcDbConfig: {2}set_lk_max_locks 1500  olcDbConfig: {3}set_lk_max_lockers 1500 olcDbIndex: uid pres,eq  olcDbIndex: cn,sn pres,eq,approx,sub olcDbIndex: objectClass eq  olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by  anonymous auth by dn=”cn=admin,dc=hs-esslingen,dc=de” write by  none olcAccess: {1}to dn.base=”” by  read olcAccess: {2}to  by dn=”cn=admin,dc=hs-esslingen,dc=de” write by  read
+ldapadd -H ldapi:/// -Y EXTERNAL -f new-db.ldif
+ldapmodify -Y external -H ldapi:/// -f ldap-loglevel.ldif
+wenn auf ldap kaputt: folgendes Vorgehen
+/etc/init.d/slapd stop cd /var/lib/ldap/ ls -altr rm .bdb log. __* alock -vf
+FILE=ls -1tr /root/ldap-backups/*.ldif| tail -1
+time slapadd -l FILE
+chown openldap:openldap *
+/etc/init.d/slapd start
+slapadd:  line 1: database #1 (dc=nodomain) not configured to hold  “dc=hs-esslingen,dc=de”; no database configured for that naming context _  1.61% eta none elapsed none spd 5.0 M/s Closing DB…
+ldapmodify -Y external -H ldapi:/// -f ldap-loglevel.ldif
+olCDatabase is required.
+One can add a database using this:
+dn:  olcDatabase={2}hdb,cn=config objectClass: olcDatabaseConfig  objectClass: olcHdbConfig olcDatabase: {2}hdb olcDbDirectory:  /var/lib/ldap olcSuffix: dc=hs-esslingen,dc=de olcLastMod: TRUE  olcRootDN: cn=admin,dc=hs-esslingen,dc=de olcRootPW:: olcDbCheckpoint:  512 30 olcDbConfig: {0}set_cachesize 0 2097152 0 olcDbConfig:  {1}set_lk_max_objects 1500 olcDbConfig: {2}set_lk_max_locks 1500  olcDbConfig: {3}set_lk_max_lockers 1500 olcDbIndex: uid pres,eq  olcDbIndex: cn,sn pres,eq,approx,sub olcDbIndex: objectClass eq  olcAccess: {0}to attrs=userPassword,shadowLastChange by self write by  anonymou s auth by dn=”cn=admin,dc=hs-esslingen,dc=de” write by  none olcAccess: {1}to dn.base=”” by  read olcAccess: {2}to  by dn=”cn=admin,dc=hs-esslingen,dc=de” write by  read
+ldapadd -H ldapi:/// -Y EXTERNAL -f new-db.ldif
+Then sudo time slapadd -b dc=hs-esslingen,dc=de -l 10.ldif
+Rights
+Switch to user: sudo su – username Switch to root: sudo su – cat /etc/passwd : cut -f1 -d:
+addser  -n ( do not create a home directory ) Here if you want to never have a  home directory, then one can edit the file /etc/adduser.conf
+Add a  user to a group usermod -a -G group user Remvoe a user from a group If  no user exists, then deluser user group If the user exits, then usermod  -G “” username adduser user group groupdel userdel -r user ( delete with  home directory ) Entries in the vipw -g is automatically deleted when a  user is deleted. His remaining files are marked with his uid ( a number  ). Hence the unix system never automatically assigns the same uid which  had been already used once.
+
+
+
+296     #FILE_CONFIG="${1}"$
+297     echo "detected template: ${FILE_CONFIG}"$
+298     eval "cat <<EOF$
+299     $(<${FILE_CONFIG})$
+300     EOF$
+301     " > .tmp_pipeline.prototxt$
+302     echo "temporary config file: .tmp_pipeline.prototxt"$
+303     #$
+
+
+
+  #svn mkdir file:///$SVNREPOS/$g/docs -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/pm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/se -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/qa -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/docs/cm -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/scratch -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/Application -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/HAL-Target -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Host -q --message "Initial commit"
+  #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
+  #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
+

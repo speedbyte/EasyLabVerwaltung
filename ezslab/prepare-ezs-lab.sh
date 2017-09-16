@@ -265,7 +265,7 @@ function 3_prepare_ldap
 {
     #Script to add ldap groups in the ldap 
     #python << EOF > logs/log-prepare-ezs-python.log  2>&1
-    python ldap-python.py $AUTHORIZATIONFILE $GIT_OPTION 
+    python ldap_python.py $AUTHORIZATIONFILE $GIT_OPTION
     #EOF
 }
 
