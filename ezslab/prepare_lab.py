@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import argparse
 import time
 import datetime
@@ -8,27 +9,20 @@ import ConfigParser
 import sys
 import os
 
-cp = ConfigParser.ConfigParser()
+
 cp_script = ConfigParser.ConfigParser()
 
 cp_script.read('script-config.opt')
 
-try:
-    authorizationfile = sys.argv[1]
-except:
-    authorizationfile = ''
 
 maxrepos = cp_script.get('labor', 'MAXREPOS')
 maxrepos = int(maxrepos, 10)  # hack so that the script would run. string to int coversion problem
 
-iterations = cp_script.get('labor', 'ITERATIONS')
-iterations = int(iterations, 10)  # $ITERATIONS . hack so that the script would run, string to int converstion problem
-
 prefixrepolist = cp_script.get('labor', 'PREFIXREPOLIST')
+iterations = len(prefixrepolist.split(','))
+
 gitlab_server_url = cp_script.get('gitlab', 'GITLAB_SERVER')
 gitlab_server_token = cp_script.get('gitlab', 'GITLAB_SERVER_TOKEN')
-
-cp.read(authorizationfile)
 
 user = "ezslab"
 password = "njn\$43EL"
@@ -92,7 +86,6 @@ def prepare_gitrepos_create_repos():
         url_join += "PRIVATE-TOKEN:" + gitlab_server_token
         url_join += "--data-urlencode name=" + reponame + "--data-urlencode namespace_id=10 https://$gitlab_server/api/v3/projects"
         subprocess.check_call(url_join)
-        # curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
         time.sleep(1)
         template_repo = "https://" + user + ":" + password + "@" + gitlab_server + "/LaborAufgaben/" + reponame + ".git"
         subprocess.check_call("git remote set-url origin", template_repo)
@@ -103,9 +96,9 @@ def prepare_gitrepos_create_repos():
         subprocess.check_call("cd ../../ezslab")
 
 
-def execute_gitlab_command_and_ldap_prepare():
+def execute_gitlab_command_and_ldap_prepare(authorization_file):
     print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    ldap_python()
+    ldap_python(authorization_file)
 
 def execute_ldap_add_command():
     command = "ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f " \
@@ -143,18 +136,19 @@ def ezslab_listusers(args):
 
 
 def ezslab_flush(args):
+
     ''' Initialize config directories'''
     if git_option is "y":
         prepare_gitrepos_delete_repos()
         time.sleep(10)
         prepare_gitrepos_create_repos()
-
-    execute_gitlab_command_and_ldap_prepare()
+    authorizationfile = args.conffile
+    execute_gitlab_command_and_ldap_prepare(authorizationfile)
 
     if ldap_option is "y":
         grouptodelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
         print "deleting all members under $grouptodelete"
-
+        execute_ldap_delete_command()
 
 def ezslab_sync(args):
     ''' Initialize config directories'''
@@ -171,6 +165,8 @@ def ezslab_ldap(args):
     ldap_option = "y"
 
 
+
+
 def main():
 
     '''Main entry'''
@@ -178,7 +174,10 @@ def main():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(title='subcommands', description='')
 
-    conffile_required = 'authorizationfile.opt'
+    try:
+        authorizationfile = sys.argv[1]
+    except:
+        authorizationfile = 'authorization_file_labor_development.opt'
 
     # adduser
     parser_init = subparsers.add_parser('adduser', help='adds user to the ldap group')
@@ -217,12 +216,12 @@ def main():
     parser_download = subparsers.add_parser('flush', help='flush ldap users')
     parser_download.set_defaults(func=ezslab_flush)
     parser_download.add_argument('-s', '--server', help='server on which to flush all users', type=str)
-    parser_download.add_argument('-c', '--conffile', help='the config file', type=str, required=conffile_required)
+    parser_download.add_argument('-c', '--conffile', help='the config file', type=str, required=authorizationfile)
 
     # sync
     parser_sync = subparsers.add_parser('sync', help='sync the authorization file, todo')
     parser_sync.set_defaults(func=ezslab_sync)
-    parser_sync.add_argument('-c', '--conffile', help='the config file', type=str, required=conffile_required)
+    parser_sync.add_argument('-c', '--conffile', help='the config file', type=str, required=authorizationfile)
     parser_sync.add_argument('-s', '--server', help='URL for server', type=str)
 
     if len(sys.argv) == 1:
@@ -233,7 +232,11 @@ def main():
     args.func(args)
 
 
-def ldap_python():
+def ldap_python(authorizationfile):
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(authorizationfile)
+
     listofgroups_1 = []
     listofgroups_2 = []
     listofgroups_3 = []
@@ -382,6 +385,7 @@ def ldap_python():
 if __name__ == '__main__':
     main()
 
+# curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
 # curl --request POST --header "PRIVATE-TOKEN: $gitlab_server_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
 # ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
 # curl --request POST --header "PRIVATE-TOKEN: pHNJ8ksUCCssCDmtyZxh"
