@@ -12,3 +12,80 @@
   #svn mkdir file:///$SVNREPOS/$g/impl/IDE-Target -q --message "Initial commit"
   #svn import -m "Initial commit" /var/repos/validatebuild.sh file:///$SVNREPOS/$g/impl/IDE-Host/validatebuild.sh        
 
+
+
+def prepare_gitrepos_delete_repos_curl():
+    answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
+    if answer == "Y":
+        print "Backup GIT repos.. This can take a long time...."
+        # git rename repos
+    else:
+        print "Not Backup GIT repos.. This can take a long time...."
+    count = 1
+    type = 'repo'
+
+    for i in range(maxrepos * iterations):
+        index = (i - 1) / maxrepos
+        prefixrepo = prefixrepolist[index]
+        reponame = prefixrepo + type + str(count)
+        if [count > maxrepos]:
+            count = 1
+        else:
+            count = count + 1
+
+        print "deleting repo " + reponame
+        url_join = "curl --request DELETE --header "
+        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
+        url_join += " https://" + gitlab_server_url + "/api/v3/projects/LaborAufgaben%2F" + reponame
+        command = url_join.split(' ')
+        print command
+        subprocess.check_call(command)
+        time.sleep(1)
+        url_join = "curl --request GET --header "
+        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
+        url_join += " https://" + gitlab_server_url + "/api/v3/projects/LaborAufgaben%2F" + reponame
+        subprocess.check_call(url_join)
+        time.sleep(1)
+
+
+def prepare_gitrepos_create_repos():
+    count = 1
+    type = 'repo'
+    os.chdir('../submodules/template-repo')
+    print subprocess.check_call("git remote -v")
+    for i in range(maxrepos * iterations):
+        index = (i - 1) / maxrepos
+        prefixrepo = prefixrepolist[index]
+        reponame = prefixrepo + type + str(count)
+        if [count > maxrepos]:
+            count = 1
+        else:
+            count = count + 1
+        print "creating repo " + reponame
+        url_join = "curl --header "
+        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
+        url_join += "--data-urlencode name=" + reponame + "--data-urlencode namespace_id=10 https://$gitlab_server/api/v3/projects"
+        subprocess.check_call(url_join)
+        time.sleep(1)
+        template_repo = "https://" + user + ":" + password + "@" + gitlab_server_url + "/LaborAufgaben/" + reponame + ".git"
+        subprocess.check_call("git remote set-url origin", template_repo)
+        subprocess.check_call("git push origin master")
+        print "Adding users"
+        subprocess.check_call(
+            "git remote set-url origin https://$user@$gitlab_server/LaborVerwaltung/template-repo.git")
+        subprocess.check_call("cd ../../ezslab")
+
+
+#ldapadd -x -c -S logs/ldapmodify-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f ldif-prepare-ezs-ldapm.ldif
+
+# Modify members password to Standard Password
+ldifmodfile.write(
+    "dn: cn=" + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
+ldifmodfile.write("changetype: modify\n")
+ldifmodfile.write("replace: userpassword\n")
+ldifmodfile.write("userpassword: ezsiscool\n")
+ldifmodfile.write('\n')
+# End of modify members password
+
+ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif', 'w')
+

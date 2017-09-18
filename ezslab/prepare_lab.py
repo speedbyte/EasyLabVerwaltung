@@ -9,11 +9,11 @@ import ConfigParser
 import sys
 import os
 
+# gitlab v3
 
 cp_script = ConfigParser.ConfigParser()
 
 cp_script.read('script-config.opt')
-
 
 maxrepos = cp_script.get('labor', 'MAXREPOS')
 maxrepos = int(maxrepos, 10)  # hack so that the script would run. string to int coversion problem
@@ -24,75 +24,53 @@ iterations = len(prefixrepolist.split(','))
 gitlab_server_url = cp_script.get('gitlab', 'GITLAB_SERVER')
 gitlab_server_token = cp_script.get('gitlab', 'GITLAB_SERVER_TOKEN')
 
-user = "ezslab"
-password = "njn\$43EL"
-ldap_admin_password = "marc276%!"
+user = cp_script.get('credentials', 'GITLAB_ADMIN')
+password = cp_script.get('credentials', 'GITLAB_ADMIN_PASSWORD')
+
+ldap_admin = cp_script.get('credentials', 'LDAP_ADMIN')
+ldap_admin_password = cp_script.get('credentials', 'LDAP_ADMIN_PASSWORD')
+
 currentdate = datetime.date
 
-git_option = 'n'
-ldap_option = 'n'
 
-
-def prepare_gitrepos_delete_repos():
-    answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
-    if answer == "Y":
-        print "Backup GIT repos.. This can take a long time...."
-        # git rename repos
-    else:
-        print "Not Backup GIT repos.. This can take a long time...."
-    count = 1
-    type = 'repo'
-
-    for i in range(maxrepos * iterations):
-        index = (i - 1) / maxrepos
-        prefixrepo = prefixrepolist[index]
-        reponame = prefixrepo + type + str(count)
-        if [count > maxrepos]:
-            count = 1
-        else:
-            count = count + 1
-
-        print "deleting repo " + reponame
-        url_join = "curl --request DELETE --header "
-        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
-        url_join += " https://" + gitlab_server_url + "/api/v3/projects/LaborAufgaben%2F" + reponame
-        command = url_join.split(' ')
+def ezslab_resync(args):
+    ''' Add / Delete shift new users to new groups etc'''
+    response = raw_input("Resync the authorization file with ldap and gitlab (Y/N)")
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    members_add_gitlab_and_ldap(authorizationfile, "incremental")# Add
+    
+    if response == "Y":
+        print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
+        command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
+            ldap_admin, ldap_admin_password)
         print command
-        subprocess.check_call(command)
-        time.sleep(1)
-        url_join = "curl --request GET --header "
-        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
-        url_join += " https://" + gitlab_server_url + "/api/v3/projects/LaborAufgaben%2F" + reponame
-        subprocess.check_call(url_join)
-        time.sleep(1)
+        #subprocess.check_output(command, shell=True, executable='/bin/bash')
+        response = 'N'
 
 
-def prepare_gitrepos_create_repos():
-    count = 1
-    type = 'repo'
-    os.chdir('../submodules/template-repo')
-    print subprocess.check_call("git remote -v")
-    for i in range(maxrepos * iterations):
-        index = (i - 1) / maxrepos
-        prefixrepo = prefixrepolist[index]
-        reponame = prefixrepo + type + str(count)
-        if [count > maxrepos]:
-            count = 1
-        else:
-            count = count + 1
-        print "creating repo " + reponame
-        url_join = "curl --header "
-        url_join += "PRIVATE-TOKEN:" + gitlab_server_token
-        url_join += "--data-urlencode name=" + reponame + "--data-urlencode namespace_id=10 https://$gitlab_server/api/v3/projects"
-        subprocess.check_call(url_join)
-        time.sleep(1)
-        template_repo = "https://" + user + ":" + password + "@" + gitlab_server_url + "/LaborAufgaben/" + reponame + ".git"
-        subprocess.check_call("git remote set-url origin", template_repo)
-        subprocess.check_call("git push origin master")
-        print "Adding users"
-        subprocess.check_call(
-            "git remote set-url origin https://$user@$gitlab_server/LaborVerwaltung/template-repo.git")
-        subprocess.check_call("cd ../../ezslab")
+def ezslab_flush(args):
+    ''' Initialize config directories'''
+
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    #members_add_gitlab_and_ldap(authorizationfile, "fresh")
+
+    print "This will delete all entries under ou=labor,ou=people,dc=hs-esslingen,dc=de (Y/N)"
+    response = sys.stdin.read(1)
+    if response == "Y":
+        ou_todelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
+        print "deleting all members under %s" % ou_todelete
+        command = "ldapdelete -r -v -x -c -D %s -w %s %s" % (ldap_admin, ldap_admin_password, ou_todelete)
+        print command
+        #subprocess.check_output(command, shell=True, executable='/bin/bash')
+
+        print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
+        command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
+            ldap_admin, ldap_admin_password)
+        print command
+        # subprocess.check_output(command, shell=True, executable='/bin/bash')
+        response = 'N'
 
 
 def execute_ldap_add_command():
@@ -100,80 +78,9 @@ def execute_ldap_add_command():
               "ldif-prepare-ezs-ldap.ldif".split('')
     subprocess.check_output(command, shell=True, executable='/bin/bash')
 
-def execute_ldap_delete_command():
-    command = "ldapdelete -r -v -x -c -D cn=admin, dc=hs-esslingen, dc=de -w ldap_admin_password " \
-              "grouptodelete".split(' ')
-    subprocess.check_output(command, shell=True, executable='/bin/bash')
-    execute_ldap_add_command()
-
-
-def ezslab_adduser(args):
-    ''' Initialize config directories'''
-    authorizationfile = args.authfile
-    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    members_add_gitlab_and_ldap(authorizationfile)
-
-
-def ezslab_deluser(args):
-    ''' Initialize config directories'''
-    authorizationfile = args.authfile
-    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    members_add_gitlab_and_ldap(authorizationfile)
-
-
-def ezslab_moduser(args):
-    ''' Initialize config directories'''
-    authorizationfile = args.authfile
-    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    members_add_gitlab_and_ldap(authorizationfile)
-
-
-def ezslab_listusers(args):
-    ''' Initialize config directories'''
-    pass
-
-
-def ezslab_flush(args):
-
-    ''' Initialize config directories'''
-
-    response = raw_input("This will delete all entries under ou=labor,ou=people,dc=hs-esslingen,dc=de (Y/N)")
-    if response is "yes":
-        ou_todelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
-        print "deleting all members under $ou_todelete"
-        execute_ldap_delete_command()
-        response="no"
-
-    response = raw_input("This will delete all student repos belonging to group LaborAufgaben. Currently this is the list (Y/N)")
-    if response is "yes":
-        prepare_gitrepos_delete_repos()
-        time.sleep(10)
-        prepare_gitrepos_create_repos()
-
-    authorizationfile = args.authfile
-    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    members_add_gitlab_and_ldap(authorizationfile)
-
-
-def ezslab_sync(args):
-    ''' Initialize config directories'''
-    pass
-
-
-def ezslab_git(args):
-    ''' Initialize config directories'''
-    git_option = "y"
-
-
-def ezslab_ldap(args):
-    ''' Initialize config directories'''
-    ldap_option = "y"
-
-
 
 
 def main():
-
     '''Main entry'''
 
     parser = argparse.ArgumentParser()
@@ -183,48 +90,15 @@ def main():
 
     # adduser
     parser_init = subparsers.add_parser('adduser', help='adds user to the ldap group')
-    parser_init.set_defaults(func=ezslab_adduser)
+    parser_init.set_defaults(func=ezslab_resync)
     parser_init.add_argument('-u', '--user', help='the user id', type=str)
     parser_init.add_argument('-g', '--group', help='the group name', type=str)
-
-    # adduser
-    parser_init = subparsers.add_parser('deluser', help='delete the user from the ldap group')
-    parser_init.set_defaults(func=ezslab_deluser)
-    parser_init.add_argument('-u', '--user', help='the user id', type=str)
-    parser_init.add_argument('-g', '--group', help='the group name', type=str)
-
-    # modifyuser
-    parser_init = subparsers.add_parser('moduser', help='add user to a new group')
-    parser_init.set_defaults(func=ezslab_moduser)
-    parser_init.add_argument('-u', '--user', help='the user id', type=str)
-    parser_init.add_argument('-g', '--group', help='the new group name', type=str)
-
-    # list-remote
-    parser_download = subparsers.add_parser('listusers', help='list remote entries')
-    parser_download.set_defaults(func=ezslab_listusers)
-    parser_download.add_argument('-s', '--server', help='server on which to put the user', type=str)
-
-    # git
-    parser_download = subparsers.add_parser('git', help='do git')
-    parser_download.set_defaults(func=ezslab_git)
-    parser_download.add_argument('-g', '--gitlab', help='do git', type=str)
-
-    # git
-    parser_download = subparsers.add_parser('ldap', help='do ldap')
-    parser_download.set_defaults(func=ezslab_ldap)
-    parser_download.add_argument('-l', '--ldap', help='do ldap', type=str)
 
     # flush
     parser_download = subparsers.add_parser('flush', help='flush ldap users')
     parser_download.set_defaults(func=ezslab_flush)
     parser_download.add_argument('-s', '--server', help='server on which to flush all users', type=str)
     parser_download.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
-
-    # sync
-    parser_sync = subparsers.add_parser('sync', help='sync the authorization file, todo')
-    parser_sync.set_defaults(func=ezslab_sync)
-    parser_sync.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
-    parser_sync.add_argument('-s', '--server', help='URL for server', type=str)
 
     if len(sys.argv) == 1:
         print parser.format_help()
@@ -234,8 +108,7 @@ def main():
     args.func(args)
 
 
-def members_add_gitlab_and_ldap(authorizationfile):
-
+def members_add_gitlab_and_ldap(authorizationfile, mode):
     cp = ConfigParser.ConfigParser()
     authfile = os.getcwd() + '/' + authorizationfile
     print authfile
@@ -281,7 +154,6 @@ def members_add_gitlab_and_ldap(authorizationfile):
             listofprojects[x].append(listofprojects_prefix[x] + 'repo' + str(y))
 
     ldiffile = open('./ldif-prepare-ezs-ldap.ldif', 'w')
-    ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif', 'w')
 
     ldiffile.write("dn: ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
     ldiffile.write("changetype: add\n")
@@ -290,10 +162,78 @@ def members_add_gitlab_and_ldap(authorizationfile):
     ldiffile.write("ou: labor\n")
     ldiffile.write('\n')
 
-    git = gitlab.Gitlab(gitlab_server_url, gitlab_server_token)
-    #runners = git.runners.list()
-    #print runners[0].id
+    gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
 
+    # fresh -> backup, list , delete, create, fill, add members
+    # incremental -> add members
+
+    if ( mode == "fresh" ):
+        # -------------------------------------BACKUP
+        answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
+        if answer == "Y":
+            print "Backup GIT repos.. This can take a long time...."
+        else:
+            print "No Backup GIT repos"
+
+        # -------------------------------------DELETE
+        print "This will delete all the below listed student repos"
+        projects = gl.projects.all(search='LaborAufgaben', sort='asc')
+        number_of_projects = len(projects)
+        for x in range(number_of_projects):
+            print projects[x].name
+
+        response = raw_input(
+            "Proceed with delete (Y/N)")
+        if response == "Y":
+            for x in range(iterations):
+                for y in range(maxrepos):
+                    reponame = listofprojects[x][y]
+                    print "deleting repo " + reponame
+                    time.sleep(1)
+                    # Get a project by ID
+                    try:
+                        project = gl.projects.get('LaborAufgaben/' + reponame)
+                    except:
+                        print "No repo %s found under LaborAufgaben, Skipping....." % (reponame)
+                        continue
+                    project.delete()
+
+        time.sleep(1)
+
+        # -------------------------------------CREATE and FILL
+        user = "ezslab"
+        password = "njn$43EL"
+        curdir_save = os.getcwd()
+        submodules_dir = curdir_save + '/' + '../submodules/template-repo'
+        os.chdir(submodules_dir)
+        print os.getcwd()
+        subprocess.check_call(["git", "remote", "-v"])
+        for x in range(iterations):
+            for y in range(maxrepos):
+                reponame = listofprojects[x][y]
+                print "creating repo " + reponame
+                project = gl.projects.create({'name': reponame, 'namespace_id': 10})
+                time.sleep(1)
+                template_repo_original = "https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/template-repo.git"
+                template_repo = "https://%s:%s@%s/LaborAufgaben/%s.git"% (user, password, gitlab_server_url, reponame)
+                command = "git remote set-url origin " + template_repo
+                print command
+                subprocess.check_call(command.split(' '))
+                subprocess.check_call("git push origin master".split(' '))
+                print "Adding users"
+                template_repo = "https://%s@%s/LaborAufgaben/%s.git" % (user, gitlab_server_url, reponame)
+                command = "git remote set-url origin " + template_repo_original
+                print command
+                subprocess.check_call(command.split(' '))
+                branch = project.branches.get('master')
+                branch.protect()
+                branch = project.branches.create({'branch_name': 'Work',
+                                                  'ref': 'master'})
+
+        os.chdir(curdir_save)
+
+    # -------------------------------------ADD MEMBERS
+    # both incremental and fresh
     for x in range(iterations):
         for y in range(maxrepos):
             groupname = listofgroups[x][y]
@@ -321,7 +261,7 @@ def members_add_gitlab_and_ldap(authorizationfile):
             ldiffile.write("objectClass: top\n")
             ldiffile.write("description: group of lab students\n")
             ldiffile.write("cn: " + groupname + "\n")
-            projectfound = git.projects.get('LaborAufgaben/' + reponame)
+            projectfound = gl.projects.get('LaborAufgaben/' + reponame)
             print "project found ", projectfound.id
             members = projectfound.members.list()
             if len(members) > 0:
@@ -335,22 +275,21 @@ def members_add_gitlab_and_ldap(authorizationfile):
                     ldiffile.write(
                         "member: cn= " + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     print membertoadd
-                    if git_option == 'y':
-                        memberfound = git.users.list(username=membertoadd)
-                        print "userfound", memberfound
-                        if len(memberfound) > 0:
-                            user = memberfound[0]
-                            user_id = user.id
-                        else:
-                            print "Creating new member in GITLAB", membertoadd
-                            user = git.users.create({'email': membertoadd + '@hs-esslingen.de',
-                                                     'password': 'ezsiscool',
-                                                     'username': membertoadd,
-                                                     'name': membertoadd})
-                            user_id = user.id
-                        print user_id
-                        member = projectfound.members.create(
-                            {'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})
+                    memberfound = gl.users.list(username=membertoadd)
+                    print "userfound", memberfound
+                    if len(memberfound) > 0:
+                        user = memberfound[0]
+                        user_id = user.id
+                    else:
+                        print "Creating new member in GITLAB", membertoadd
+                        user = gl.users.create({'email': membertoadd + '@hs-esslingen.de',
+                                                'password': 'ezsiscool',
+                                                'username': membertoadd,
+                                                'name': membertoadd})
+                        user_id = user.id
+                    print user_id
+                    member = projectfound.members.create(
+                        {'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})
                 else:
                     ldiffile.write("member: cn=dummy,ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     print "dummy"
@@ -379,16 +318,6 @@ def members_add_gitlab_and_ldap(authorizationfile):
                     ldiffile.write("cn: " + membertoadd + "\n")
                     ldiffile.write('\n')
                     # End of add team group members to LDAP
-
-                    # Modify members password to Standard Password
-                    ldifmodfile.write(
-                        "dn: cn=" + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
-                    ldifmodfile.write("changetype: modify\n")
-                    ldifmodfile.write("replace: userpassword\n")
-                    ldifmodfile.write("userpassword: ezsiscool\n")
-                    ldifmodfile.write('\n')
-                    # End of modify members password
-
 
 if __name__ == '__main__':
     main()
