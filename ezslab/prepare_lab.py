@@ -42,11 +42,16 @@ def ezslab_resync(args):
 
     # Add
     if response == "Y":
+        ou_todelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
         print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
         command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
             ldap_admin, ldap_admin_password)
         print command
-        subprocess.check_output(command, shell=True, executable='/bin/bash')
+        
+	try:
+		subprocess.check_output(command.split(' '))
+	except:
+		print "errors in ldapadd"
         response = 'N'
 
 
@@ -74,13 +79,6 @@ def ezslab_flush(args):
         response = 'N'
 
 
-def execute_ldap_add_command():
-    command = "ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f " \
-              "ldif-prepare-ezs-ldap.ldif".split('')
-    subprocess.check_output(command, shell=True, executable='/bin/bash')
-
-
-
 def main():
     '''Main entry'''
 
@@ -90,16 +88,14 @@ def main():
     authorizationfile = None
 
     # resync
-    parser_init = subparsers.add_parser('resync', help='resyncs auth file with gitlab and ldap')
-    parser_init.set_defaults(func=ezslab_resync)
-    parser_init.add_argument('-u', '--user', help='the user id', type=str)
-    parser_init.add_argument('-g', '--group', help='the group name', type=str)
+    parser_resync = subparsers.add_parser('resync', help='resyncs auth file with gitlab and ldap')
+    parser_resync.set_defaults(func=ezslab_resync)
+    parser_resync.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
 
     # flush
-    parser_download = subparsers.add_parser('flush', help='flush ldap users')
-    parser_download.set_defaults(func=ezslab_flush)
-    parser_download.add_argument('-s', '--server', help='server on which to flush all users', type=str)
-    parser_download.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
+    parser_flush = subparsers.add_parser('flush', help='flush ldap users')
+    parser_flush.set_defaults(func=ezslab_flush)
+    parser_flush.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
 
     if len(sys.argv) == 1:
         print parser.format_help()
