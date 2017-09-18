@@ -47,12 +47,12 @@ def ezslab_resync(args):
         command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
             ldap_admin, ldap_admin_password)
         print command
-        
-	try:
-		subprocess.check_output(command.split(' '))
-	except:
-		print "errors in ldapadd"
-        response = 'N'
+
+    try:
+        subprocess.check_output(command.split(' '))
+    except subprocess.CalledProcessError as e:
+        print e.output
+    response = 'N'
 
 
 def ezslab_flush(args):
@@ -69,13 +69,20 @@ def ezslab_flush(args):
         print "deleting all members under %s" % ou_todelete
         command = "ldapdelete -r -v -x -c -D %s -w %s %s" % (ldap_admin, ldap_admin_password, ou_todelete)
         print command
-        subprocess.check_output(command, shell=True, executable='/bin/bash')
+        try:
+            subprocess.check_output(command.split(' '))
+        except subprocess.CalledProcessError as e:
+            print e.output
+            sys.exit(1)
 
         print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
         command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
             ldap_admin, ldap_admin_password)
         print command
-        subprocess.check_output(command, shell=True, executable='/bin/bash')
+        try:
+            subprocess.check_output(command.split(' '))
+        except subprocess.CalledProcessError as e:
+            print e.output
         response = 'N'
 
 
