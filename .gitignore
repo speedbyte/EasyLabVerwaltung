@@ -1,3 +1,4 @@
+*.ldif
 cmake-build-debug/
 .idea/
 *.log

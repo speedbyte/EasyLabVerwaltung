@@ -34,8 +34,7 @@ ldap_option = 'n'
 
 
 def prepare_gitrepos_delete_repos():
-    print "Do you want a backup of the GIT repos (Y/N)"
-    answer = sys.stdin.readline()
+    answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
     if answer == "Y":
         print "Backup GIT repos.. This can take a long time...."
         # git rename repos
@@ -96,10 +95,6 @@ def prepare_gitrepos_create_repos():
         subprocess.check_call("cd ../../ezslab")
 
 
-def execute_gitlab_command_and_ldap_prepare(authorization_file):
-    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    ldap_python(authorization_file)
-
 def execute_ldap_add_command():
     command = "ldapadd -x -c -S logs/ldapadd-error.log -D cn=admin,dc=hs-esslingen,dc=de -w marc276%! -f " \
               "ldif-prepare-ezs-ldap.ldif".split('')
@@ -114,20 +109,23 @@ def execute_ldap_delete_command():
 
 def ezslab_adduser(args):
     ''' Initialize config directories'''
-    execute_gitlab_command_and_ldap_prepare()
-    execute_ldap_add_command()
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    members_add_gitlab_and_ldap(authorizationfile)
 
 
 def ezslab_deluser(args):
     ''' Initialize config directories'''
-    execute_gitlab_command_and_ldap_prepare()
-    execute_ldap_add_command()
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    members_add_gitlab_and_ldap(authorizationfile)
 
 
 def ezslab_moduser(args):
     ''' Initialize config directories'''
-    execute_gitlab_command_and_ldap_prepare()
-    execute_ldap_add_command()
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    members_add_gitlab_and_ldap(authorizationfile)
 
 
 def ezslab_listusers(args):
@@ -138,17 +136,24 @@ def ezslab_listusers(args):
 def ezslab_flush(args):
 
     ''' Initialize config directories'''
-    if git_option is "y":
+
+    response = raw_input("This will delete all entries under ou=labor,ou=people,dc=hs-esslingen,dc=de (Y/N)")
+    if response is "yes":
+        ou_todelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
+        print "deleting all members under $ou_todelete"
+        execute_ldap_delete_command()
+        response="no"
+
+    response = raw_input("This will delete all student repos belonging to group LaborAufgaben. Currently this is the list (Y/N)")
+    if response is "yes":
         prepare_gitrepos_delete_repos()
         time.sleep(10)
         prepare_gitrepos_create_repos()
-    authorizationfile = args.authfile
-    execute_gitlab_command_and_ldap_prepare(authorizationfile)
 
-    if ldap_option is "y":
-        grouptodelete = "ou=labor,ou=people,dc=hs-esslingen,dc=de"
-        print "deleting all members under $grouptodelete"
-        execute_ldap_delete_command()
+    authorizationfile = args.authfile
+    print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
+    members_add_gitlab_and_ldap(authorizationfile)
+
 
 def ezslab_sync(args):
     ''' Initialize config directories'''
@@ -229,7 +234,7 @@ def main():
     args.func(args)
 
 
-def ldap_python(authorizationfile):
+def members_add_gitlab_and_ldap(authorizationfile):
 
     cp = ConfigParser.ConfigParser()
     authfile = os.getcwd() + '/' + authorizationfile
@@ -278,12 +283,11 @@ def ldap_python(authorizationfile):
     ldiffile = open('./ldif-prepare-ezs-ldap.ldif', 'w')
     ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif', 'w')
 
-    currentOUunit = "labor"
-    ldiffile.write("dn: ou=" + currentOUunit + ",ou=people,dc=hs-esslingen,dc=de\n")
+    ldiffile.write("dn: ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
     ldiffile.write("changetype: add\n")
     ldiffile.write("objectClass: organizationalUnit\n")
     ldiffile.write("objectClass: top\n")
-    ldiffile.write("ou: " + currentOUunit + "\n")
+    ldiffile.write("ou: labor\n")
     ldiffile.write('\n')
 
     git = gitlab.Gitlab(gitlab_server_url, gitlab_server_token)
@@ -309,7 +313,7 @@ def ldap_python(authorizationfile):
             ldiffile.write('\n')
             # End of delete existing team groups.
 
-            print "Creating group " + groupname + " and adding below members to the group"
+            print "Creating group " + groupname + " and adding below members to the group for " + reponame
             # Create team groups.
             ldiffile.write("dn: cn=" + groupname + ",ou=groups,dc=hs-esslingen,dc=de\n")
             ldiffile.write("changetype: add\n")
@@ -317,9 +321,7 @@ def ldap_python(authorizationfile):
             ldiffile.write("objectClass: top\n")
             ldiffile.write("description: group of lab students\n")
             ldiffile.write("cn: " + groupname + "\n")
-
-            print "REPONAME", reponame
-            projectfound = git.projects('LaborAufgaben/' + reponame)
+            projectfound = git.projects.get('LaborAufgaben/' + reponame)
             print "project found ", projectfound.id
             members = projectfound.members.list()
             if len(members) > 0:
@@ -331,7 +333,7 @@ def ldap_python(authorizationfile):
                 membertoadd = membertoadd.strip(' ')
                 if membertoadd != '':
                     ldiffile.write(
-                        "member: cn= " + membertoadd + ",ou=" + currentOUunit + ",ou=people,dc=hs-esslingen,dc=de\n")
+                        "member: cn= " + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     print membertoadd
                     if git_option == 'y':
                         memberfound = git.users.list(username=membertoadd)
@@ -350,7 +352,7 @@ def ldap_python(authorizationfile):
                         member = projectfound.members.create(
                             {'user_id': user.id, 'access_level': gitlab.DEVELOPER_ACCESS})
                 else:
-                    ldiffile.write("member: cn=dummy,ou=" + currentOUunit + ",ou=people,dc=hs-esslingen,dc=de\n")
+                    ldiffile.write("member: cn=dummy,ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     print "dummy"
                     # End of adding members to the team groups.
             ldiffile.write('\n')
@@ -361,7 +363,7 @@ def ldap_python(authorizationfile):
                 if membertoadd != '':
                     # Add team group members to LDAP
                     ldiffile.write(
-                        "dn: cn=" + membertoadd + ",ou=" + currentOUunit + ",ou=people,dc=hs-esslingen,dc=de\n")
+                        "dn: cn=" + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     ldiffile.write("changetype: add\n")
                     ldiffile.write("givenName: Not configured\n")
                     ldiffile.write("sn: Not configured\n")
@@ -380,7 +382,7 @@ def ldap_python(authorizationfile):
 
                     # Modify members password to Standard Password
                     ldifmodfile.write(
-                        "dn: cn=" + membertoadd + ",ou=" + currentOUunit + ",ou=people,dc=hs-esslingen,dc=de\n")
+                        "dn: cn=" + membertoadd + ",ou=labor,ou=people,dc=hs-esslingen,dc=de\n")
                     ldifmodfile.write("changetype: modify\n")
                     ldifmodfile.write("replace: userpassword\n")
                     ldifmodfile.write("userpassword: ezsiscool\n")
