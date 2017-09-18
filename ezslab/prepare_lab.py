@@ -70,7 +70,7 @@ def prepare_gitrepos_delete_repos():
 
 def prepare_gitrepos_create_repos():
     count = 1
-    type = repo
+    type = 'repo'
     os.chdir('../submodules/template-repo')
     print subprocess.check_call("git remote -v")
     for i in range(maxrepos * iterations):
@@ -87,7 +87,7 @@ def prepare_gitrepos_create_repos():
         url_join += "--data-urlencode name=" + reponame + "--data-urlencode namespace_id=10 https://$gitlab_server/api/v3/projects"
         subprocess.check_call(url_join)
         time.sleep(1)
-        template_repo = "https://" + user + ":" + password + "@" + gitlab_server + "/LaborAufgaben/" + reponame + ".git"
+        template_repo = "https://" + user + ":" + password + "@" + gitlab_server_url + "/LaborAufgaben/" + reponame + ".git"
         subprocess.check_call("git remote set-url origin", template_repo)
         subprocess.check_call("git push origin master")
         print "Adding users"
@@ -142,7 +142,7 @@ def ezslab_flush(args):
         prepare_gitrepos_delete_repos()
         time.sleep(10)
         prepare_gitrepos_create_repos()
-    authorizationfile = args.conffile
+    authorizationfile = args.authfile
     execute_gitlab_command_and_ldap_prepare(authorizationfile)
 
     if ldap_option is "y":
@@ -174,10 +174,7 @@ def main():
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(title='subcommands', description='')
 
-    try:
-        authorizationfile = sys.argv[1]
-    except:
-        authorizationfile = 'authorization_file_labor_development.opt'
+    authorizationfile = None
 
     # adduser
     parser_init = subparsers.add_parser('adduser', help='adds user to the ldap group')
@@ -216,12 +213,12 @@ def main():
     parser_download = subparsers.add_parser('flush', help='flush ldap users')
     parser_download.set_defaults(func=ezslab_flush)
     parser_download.add_argument('-s', '--server', help='server on which to flush all users', type=str)
-    parser_download.add_argument('-c', '--conffile', help='the config file', type=str, required=authorizationfile)
+    parser_download.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
 
     # sync
     parser_sync = subparsers.add_parser('sync', help='sync the authorization file, todo')
     parser_sync.set_defaults(func=ezslab_sync)
-    parser_sync.add_argument('-c', '--conffile', help='the config file', type=str, required=authorizationfile)
+    parser_sync.add_argument('-c', '--authfile', help='the authorizationfile', type=str, required=authorizationfile)
     parser_sync.add_argument('-s', '--server', help='URL for server', type=str)
 
     if len(sys.argv) == 1:
@@ -235,7 +232,14 @@ def main():
 def ldap_python(authorizationfile):
 
     cp = ConfigParser.ConfigParser()
-    cp.read(authorizationfile)
+    authfile = os.getcwd() + '/' + authorizationfile
+    print authfile
+
+    if os.path.isfile(authfile):
+        cp.read(authfile)
+    else:
+        print "no file is found at", os.path.realpath(authfile)
+        sys.exit(1)
 
     listofgroups_1 = []
     listofgroups_2 = []
@@ -266,10 +270,10 @@ def ldap_python(authorizationfile):
     listofprojects = [listofprojects_1, listofprojects_2, listofprojects_3, listofprojects_4, listofprojects_5,
                       listofprojects_6, listofprojects_7, listofprojects_8, listofprojects_9, listofprojects_10]
 
-    for y in range(iterations):
-        for x in range(1, maxrepos + 1):
-            listofgroups[y].append(listofgroups_prefix[y] + 'group' + str(x))
-            listofprojects[y].append(listofprojects_prefix[y] + 'repo' + str(x))
+    for x in range(iterations):
+        for y in range(1, maxrepos + 1):
+            listofgroups[x].append(listofgroups_prefix[x] + 'group' + str(y))
+            listofprojects[x].append(listofprojects_prefix[x] + 'repo' + str(y))
 
     ldiffile = open('./ldif-prepare-ezs-ldap.ldif', 'w')
     ldifmodfile = open('./ldif-prepare-ezs-ldapm.ldif', 'w')
@@ -282,14 +286,14 @@ def ldap_python(authorizationfile):
     ldiffile.write("ou: " + currentOUunit + "\n")
     ldiffile.write('\n')
 
-    git = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
-    runners = git.runners.list()
-    print runners[0].id
+    git = gitlab.Gitlab(gitlab_server_url, gitlab_server_token)
+    #runners = git.runners.list()
+    #print runners[0].id
 
-    for y in range(iterations):
-        for x in range(maxrepos):
-            groupname = listofgroups[y][x]
-            reponame = listofprojects[y][x]
+    for x in range(iterations):
+        for y in range(maxrepos):
+            groupname = listofgroups[x][y]
+            reponame = listofprojects[x][y]
             try:
                 groupmembers = cp.get('groups', groupname)
             except:
@@ -313,7 +317,9 @@ def ldap_python(authorizationfile):
             ldiffile.write("objectClass: top\n")
             ldiffile.write("description: group of lab students\n")
             ldiffile.write("cn: " + groupname + "\n")
-            projectfound = git.projects.get('LaborAufgaben/' + reponame)
+
+            print "REPONAME", reponame
+            projectfound = git.projects('LaborAufgaben/' + reponame)
             print "project found ", projectfound.id
             members = projectfound.members.list()
             if len(members) > 0:
