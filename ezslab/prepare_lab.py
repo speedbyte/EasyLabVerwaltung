@@ -38,14 +38,15 @@ def ezslab_resync(args):
     response = raw_input("Resync the authorization file with ldap and gitlab (Y/N)")
     authorizationfile = args.authfile
     print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    members_add_gitlab_and_ldap(authorizationfile, "incremental")# Add
-    
+    members_add_gitlab_and_ldap(authorizationfile, "incremental")
+
+    # Add
     if response == "Y":
         print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
         command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
             ldap_admin, ldap_admin_password)
         print command
-        #subprocess.check_output(command, shell=True, executable='/bin/bash')
+        subprocess.check_output(command, shell=True, executable='/bin/bash')
         response = 'N'
 
 
@@ -54,7 +55,7 @@ def ezslab_flush(args):
 
     authorizationfile = args.authfile
     print "Adding and deleting groups and studentsnames in LDAP as per entries in authorization-file.opt.";
-    #members_add_gitlab_and_ldap(authorizationfile, "fresh")
+    members_add_gitlab_and_ldap(authorizationfile, "fresh")
 
     print "This will delete all entries under ou=labor,ou=people,dc=hs-esslingen,dc=de (Y/N)"
     response = sys.stdin.read(1)
@@ -63,13 +64,13 @@ def ezslab_flush(args):
         print "deleting all members under %s" % ou_todelete
         command = "ldapdelete -r -v -x -c -D %s -w %s %s" % (ldap_admin, ldap_admin_password, ou_todelete)
         print command
-        #subprocess.check_output(command, shell=True, executable='/bin/bash')
+        subprocess.check_output(command, shell=True, executable='/bin/bash')
 
         print "adding all members from ldif-prepare-ezs-ldap.ldif file under %s", ou_todelete
         command = "ldapadd -x -c -S logs/ldapadd-error.log -D %s -w %s -f ldif-prepare-ezs-ldap.ldif" % (
             ldap_admin, ldap_admin_password)
         print command
-        # subprocess.check_output(command, shell=True, executable='/bin/bash')
+        subprocess.check_output(command, shell=True, executable='/bin/bash')
         response = 'N'
 
 
@@ -88,8 +89,8 @@ def main():
 
     authorizationfile = None
 
-    # adduser
-    parser_init = subparsers.add_parser('adduser', help='adds user to the ldap group')
+    # resync
+    parser_init = subparsers.add_parser('resync', help='resyncs auth file with gitlab and ldap')
     parser_init.set_defaults(func=ezslab_resync)
     parser_init.add_argument('-u', '--user', help='the user id', type=str)
     parser_init.add_argument('-g', '--group', help='the group name', type=str)
