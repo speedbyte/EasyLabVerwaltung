@@ -1,5 +1,5 @@
 [labor]
-MAXREPOS = 5
+MAXREPOS = 35
 PREFIXREPOLIST = ezs-stud-,sa-stud-
 
 [gitlab]
