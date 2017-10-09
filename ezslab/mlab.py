@@ -15,14 +15,8 @@ user = 'ezslab'
 password = 'njn$43EL'
 
 
-def delete_repos(gl):
+def delete_repos(gl, todo):
     if ( mode == "fresh" ):
-        # -------------------------------------BACKUP
-        answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
-        if answer == "Y":
-            print "Backup GIT repos.. This can take a long time...."
-        else:
-            print "No Backup GIT repos"
 
         # -------------------------------------DELETE
         response = raw_input(
@@ -49,13 +43,15 @@ def delete_repo(gl, reponame):
     try:
 	project = gl.projects.get('LaborAufgaben/' + reponame)
 	project.delete()
+	print "successfully deleted " + project.id
     except:
 	print "No repo %s found under LaborAufgaben, Skipping....." % (reponame)
 
 
-def create_gitlab_repo(gl, reponame, templateURL):
+def create_repo(gl, reponame):
 
-        # -------------------------------------CREATE and FILL
+       	templateURL="https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/template-repo.git"
+	 # -------------------------------------CREATE and FILL
         curdir_save = os.getcwd()
         submodules_dir = curdir_save + '/' + '../submodules/template-repo'
         os.chdir(submodules_dir)
@@ -108,8 +104,7 @@ def manage_repo(gl, groupname, groupmembers, reponame):
 		print "project found ", repo.id
 	except:#if ( repo == None ) :
 		print "create a repo with repo name" 
-		templateURL="https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/template-repo.git"
-		repo = create_gitlab_repo(reponame,templateURL)
+		repo = create_repo(gl,reponame)
 		
 	actualmembers = repo.members.list()
 	if len(actualmembers) > 0:
@@ -129,11 +124,40 @@ def manage_repo(gl, groupname, groupmembers, reponame):
 
 if __name__ == '__main__':
 	
-	gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
-	groupname = "atest_group_test1" #listofgroups[x][y]
-	groupmembers = "XXXXit00, YYYYit00" 
-	reponame = "ctest_repo_test1" #listofprojects[x][y]
-	manage_repo(gl, groupname, groupmembers, reponame)
+	command = raw_input("Enter value to test - choices are manage_repo, delete_repo, flush_repos, create_repo, create_user :  ")
+	print command
+	if ( command == "manage_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		manage_repo(gl, groupname, groupmembers, reponame)
+	elif ( command == "delete_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		delete_repo(gl, reponame)
+	elif ( command == "create_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		create_repo(gl, reponame)
+	elif ( command == "flush_repos"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		flush_repois(gl, reponame)
+	elif ( command == "create_user"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		username = "ZZZZit00" 
+		create_user(gl, username)
+	else:
+		print "nothing to do  - aborting...."
 
 # curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
 # curl --request POST --header "PRIVATE-TOKEN: $gitlab_server_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
