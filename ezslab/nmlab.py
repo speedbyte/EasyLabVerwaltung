@@ -6,7 +6,6 @@ import subprocess
 import gitlab
 import sys
 import os
-import SimpleXMLRPCServer
 
 # gitlab v3
 
@@ -16,14 +15,8 @@ user = 'ezslab'
 password = 'njn$43EL'
 
 
-def delete_repos():
+def delete_repos(gl, todo):
     if ( mode == "fresh" ):
-        # -------------------------------------BACKUP
-        answer = raw_input("Do you want a backup of the GIT repos (Y/N)")
-        if answer == "Y":
-            print "Backup GIT repos.. This can take a long time...."
-        else:
-            print "No Backup GIT repos"
 
         # -------------------------------------DELETE
         response = raw_input(
@@ -45,25 +38,26 @@ def delete_repos():
         time.sleep(1)
 
 
-def delete_repo(reponame):
+def delete_repo(gl, reponame):
     # Get a project by ID
     try:
 	project = gl.projects.get('LaborAufgaben/' + reponame)
+	project.delete()
+	print "successfully deleted " + project.id
     except:
 	print "No repo %s found under LaborAufgaben, Skipping....." % (reponame)
-    project.delete()
 
 
-def create_gitlab_repo(gl, reponame, templateURL):
-        print "In create_gitlab_repo"
-        # -------------------------------------CREATE and FILL
+def create_repo(gl, reponame):
+
+       	templateURL="https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/template-repo.git"
+	 # -------------------------------------CREATE and FILL
         curdir_save = os.getcwd()
-        print "1 " + os.getcwd()
         submodules_dir = curdir_save + '/' + '../submodules/template-repo'
         os.chdir(submodules_dir)
-        print "2 " + os.getcwd()
+        print os.getcwd()
         subprocess.check_call(["git", "remote", "-v"])
-	print "Creating repo " + reponame
+	print "creating repo " + reponame
 	project = gl.projects.create({'name': reponame, 'namespace_id': 10})
 	time.sleep(1)
 	template_repo_original = templateURL
@@ -108,10 +102,9 @@ def manage_repo(gl, groupname, groupmembers, reponame):
 	try:
 		repo = gl.projects.get('LaborAufgaben/' + reponame)
 		print "project found ", repo.id
-	except:
-		print "Create a repo 1 with repo name " + reponame
-		templateURL="https://vagrawal@gitlab.hs-esslingen.de/IT-Allgemein-LaborVerwaltung/template-repo.git"
-		repo = create_gitlab_repo(gl, reponame,templateURL)
+	except:#if ( repo == None ) :
+		print "create a repo with repo name" 
+		repo = create_repo(gl,reponame)
 		
 	actualmembers = repo.members.list()
 	if len(actualmembers) > 0:
@@ -120,74 +113,51 @@ def manage_repo(gl, groupname, groupmembers, reponame):
  	groupmembers = groupmembers.split(',')
 	for x in range(len(groupmembers)):
 		membername = groupmembers[x].strip()
-       		create_user(gl, membername) # existing users are not re-created.
+       		create_user(membername) # existing users are not re-created.
 	        memberfound = gl.users.list(username=membername)
 		time.sleep(1) 
 		print memberfound
-	        repo.members.create({'user_id': memberfound[0].id, 'access_level': gitlab.MASTER_ACCESS})
+	        repo.members.create({'user_id': memberfound[0].id, 'access_level': gitlab.DEVELOPER_ACCESS})
 			
 	# End of create team groups.
 
 
-
-#This method is being fired after a user profile has been saved. 
-#The password parameter contains the plain password if it was reset or register otherwise the password is an empty String
-#Context parameter possible values are: 
-#SELFREGISTRATION = 0; PROFILEEDIT = 1; USERADMINADD = 2; USERADMINEDIT = 3;
-def postUserProfileSaveHandler(map):
-	print("postUserProfileSaveHandler: ")
-	print " objectID: " + map["objectID"]
-	print " Login name: " + map["loginName"]
-	print " First name: " + map["firstName"]	
-	print " Last name: " + map["lastName"] 
-	print " Email: " + map["email"]	
-	print " Password: " + map["password"]
-	print " Context: " + map["context"]
-	return True
+if __name__ == '__main__':
 	
-#This method is being fired after a group has been saved or group members has been changed.
-#The members attribute is either empty (=the group does not contain members) or a comma separated id list like: 100,102
-def postGroupSaveHandler(map):
-        reponame = map["name"]
-	reponame = reponame.replace(" ","-").lower()
-	print "Group " + map["name"] + " has changed: "+ reponame + " " +  map["members"] 
-        manage_repo(gl, map["name"], map["members"], reponame) 
-	return True
-
-#This method is being fired when user(s) are deleted from the system.
-def postUserDeleteHandler(map):
-	print("postUserDeleteHandler: ")
-	print " objectIDS: " + map["objectIDs"]
-	return True
-
-#This method is being fired when group(s) are deleted from the system.	
-def postGroupDeleteHandler(map):
-	print("postGroupDeleteHandler: ")
-	print " objectIDS: " + map["objectIDs"]
-	return True
-	
-def main():
-	print "Track+ XML-RPC demo server started"
-	server = SimpleXMLRPCServer.SimpleXMLRPCServer(("127.0.0.1", 8001))							
-	server.register_function(postUserProfileSaveHandler)
-	server.register_function(postGroupSaveHandler)	
-	server.register_function(postUserDeleteHandler)
-	server.register_function(postGroupDeleteHandler)
-	print "Press ctrl+c to stop the server!"
-	server.serve_forever()
-	
-	
-if __name__ == "__main__":
-	gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
-	main()
-
-#if __name__ == '__main__':
-#	gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
-	
-#	groupname = "atest_group_test1" #listofgroups[x][y]
-#	groupmembers = "XXXXit00, YYYYit00" 
-#	reponame = "ctest_repo_test1" #listofprojects[x][y]
-#	manage_repo(gl, groupname, groupmembers, reponame)
+	command = raw_input("Enter value to test - choices are manage_repo, delete_repo, flush_repos, create_repo, create_user :  ")
+	print command
+	if ( command == "manage_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		manage_repo(gl, groupname, groupmembers, reponame)
+	elif ( command == "delete_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		delete_repo(gl, reponame)
+	elif ( command == "create_repo"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		create_repo(gl, reponame)
+	elif ( command == "flush_repos"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		reponame = "ctest_repo_test1" 
+		flush_repois(gl, reponame)
+	elif ( command == "create_user"):
+		gl = gitlab.Gitlab('https://' + gitlab_server_url, gitlab_server_token)
+		groupname = "atest_group_test1" 
+		groupmembers = "XXXXit00, YYYYit00" 
+		username = "ZZZZit00" 
+		create_user(gl, username)
+	else:
+		print "nothing to do  - aborting...."
 
 # curl --header "PRIVATE-TOKEN: <my token>" -X POST "https://gitlab.com/api/v3/projects?name=foobartest8&namespace_id=10"
 # curl --request POST --header "PRIVATE-TOKEN: $gitlab_server_TOKEN" https://gitlab.example.com/api/v3/projects/:id/members/:user_id?access_level=30
