@@ -1,4 +1,5 @@
 #!/bin/bash
+# _*_ coding: utf-8 _*_
 
 if [ "$(hostname)" == "itlx3304" ]; then
 	EZSLAB_PERSONAL_TOKEN=Lzx9BbajbRkxhTZjknDt

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# _*_coding: utf-8 _*_
 
 import argparse
 import time
@@ -8,6 +9,7 @@ import gitlab
 import ConfigParser
 import sys
 import os
+
 
 # gitlab v3
 
